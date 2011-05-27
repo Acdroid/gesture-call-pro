@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Gesture Call Donate</string>
+    <string name = "makeGesture">Machen Sie eine Geste um einen Kontakt anzurufen</string>
+    
+    <!--  Button -->
+    <string name = "ini_Button">Einfügen</string>
+    <string name = "button_done">Neu erstellen</string>
+    <string name = "cancelGesture">Geste beenden</string>
+    <string name = "cancelGesture2">Zurück</string>
+    <string name = "button_volver">Zurück</string>
+    <string name = "button_save">Speichern</string>
+    <string name = "button_edit_gesture">Geste Bearbeiten</string>
+    <string name= "button_reload">Nachladen</string>
+    
+    <!--  Menu -->
+    <string name ="salir">Beenden</string>
+    <string name ="opciones">Optionen</string>
+    <string name ="menu_edit">Geste</string>
+    
+    <!--  Dialog -->
+    <string name = "di_salir">"Möchten Sie den Programm beenden?"</string>
+    <string name="gestures_edit">Gesten Bearbeiten</string>
+    <string name="gestures_delete">Löschen</string>
+    <string name="dialog_bc_seriusly">Wollen Sie dieses Kontakt anrufen ? :</string>
+    <string name="dialog_no_more">Deise Nachricht nicht wieder einblenden</string>
+    <string name="dialog_sure">Sind Sie sicher?</string>
+    <string name="calling">Rufaufbau...</string>
+    
+    <!-- Miscelanea -->
+	<string name = "first_time_toast">Das ist das erste Mal, dass Sie Geste Anruf benutzen\n....</string>
+	<string name = "gesto_anadido">Geste wurde erfolgreich erstellt</string>
+	<string name = "yes">Ja</string>
+	<string name = "no">Nein</string>
+	<string name = "no_gesto">Die Geste wurde nicht erkannt</string>
+	<string name = "info_list_gestos">Taste halten um Geste zu bearbeiten</string>
+	<string name="gestures_loading">Gesten werden geladet...</string>
+	<string name="gestures_empty">Keine Gesten vorhanden</string>
+	<string name="gestures_activity">Gesten</string>
+	<string name="gestures_delete_success">Geste gelöscht</string>
+	<string name="gestures_error_loading">%s konnte nicht geladet werden. Vergewissern Sie sich, dass die SD karte montiert ist.</string>
+		
+	<!-- Preferencias -->
+	<string name ="pref_main">Einstellungen</string>
+	<string name ="pref_ask">Rufaufbau Bestätigung</string>
+	<string name ="pref_ask_summary">Rufaufbau verlangt Bestätigung</string>
+	
+	
+</resources>

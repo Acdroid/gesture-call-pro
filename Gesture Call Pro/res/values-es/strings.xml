@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Gesture Call</string>
+    <string name = "makeGesture">Haz un gesto para llamar a un contacto</string>
+    
+    <!--  Button -->
+    <string name = "ini_Button">Añadir</string>
+    <string name = "button_done">Crear</string>
+    <string name = "cancelGesture">Cancelar Gesto</string>
+    <string name = "cancelGesture2">Volver</string>
+    <string name = "button_volver">Volver</string>
+    <string name = "button_save">Guardar</string>
+    <string name = "button_edit_gesture">Gestos</string>
+    <string name= "button_reload">Recargar</string>
+    
+    <!--  Menu -->
+    <string name ="salir">Salir</string>
+    <string name ="opciones">Opciones</string>
+    <string name ="menu_edit">Gestos</string>
+    
+    <!--  Dialog -->
+    <string name = "di_salir">"¿Seguro que quieres salir de la aplicación?"</string>
+    <string name="gestures_edit">Modificar Gesto</string>
+    <string name="gestures_delete">Borrar</string>
+    <string name="dialog_bc_seriusly">¿Quieres llamar a</string>
+    <string name="dialog_no_more">No mostrar más este mensaje</string>
+    <string name="dialog_sure">¿Estás seguro?</string>
+    <string name="calling">Llamando...</string>
+    
+    <!-- Miscelanea -->
+	<string name = "first_time_toast">Esta es la primera vez que usas Gesture Call\n....</string>
+	<string name = "gesto_anadido">Gesto añadido Correctamente</string>
+	<string name = "yes">Sí</string>
+	<string name = "no">No</string>
+	<string name = "no_gesto">No se ha reconocido el gesto</string>
+	<string name = "info_list_gestos">Pulsación larga para editar el Gesto</string>
+	<string name="gestures_loading">Cargando gestos...</string>
+	<string name="gestures_empty">No hay gestos</string>
+	<string name="gestures_activity">Gestos</string>
+	<string name="gestures_delete_success">Gesto Borrado</string>
+	<string name="gestures_error_loading">No se puede cargar %s. Asegurate de que la tarjeta
+		SD está montada.</string>
+	<string name="error_no_libreria">Ha ocurrido un error fatal. No se ha podido cargar la librería de gestos!</string>
+		
+	<!-- Preferencias -->
+	<string name ="pref_main">Preferencias del Programa</string>
+	<string name ="pref_ask">Preguntar antes de llamar</string>
+	<string name ="pref_ask_summary">Al realizar un gesto requerirá de confirmación antes de llamar</string>
+	
+	
+</resources>

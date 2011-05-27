@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:orientation="vertical"
+ android:gravity="top"
+ >
+  
+  
+  <TextView
+  	android:gravity="left"
+  	android:padding="5dip"
+ 	android:layout_width="fill_parent"
+  	android:layout_height="wrap_content"
+  	android:text="@string/pref_main"
+  	android:background="@color/gris"
+  	android:textColor="@android:color/primary_text_dark"
+  	android:textSize="20dip"
+  	></TextView>
+  	
+  	<LinearLayout
+  	
+  	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal">
+	    
+	    <CheckBox
+	    	android:gravity="center"
+		  	android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		  	android:id="@+id/pref_check"
+		  	android:checked="false"
+		></CheckBox>
+		
+		<LinearLayout
+			android:layout_width="fill_parent"
+	   		android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:gravity="left"
+	    	android:padding="6dip">
+	    	
+	    	<TextView
+	    		android:layout_width="fill_parent"
+	   			android:layout_height="wrap_content"
+	   			android:text="@string/pref_ask"
+	   			android:textColor="@android:color/primary_text_dark"
+	   			android:textSize="17dip"
+	   			android:textStyle="bold">
+	   			</TextView>
+	    	<TextView
+	    		android:layout_width="fill_parent"
+	   			android:layout_height="wrap_content"
+	   			android:text="@string/pref_ask_summary"
+	   			android:textColor="@android:color/secondary_text_dark"
+	   			android:textSize="15dip"
+	   			android:textStyle="bold">
+	   			</TextView>
+	    	</LinearLayout>
+	    	
+	    
+	    
+	    </LinearLayout>
+
+  	
+  	
+  	<LinearLayout
+
+         	android:gravity="bottom"
+
+            android:layout_width="fill_parent"
+	        android:layout_height="fill_parent">
+  	
+ 	<LinearLayout
+         style="@android:style/ButtonBar"
+         	android:gravity="bottom"
+
+            android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	
+	        android:orientation="horizontal">
+	        <Button
+	            android:id="@+id/pref_save_utton"
+	            android:onClick="clickSave"
+	
+	            android:layout_width="0dip"
+	            android:layout_height="wrap_content"
+	            android:layout_weight="1"
+	
+	            android:text="@string/button_save" />
+	
+	        <Button
+	        	android:id="@+id/pref_button_volver"
+	            android:onClick="clickReturn"
+	
+	            android:layout_width="0dip"
+	            android:layout_height="wrap_content"
+	            android:layout_weight="1"
+	            
+	
+	            android:text="@string/button_volver" />
+
+
+</LinearLayout>
+    </LinearLayout>
+  	
+  	
+</LinearLayout>

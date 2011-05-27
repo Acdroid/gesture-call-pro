@@ -1,0 +1,54 @@
+
+    <ScrollView android:id="@+id/scrollView1" android:layout_width="fill_parent" android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android">
+        <LinearLayout android:id="@+id/linearLayout1" android:layout_width="match_parent" android:layout_height="match_parent">
+            <ScrollView android:layout_width="wrap_content" android:layout_height="match_parent" android:id="@+id/scrollView2">
+                <LinearLayout android:id="@+id/linearLayout2" android:layout_width="match_parent" android:layout_height="match_parent">
+                    <TextView
+                    	android:text="
+-Acdroid-\n
+·Concept, Idea and Development:\n
+ Marcos Trujillo Seoane\n
+ Carlos Díaz Cánovas\n
+\n
+·Further Testing:\n
+ Haizea Mendo San José\n
+\n
+Translations:\n
+\n
+·Spanish:\n
+ Marcos Trujillo Seoane\n
+\n
+·English and French:\n
+ Carlos Díaz Cánovas\n
+ \n
+ ·Italian:\n
+ Javier Torán Zufía\n
+ Jesús Varela Torres\n
+·Catalan:\n
+ Daniel Aguilera Morales\n
+ \n
+·Japanese:\n
+ Luis Lorenzo Salgado Urbano\n
+ \n
+ ·German:\n
+ Adrián Antoñana Gómez\n
+ \n 
+·Mandarin Chinese:\n
+ Yang Wei\n"
+                    	
+                    	android:id="@+id/textView1" android:layout_width="fill_parent" android:layout_height="wrap_content"></TextView>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </ScrollView>
+
+
+
+    <!-- 
+ ·Basque:\n
+ Haizea Mendo San José\n
+ \n
+·Korean:\n
+ Mina Park\n
+    
+    -->

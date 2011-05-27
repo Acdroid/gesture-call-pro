@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   <string name="app_name">Gesture Call Donate</string>
+   <string name = "makeGesture">Fes un gest per trucar a un contacte</string>
+   
+   <!--  Button -->
+   <string name = "ini_Button">Afegir</string>
+
+   <string name = "button_done">Crear</string>
+   <string name = "cancelGesture">Cancelar Gest</string>
+   <string name = "cancelGesture2">Tornar</string>
+
+
+       <string name = "button_volver">Tornar</string>
+
+       <string name = "button_edit_gesture">Gestos</string>
+       <string name= "button_reload">Recarregar</string>
+       
+       <!--  Menu -->
+       <string name ="salir">Sortir</string>
+       <string name ="opciones">Opcions</string>
+
+       <string name ="menu_edit">Gestos</string>
+       
+       <!--  Dialog -->
+       <string name = "di_salir">"Estàs segur de voler sortir de l'aplicació?"</string>
+       <string name="gestures_edit">Modificar Gest</string>
+       <string name="dialog_bc_seriusly">Trucar a</string>
+       <string name="gestures_delete">Eliminar</string>
+       <string name="calling">Trucant...</string>
+       
+       <!-- Miscelanea -->
+    <string name = "first_time_toast">Aquesta és la primera vegada que fas servir Gesture Call\n....</string>
+    <string name = "gesto_anadido">Gest afegit Correctament</string>
+
+    <string name = "yes">Sí</string>
+    <string name = "no">No</string>
+    <string name = "no_gesto">No s\'ha reconegut el gest</string>
+    <string name = "info_list_gestos">Polsa prolongadament per editar el Gest</string>
+    <string name="gestures_loading">Carregant gestos...</string>
+    <string name="gestures_empty">No hi ha gestos</string>
+
+    <string name="gestures_activity">Gestos</string>
+    <string name="gestures_delete_success">Gest Eliminat</string>
+    <string name="gestures_error_loading">No es pot carregar %s. Assegura\'t de que la targeta SD està muntada.</string>
+    <string name="error_no_libreria">No s\'ha pogut carregar Gestures Library</string>
+    
+    
+    
+    </resources>
+    

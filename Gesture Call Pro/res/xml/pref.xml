@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<PreferenceCategory
+            android:title="@string/pref_main">
+            
+        <CheckBoxPreference
+                android:key="ask_before_call"
+                android:title="@string/pref_ask"
+                android:summary="@string/pref_ask_summary" />
+            
+    </PreferenceCategory>
+</PreferenceScreen>	
