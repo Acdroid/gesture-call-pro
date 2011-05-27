@@ -25,7 +25,7 @@
 
 	<activity android:name=".preferences.Preferences"></activity>
 	
-		<!-- Widgets -->
+		<!-- Widgets 
 	<receiver android:name=".ui.widget.WidgetSimple" android:label="Gesture Call Simple">
         <intent-filter>
            <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -33,7 +33,7 @@
         <meta-data
            android:name="android.appwidget.provider"
            android:resource="@xml/widget_simple_conf" />
-    </receiver>
+    </receiver>-->
 	
 	
     </application>
