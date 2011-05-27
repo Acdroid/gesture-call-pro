@@ -34,8 +34,10 @@ Translations:\n
  Adrián Antoñana Gómez\n
  \n 
 ·Mandarin Chinese:\n
- Yang Wei\n"
-                    	
+ Yang Wei\n
+ \n
+·Thai and Malay\n
+ 'El Dani et al'\n"                 	
                     	android:id="@+id/textView1" android:layout_width="fill_parent" android:layout_height="wrap_content"></TextView>
                 </LinearLayout>
             </ScrollView>

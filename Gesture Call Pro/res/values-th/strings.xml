@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Gesture Call Donate</string>
+    <string name = "makeGesture">แสดงท่าทางเพื่อโทรออก</string>
+    
+    <!--  Button -->
+    <string name = "ini_Button">เพิ่ม</string>
+    <string name = "button_done">สร้าง</string>
+    <string name = "cancelGesture">ยกเลิกท่าทาง</string>
+    <string name = "cancelGesture2">กลับ</string>
+    <string name = "button_volver">กลับ</string>
+    <string name = "button_save">บันทึก</string>
+    <string name = "button_edit_gesture">ท่าทาง</string>
+    <string name="button_reload">โหลดใหม่</string>
+    
+    <!--  Menu -->
+    <string name ="salir">ออก</string>
+    <string name ="opciones">ทางเลือก</string>
+    <string name ="menu_edit">ท่าทาง</string>
+  
+    <!--  Dialog -->
+    <string name = "di_salir">คุณต้องการจะออกจากรายการแน่หรือ</string>
+    <string name="gestures_edit">แก้ไขท่าทาง</string>
+    <string name="gestures_delete">ลบ</string>
+    <string name="dialog_bc_seriusly">คุณต้องการจะโทรออกแน่หรือ</string>
+    <string name="dialog_no_more">อย่าแสดงข้อความนี้อีก</string>
+    <string name="dialog_sure">คุณแน่ใจหรือ</string>
+    <string name="calling">กำลังโทรออก</string>
+    
+    <!-- Miscelanea -->
+	<string name = "first_time_toast">นี่เป็นครั้งแรกที่คุณใช้ท่าทางเพื่อการโทรออก\n</string>
+	<string name = "gesto_anadido">ท่าทางถูกบันทึกเริ่มร้อยแล้ว</string>
+	<string name = "yes">ใช่</string>
+	<string name = "no"> ไม่ใช่</string>
+	<string name = "no_gesto">ไม่สามารถรับรู้ท่าทางของคุณ</string>
+	<string name = "info_list_gestos">กดค้างบนรายการที่ต้องการแก้ไข</string>
+	<string name="gestures_loading">กำลังดาวโหลดท่าทาง...</string>
+	<string name="gestures_empty">ไม่มีท่าทาง</string>
+	<string name="gestures_activity">ท่าทาง</string>
+	<string name="gestures_delete_success">ท่าทางถูกลบทิ้งแล้ว</string>
+	<string name="gestures_error_loading">ไม่สามารถดาวนโหลด %s โปรดตรวจสอบว่าท่านได้ใส่ SD card เรียบร้อยแล้ว</string>
+	<string name="error_no_libreria"> ข้อผิดพลาดร้ายแรง ไม่พบท่าทางที่บันทึกไว้</string>
+	
+
+	<!-- Preferencias -->
+	<string name ="pref_main">โปรแกรมที่คุณพอใจ</string>
+	<string name ="pref_ask">ถามก่อนโทรออก</string>
+	<string name ="pref_ask_summary">เมื่อคุณแสดงทาทาง คุณจะต้องยืนยันก่อนโทรออก</string>
+	
+	
+	
+	
+</resources>
+
