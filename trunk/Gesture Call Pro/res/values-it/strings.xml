@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Gesture Call Donate</string>
+    <string name = "makeGesture">Fai un gesto per chiamare un contatto</string>
+    
+    <!--  Button -->
+    <string name = "ini_Button">Aggiungere</string>
+    <string name = "button_done">Creare</string>
+    <string name = "cancelGesture">Annullare Gesto</string>
+    <string name = "cancelGesture2">Ritornare</string>
+    <string name = "button_volver">Ritornare</string>
+    <string name = "button_save">Salvare</string>
+    <string name = "button_edit_gesture">Gesti</string>
+    <string name= "button_reload">Ricaricare</string>
+    
+    <!--  Menu -->
+    <string name ="salir">Esci</string>
+    <string name ="opciones">Opzioni</string>
+    <string name ="menu_edit">Gesti</string>
+    
+    <!--  Dialog -->
+    <string name = "di_salir">"¿Sei sicuro di voler uscire dalla applicazione?"</string>
+    <string name="gestures_edit">Modificare Gesto</string>
+    <string name="gestures_delete">Annullare</string>
+    <string name="dialog_bc_seriusly">¿Vuoi chiamare</string>
+    <string name="dialog_no_more">Non mostrare piú questo messaggio</string>
+    <string name="dialog_sure">¿Sei sicuro?</string>
+    <string name="calling">Chiamando...</string>
+    
+    <!-- Miscelanea -->
+	<string name = "first_time_toast">Questa é la prima volta che fai uso di Gesture Call\n....</string>
+	<string name = "gesto_anadido">Gesto aggiunto correttamente</string>
+	<string name = "yes">Si­</string>
+	<string name = "no">No</string>
+	<string name = "no_gesto">Non si ha riconosciuto il gesto</string>
+	<string name = "info_list_gestos">Lunga pulsazione per editare il gesto</string>
+	<string name="gestures_loading">Caricando gesti...</string>
+	<string name="gestures_empty">Non ci sono gesti</string>
+	<string name="gestures_activity">Gesti</string>
+	<string name="gestures_delete_success">Gesto eliminato</string>
+	<string name="gestures_error_loading">Non si puó caricare. Prova lo stato della tessera di memoria SD.</string>
+	<string name="error_no_libreria">Si ha verificato il seguente errore fatale. Non si puó caricare la biblioteca di gesti!</string>
+		
+	<!-- Preferencias -->
+	<string name ="pref_main">Impostazione delle preferenze</string>
+	<string name ="pref_ask">Domandare prima di chiamare </string>
+	<string name ="pref_ask_summary">dopo fare un gesto chiedere conferma prima di chiamare</string>
+	
+	
+</resources>

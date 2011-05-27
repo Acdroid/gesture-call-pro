@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/lay_main"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/linearlayout_color_gradient_down">
+    
+    
+        <android.gesture.GestureOverlayView
+			android:id="@+id/gestures"
+			android:layout_width="fill_parent"
+			android:layout_height="0dip"
+			android:layout_weight="1.0"
+			android:gravity="center"
+
+			android:gestureStrokeType="multiple"
+			android:eventsInterceptionEnabled="true" android:orientation="vertical">
+    
+
+		<TextView  
+		
+		        android:gravity="center"
+		    	android:layout_width="fill_parent"
+		    	android:layout_height="wrap_content"
+		    	android:layout_alignParentLeft="true"
+		    	android:textColor="@android:color/white"
+		    	android:textSize="22dip"
+		    	android:textStyle="bold"
+		    	android:paddingTop="20dip"
+		   		android:text="@string/makeGesture"/>
+		 <LinearLayout
+		 	android:layout_width="fill_parent"
+		    android:layout_height="fill_parent"
+		    android:gravity="bottom"
+
+		    android:orientation="vertical">
+		    
+		    
+		    <LinearLayout
+		        style="@android:style/ButtonBar"
+		
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		
+		        android:orientation="horizontal">
+		
+		        <Button
+		            android:id="@+id/ButtonBar"
+		                
+		            android:layout_width="0dip"
+		            android:layout_height="wrap_content"
+		            android:layout_weight="1"
+		
+		            android:onClick="clickAdd"
+		            android:text="@string/ini_Button"/>
+		    
+		        <Button
+		        	android:id="@+id/main_button_edit"
+		            android:layout_width="0dip"
+		            android:layout_height="wrap_content"
+		            android:layout_weight="1"
+		            
+		            android:onClick="clickEdit"
+		            android:text="@string/button_edit_gesture" />
+		            
+		        <Button
+		        	android:id="@+id/main_button_options"
+		            android:layout_width="0dip"
+		            android:layout_height="wrap_content"
+		            android:layout_weight="1"
+		            
+		            android:onClick="clickOpciones"
+		            android:text="@string/opciones" />
+		            
+		            
+		    
+		    </LinearLayout>
+		    
+   
+		    </LinearLayout>
+
+
+   		
+	   	</android.gesture.GestureOverlayView>
+	   	
+
+ 		
+
+</LinearLayout>

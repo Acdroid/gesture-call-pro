@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	  android:installLocation="auto"
+      android:versionName="1.2" android:versionCode="1" package="ac.gestureCallPro">
+    <uses-sdk android:minSdkVersion="5" />
+    <uses-permission android:name="android.permission.READ_CONTACTS"></uses-permission>
+    <uses-permission android:name="android.permission.CALL_PHONE"></uses-permission>
+    <uses-permission android:name="android.permission.CALL_PRIVILEGED"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
+
+    <application android:icon="@drawable/icon" android:label="@string/app_name" >
+        <activity android:name=".ui.main"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.contactos.ListContact"></activity>
+        <activity android:name=".ui.creadorGestos.CreadorGestos"></activity>
+        <activity android:name=".ui.gestos.GestureBuilderActivity"></activity>
+
+	<activity android:name=".preferences.Preferences"></activity>
+    </application>
+</manifest>
