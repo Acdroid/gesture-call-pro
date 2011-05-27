@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Gesture Call Donate</string>
+    <string name = "makeGesture">buat isyarat untuk membuat panggilan</string>
+    
+    <!--  Button -->
+    <string name = "ini_Button">tambah</string>
+    <string name = "button_done">buat</string>
+    <string name = "cancelGesture">batal isyarat</string>
+    <string name = "cancelGesture2">kembali</string>
+    <string name = "button_volver">kembali</string>
+    <string name = "button_save">simpan</string>
+    <string name = "button_edit_gesture">isyarat</string>
+    <string name="button_reload">muat semula</string>
+    
+    <!--  Menu -->
+    <string name ="salir">keluar</string>
+    <string name ="opciones">pilihan</string>
+    <string name ="menu_edit">isyarat</string>
+  
+    <!--  Dialog -->
+    <string name = "di_salir">adakah anda benar-benar hendak keluar?</string>
+    <string name="gestures_edit">edit isyarat</string>
+    <string name="gestures_delete">padam</string>
+    <string name="dialog_bc_seriusly">adakah anda benar-benar hendak membuat panggilan?</string>
+    <string name="dialog_no_more">Jangan paparkan mesej ini lagi</string>
+    <string name="dialog_sure">adakah anda yakin?</string>
+    <string name="calling">memanggil...</string>
+    
+    <!-- Miscelanea -->
+	<string name = "first_time_toast">Ini kali pertama anda menggunakan Panggilan Isyarat</string>
+	<string name = "gesto_anadido">Isyarat berjaya ditambah</string>
+	<string name = "yes">ya</string>
+	<string name = "no">tidak</string>
+	<string name = "no_gesto">Isyarat tidak dikenali</string>
+	<string name = "info_list_gestos">Klik panjang pada item untuk mengedit pilihan item</string>
+	<string name="gestures_loading">muatan isyarat...</string>
+	<string name="gestures_empty">Tiada isyarat</string>
+	<string name="gestures_activity">Isyarat</string>
+	<string name="gestures_delete_success">Isyarat dipadam</string>
+	<string name="gestures_error_loading">Tidak boleh muat %s. Pastikan anda telah memuatkan kad SD...</string>
+	<string name="error_no_libreria">Ralat mati. Perpustakaan isyarat tidal dijumpai!</string>
+	
+
+	<!-- Preferencias -->
+	<string name ="pref_main">aturcara keutamaan</string>
+	<string name ="pref_ask">Tanya sebelum membuat panggilan</string>
+	<string name ="pref_ask_summary">Semasa membuat isyarat, pengesahan diperlukan sebelum membuat panggilan</string>
+	
+	
+	
+	
+</resources>
