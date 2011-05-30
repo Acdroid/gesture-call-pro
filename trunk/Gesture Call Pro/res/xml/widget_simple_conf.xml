@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
     android:minWidth="72dp"
-    android:minHeight="72dp"
+    android:minHeight="70dp"
     android:updatePeriodMillis="801000"
     android:icon="@drawable/icon"
     android:label="Gesture Call Simple"
