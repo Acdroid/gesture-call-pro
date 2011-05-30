@@ -5,5 +5,6 @@
     android:updatePeriodMillis="801000"
     android:icon="@drawable/icon"
     android:label="Gesture Call Simple"
+    android:configure="ac.gestureCallPro.ui.widget.WidgetSimpleConfig"
     android:initialLayout="@layout/widget_simple">
 </appwidget-provider>
