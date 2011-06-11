@@ -2,7 +2,7 @@
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
     android:minWidth="72dp"
     android:minHeight="70dp"
-    android:updatePeriodMillis="801000"
+    android:updatePeriodMillis="25000"
     android:icon="@drawable/icon"
     android:label="Gesture Call Simple"
     android:configure="ac.gestureCallPro.ui.widget.WidgetSimpleConfig"

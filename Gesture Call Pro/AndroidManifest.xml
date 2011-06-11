@@ -27,6 +27,8 @@
 	<activity android:name=".preferences.Preferences"></activity>
 	
 		<!-- Widgets --> 
+		
+		<!--  Widget Simple -->
 	<receiver android:name=".ui.widget.WidgetSimple" android:label="Gesture Call Simple">
         <intent-filter>
            <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -44,6 +46,27 @@
         	<action android:name="android.apwidget.action.APPWIDGET_CONFIGURE"/>
     	</intent-filter>
 	</activity>
+	
+	<!--  Widget Pro -->
+	
+	<receiver android:name=".ui.widget.WidgetPro" android:label="Gesture Call Pro">
+        <intent-filter>
+           <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+    		<action android:name="ac.gestureCallPro.ProPressButton"/>
+    		<action android:name="ac.gestureCallPro.proDirectCall"/>
+		</intent-filter>
+        <meta-data
+           android:name="android.appwidget.provider"
+           android:resource="@xml/widget_pro_config" />
+    </receiver>
+    
+    <activity android:name=".ui.widget.WidgetProConfig">
+    	<intent-filter>
+        	<action android:name="android.apwidget.action.APPWIDGET_CONFIGURE"/>
+    	</intent-filter>
+	</activity>
+	
+	
 	
 	
     </application>

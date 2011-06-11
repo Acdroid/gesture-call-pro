@@ -28,6 +28,14 @@ public class WidgetSimple extends AppWidgetProvider {
 			int[] appWidgetIds) {
 		Log.d("widget","Entra en onupdate");
 		super.onUpdate(context, appWidgetManager, appWidgetIds);
+		for (int i = 0; i < appWidgetIds.length; i++)
+	    {
+	        //ID del widget actual
+	        int widgetId = appWidgetIds[i];
+	 
+	        //Actualizamos el widget actual
+	        actualizarWidget(context, appWidgetManager, widgetId);
+	    }
 	}
 
 
