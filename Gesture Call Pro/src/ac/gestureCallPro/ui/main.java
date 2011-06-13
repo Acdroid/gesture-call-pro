@@ -38,7 +38,7 @@ import android.widget.Toast;
 
 
 public class main extends Activity {
-    
+
 	public static final String NO_PREDICCION = "Sin_Resultado";
 	public static final int RESULT_OK = 0;
 	public static final int RESULT_ERROR = 1;
@@ -49,57 +49,57 @@ public class main extends Activity {
 	public static final int DIALOG_SALIR = 0;
 	public static final int DIALOG_CALL = 1;
 	public static final String MY_AD_UNIT_ID = "a14daeadcc3acb6";
-   public static final int ACCION_LLAMAR=0;
-   public static final int ACCION_SMS=1;
-   public static final int ACCION_PERDIDA=2;
-	
+	public static final int ACCION_LLAMAR=0;
+	public static final int ACCION_SMS=1;
+	public static final int ACCION_PERDIDA=2;
+
 	public GestureOverlayView overlay;
 	public static GesturesRecognizer gr;
-	
+
 	public  AppConfig ap;
-	
+
 	private final String dir = Environment.getExternalStorageDirectory() + "/GestureCall";
 	private final String fich = "gestures";
 	//HAndler encargado de recibir las predicciones del
 	public Handler handler = new Handler(){
 		@Override
 		public void handleMessage(Message msg) {
-			call((String) msg.obj);
+			ejecutaAccion((String) msg.obj);
 		}
 
 	};
-	
+
 	public Dialog dialogCall;
 	public String prediccionActual="";
-	
+
 	public Context mContext;
-   
-   public int tipoAccion=ACCION_LLAMAR;
-	
+
+	public int tipoAccion=ACCION_LLAMAR;
+
 
 	@Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
-        
-        init();
-    }
-    
-    
-    private void init(){
-    	
-    	mContext = this;
-    	
-    	
-    	
-    	//Iniciamos el dialog
-      dialogCall = new Dialog(mContext);
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.main);
+
+		init();
+	}
+
+
+	private void init(){
+
+		mContext = this;
+
+
+
+		//Iniciamos el dialog
+		dialogCall = new Dialog(mContext);
 		dialogCall.setContentView(R.layout.dialog_b4_call);
 		dialogCall.setTitle(mContext.getResources().getString(R.string.calling));
 		Button buttonDialog= (Button) dialogCall.findViewById(R.id.dialog_button_yes);
-		
-		
-		
+
+
+
 		buttonDialog.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -115,25 +115,25 @@ public class main extends Activity {
 
 			}
 		});
-    	
 
-       ap = new AppConfig(this, AppConfig.NAME);
-    	overlay = (GestureOverlayView)findViewById(R.id.gestures);
-       
-       //ap.getAccionPordefecto //TODO 
-       tipoAccion = ACCION_LLAMAR; //de momento accion por defecto llamar
-    	
-    	try {
-    		//gr = new GesturesRecognizer(mStoreFile, this, overlay,handler,GesturesRecognizer.RECONOCEDOR_BASICO);
-    		gr = new GesturesRecognizer(dir,fich, overlay, handler, GesturesRecognizer.RECONOCEDOR_BASICO);
+
+		ap = new AppConfig(this, AppConfig.NAME);
+		overlay = (GestureOverlayView)findViewById(R.id.gestures);
+
+		//ap.getAccionPordefecto //TODO 
+		tipoAccion = ACCION_LLAMAR; //de momento accion por defecto llamar
+
+		try {
+			//gr = new GesturesRecognizer(mStoreFile, this, overlay,handler,GesturesRecognizer.RECONOCEDOR_BASICO);
+			gr = new GesturesRecognizer(dir,fich, overlay, handler, GesturesRecognizer.RECONOCEDOR_BASICO);
 		} catch (Exception e) {
 			Toast.makeText(this, e.getMessage() + "\nNo esta habilitado el reconocedor de gestos.",Toast.LENGTH_SHORT).show();
 		} //Reconocedor, lo cargamos con la base de datos de accesos directos
-		
-    	
-    }
-    
-    
+
+
+	}
+
+
 	@Override
 	protected Dialog onCreateDialog(int id) {
 		@SuppressWarnings("unused")
@@ -158,16 +158,16 @@ public class main extends Activity {
 			});
 			AlertDialog alert = builder.create();
 			return alert;
-			
+
 		case DIALOG_CALL:
-			
+
 			return dialogCall;
 		default:
 			return dialog = null;
 		}
 	}
-    
-    
+
+
 	public AppConfig getAp() {
 		return ap;
 	}
@@ -179,7 +179,7 @@ public class main extends Activity {
 		inflater.inflate(R.menu.menu_escritorio, menu);
 		return true;
 	}
-    
+
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// Handle item selection
@@ -197,8 +197,8 @@ public class main extends Activity {
 			return super.onOptionsItemSelected(item);
 		}
 	}
-	
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		if (requestCode == ID){
 			switch (resultCode){
 			case RESULT_OK:
@@ -211,32 +211,60 @@ public class main extends Activity {
 				getStore().load();
 				break;
 			default:
-				
+
 			}
-			
+
 			getStore().load();
 		}
 	}
 
 	
-	
-    public void call(String prediccion){
-    	
-    	if (prediccion.equals("")){
-    		mToast.Make(this, getResources().getString(R.string.no_gesto), 0);
-    		return;
-    	}
-    	
-    	try {
+	public void ejecutaAccion(String prediccion){
+		int accionActual = getTipoAccion();
+		
+		switch (accionActual) {
+		case ACCION_LLAMAR:
+			call(prediccion);			
+			break;
+		case ACCION_SMS:
+			sms(prediccion);
+			break;
+		case ACCION_PERDIDA:
+			callLost(prediccion);
+			break;
+		default:
+			break;
+		}
+		
+		
+	}
+
+	/**
+	 * <p>Este metodo se encarga de realizar una llamada al
+	 * numero de telefono que se le pasa como prediccion
+	 * tras realizar un gesto. Se comprueba en las
+	 * preferencias si se llama directamente o se muestra un
+	 * dialogo antes de llamar.
+	 * 
+	 * @param prediccion numero de telefono al que queremos llamar.
+	 */
+	public void call(String prediccion){
+
+		if (prediccion.equals("")){
+			mToast.Make(this, getResources().getString(R.string.no_gesto), 0);
+			return;
+		}
+
+		try {
 			if (ap.getBool(AppConfig.AVISO_AL_LLAMAR)){
 				prediccionActual = prediccion;
-				
-				
+
+
 				TextView t = (TextView)dialogCall.findViewById(R.id.dialog_text_contact);
-				
+
 				Uri uri =  Data.CONTENT_URI;
 				String[] projection = new String []{
-							Data.DISPLAY_NAME
+						Data.DISPLAY_NAME
 				};
 				String[] selectionArgs = null;
 				String sortOrder = Data.DISPLAY_NAME + " COLLATE LOCALIZED ASC";
@@ -250,10 +278,10 @@ public class main extends Activity {
 					t.setText(getPrediccionActual());
 				}
 				showDialog(DIALOG_CALL);
-				
+
 			}
 			else{
-			
+
 				String url = "tel:" + prediccion;
 				Intent i = new Intent(Intent.ACTION_CALL, Uri.parse(url));
 				startActivityForResult(i,ID);
@@ -264,31 +292,66 @@ public class main extends Activity {
 			startActivityForResult(i,ID);
 		}
 
-    }
-    
-    public void clickAdd(View v){
-    	Intent i = new Intent(main.this,ListContact.class);
-    	startActivityForResult(i, ID);
-    }
-    
-    public void clickEdit(View v){
+	}
+	
+	/**
+	 * <p>Este metodo se encarga de iniciar el envio de
+	 * un sms al numero de telefono que se le pasa como
+	 * prediccion tras realizar un gesto. Se comprueba en las
+	 * preferencias si se llama directamente o se muestra un
+	 * dialogo antes de llamar.
+	 * 
+	 * @param prediccion numero de telefono al que queremos
+	 * enviar un sms.
+	 */
+	public void sms(String prediccion){
+		return;
+		
+	}
+	
+	/**
+	 * <p>Este metodo se encarga de realizar una llamada
+	 * perdida al numero de telefono que se le pasa como
+	 * prediccion tras realizar un gesto. Se comprueba en las
+	 * preferencias si se llama directamente o se muestra un
+	 * dialogo antes de llamar.
+	 * 
+	 * @param prediccion numero de telefono al que queremos llamar.
+	 */
+	public void callLost(String prediccion){
+
+	
+	
+	
+	
+	/* **************** Funciones auxiliares o menores ****************** */
+
+	public void clickAdd(View v){
+		Intent i = new Intent(main.this,ListContact.class);
+		startActivityForResult(i, ID);
+	}
+
+	public void clickEdit(View v){
 		Intent i = new Intent(main.this,GestureBuilderActivity.class);
 		startActivityForResult(i,ID);
-    }
-    
-    public void clickOpciones(View v){
-    	Intent i = new Intent(this,Preferences.class);
-    	startActivityForResult(i, ID);
-    	
-    }
-    
-    public static GestureLibrary getStore(){
-    	return gr.getStore();    	
-    }
+	}
+
+	public void clickOpciones(View v){
+		Intent i = new Intent(this,Preferences.class);
+		startActivityForResult(i, ID);
+
+	}
+
+	public static GestureLibrary getStore(){
+		return gr.getStore();    	
+	}
 
 
 	public String getPrediccionActual() {
 		return prediccionActual;
 	}
-    
+
+	public int getTipoAccion(){
+		return tipoAccion;
+	}
 }
