@@ -49,6 +49,9 @@ public class main extends Activity {
 	public static final int DIALOG_SALIR = 0;
 	public static final int DIALOG_CALL = 1;
 	public static final String MY_AD_UNIT_ID = "a14daeadcc3acb6";
+   public static final int ACCION_LLAMAR=0;
+   public static final int ACCION_SMS=1;
+   public static final int ACCION_PERDIDA=2;
 	
 	public GestureOverlayView overlay;
 	public static GesturesRecognizer gr;
@@ -70,6 +73,8 @@ public class main extends Activity {
 	public String prediccionActual="";
 	
 	public Context mContext;
+   
+   public int tipoAccion=ACCION_LLAMAR;
 	
 
 	@Override
@@ -88,7 +93,7 @@ public class main extends Activity {
     	
     	
     	//Iniciamos el dialog
-    	dialogCall = new Dialog(mContext);
+      dialogCall = new Dialog(mContext);
 		dialogCall.setContentView(R.layout.dialog_b4_call);
 		dialogCall.setTitle(mContext.getResources().getString(R.string.calling));
 		Button buttonDialog= (Button) dialogCall.findViewById(R.id.dialog_button_yes);
@@ -112,8 +117,11 @@ public class main extends Activity {
 		});
     	
 
-        ap = new AppConfig(this, AppConfig.NAME);
+       ap = new AppConfig(this, AppConfig.NAME);
     	overlay = (GestureOverlayView)findViewById(R.id.gestures);
+       
+       //ap.getAccionPordefecto //TODO 
+       tipoAccion = ACCION_LLAMAR; //de momento accion por defecto llamar
     	
     	try {
     		//gr = new GesturesRecognizer(mStoreFile, this, overlay,handler,GesturesRecognizer.RECONOCEDOR_BASICO);
