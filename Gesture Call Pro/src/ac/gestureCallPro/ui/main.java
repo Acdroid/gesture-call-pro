@@ -25,7 +25,6 @@ import android.os.Handler;
 import android.os.Message;
 import android.provider.ContactsContract.CommonDataKinds.Phone;
 import android.provider.ContactsContract.Data;
-
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -55,35 +54,36 @@ public class main extends Activity {
 
 	public GestureOverlayView overlay;
 	public static GesturesRecognizer gr;
-
 	public  AppConfig ap;
-
-	private final String dir = Environment.getExternalStorageDirectory() + "/GestureCall";
-	private final String fich = "gestures";
-	//HAndler encargado de recibir las predicciones del
-	public Handler handler = new Handler(){
-		@Override
-		public void handleMessage(Message msg) {
-      
-        String prediccion = (String)msg.obj;
-        //Comprobamos si se ha detectado gesto
-        if (prediccion.equals("")){
-           mToast.Make(this, getResources().getString(R.string.no_gesto), 0);
-           return;
-        }
-         
-         //Guardamos la prediccion actual
-         prediccionActual = prediccion;
-			//Ejecutamos segÃºn la accion que este elegida
-         ejecutaAccion(prediccion);
-		}
-
-	};
-
 	public Dialog dialogCall;
 	public String prediccionActual="";
 	public Context mContext;
 	public int tipoAccion=ACCION_LLAMAR; //Accion por defecto llamar si no se pulsa ningun boton
+
+	private final String dir = Environment.getExternalStorageDirectory() + "/GestureCall";
+	private final String fich = "gestures";
+
+	//HAndler encargado de recibir las predicciones del
+	public Handler handler = new Handler(){
+		@Override
+		public void handleMessage(Message msg) {
+
+			String prediccion = (String)msg.obj;
+			//Comprobamos si se ha detectado gesto
+			if (prediccion.equals("")){
+				mToast.Make(mContext, getResources().getString(R.string.no_gesto), 0);
+				return;
+			}
+
+			//Guardamos la prediccion actual
+			prediccionActual = prediccion;
+			//Ejecutamos según la accion que este elegida
+			ejecutaAccion(prediccion);
+		}
+
+	};
+
+
 
 
 	@Override
@@ -95,14 +95,17 @@ public class main extends Activity {
 	}
 
 
+	/**
+	 * <p>Metodo encargado de iniciar toda la configuracion tanto
+	 * de los elementos graficos como de preparar los atributos
+	 * tales como AppCondig ap o el mContext. s
+	 */
 	private void init(){
 
 		mContext = this;
 
-
-
 		//Iniciamos el dialog
-      //TODO cambiar esto , hay que sacarlo fuera de aquÃ­ 
+		//TODO cambiar esto , hay que sacarlo fuera de aquí 
 		dialogCall = new Dialog(mContext);
 		dialogCall.setContentView(R.layout.dialog_b4_call);
 		dialogCall.setTitle(mContext.getResources().getString(R.string.calling));
@@ -115,39 +118,37 @@ public class main extends Activity {
 				if(c.isChecked()){
 					getAp().put(false, AppConfig.AVISO_AL_LLAMAR);
 				}
-            
-            //Dependiendo del tipo de accion realizamos una u otra cosa
-            switch (accionActual) {
-            case ACCION_LLAMAR:
-              String url = "tel:" + getPrediccionActual();
-              Intent i = new Intent(Intent.ACTION_CALL, Uri.parse(url));
-				  startActivityForResult(i,ID);
-  		      break;
-            case ACCION_SMS:
-              String url = "sms:" + getPrediccionActual();
-              Intent iSMS = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-              startActivityForResult(iSMS,ID);
-              break;
-            case ACCION_PERDIDA:
-              mToast.Make(this, "Action is not yet available", 0);
-              break;
-            default:
-              break;
-            }
-            
-            
-            
-            dialogCall.dismiss();
+
+				//Dependiendo del tipo de accion realizamos una u otra cosa
+				String url = "";
+				switch (tipoAccion) {
+				case ACCION_LLAMAR:
+					url=  "tel:" + getPrediccionActual();
+					Intent i = new Intent(Intent.ACTION_CALL, Uri.parse(url));
+					startActivityForResult(i,ID);
+					break;
+				case ACCION_SMS:
+					url = "sms:" + getPrediccionActual();
+					Intent iSMS = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+					startActivityForResult(iSMS,ID);
+					break;
+				case ACCION_PERDIDA:
+					mToast.Make(mContext, "Action is not yet available", 0);
+					break;
+				default:
+					break;
+				}
+				dialogCall.dismiss();
 
 			}
 		});
 
 
 
-      //Cargamos las opciones
+		//Cargamos las opciones
 		ap = new AppConfig(this, AppConfig.NAME);
-      tipoAccion = ACCION_LLAMAR; //TODO de momento accion por defecto llamar futuro --> ap.getAccionPordefecto 
-      
+		tipoAccion = ACCION_LLAMAR; //TODO de momento accion por defecto llamar futuro --> ap.getAccionPordefecto 
+
 		overlay = (GestureOverlayView)findViewById(R.id.gestures);
 		try {
 			gr = new GesturesRecognizer(dir,fich, overlay, handler, GesturesRecognizer.RECONOCEDOR_BASICO);
@@ -251,7 +252,7 @@ public class main extends Activity {
 	 */
 	public void ejecutaAccion(String prediccion){
 		int accionActual = getTipoAccion();
-		
+
 		switch (accionActual) {
 		case ACCION_LLAMAR:
 			call(prediccion);			
@@ -265,8 +266,8 @@ public class main extends Activity {
 		default:
 			break;
 		}
-		
-		
+
+
 	}
 
 	/**
@@ -280,11 +281,11 @@ public class main extends Activity {
 	 */
 	public void call(String prediccion){
 
-      //Comprobamos si se quiere avisar antes de llamar o no
+		//Comprobamos si se quiere avisar antes de llamar o no
 		try {
 			if (ap.getBool(AppConfig.AVISO_AL_LLAMAR)){ 
-            
-            //Obtenemos el textView para cambiar el nombre de la persona a la que queremos llamar
+
+				//Obtenemos el textView para cambiar el nombre de la persona a la que queremos llamar
 				TextView t = (TextView)dialogCall.findViewById(R.id.dialog_text_contact);
 
 				Uri uri =  Data.CONTENT_URI;
@@ -318,7 +319,7 @@ public class main extends Activity {
 		}
 
 	}
-	
+
 	/**
 	 * <p>Este metodo se encarga de iniciar el envio de
 	 * un sms al numero de telefono que se le pasa como
@@ -331,13 +332,13 @@ public class main extends Activity {
 	 */
 	public void sms(String prediccion){
 
-      //Comprobamos si se quiere avisar antes de enviar el sms
+		//Comprobamos si se quiere avisar antes de enviar el sms
 		try {
 			if (ap.getBool(AppConfig.AVISO_AL_LLAMAR)){
 
-            //Obtenemos el textView para cambiar el nombre de la persona a la que queremos llamar
-            //TODO cambiar el texto llamar por  enviar SMS
-            TextView t = (TextView)dialogCall.findViewById(R.id.dialog_text_contact);
+				//Obtenemos el textView para cambiar el nombre de la persona a la que queremos llamar
+				//TODO cambiar el texto llamar por  enviar SMS
+				TextView t = (TextView)dialogCall.findViewById(R.id.dialog_text_contact);
 
 				Uri uri =  Data.CONTENT_URI;
 				String[] projection = new String []{
@@ -360,7 +361,7 @@ public class main extends Activity {
 			else{//En caso de false se envia directamente
 
 				String url = "sms:" + prediccion;
-            Intent iSMS = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+				Intent iSMS = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
 				startActivityForResult(iSMS,ID);
 			}
 		} catch (NoPreferenceException e) { //En caso de no existir la opcion se envia directamente
@@ -368,9 +369,9 @@ public class main extends Activity {
 			Intent iSMS = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
 			startActivityForResult(iSMS,ID);
 		}
-		
+
 	}
-	
+
 	/**
 	 * <p>Este metodo se encarga de realizar una llamada
 	 * perdida al numero de telefono que se le pasa como
@@ -382,10 +383,10 @@ public class main extends Activity {
 	 */
 	public void callLost(String prediccion){
 
-     //TODO hay que hacerlo to, investigar y esas cosas .
-    }
-	
-	
+		//TODO hay que hacerlo to, investigar y esas cosas .
+	}
+
+
 	/* **************** Funciones auxiliares o menores ****************** */
 
 	public void clickAdd(View v){
