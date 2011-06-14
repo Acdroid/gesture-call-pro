@@ -1,0 +1,9 @@
+#labels changelog
+#ChangeLog
+
+= Cambios de las versiones de Gesture call pro  para cuando se suban al market recordar todos los cambios realizados =
+
+= v1.3 =
+  * Creación del widget simple
+  * Creación del widget Pro
+  * Ahora también se pueden enviar SMS
