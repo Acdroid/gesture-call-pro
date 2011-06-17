@@ -7,3 +7,4 @@
   * Creación del widget simple
   * Creación del widget Pro
   * Ahora también se pueden enviar SMS
+  * Probando para la realización de llamadas perdidas
