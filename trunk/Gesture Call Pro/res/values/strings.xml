@@ -3,6 +3,9 @@
     <string name="app_name">Gesture Call Donate</string>
     <string name = "makeGesture">Make a gesture to call a contact</string>
     
+    <!--  NUEVAS -->
+    
+    
     <!--  Button -->
     <string name = "ini_Button">Add</string>
     <string name = "button_done">Create</string>

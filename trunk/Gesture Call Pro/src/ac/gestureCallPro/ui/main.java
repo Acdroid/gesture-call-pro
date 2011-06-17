@@ -77,7 +77,7 @@ public class main extends Activity {
 
 			//Guardamos la prediccion actual
 			prediccionActual = prediccion;
-			//Ejecutamos según la accion que este elegida
+			//Ejecutamos segun la accion que este elegida
 			ejecutaAccion(prediccion);
 		}
 
@@ -98,51 +98,15 @@ public class main extends Activity {
 	/**
 	 * <p>Metodo encargado de iniciar toda la configuracion tanto
 	 * de los elementos graficos como de preparar los atributos
-	 * tales como AppCondig ap o el mContext. s
+	 * tales como AppCondig ap o el mContext.
 	 */
 	private void init(){
 
 		mContext = this;
 
 		//Iniciamos el dialog
-		//TODO cambiar esto , hay que sacarlo fuera de aquí 
-		dialogCall = new Dialog(mContext);
-		dialogCall.setContentView(R.layout.dialog_b4_call);
-		dialogCall.setTitle(mContext.getResources().getString(R.string.calling));
-		Button buttonDialog= (Button) dialogCall.findViewById(R.id.dialog_button_yes);
-		buttonDialog.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				CheckBox c = (CheckBox)dialogCall.findViewById(R.id.dialog_check);
-				if(c.isChecked()){
-					getAp().put(false, AppConfig.AVISO_AL_LLAMAR);
-				}
-
-				//Dependiendo del tipo de accion realizamos una u otra cosa
-				String url = "";
-				switch (tipoAccion) {
-				case ACCION_LLAMAR:
-					url=  "tel:" + getPrediccionActual();
-					Intent i = new Intent(Intent.ACTION_CALL, Uri.parse(url));
-					startActivityForResult(i,ID);
-					break;
-				case ACCION_SMS:
-					url = "sms:" + getPrediccionActual();
-					Intent iSMS = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-					startActivityForResult(iSMS,ID);
-					break;
-				case ACCION_PERDIDA:
-					mToast.Make(mContext, "Action is not yet available", 0);
-					break;
-				default:
-					break;
-				}
-				dialogCall.dismiss();
-
-			}
-		});
-
+		//TODO cambiar esto , hay que sacarlo fuera de aquÃ­
+		createDialog();
 
 
 		//Cargamos las opciones
@@ -261,7 +225,7 @@ public class main extends Activity {
 			sms(prediccion);
 			break;
 		case ACCION_PERDIDA:
-			callLost(prediccion);
+			missedCall(prediccion);
 			break;
 		default:
 			break;
@@ -298,7 +262,7 @@ public class main extends Activity {
 				Cursor c =  managedQuery(uri, projection, selection, selectionArgs, sortOrder);
 				startManagingCursor(c);
 				if(c.moveToFirst()){ 
-					t.setText(c.getString(c.getColumnIndex(Data.DISPLAY_NAME)));       			
+					t.setText(c.getString(c.getColumnIndex(Data.DISPLAY_NAME))+  "?");       			
 				}
 				else{
 					t.setText(getPrediccionActual());
@@ -337,7 +301,8 @@ public class main extends Activity {
 			if (ap.getBool(AppConfig.AVISO_AL_LLAMAR)){
 
 				//Obtenemos el textView para cambiar el nombre de la persona a la que queremos llamar
-				//TODO cambiar el texto llamar por  enviar SMS
+				dialogCall.setTitle(mContext.getResources().getString(R.string.calling));
+				
 				TextView t = (TextView)dialogCall.findViewById(R.id.dialog_text_contact);
 
 				Uri uri =  Data.CONTENT_URI;
@@ -350,7 +315,7 @@ public class main extends Activity {
 				Cursor c =  managedQuery(uri, projection, selection, selectionArgs, sortOrder);
 				startManagingCursor(c);
 				if(c.moveToFirst()){ 
-					t.setText(c.getString(c.getColumnIndex(Data.DISPLAY_NAME)));       			
+					t.setText(c.getString(c.getColumnIndex(Data.DISPLAY_NAME)) +  "?");       			
 				}
 				else{
 					t.setText(getPrediccionActual());
@@ -381,11 +346,54 @@ public class main extends Activity {
 	 * 
 	 * @param prediccion numero de telefono al que queremos llamar.
 	 */
-	public void callLost(String prediccion){
+	public void missedCall(String prediccion){
 
 		//TODO hay que hacerlo to, investigar y esas cosas .
 	}
 
+	/**
+	 * Metodo para la creacion del dialgo, para que este mas accesible
+	 * y separado del resto del codigo
+	 */
+	private void createDialog(){
+		dialogCall = new Dialog(mContext);
+		dialogCall.setContentView(R.layout.dialog_b4_call);
+		dialogCall.setTitle(mContext.getResources().getString(R.string.calling));
+		Button buttonDialog= (Button) dialogCall.findViewById(R.id.dialog_button_yes);
+		buttonDialog.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				CheckBox c = (CheckBox)dialogCall.findViewById(R.id.dialog_check);
+				if(c.isChecked()){
+					getAp().put(false, AppConfig.AVISO_AL_LLAMAR);
+				}
+
+				//Dependiendo del tipo de accion realizamos una u otra cosa
+				String url = "";
+				switch (tipoAccion) {
+				case ACCION_LLAMAR:
+					url=  "tel:" + getPrediccionActual();
+					Intent i = new Intent(Intent.ACTION_CALL, Uri.parse(url));
+					startActivityForResult(i,ID);
+					break;
+				case ACCION_SMS:
+					url = "sms:" + getPrediccionActual();
+					Intent iSMS = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+					startActivityForResult(iSMS,ID);
+					break;
+				case ACCION_PERDIDA:
+					mToast.Make(mContext, "Action is not yet available", 0);
+					break;
+				default:
+					break;
+				}
+				dialogCall.dismiss();
+
+			}
+		});
+
+	}
 
 	/* **************** Funciones auxiliares o menores ****************** */
 
