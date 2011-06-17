@@ -118,12 +118,24 @@
 	        	android:background="@drawable/gradiente_shadow"></LinearLayout>
 	    </LinearLayout>
 	 
+	 <LinearLayout
+	 	    
+	        android:orientation="vertical"
+	        android:layout_height="wrap_content"
+	        android:layout_width="fill_parent"
+	        android:layout_alignParentBottom="true">
+	        
+	        <LinearLayout
+	 			android:layout_height="10dip"
+	        	android:layout_width="fill_parent"
+	        	android:background="@drawable/gradient_shadow_down"></LinearLayout>
 	    <LinearLayout
 	        android:orientation="horizontal"
 	        android:layout_height="wrap_content"
 	        android:layout_width="fill_parent"
 	        android:layout_alignParentBottom="true"
-	        style="@android:style/ButtonBar">
+	        android:padding="5dip"
+	        android:background="@drawable/gradient_header">
 	 
        			 <Button
 		            android:id="@+id/ButtonBar"
@@ -133,7 +145,8 @@
 		            android:layout_weight="1"
 		
 		            android:onClick="clickAdd"
-		            android:text="@string/ini_Button"/>
+		            android:text="@string/ini_Button"
+		            android:background="#cccccc"/>
 		    
 		        <Button
 		        	android:id="@+id/main_button_edit"
@@ -154,7 +167,7 @@
 		            android:text="@string/opciones" />
 	 
 	    </LinearLayout>
-	 
+	 </LinearLayout>
 	</RelativeLayout>
 		    
 		    
