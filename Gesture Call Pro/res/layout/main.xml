@@ -141,30 +141,35 @@
 		            android:id="@+id/ButtonBar"
 		                
 		            android:layout_width="0dip"
-		            android:layout_height="wrap_content"
-		            android:layout_weight="1"
+		            android:layout_height="fill_parent"
+		            android:layout_weight="1"		            
 		
 		            android:onClick="clickAdd"
 		            android:text="@string/ini_Button"
+		            android:padding="10dip"
 		            android:background="#cccccc"/>
 		    
 		        <Button
 		        	android:id="@+id/main_button_edit"
 		            android:layout_width="0dip"
-		            android:layout_height="wrap_content"
+		            android:layout_height="fill_parent"
 		            android:layout_weight="1"
 		            
 		            android:onClick="clickEdit"
-		            android:text="@string/button_edit_gesture" />
+		            android:text="@string/button_edit_gesture"
+		            android:padding="10dip"
+		            android:background="#cccccc"/>
 		            
 		        <Button
 		        	android:id="@+id/main_button_options"
 		            android:layout_width="0dip"
-		            android:layout_height="wrap_content"
+		            android:layout_height="fill_parent"
 		            android:layout_weight="1"
 		            
 		            android:onClick="clickOpciones"
-		            android:text="@string/opciones" />
+		            android:text="@string/opciones"
+		            android:padding="10dip"
+		            android:background="#cccccc"/>
 	 
 	    </LinearLayout>
 	 </LinearLayout>
