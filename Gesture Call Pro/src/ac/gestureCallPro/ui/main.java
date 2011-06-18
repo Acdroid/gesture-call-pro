@@ -12,6 +12,9 @@ import ac.gestureCallPro.util.mToast.mToast;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -165,6 +168,10 @@ public class main extends Activity {
 		} catch (Exception e) {
 			Toast.makeText(this, e.getMessage() + "\nNo esta habilitado el reconocedor de gestos.",Toast.LENGTH_SHORT).show();
 		} //Reconocedor, lo cargamos con la base de datos de accesos directos
+		
+		
+		setStatusBarNotification();
+		
 	}
 
 
@@ -251,6 +258,50 @@ public class main extends Activity {
 			getStore().load();
 		}
 	}
+	
+	
+	
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	
+	
+	/**
+	 * Crea una notificación en la barra de status
+	 * para acceder directamente a la aplicación
+	 * */
+	public void setStatusBarNotification(){
+		
+		String ns = Context.NOTIFICATION_SERVICE;
+		NotificationManager mNotificationManager = (NotificationManager) getSystemService(ns);
+		
+		int icon = R.drawable.icon;
+		CharSequence tickerText = "Hello";
+		long when = System.currentTimeMillis();
+
+		Notification notification = new Notification(icon, tickerText, when);
+		
+		notification.flags |= Notification.FLAG_NO_CLEAR | Notification.FLAG_ONGOING_EVENT;
+				
+		Context context = getApplicationContext();
+		CharSequence contentTitle = getString(R.string.app_name);
+		CharSequence contentText  = getString(R.string.click_gesture);
+		Intent notificationIntent = new Intent(this, main.class);
+		PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0);
+
+		notification.setLatestEventInfo(context, contentTitle, contentText, contentIntent);
+		
+		
+		final int HELLO_ID = 1;
+
+		mNotificationManager.notify(HELLO_ID, notification);
+		
+		
+	}
+	
+	
+	
+	
+	
 
 	/**
 	 * <p>Metodo que llama a la accion determinada (llamar

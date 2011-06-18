@@ -4,6 +4,7 @@
     <string name = "makeGesture">Make a gesture to call a contact</string>
     
     <!--  NUEVAS -->
+    <string name ="click_gesture">Access Gesture Call !</string>
     
     
     <!--  Button -->
