@@ -32,6 +32,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -59,6 +60,8 @@ public class main extends Activity {
 	public String prediccionActual="";
 	public Context mContext;
 	public int tipoAccion=ACCION_LLAMAR; //Accion por defecto llamar si no se pulsa ningun boton
+	
+	public boolean smsOn=false;
 
 	private final String dir = Environment.getExternalStorageDirectory() + "/GestureCall";
 	private final String fich = "gestures";
@@ -92,6 +95,49 @@ public class main extends Activity {
 		setContentView(R.layout.main);
 
 		init();
+	}
+
+
+	@Override
+	protected void onRestart() {
+		
+		super.onRestart();
+		
+		
+		ImageView i = (ImageView)findViewById(R.id.main_sms);
+		
+		if(smsOn){
+			tipoAccion=ACCION_SMS;
+			//OJO esto se cambiara segun los temas
+			i.setImageResource(R.drawable.env_green_enabled_cutre);
+		}
+		else{
+			tipoAccion=ACCION_LLAMAR;
+			i.setImageResource(R.drawable.env_green_disabled_cutre);
+			
+			//OJO desactivar otros elementos como llamada perdida
+		}
+	}
+
+
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		
+		ImageView i = (ImageView)findViewById(R.id.main_sms);
+		
+		if(smsOn){
+			tipoAccion=ACCION_SMS;
+			//OJO esto se cambiara segun los temas
+			i.setImageResource(R.drawable.env_green_enabled_cutre);
+		}
+		else{
+			tipoAccion=ACCION_LLAMAR;
+			i.setImageResource(R.drawable.env_green_disabled_cutre);
+			
+			//OJO desactivar otros elementos como llamada perdida
+		}
 	}
 
 
@@ -400,6 +446,25 @@ public class main extends Activity {
 	public void clickAdd(View v){
 		Intent i = new Intent(main.this,ListContact.class);
 		startActivityForResult(i, ID);
+	}
+	
+	public void clickSms(View v){
+		ImageView i = (ImageView)v.findViewById(R.id.main_sms);
+		
+		if(smsOn){
+			smsOn=false;
+			tipoAccion=ACCION_LLAMAR;
+			//OJO esto se cambiara segun los temas
+			i.setImageResource(R.drawable.env_green_disabled_cutre);
+		}
+		else{
+			smsOn=true;
+			tipoAccion=ACCION_SMS;
+			i.setImageResource(R.drawable.env_green_enabled_cutre);
+			
+			//OJO desactivar otros elementos como llamada perdida
+		}
+		
 	}
 
 	public void clickEdit(View v){
