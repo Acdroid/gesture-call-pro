@@ -8,3 +8,6 @@
         />   
     <corners android:radius="2px" />
 </shape>
+
+<!-- android:startColor="#4aace5"  -->
+<!-- android:startColor="#a4c639" -->
