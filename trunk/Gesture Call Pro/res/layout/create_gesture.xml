@@ -22,7 +22,7 @@
             android:layout_margin="10dip"
          
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@android:color/background_light"
+            android:textColor="@android:color/background_dark"
             android:gravity="center"
             android:textStyle="bold"/>
     </LinearLayout>
