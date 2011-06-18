@@ -7,12 +7,9 @@
         android:angle="90"
           
    />
-   <padding
-        android:left="2dip"
-        android:top="2dip"
-        android:right="2dip"
-        android:bottom="2dip" />
-   
+    <stroke
+        android:width="2dip"
+        android:color="#A3A3A3"/>
    <corners 
    	android:radius="9dip"
  	/>  
