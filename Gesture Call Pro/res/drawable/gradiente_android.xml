@@ -5,9 +5,10 @@
     	android:endColor="#dddddd"
         android:angle="90"
         
+  
         />   
     <corners android:radius="2px" />
 </shape>
 
-<!-- android:startColor="#4aace5"  -->
-<!-- android:startColor="#a4c639" -->
+<!-- android:startColor="#4aace5" azul -->
+<!-- android:startColor="#a4c639" verde -->
