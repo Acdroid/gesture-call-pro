@@ -57,14 +57,12 @@
 		        android:background="@drawable/gradient_header">
 		
 		        <Button
-		            android:id="@+id/done"
-		                
+		            android:id="@+id/done"		                
 		            android:layout_width="0dip"
 		            android:layout_height="fill_parent"
-		            android:layout_weight="1"
-		
+		            android:layout_weight="1"		
 		            android:enabled="false"
-					android:background="@drawable/button_menu_bar"
+					android:background="@drawable/button_menu_bar_left"
 		            android:onClick="doneGesture"
 		            android:text="@string/button_done" />
 		    
@@ -73,7 +71,7 @@
 		            android:layout_width="0dip"
 		            android:layout_height="fill_parent"
 		            android:layout_weight="1"
-		            android:background="@drawable/button_menu_bar"
+		            android:background="@drawable/button_menu_bar_right"
 		            android:onClick="cancelGesture"
 		            android:text="@string/cancelGesture" />
 		    
