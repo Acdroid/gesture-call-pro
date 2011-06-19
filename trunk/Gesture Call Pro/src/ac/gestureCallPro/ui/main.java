@@ -112,11 +112,11 @@ public class main extends Activity {
 		if(smsOn){
 			tipoAccion=ACCION_SMS;
 			//OJO esto se cambiara segun los temas
-			i.setImageResource(R.drawable.env_green_enabled_cutre);
+			i.setImageResource(R.drawable.env_green_enabled);
 		}
 		else{
 			tipoAccion=ACCION_LLAMAR;
-			i.setImageResource(R.drawable.env_green_disabled_cutre);
+			i.setImageResource(R.drawable.env_green_disabled);
 			
 			//OJO desactivar otros elementos como llamada perdida
 		}
@@ -133,11 +133,11 @@ public class main extends Activity {
 		if(smsOn){
 			tipoAccion=ACCION_SMS;
 			//OJO esto se cambiara segun los temas
-			i.setImageResource(R.drawable.env_green_enabled_cutre);
+			i.setImageResource(R.drawable.env_green_enabled);
 		}
 		else{
 			tipoAccion=ACCION_LLAMAR;
-			i.setImageResource(R.drawable.env_green_disabled_cutre);
+			i.setImageResource(R.drawable.env_green_disabled);
 			
 			//OJO desactivar otros elementos como llamada perdida
 		}
@@ -506,12 +506,12 @@ public class main extends Activity {
 			smsOn=false;
 			tipoAccion=ACCION_LLAMAR;
 			//OJO esto se cambiara segun los temas
-			i.setImageResource(R.drawable.env_green_disabled_cutre);
+			i.setImageResource(R.drawable.env_green_disabled);
 		}
 		else{
 			smsOn=true;
 			tipoAccion=ACCION_SMS;
-			i.setImageResource(R.drawable.env_green_enabled_cutre);
+			i.setImageResource(R.drawable.env_green_enabled);
 			
 			//OJO desactivar otros elementos como llamada perdida
 		}
