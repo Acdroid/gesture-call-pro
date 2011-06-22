@@ -275,7 +275,7 @@ public class main extends Activity {
 		NotificationManager mNotificationManager = (NotificationManager) getSystemService(ns);
 		
 		int icon = R.drawable.icon;
-		CharSequence tickerText = "Hello";
+		CharSequence tickerText = "Hello !";
 		long when = System.currentTimeMillis();
 
 		Notification notification = new Notification(icon, tickerText, when);
