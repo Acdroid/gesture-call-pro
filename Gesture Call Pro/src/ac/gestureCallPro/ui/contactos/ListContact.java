@@ -17,7 +17,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.gesture.GestureLibrary;
-import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract.CommonDataKinds.Phone;
 import android.provider.ContactsContract.Data;
@@ -36,6 +35,7 @@ public final class ListContact extends ListActivity
 	public static final String KEY_NAME ="NAME";
 	public static final String KEY_PHONE ="PHONE";
 	public GestureLibrary store;
+	public ContactCursor manegadorCursor;
 
 	public Cursor cursor;
 	/**
@@ -48,12 +48,12 @@ public final class ListContact extends ListActivity
 		setContentView(R.layout.lista_contactos);     
 		
 		store = main.getStore();
-		
-		cursor = getContacts();
-		startManagingCursor(cursor);
+		manegadorCursor = new ContactCursor(this);
+		cursor =  manegadorCursor.getCursor();
+		//startManagingCursor(cursor);
 		String[] fields = new String[] {
-				Data.DISPLAY_NAME,
-				Phone.NUMBER
+				manegadorCursor.getNameNameColum(),
+				manegadorCursor.getPhoneNameColum()
 		};
 
         int[] to = new int[] { R.id.item_lista_nombre,R.id.item_lista_numero};
@@ -107,8 +107,8 @@ public final class ListContact extends ListActivity
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		super.onListItemClick(l, v, position, id);
 		Intent i = new Intent(ListContact.this,CreadorGestos.class);
-		String nombre = cursor.getString(cursor.getColumnIndex(Data.DISPLAY_NAME));
-		String phone= cursor.getString(cursor.getColumnIndex(Phone.NUMBER));
+		String nombre = cursor.getString(cursor.getColumnIndex(manegadorCursor.getNameNameColum()));
+		String phone= cursor.getString(cursor.getColumnIndex(manegadorCursor.getPhoneNameColum()));
 		
 		
 		i.putExtra(KEY_NAME, nombre);
@@ -155,7 +155,7 @@ public final class ListContact extends ListActivity
 
 			this.mContext = context;
 			gestosNoNull = store.getGestureEntries();	
-			alphaIndexer=new AlphabetIndexer(c,c.getColumnIndex(Data.DISPLAY_NAME), " ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+			alphaIndexer=new AlphabetIndexer(c,c.getColumnIndex(manegadorCursor.getNameNameColum()), " ABCDEFGHIJKLMNOPQRSTUVWXYZ");
 		}
 
 		@Override
