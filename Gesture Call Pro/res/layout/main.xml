@@ -5,7 +5,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@drawable/gradiente_android">
-    <!-- android:background="@drawable/linearlayout_color_gradient_down"> -->
+    
     
     
         <android.gesture.GestureOverlayView
@@ -16,9 +16,9 @@
 			android:gravity="center"
 			android:gestureColor="#c32020"
 			android:uncertainGestureColor="#80c32020"
-
 			android:gestureStrokeType="multiple"
-			android:eventsInterceptionEnabled="true" android:orientation="vertical">
+			android:eventsInterceptionEnabled="true"
+			android:orientation="vertical">
     
 <!--  
 		<TextView  
@@ -131,7 +131,7 @@
 		        		android:id="@+id/main_sms"
 		        		android:layout_width="wrap_content"
 		        		android:layout_height="wrap_content"
-		        		android:src="@drawable/env_green_disabled"
+		        		android:src="@drawable/env_disabled"
 		        		android:onClick="clickSms"/>
 		        	<ImageView
 		        		android:id="@+id/imggears"
