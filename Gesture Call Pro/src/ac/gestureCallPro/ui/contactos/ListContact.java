@@ -11,6 +11,7 @@ import java.util.Set;
 import ac.gestureCallPro.R;
 import ac.gestureCallPro.ui.main;
 import ac.gestureCallPro.ui.creadorGestos.CreadorGestos;
+import ac.gestureCallPro.util.contactos.ContactCursor;
 import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
@@ -84,19 +85,20 @@ public final class ListContact extends ListActivity
 //        String sortOrder = ContactsContract.Contacts.DISPLAY_NAME + " COLLATE LOCALIZED ASC";
 
 		
-		Uri uri =  Data.CONTENT_URI;
-		String[] projection = new String []{
-				Data._ID,
-				Data.DISPLAY_NAME,
-				Phone.NUMBER,
-				Phone.TYPE 
-		};
-		String selection = Data.MIMETYPE + "='" + Phone.CONTENT_ITEM_TYPE + "' AND "
-        		+ Phone.NUMBER + " IS NOT NULL";
-		
-		String[] selectionArgs = null;
-		String sortOrder = Data.DISPLAY_NAME + " COLLATE LOCALIZED ASC";
-        return managedQuery(uri, projection, selection, selectionArgs, sortOrder);
+//		Uri uri =  Data.CONTENT_URI;
+//		String[] projection = new String []{
+//				Data._ID,
+//				Data.DISPLAY_NAME,
+//				Phone.NUMBER,
+//				Phone.TYPE 
+//		};
+//		String selection = Data.MIMETYPE + "='" + Phone.CONTENT_ITEM_TYPE + "' AND "
+//        		+ Phone.NUMBER + " IS NOT NULL";
+//		
+//		String[] selectionArgs = null;
+//		String sortOrder = Data.DISPLAY_NAME + " COLLATE LOCALIZED ASC";
+//        return managedQuery(uri, projection, selection, selectionArgs, sortOrder);
+		return new ContactCursor(this).getCursor();
     }
 
 
