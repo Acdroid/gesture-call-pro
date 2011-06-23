@@ -4,6 +4,7 @@ package ac.gestureCallPro.util.config;
 import java.io.File;
 import java.io.IOException;
 
+import ac.gestureCallPro.exceptions.NoPreferenceException;
 import android.content.Context;
 import android.os.Environment;
 import android.util.Log;
@@ -19,9 +20,13 @@ import android.util.Log;
  * @author mtrujillo & cdiaz
  */
 public class AppConfig extends MSharedPreferences{
+	public static final String VERSION = "version";
 	public static final String FIRST_TIME = "first_time";
 	public static final String NAME = "GestureCall";
 	public static final String AVISO_AL_LLAMAR = "ask_before_call";
+	public static final String DEBUG = "debug";
+	public static final String NOTIFICATION = "notification";
+	public static final String RETURN_AFTER_CALL = "returnAfterCall";
 
 	private static final String dir = Environment.getExternalStorageDirectory() + "/GestureCall";
 	private final String fich = dir + "/gestures";
@@ -29,28 +34,27 @@ public class AppConfig extends MSharedPreferences{
 
 	public AppConfig(Context mContext, String name){
 		super(mContext,name);
-
-		//Comprobamos si es la primera vez que se llama alconstructor, en tal caso
-		//se guardan los valores iniciales
-		if(!pref.contains(FIRST_TIME)){
-			//mToast.Make(mContext,mContext.getResources().getString(R.string.first_time_toast), 1);
-
-			//Procedemos a cargar los valores por primera vez en las preferencias.
-			//Estos valores son por defecto
-
-			//Valores por defectos
-			put(false,FIRST_TIME); //Flag para indicar que no es la primera vez que se usa
-			put(true,AVISO_AL_LLAMAR);
-			
-
-			createStructure(dir, fich);
-
-
+		
+		//para el desarrollo por si se quiere hacer cosas especiales
+		try {
+			if( (!pref.contains(DEBUG)) && (getBool(DEBUG) == true)){
+				makeDEBUG();
+				//return;
+			}
+		} catch (NoPreferenceException e) {
 		}
+		
+
+		if(!pref.contains(VERSION)){
+			makeAll();
+		}
+		else{
+			checkVersion();
+		}
+		
 
 	}
-
-
+	
 	/**
 	 * Crea la estructura hasta el archivo deseado
 	 * 
@@ -98,5 +102,76 @@ public class AppConfig extends MSharedPreferences{
 
 
 	}
+	
+	/**
+	 * Llama a todas las versiones
+	 */
+	private void makeAll(){
+		makeV1();
+		makeV2();
+	}
+	
+	/**
+	 * Comprueba la version de la configuracion y dependiendo
+	 * de esto llama a las funciones necesarias
+	 */
+	private void checkVersion(){
+		int ver;
+		try {
+			ver = getInt(VERSION);
+		} catch (NoPreferenceException e) {
+			//TODO revisar
+			ver = 0; //Si falla ponemos que es version 0 y que sobreescriba todo
+		}
+		
+		if (ver < 1){
+			makeAll();
+			return;
+		}
+		if (ver < 2){
+			makeV2();
+			return;
+		}
+		
+		
+	}
+	
+	/**
+	 * Primera version de las opciones con la opcion de
+	 * aviso al llamar e inclusion de la version
+	 */
+	private void makeV1(){		
+		//Para los antiguos si no contine aviso al llamar lo guardamos
+		//Esto lo hacemos apra que se mantenga la opcion de los que ya
+		//tienen la version antigua de GC
+		if(!pref.contains(AVISO_AL_LLAMAR))
+			put(true,AVISO_AL_LLAMAR);
+		
+		put(1,VERSION);
+		createStructure(dir, fich);
+	}
 
+	/**
+	 * Primera version de las opciones con la opcion de
+	 * aviso al llamar e inclusion de la version
+	 */
+	private void makeV2(){		
+		put(true,DEBUG); //SOLO PARA DESARROLLADORES, PONER A FALSE!
+		
+		put(true,NOTIFICATION);
+		put(false,RETURN_AFTER_CALL);		
+		put(2,VERSION);
+	}
+
+	
+	
+	
+	/**
+	 * Para el desarrollo por si se quieren probar cosas
+	 * Por ejemplo para añadir nuevas opciones
+	 * durante el desarrollo
+	 */
+	private void makeDEBUG(){
+		return;
+	}
 }
