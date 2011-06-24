@@ -3,6 +3,7 @@ package ac.gestureCallPro.util.config;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.GregorianCalendar;
 
 import ac.gestureCallPro.exceptions.NoPreferenceException;
 import ac.gestureCallPro.ui.main;
@@ -29,6 +30,13 @@ public class AppConfig extends MSharedPreferences{
 	public static final String NOTIFICATION = "notification";
 	public static final String RETURN_AFTER_CALL = "returnAfterCall";
 	public static final String ACCION_POR_DEFECTO = "defAction";
+	public static final String THEME = "theme";
+	
+    public static final class Themes {
+        public static final int GREY = 0;
+        public static final int GREEN = 1;
+        public static final int BLUE = 2;
+    }
 	
 
 	private static final String dir = Environment.getExternalStorageDirectory() + "/GestureCall";
@@ -164,6 +172,7 @@ public class AppConfig extends MSharedPreferences{
 		put(true,NOTIFICATION);
 		put(false,RETURN_AFTER_CALL);
 		put(main.ACCION_LLAMAR,ACCION_POR_DEFECTO);
+		put(Themes.GREY,THEME);
 		put(2,VERSION); //Imprescindible siempre poner
 	}
 
@@ -179,7 +188,7 @@ public class AppConfig extends MSharedPreferences{
 		//Poner flags que se quieran probar
 //		put(main.ACCION_LLAMAR,ACCION_POR_DEFECTO);
 //		put(true,NOTIFICATION);
-		
+		put(Themes.BLUE,THEME);
 		logOptions(); //Muestra todas las opciones menos FIRST_TIME
 		return;
 	}
@@ -196,7 +205,8 @@ public class AppConfig extends MSharedPreferences{
 			Log.d("DEBUG",DEBUG + " " + getBool(DEBUG));
 			Log.d("DEBUG",NOTIFICATION + " " + getBool(NOTIFICATION));
 			Log.d("DEBUG",RETURN_AFTER_CALL + " " + getBool(RETURN_AFTER_CALL));
-			Log.d("DEBUG",VERSION + " " + getInt(VERSION)); 
+			Log.d("DEBUG",VERSION + " " + getInt(VERSION));
+			Log.d("DEBUG",THEME + " " + getInt(THEME) + "  (0 gris,1verde,2azul)");
 			
 			
 		} catch (NoPreferenceException e) {

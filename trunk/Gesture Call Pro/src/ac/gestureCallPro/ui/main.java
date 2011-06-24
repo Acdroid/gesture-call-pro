@@ -7,6 +7,7 @@ import ac.gestureCallPro.preferences.Preferences;
 import ac.gestureCallPro.ui.contactos.ListContact;
 import ac.gestureCallPro.ui.gestos.GestureBuilderActivity;
 import ac.gestureCallPro.util.config.AppConfig;
+import ac.gestureCallPro.util.config.AppConfig.Themes;
 import ac.gestureCallPro.util.gestures.GesturesRecognizer;
 import ac.gestureCallPro.util.mToast.mToast;
 import android.app.Activity;
@@ -28,6 +29,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.provider.ContactsContract.CommonDataKinds.Phone;
 import android.provider.ContactsContract.Data;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -36,6 +38,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -59,6 +62,7 @@ public class main extends Activity {
 
 	public GestureOverlayView overlay;
 	public static GesturesRecognizer gr;
+	public LinearLayout lay_main;
 	public  AppConfig ap;
 	public Dialog dialogCall;
 	public String prediccionActual="";
@@ -115,13 +119,12 @@ public class main extends Activity {
 		mContext = this;
 
 		//Iniciamos el dialog
-		//TODO cambiar esto , hay que sacarlo fuera de aquí
+		//TODO cambiar esto , hay que sacarlo fuera de aqui
 		createDialog();
 
 
 		//Cargamos las opciones
 		ap = new AppConfig(this, AppConfig.NAME);
-		tipoAccion = ACCION_LLAMAR; //TODO de momento accion por defecto llamar futuro --> ap.getAccionPordefecto 
 
 		overlay = (GestureOverlayView)findViewById(R.id.gestures);
 		try {
@@ -135,6 +138,10 @@ public class main extends Activity {
 		
 		//accion por defecto
 		setDefaultAction();
+		
+		//Cargamos tema
+		lay_main = (LinearLayout)findViewById(R.id.lay_main);
+		setTheme();
 		
 		
 	}
@@ -255,7 +262,7 @@ public class main extends Activity {
 		
 		//Creamos la notificacion
 		int icon = R.drawable.icon;
-		CharSequence tickerText = "Hello !";
+		CharSequence tickerText = "Hello! Try me";
 		long when = System.currentTimeMillis();
 
 		Notification notification = new Notification(icon, tickerText, when);
@@ -311,6 +318,48 @@ public class main extends Activity {
 	}
 	
 	
+	/**
+	 * Carga el tema segun las preferencias del usuarios
+	 * 
+	 */
+	public void setTheme(){
+		int  theme;
+		try {
+			theme = ap.getInt(AppConfig.THEME);
+		} catch (NoPreferenceException e) {
+			theme = Themes.GREY;
+		}
+		
+		Log.d("DEBUG","puto theme " + theme);
+		
+		switch (theme) {
+		case Themes.GREY:
+			lay_main.setBackgroundResource(R.drawable.background_grey);
+			overlay.setGestureColor(R.color.overlay_grey);
+			overlay.setUncertainGestureColor(R.color.overlay_grey_uncertain);
+			
+			break;
+		case Themes.BLUE:
+			lay_main.setBackgroundResource(R.drawable.background_blue_gradient);
+			//overlay.setGestureColor(R.color.overlay_blue);
+			overlay.setUncertainGestureColor(R.color.overlay_blue_uncertain);
+			
+			break;
+		case Themes.GREEN:
+			lay_main.setBackgroundResource(R.drawable.background_green_gradient);
+			overlay.setGestureColor(R.color.overlay_green);
+			overlay.setUncertainGestureColor(R.color.overlay_green_uncertain);
+			
+			break;
+
+		default:
+			lay_main.setBackgroundResource(R.drawable.background_grey);
+			overlay.setGestureColor(R.color.overlay_grey);
+			overlay.setUncertainGestureColor(R.color.overlay_grey_uncertain);
+			
+			break;
+		}
+	}
 	
 	
 	
