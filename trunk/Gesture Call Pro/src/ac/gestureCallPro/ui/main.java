@@ -55,6 +55,7 @@ public class main extends Activity {
 	public static final int ACCION_LLAMAR=0;
 	public static final int ACCION_SMS=1;
 	public static final int ACCION_PERDIDA=2;
+	public static final int HELLO_ID = 62929;
 
 	public GestureOverlayView overlay;
 	public static GesturesRecognizer gr;
@@ -101,47 +102,7 @@ public class main extends Activity {
 	}
 
 
-	@Override
-	protected void onRestart() {
-		
-		super.onRestart();
-		
-		
-		ImageView i = (ImageView)findViewById(R.id.main_sms);
-		
-		if(smsOn){
-			tipoAccion=ACCION_SMS;
-			//OJO esto se cambiara segun los temas
-			i.setImageResource(R.drawable.env_enabled);
-		}
-		else{
-			tipoAccion=ACCION_LLAMAR;
-			i.setImageResource(R.drawable.env_disabled);
-			
-			//OJO desactivar otros elementos como llamada perdida
-		}
-	}
-
-
-	@Override
-	protected void onResume() {
-		// TODO Auto-generated method stub
-		super.onResume();
-		
-		ImageView i = (ImageView)findViewById(R.id.main_sms);
-		
-		if(smsOn){
-			tipoAccion=ACCION_SMS;
-			//OJO esto se cambiara segun los temas
-			i.setImageResource(R.drawable.env_enabled);
-		}
-		else{
-			tipoAccion=ACCION_LLAMAR;
-			i.setImageResource(R.drawable.env_disabled);
-			
-			//OJO desactivar otros elementos como llamada perdida
-		}
-	}
+	
 
 
 	/**
@@ -169,8 +130,12 @@ public class main extends Activity {
 			Toast.makeText(this, e.getMessage() + "\nNo esta habilitado el reconocedor de gestos.",Toast.LENGTH_SHORT).show();
 		} //Reconocedor, lo cargamos con la base de datos de accesos directos
 		
-		
+		//notificacion
 		setStatusBarNotification();
+		
+		//accion por defecto
+		setDefaultAction();
+		
 		
 	}
 
@@ -266,7 +231,7 @@ public class main extends Activity {
 	
 	
 	/**
-	 * Crea una notificación en la barra de status
+	 * Crea una notificacion en la barra de status
 	 * para acceder directamente a la aplicación
 	 * */
 	public void setStatusBarNotification(){
@@ -274,6 +239,21 @@ public class main extends Activity {
 		String ns = Context.NOTIFICATION_SERVICE;
 		NotificationManager mNotificationManager = (NotificationManager) getSystemService(ns);
 		
+		//Comprobamos si el usuario desea usar notificaciones
+		boolean notif;
+		try {
+			notif = ap.getBool(AppConfig.NOTIFICATION);
+		} catch (NoPreferenceException e) {
+			notif = true; //en caso de error SI notificaciones
+		}
+		
+		if (!notif){
+			mNotificationManager.cancel(HELLO_ID);
+			return;
+		}
+		
+		
+		//Creamos la notificacion
 		int icon = R.drawable.icon;
 		CharSequence tickerText = "Hello !";
 		long when = System.currentTimeMillis();
@@ -291,11 +271,43 @@ public class main extends Activity {
 		notification.setLatestEventInfo(context, contentTitle, contentText, contentIntent);
 		
 		
-		final int HELLO_ID = 1;
+		
 
 		mNotificationManager.notify(HELLO_ID, notification);
+	}
+	
+	/**
+	 * Establece la accion por defecto deseada por el usuario
+	 */
+	public void setDefaultAction(){
 		
+		int  actDef;
+		try {
+			actDef = ap.getInt(AppConfig.ACCION_POR_DEFECTO);
+		} catch (NoPreferenceException e) {
+			actDef = ACCION_LLAMAR;
+		}
+		ImageView iSMS = (ImageView)findViewById(R.id.main_sms);
 		
+		switch (actDef) {
+		case ACCION_LLAMAR:
+			tipoAccion = ACCION_LLAMAR;
+			smsOn = false;
+			iSMS.setImageResource(R.drawable.env_disabled);
+			break;
+		case ACCION_SMS:
+			tipoAccion = ACCION_SMS;
+			smsOn = true;
+			iSMS.setImageResource(R.drawable.env_enabled);
+			break;
+		case ACCION_PERDIDA:
+			tipoAccion = ACCION_PERDIDA;
+			smsOn = false;
+			iSMS.setImageResource(R.drawable.env_disabled);
+			break;
+		default:
+			break;
+		}
 	}
 	
 	
@@ -490,6 +502,48 @@ public class main extends Activity {
 			}
 		});
 
+	}
+	
+	@Override
+	protected void onRestart() {
+		
+		super.onRestart();
+		
+		
+		ImageView i = (ImageView)findViewById(R.id.main_sms);
+		
+		if(smsOn){
+			tipoAccion=ACCION_SMS;
+			//OJO esto se cambiara segun los temas
+			i.setImageResource(R.drawable.env_enabled);
+		}
+		else{
+			tipoAccion=ACCION_LLAMAR;
+			i.setImageResource(R.drawable.env_disabled);
+			
+			//OJO desactivar otros elementos como llamada perdida
+		}
+	}
+
+
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		
+		ImageView i = (ImageView)findViewById(R.id.main_sms);
+		
+		if(smsOn){
+			tipoAccion=ACCION_SMS;
+			//OJO esto se cambiara segun los temas
+			i.setImageResource(R.drawable.env_enabled);
+		}
+		else{
+			tipoAccion=ACCION_LLAMAR;
+			i.setImageResource(R.drawable.env_disabled);
+			
+			//OJO desactivar otros elementos como llamada perdida
+		}
 	}
 
 	/* **************** Funciones auxiliares o menores ****************** */

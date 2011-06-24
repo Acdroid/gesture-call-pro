@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.IOException;
 
 import ac.gestureCallPro.exceptions.NoPreferenceException;
+import ac.gestureCallPro.ui.main;
 import android.content.Context;
 import android.os.Environment;
 import android.util.Log;
@@ -27,6 +28,8 @@ public class AppConfig extends MSharedPreferences{
 	public static final String DEBUG = "debug";
 	public static final String NOTIFICATION = "notification";
 	public static final String RETURN_AFTER_CALL = "returnAfterCall";
+	public static final String ACCION_POR_DEFECTO = "defAction";
+	
 
 	private static final String dir = Environment.getExternalStorageDirectory() + "/GestureCall";
 	private final String fich = dir + "/gestures";
@@ -39,7 +42,7 @@ public class AppConfig extends MSharedPreferences{
 		try {
 			if( (!pref.contains(DEBUG)) && (getBool(DEBUG) == true)){
 				makeDEBUG();
-				//return;
+				return;
 			}
 		} catch (NoPreferenceException e) {
 		}
@@ -159,8 +162,11 @@ public class AppConfig extends MSharedPreferences{
 		put(true,DEBUG); //SOLO PARA DESARROLLADORES, PONER A FALSE!
 		
 		put(true,NOTIFICATION);
-		put(false,RETURN_AFTER_CALL);		
+		put(false,RETURN_AFTER_CALL);
+		put(main.ACCION_LLAMAR,ACCION_POR_DEFECTO);
 		put(2,VERSION);
+		
+		Log.d("DEBUG","termina makeV2");
 	}
 
 	
@@ -172,6 +178,33 @@ public class AppConfig extends MSharedPreferences{
 	 * durante el desarrollo
 	 */
 	private void makeDEBUG(){
+		Log.d("DEBUG","makeDebug");
+		put(main.ACCION_SMS,ACCION_POR_DEFECTO);
+		put(false,NOTIFICATION);
+		
+		logOptions();
 		return;
 	}
+	
+	/**
+	 * Muestra por log todas las opciones:
+	 */
+	private void logOptions(){
+		
+		try {
+			Log.d("DEBUG",ACCION_POR_DEFECTO + " " +  getInt(ACCION_POR_DEFECTO) 
+					
+			+ "\n" + AVISO_AL_LLAMAR + " " + getBool(AVISO_AL_LLAMAR)  
+			+ "\n" + DEBUG + " " + getBool(DEBUG)
+			+ "\n" + FIRST_TIME + " " + getBool(FIRST_TIME)
+			+ "\n" + NOTIFICATION + " " + getBool(NOTIFICATION)
+			+ "\n" + RETURN_AFTER_CALL + " " + getBool(RETURN_AFTER_CALL)
+			+ "\n" + VERSION + " " + getInt(VERSION) 
+			
+			);
+		} catch (NoPreferenceException e) {
+
+		}
+	}
+	
 }
