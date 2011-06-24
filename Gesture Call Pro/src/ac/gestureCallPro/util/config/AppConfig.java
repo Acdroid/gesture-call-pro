@@ -40,7 +40,7 @@ public class AppConfig extends MSharedPreferences{
 		
 		//para el desarrollo por si se quiere hacer cosas especiales
 		try {
-			if( (!pref.contains(DEBUG)) && (getBool(DEBUG) == true)){
+			if( (pref.contains(DEBUG)) && (getBool(DEBUG) == true)){
 				makeDEBUG();
 				return;
 			}
@@ -159,14 +159,12 @@ public class AppConfig extends MSharedPreferences{
 	 * aviso al llamar e inclusion de la version
 	 */
 	private void makeV2(){		
-		put(true,DEBUG); //SOLO PARA DESARROLLADORES, PONER A FALSE!
+		//put(true,DEBUG); //SOLO PARA DESARROLLADORES, PONER A FALSE!
 		
 		put(true,NOTIFICATION);
 		put(false,RETURN_AFTER_CALL);
 		put(main.ACCION_LLAMAR,ACCION_POR_DEFECTO);
-		put(2,VERSION);
-		
-		Log.d("DEBUG","termina makeV2");
+		put(2,VERSION); //Imprescindible siempre poner
 	}
 
 	
@@ -178,11 +176,11 @@ public class AppConfig extends MSharedPreferences{
 	 * durante el desarrollo
 	 */
 	private void makeDEBUG(){
-		Log.d("DEBUG","makeDebug");
-		put(main.ACCION_SMS,ACCION_POR_DEFECTO);
-		put(false,NOTIFICATION);
+		//Poner flags que se quieran probar
+//		put(main.ACCION_LLAMAR,ACCION_POR_DEFECTO);
+//		put(true,NOTIFICATION);
 		
-		logOptions();
+		logOptions(); //Muestra todas las opciones menos FIRST_TIME
 		return;
 	}
 	
@@ -192,18 +190,17 @@ public class AppConfig extends MSharedPreferences{
 	private void logOptions(){
 		
 		try {
-			Log.d("DEBUG",ACCION_POR_DEFECTO + " " +  getInt(ACCION_POR_DEFECTO) 
+			Log.d("DEBUG",ACCION_POR_DEFECTO + " " +  getInt(ACCION_POR_DEFECTO)) ;
 					
-			+ "\n" + AVISO_AL_LLAMAR + " " + getBool(AVISO_AL_LLAMAR)  
-			+ "\n" + DEBUG + " " + getBool(DEBUG)
-			+ "\n" + FIRST_TIME + " " + getBool(FIRST_TIME)
-			+ "\n" + NOTIFICATION + " " + getBool(NOTIFICATION)
-			+ "\n" + RETURN_AFTER_CALL + " " + getBool(RETURN_AFTER_CALL)
-			+ "\n" + VERSION + " " + getInt(VERSION) 
+			Log.d("DEBUG", AVISO_AL_LLAMAR + " " + getBool(AVISO_AL_LLAMAR)  );
+			Log.d("DEBUG",DEBUG + " " + getBool(DEBUG));
+			Log.d("DEBUG",NOTIFICATION + " " + getBool(NOTIFICATION));
+			Log.d("DEBUG",RETURN_AFTER_CALL + " " + getBool(RETURN_AFTER_CALL));
+			Log.d("DEBUG",VERSION + " " + getInt(VERSION)); 
 			
-			);
+			
 		} catch (NoPreferenceException e) {
-
+			Log.d("GestureCall_AC","Falla al pintar en el log en la funcion debug de AppConfig. Te falta algun registro.");
 		}
 	}
 	
