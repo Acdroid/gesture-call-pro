@@ -3,8 +3,8 @@
 	android:id="@+id/lay_main"
     android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:background="@drawable/gradiente_android">    
+    android:layout_height="fill_parent">
+    <!-- android:background="@drawable/gradiente_android">-->    
     
     
     
@@ -14,13 +14,15 @@
 			android:layout_height="0dip"
 			android:layout_weight="1.0"
 			android:gravity="center"
-			android:gestureColor="#c32020"
-			android:uncertainGestureColor="#80c32020"
+			android:gestureColor="@color/overlay_blue"
 			android:gestureStrokeType="multiple"
 			android:eventsInterceptionEnabled="true"
 			android:orientation="vertical">
     
 <!--  
+			android:gestureColor="#c32020"
+			android:uncertainGestureColor="#80c32020"
+
 		<TextView  
 		
 		        android:gravity="center"

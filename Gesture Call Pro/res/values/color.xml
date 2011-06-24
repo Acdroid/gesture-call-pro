@@ -14,5 +14,13 @@
     <color name="rojo">#FF0000</color>
     <color name="azul">#0000FF</color>
     <color name="gesture_color">#FFFFFF00</color>
-    <color name="amarillo_claro">#FFFFCB</color>   
+    <color name="amarillo_claro">#FFFFCB</color>
+    
+    <color name="overlay_grey">#8D8D8D</color>
+    <color name="overlay_grey_uncertain">#808D8D8D</color>
+    <color name="overlay_green">#640E4E</color>
+    <color name="overlay_green_uncertain">#80640E4E</color>
+    <color name="overlay_blue">#FFAD48</color>
+    <color name="overlay_blue_uncertain">#80FFAD48</color>
+    
 </resources>
