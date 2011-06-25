@@ -13,10 +13,11 @@
 			android:layout_width="fill_parent"
 			android:layout_height="0dip"
 			android:layout_weight="1.0"
-			android:gravity="center"
-			android:gestureColor="@color/overlay_blue"
+			android:gravity="center"			
 			android:gestureStrokeType="multiple"
 			android:eventsInterceptionEnabled="true"
+			android:gestureColor="#c32020"
+			android:uncertainGestureColor="#80c32020"
 			android:orientation="vertical">
     
 <!--  
@@ -54,12 +55,10 @@
 		        android:orientation="horizontal">
 		
 		        <Button
-		            android:id="@+id/ButtonBar"
-		                
+		            android:id="@+id/ButtonBar"		                
 		            android:layout_width="0dip"
 		            android:layout_height="wrap_content"
-		            android:layout_weight="1"
-		
+		            android:layout_weight="1"		
 		            android:onClick="clickAdd"
 		            android:text="@string/ini_Button"/>
 		    
@@ -67,8 +66,7 @@
 		        	android:id="@+id/main_button_edit"
 		            android:layout_width="0dip"
 		            android:layout_height="wrap_content"
-		            android:layout_weight="1"
-		            
+		            android:layout_weight="1"		            
 		            android:onClick="clickEdit"
 		            android:text="@string/button_edit_gesture" />
 		            
@@ -76,8 +74,7 @@
 		        	android:id="@+id/main_button_options"
 		            android:layout_width="0dip"
 		            android:layout_height="wrap_content"
-		            android:layout_weight="1"
-		            
+		            android:layout_weight="1"		            
 		            android:onClick="clickOpciones"
 		            android:text="@string/opciones" />
 		            
@@ -106,8 +103,7 @@
 	        android:orientation="vertical"
 	        android:layout_height="50dip"
 	        android:layout_width="fill_parent"
-	        android:layout_alignParentTop="true"
-	        >
+	        android:layout_alignParentTop="true">
 	 		<LinearLayout 
 	 			android:layout_height="40dip"
 	        	android:layout_width="fill_parent"
@@ -152,8 +148,9 @@
 	        	android:background="@drawable/gradiente_shadow"></LinearLayout>
 	    </LinearLayout>
 	 
-	 <LinearLayout
-	 	    
+	 
+	 
+	 <LinearLayout	 	    
 	        android:orientation="vertical"
 	        android:layout_height="wrap_content"
 	        android:layout_width="fill_parent"
@@ -162,58 +159,43 @@
 	        <LinearLayout
 	 			android:layout_height="10dip"
 	        	android:layout_width="fill_parent"
-	        	android:background="@drawable/gradient_shadow_down"></LinearLayout>
-	    <LinearLayout
-	        android:orientation="horizontal"
-	        android:layout_height="wrap_content"
-	        android:layout_width="fill_parent"
-	        android:layout_alignParentBottom="true"
-	        android:padding="5dip"
-	        android:background="@drawable/gradient_header">
-	 
-       			 <Button
-		            android:id="@+id/ButtonBar"		                
-		            android:layout_width="0dip"
-		            android:layout_height="fill_parent"
-		            android:layout_weight="1"		            
-		            android:onClick="clickAdd"
-		            android:text="@string/ini_Button"
-		            android:padding="10dip"
-		            android:background="@drawable/button_menu_bar_left"/>
-		    
-		        <Button
-		        	android:id="@+id/main_button_edit"
-		            android:layout_width="0dip"
-		            android:layout_height="fill_parent"
-		            android:layout_weight="1"		            
-		            android:onClick="clickEdit"
-		            android:text="@string/button_edit_gesture"
-		            android:padding="10dip"		           
-		            android:background="@drawable/button_menu_bar_right"/>
-		            
-		        <!-- <Button
-		        	android:id="@+id/main_button_options"
-		            android:layout_width="0dip"
-		            android:layout_height="fill_parent"
-		            android:layout_weight="1"		            
-		            android:onClick="clickOpciones"
-		            android:text="@string/opciones"
-		            android:padding="10dip"
-		            android:background="@drawable/button_menu_bar"/> -->
-	 
-	    </LinearLayout>
-	 </LinearLayout>
+	        	android:background="@drawable/gradient_shadow_down">
+	        </LinearLayout>
+			        	
+			    <LinearLayout
+			        android:orientation="horizontal"
+			        android:layout_height="wrap_content"
+			        android:layout_width="fill_parent"
+			        android:layout_alignParentBottom="true"
+			        android:padding="5dip"
+			        android:background="@drawable/gradient_header">
+			 
+		       			 <Button
+				            android:id="@+id/ButtonBar"		                
+				            android:layout_width="0dip"
+				            android:layout_height="fill_parent"
+				            android:layout_weight="1"		            
+				            android:onClick="clickAdd"
+				            android:text="@string/ini_Button"
+				            android:padding="10dip"
+				            android:background="@drawable/button_menu_bar_left_bg"/>
+				    
+				        <Button
+				        	android:id="@+id/main_button_edit"
+				            android:layout_width="0dip"
+				            android:layout_height="fill_parent"
+				            android:layout_weight="1"		            
+				            android:onClick="clickEdit"
+				            android:text="@string/button_edit_gesture"
+				            android:padding="10dip"		           
+				            android:background="@drawable/button_menu_bar_right_bg"/>
+				            
+			 
+			    </LinearLayout>
+			 </LinearLayout>
 	</RelativeLayout>
 		    
 		    
-		    
-		    
-		    
-		    
-		    
-		    
-		    
-
 
    		
 	   	</android.gesture.GestureOverlayView>
