@@ -342,8 +342,8 @@ public class main extends Activity {
 		switch (theme) {
 		case Themes.GREY:
 			lay_main.setBackgroundResource(R.drawable.background_grey);
-			overlay.setGestureColor(R.color.overlay_grey);
-			overlay.setUncertainGestureColor(R.color.overlay_grey_uncertain);
+			//overlay.setGestureColor(R.color.overlay_grey);
+			//overlay.setUncertainGestureColor(R.color.overlay_grey_uncertain);
 			
 			break;
 		case Themes.BLUE:
