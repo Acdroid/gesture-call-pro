@@ -18,12 +18,14 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.DialogInterface.OnCancelListener;
 import android.content.Intent;
 import android.database.Cursor;
 import android.gesture.GestureLibrary;
 import android.gesture.GestureOverlayView;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
@@ -68,6 +70,7 @@ public class main extends Activity {
 	public String prediccionActual="";
 	public Context mContext;
 	public int tipoAccion=ACCION_LLAMAR; //Accion por defecto llamar si no se pulsa ningun boton
+	public CallCountDown countdown;
 	
 	public boolean smsOn=false;
 
@@ -135,6 +138,10 @@ public class main extends Activity {
 		
 		//notificacion
 		setStatusBarNotification();
+		
+		//La cuenta atras para las llamadas
+		countdown = new CallCountDown(5000, 1000);
+				
 		
 		//accion por defecto
 		setDefaultAction();
@@ -262,7 +269,7 @@ public class main extends Activity {
 		
 		//Creamos la notificacion
 		int icon = R.drawable.icon;
-		CharSequence tickerText = "Hello! Try me";
+		CharSequence tickerText = "Hello! Try me...";
 		long when = System.currentTimeMillis();
 
 		Notification notification = new Notification(icon, tickerText, when);
@@ -426,6 +433,10 @@ public class main extends Activity {
 					t.setText(getPrediccionActual());
 				}
 				showDialog(DIALOG_CALL);
+								
+				countdown.setButton((Button) dialogCall.findViewById(R.id.dialog_button_yes));
+				countdown.start();
+				
 
 			}
 			else{//Si no se llama directamente
@@ -479,6 +490,9 @@ public class main extends Activity {
 					t.setText(getPrediccionActual());
 				}
 				showDialog(DIALOG_CALL);
+				
+				countdown.setButton((Button) dialogCall.findViewById(R.id.dialog_button_yes));
+				countdown.start();
 
 			}
 			else{//En caso de false se envia directamente
@@ -517,41 +531,95 @@ public class main extends Activity {
 		dialogCall = new Dialog(mContext);
 		dialogCall.setContentView(R.layout.dialog_b4_call);
 		dialogCall.setTitle(mContext.getResources().getString(R.string.calling));
-		Button buttonDialog= (Button) dialogCall.findViewById(R.id.dialog_button_yes);
+		
+		//Cuando el usuario pulsa atras, cancelamos la cuenta atras
+		dialogCall.setOnCancelListener(new OnCancelListener() {			
+			@Override
+			public void onCancel(DialogInterface dialog) {
+				countdown.cancel();				
+			}
+		});
+		
+		Button buttonDialog = (Button) dialogCall.findViewById(R.id.dialog_button_yes);
+		
+		
 		buttonDialog.setOnClickListener(new OnClickListener() {
-
 			@Override
 			public void onClick(View v) {
-				CheckBox c = (CheckBox)dialogCall.findViewById(R.id.dialog_check);
-				if(c.isChecked()){
-					getAp().put(false, AppConfig.AVISO_AL_LLAMAR);
-				}
-
-				//Dependiendo del tipo de accion realizamos una u otra cosa
-				String url = "";
-				switch (tipoAccion) {
-				case ACCION_LLAMAR:
-					url=  "tel:" + getPrediccionActual();
-					Intent i = new Intent(Intent.ACTION_CALL, Uri.parse(url));
-					startActivityForResult(i,ID);
-					break;
-				case ACCION_SMS:
-					url = "sms:" + getPrediccionActual();
-					Intent iSMS = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-					startActivityForResult(iSMS,ID);
-					break;
-				case ACCION_PERDIDA:
-					mToast.Make(mContext, "Action is not yet available", 0);
-					break;
-				default:
-					break;
-				}
+				callActions();
 				dialogCall.dismiss();
-
 			}
 		});
 
 	}
+	
+	
+	
+	/**
+	 * Este metodo gestiona las acciones a tomar en las llamadas
+	 * */
+	private void callActions() {
+		
+		CheckBox c = (CheckBox)dialogCall.findViewById(R.id.dialog_check);
+		if(c.isChecked()){
+			getAp().put(false, AppConfig.AVISO_AL_LLAMAR);
+		}
+
+		//Dependiendo del tipo de accion realizamos una u otra cosa
+		String url = "";
+		switch (tipoAccion) {
+		case ACCION_LLAMAR:
+			url=  "tel:" + getPrediccionActual();
+			Intent i = new Intent(Intent.ACTION_CALL, Uri.parse(url));
+			startActivityForResult(i,ID);
+			break;
+		case ACCION_SMS:
+			url = "sms:" + getPrediccionActual();
+			Intent iSMS = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+			startActivityForResult(iSMS,ID);
+			break;
+		case ACCION_PERDIDA:
+			mToast.Make(mContext, "Action is not yet available", 0);
+			break;
+		default:
+			break;
+		}
+		
+	}
+	
+	
+	/**
+	 * Clase que gestiona la cuenta atras antes de una "llamada"
+	 * 1.Crear el objeto con new
+	 * 2.Llamar a setButton
+	 * 3.Llamar a start
+	 **/
+    class CallCountDown extends CountDownTimer{
+
+    	Button button;
+    	
+    	public CallCountDown(long millisInFuture, long countDownInterval) {
+    		super(millisInFuture, countDownInterval);
+    	}
+
+    	public void setButton(Button b) {    		
+    		this.button = b;
+    	}
+    	
+    	@Override
+    	public void onFinish() {
+    		callActions();
+    		dialogCall.dismiss();
+    	}
+
+    	@Override
+    	public void onTick(long millisUntilFinished) {
+    		button.setText(getString(R.string.yes)+" ("+millisUntilFinished/1000+")");
+    	}
+
+    }
+	
+	
 	
 	@Override
 	protected void onRestart() {

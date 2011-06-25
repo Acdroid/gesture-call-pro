@@ -34,9 +34,9 @@
   		android:layout_below="@+id/dialog_text_contact"
   		android:layout_alignLeft="@+id/dialog_text_contact"
   		android:layout_alignRight="@+id/dialog_text_contact"
-  		android:src="@drawable/android_duda"
-	  	android:layout_width="fill_parent"
-	  	android:layout_height="wrap_content">
+  		android:src="@drawable/call_confirm"
+	  	android:layout_width="wrap_content"
+	  	android:layout_height="100sp">
   	</ImageView>
   	
   	<Button
@@ -51,7 +51,8 @@
   		android:textStyle="bold"
   		android:gravity="center"
   		android:layout_marginLeft="15dip"
-  		android:layout_marginRight="15dip">
+  		android:layout_marginRight="15dip"
+  		android:background="@drawable/button_single_rounded_bg">
   	</Button>
   	
   	<LinearLayout

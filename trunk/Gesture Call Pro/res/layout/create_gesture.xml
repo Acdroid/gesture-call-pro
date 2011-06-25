@@ -62,7 +62,7 @@
 		            android:layout_height="fill_parent"
 		            android:layout_weight="1"		
 		            android:enabled="false"
-					android:background="@drawable/button_menu_bar_left"
+					android:background="@drawable/button_menu_bar_left_bg"
 		            android:onClick="doneGesture"
 		            android:text="@string/button_done" />
 		    
@@ -71,7 +71,7 @@
 		            android:layout_width="0dip"
 		            android:layout_height="fill_parent"
 		            android:layout_weight="1"
-		            android:background="@drawable/button_menu_bar_right"
+		            android:background="@drawable/button_menu_bar_right_bg"
 		            android:onClick="cancelGesture"
 		            android:text="@string/cancelGesture" />
 		    

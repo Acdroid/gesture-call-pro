@@ -4,8 +4,8 @@
   android:layout_width="fill_parent"
   android:layout_height="fill_parent"
   android:orientation="vertical"
- android:gravity="top"
- >
+  android:gravity="top"
+  android:background="@drawable/gradiente_android">
   
   
   <TextView
@@ -16,11 +16,9 @@
   	android:text="@string/pref_main"
   	android:background="@color/gris"
   	android:textColor="@android:color/primary_text_dark"
-  	android:textSize="20dip"
-  	></TextView>
+  	android:textSize="20dip"></TextView>
   	
-  	<LinearLayout
-  	
+  	<LinearLayout  	
   	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
 	    android:orientation="horizontal">
@@ -30,8 +28,8 @@
 		  	android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
 		  	android:id="@+id/pref_check"
-		  	android:checked="false"
-		></CheckBox>
+		  	android:checked="false">
+		</CheckBox>
 		
 		<LinearLayout
 			android:layout_width="fill_parent"
@@ -56,53 +54,53 @@
 	   			android:textSize="15dip"
 	   			android:textStyle="bold">
 	   			</TextView>
-	    	</LinearLayout>
+	    	</LinearLayout>	    		    
 	    	
-	    
-	    
+	    		    	
 	    </LinearLayout>
+	    
+	    
+
 
   	
-  	
-  	<LinearLayout
-
-         	android:gravity="bottom"
-
-            android:layout_width="fill_parent"
-	        android:layout_height="fill_parent">
-  	
- 	<LinearLayout
-         style="@android:style/ButtonBar"
-         	android:gravity="bottom"
-
-            android:layout_width="fill_parent"
-	        android:layout_height="wrap_content"
-	
-	        android:orientation="horizontal">
-	        <Button
-	            android:id="@+id/pref_save_utton"
-	            android:onClick="clickSave"
-	
-	            android:layout_width="0dip"
-	            android:layout_height="wrap_content"
-	            android:layout_weight="1"
-	
-	            android:text="@string/button_save" />
-	
-	        <Button
-	        	android:id="@+id/pref_button_volver"
-	            android:onClick="clickReturn"
-	
-	            android:layout_width="0dip"
-	            android:layout_height="wrap_content"
-	            android:layout_weight="1"
-	            
-	
-	            android:text="@string/button_volver" />
-
-
-</LinearLayout>
-    </LinearLayout>
+     <LinearLayout
+	        android:layout_height="fill_parent"
+	        android:layout_width="fill_parent"
+	        android:gravity="bottom">	        
+	        
+			        	
+			    <LinearLayout
+		         	android:gravity="bottom"
+		            android:layout_width="fill_parent"
+			        android:layout_height="wrap_content"			
+			        android:orientation="horizontal"
+			        android:padding="5dip"
+			        android:background="@drawable/gradient_header">
+		        
+			 
+		       			 <Button
+			            	android:id="@+id/pref_save_utton"
+			            	android:onClick="clickSave"
+			            	android:text="@string/button_save"       
+				            android:layout_width="0dip"
+				            android:layout_height="fill_parent"
+				            android:layout_weight="1"		            
+				            android:padding="10dip"
+				            android:background="@drawable/button_menu_bar_left_bg"/>
+				    
+				        <Button
+				        	android:id="@+id/pref_button_volver"
+			            	android:onClick="clickReturn"
+			          		android:text="@string/button_volver" 
+				            android:layout_width="0dip"
+				            android:layout_height="fill_parent"
+				            android:layout_weight="1"		            
+				            android:padding="10dip"		           
+				            android:background="@drawable/button_menu_bar_right_bg"/>
+				            
+			 
+			    </LinearLayout>
+	</LinearLayout>
   	
   	
 </LinearLayout>
