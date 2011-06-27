@@ -73,15 +73,18 @@
 			  	    android:layout_width="fill_parent"
 				    android:layout_height="wrap_content"
 				    android:orientation="horizontal"
-				    android:enabled="false">
+>
 				    			    
-					<ImageView
+					<TextView
 				    	android:gravity="center"
 					  	android:layout_width="wrap_content"
 					    android:layout_height="wrap_content"
-					  	android:id="@+id/pref_ima_seconds"
-					  	android:src="@android:drawable/btn_dropdown">
-					</ImageView>	
+					    android:textSize="25dip"
+					    android:textColor="@color/white"
+					    android:textStyle="bold"
+					  	android:id="@+id/pref_text_seconds"
+					  	android:onClick="clickSecsAfterCall">
+					</TextView>	
 					
 					<LinearLayout
 						android:layout_width="fill_parent"

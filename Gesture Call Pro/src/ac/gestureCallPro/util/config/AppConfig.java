@@ -177,7 +177,7 @@ public class AppConfig extends MSharedPreferences{
 		put(false,RETURN_AFTER_CALL);
 		put(main.ACCION_LLAMAR,ACCION_POR_DEFECTO);
 		put(Themes.GREY,THEME);
-		put(new Long(4000),S_AFTER_CALL);
+		put(new Long(3000),S_AFTER_CALL);
 		put(2,VERSION); //Imprescindible siempre poner
 	}
 
