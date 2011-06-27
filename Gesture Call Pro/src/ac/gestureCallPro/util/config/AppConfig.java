@@ -18,25 +18,28 @@ import android.util.Log;
  * se encarga de interceder entre esta y la aplicacion
  * facilitando su uso. Contiene una serie de Static con
  * todas las posibles preferencias que se pueden guardar.
- * Durante el primer uso guarda la configuraciï¿½n inicial.
+ * Durante el primer uso guarda la configuracion inicial.
  * @author mtrujillo & cdiaz
  */
 public class AppConfig extends MSharedPreferences{
-	public static final String VERSION = "version";
-	public static final String FIRST_TIME = "first_time";
-	public static final String NAME = "GestureCall";
-	public static final String AVISO_AL_LLAMAR = "ask_before_call";
-	public static final String DEBUG = "debug";
-	public static final String NOTIFICATION = "notification";
-	public static final String RETURN_AFTER_CALL = "returnAfterCall";
-	public static final String ACCION_POR_DEFECTO = "defAction";
-	public static final String THEME = "theme";
+	public static final String VERSION = "version"; //version
+	@Deprecated
+	public static final String FIRST_TIME = "first_time"; //deprecated
+	public static final String NAME = "GestureCall"; //Nombre del fichero de configuracion
+	public static final String AVISO_AL_LLAMAR = "ask_before_call"; //Se avisara antes de lamar o no
+	public static final String DEVELOPERS = "developers"; //Solo para desarrollar
+	public static final String NOTIFICATION = "notification"; //Poner o no notificacion
+	public static final String RETURN_AFTER_CALL = "returnAfterCall"; //Salir de la app al terminar de llamar
+	public static final String ACCION_POR_DEFECTO = "defAction"; //accion por defecto llamar, sms o perdida?
+	public static final String THEME = "theme"; //Theme elegido
+	public static final String S_AFTER_CALL = "secondsAfterCall"; //tiempo en segundos antes de llamar, sms o perdida
 	
     public static final class Themes {
         public static final int GREY = 0;
         public static final int GREEN = 1;
         public static final int BLUE = 2;
     }
+    
 	
 
 	private static final String dir = Environment.getExternalStorageDirectory() + "/GestureCall";
@@ -47,9 +50,10 @@ public class AppConfig extends MSharedPreferences{
 		super(mContext,name);
 		
 		//para el desarrollo por si se quiere hacer cosas especiales
+		//put(true,DEVELOPERS);
 		try {
-			if( (pref.contains(DEBUG)) && (getBool(DEBUG) == true)){
-				makeDEBUG();
+			if( (pref.contains(DEVELOPERS)) && (getBool(DEVELOPERS) == true)){
+				makeDevelopers();
 				return;
 			}
 		} catch (NoPreferenceException e) {
@@ -173,6 +177,7 @@ public class AppConfig extends MSharedPreferences{
 		put(false,RETURN_AFTER_CALL);
 		put(main.ACCION_LLAMAR,ACCION_POR_DEFECTO);
 		put(Themes.GREY,THEME);
+		put(new Long(4000),S_AFTER_CALL);
 		put(2,VERSION); //Imprescindible siempre poner
 	}
 
@@ -184,12 +189,14 @@ public class AppConfig extends MSharedPreferences{
 	 * Por ejemplo para añadir nuevas opciones
 	 * durante el desarrollo
 	 */
-	private void makeDEBUG(){
-		//Poner flags que se quieran probar
-//		put(main.ACCION_LLAMAR,ACCION_POR_DEFECTO);
+	private void makeDevelopers(){
+//		Log.d("DEBUG","pasa por developers");
+//		//Poner flags que se quieran probar
+// 		put(main.ACCION_SMS,ACCION_POR_DEFECTO);
 //		put(true,NOTIFICATION);
-		put(Themes.BLUE,THEME);
-		logOptions(); //Muestra todas las opciones menos FIRST_TIME
+//		put(Themes.GREEN,THEME);
+//		put(new Long(4000),S_AFTER_CALL);
+//		logOptions(); //Muestra todas las opciones menos FIRST_TIME
 		return;
 	}
 	
@@ -199,14 +206,15 @@ public class AppConfig extends MSharedPreferences{
 	private void logOptions(){
 		
 		try {
-			Log.d("DEBUG",ACCION_POR_DEFECTO + " " +  getInt(ACCION_POR_DEFECTO)) ;
+			Log.d("DEBUG",ACCION_POR_DEFECTO + " " +  getInt(ACCION_POR_DEFECTO) + " (0 llamar,1 sms, 2 perdida)" ) ;
 					
 			Log.d("DEBUG", AVISO_AL_LLAMAR + " " + getBool(AVISO_AL_LLAMAR)  );
-			Log.d("DEBUG",DEBUG + " " + getBool(DEBUG));
+			Log.d("DEBUG",DEVELOPERS + " " + getBool(DEVELOPERS));
 			Log.d("DEBUG",NOTIFICATION + " " + getBool(NOTIFICATION));
 			Log.d("DEBUG",RETURN_AFTER_CALL + " " + getBool(RETURN_AFTER_CALL));
 			Log.d("DEBUG",VERSION + " " + getInt(VERSION));
 			Log.d("DEBUG",THEME + " " + getInt(THEME) + "  (0 gris,1verde,2azul)");
+			Log.d("DEBUG",S_AFTER_CALL + " " + getLong(S_AFTER_CALL));
 			
 			
 		} catch (NoPreferenceException e) {

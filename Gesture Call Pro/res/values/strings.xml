@@ -5,6 +5,14 @@
     
     <!--  NUEVAS -->
     <string name ="click_gesture">Access Gesture Call !</string>
+    <string name ="pref_exit_after_call">Exit after call</string>
+    <string name ="pref_exit_after_call_summary">Cuando se termine la llamada o se envíe el sms el programa se cerrará</string>
+    <string name ="pref_notification">Usar modo notificación</string>
+    <string name ="pref_notification_summary">Pone en el area de notificaciones un acceso rápido a la aplicación para 
+    acceder rápidamente a ésta desde cualquier programa.</string>
+    <string name ="pref_seconds">Seconds after call</string>
+    <string name ="pref_seconds_summary">Número de segundos antes de realizar la llamada o abrir la mensajería automáticamente.</string>
+    
     
     
     <!--  Button -->
