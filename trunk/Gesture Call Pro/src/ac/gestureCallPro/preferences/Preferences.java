@@ -8,7 +8,10 @@ import ac.gestureCallPro.exceptions.NoPreferenceException;
 import ac.gestureCallPro.ui.main;
 import ac.gestureCallPro.util.config.AppConfig;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -16,24 +19,31 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.TextView;
 
 /**
  * @author marcos
  *
  */
 public class Preferences extends Activity{
-	
+	public static final int DIALOG_SEGUNDOS = 1;
 	private AppConfig ap;
 	private CheckBox c;
 	
 	private boolean askBefore;
 	private boolean exitAC;
 	private boolean notification;
+	private long numSecs;
+	
+	public Context mContext;
+	final CharSequence[] items = {"1 second", "2 seconds", "3 seconds", "4 seconds","5 seconds"};
+	
 	
 
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mContext = this;
         setContentView(R.layout.pref);
         getValues();
         initValues();
@@ -54,17 +64,21 @@ public class Preferences extends Activity{
 		Preferences.this.finish();
 	}
 	
+	public void clickSecsAfterCall(View v){
+		showDialog(DIALOG_SEGUNDOS);
+	}
+	
 	private void getValues(){
 		ap = new AppConfig(this, AppConfig.NAME);
 		try {
 			askBefore = ap.getBool(AppConfig.AVISO_AL_LLAMAR);
 			exitAC = ap.getBool(AppConfig.RETURN_AFTER_CALL);
 			notification = ap.getBool(AppConfig.NOTIFICATION);
+			numSecs = ap.getLong(AppConfig.S_AFTER_CALL);
 			Log.d("DEBUG","1" + notification + "");
 			
 		} catch (NoPreferenceException e) {
 			Log.d("DEBUG",e.getMessage());
-			Log.d("DEBUG","1" + notification + "");
 		}
 		
 		
@@ -72,6 +86,10 @@ public class Preferences extends Activity{
 	private void initValues(){
 		CheckBox c = (CheckBox) findViewById(R.id.pref_check);
 		c.setChecked(askBefore);
+		
+		TextView t = (TextView)findViewById(R.id.pref_text_seconds);
+		t.setText(numSecs+ "\nsecs");
+		
 		
 		c = (CheckBox)findViewById(R.id.pref_check_exit_after_call);
 		c.setChecked(exitAC);
@@ -86,6 +104,8 @@ public class Preferences extends Activity{
 	private void saveValues(){
 		CheckBox c = (CheckBox) findViewById(R.id.pref_check);
 		ap.put(c.isChecked(), AppConfig.AVISO_AL_LLAMAR);
+		
+		ap.put(numSecs, AppConfig.S_AFTER_CALL);
 		
 		c = (CheckBox) findViewById(R.id.pref_check_exit_after_call);
 		ap.put(c.isChecked(), AppConfig.RETURN_AFTER_CALL);
@@ -132,7 +152,26 @@ public class Preferences extends Activity{
 	}
 	
 	
-	
+	@Override
+	protected Dialog onCreateDialog(int id) {
+		@SuppressWarnings("unused")
+		Dialog dialog;
+		switch(id) {
+		case DIALOG_SEGUNDOS:
+			AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+			builder.setTitle(mContext.getResources().getString(R.string.select_secs));
+			builder.setItems(items, new DialogInterface.OnClickListener() {
+			    public void onClick(DialogInterface dialog, int item) {
+			        numSecs = new Long((item +1) * 1000);
+			    }
+			});
+			AlertDialog alert = builder.create();
+			return alert;
+		default:
+			return dialog = null;
+		}
+	}
+
 	
 	
 	
