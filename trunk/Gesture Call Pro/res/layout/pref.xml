@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="fill_parent"
   android:layout_height="fill_parent"
@@ -7,66 +7,220 @@
   android:gravity="top"
   android:background="@drawable/gradiente_android">
   
-  
-  <TextView
-  	android:gravity="left"
-  	android:padding="5dip"
- 	android:layout_width="fill_parent"
-  	android:layout_height="wrap_content"
-  	android:text="@string/pref_main"
-  	android:background="@color/gris"
-  	android:textColor="@android:color/primary_text_dark"
-  	android:textSize="20dip"></TextView>
-  	
-  	<LinearLayout  	
-  	    android:layout_width="fill_parent"
-	    android:layout_height="wrap_content"
-	    android:orientation="horizontal">
-	    
-	    <CheckBox
-	    	android:gravity="center"
-		  	android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		  	android:id="@+id/pref_check"
-		  	android:checked="false">
-		</CheckBox>
-		
-		<LinearLayout
-			android:layout_width="fill_parent"
-	   		android:layout_height="wrap_content"
-	    	android:orientation="vertical"
-	    	android:gravity="left"
-	    	android:padding="6dip">
-	    	
-	    	<TextView
-	    		android:layout_width="fill_parent"
-	   			android:layout_height="wrap_content"
-	   			android:text="@string/pref_ask"
-	   			android:textColor="@android:color/primary_text_dark"
-	   			android:textSize="17dip"
-	   			android:textStyle="bold">
-	   			</TextView>
-	    	<TextView
-	    		android:layout_width="fill_parent"
-	   			android:layout_height="wrap_content"
-	   			android:text="@string/pref_ask_summary"
-	   			android:textColor="@android:color/secondary_text_dark"
-	   			android:textSize="15dip"
-	   			android:textStyle="bold">
-	   			</TextView>
-	    	</LinearLayout>	    		    
-	    	
-	    		    	
-	    </LinearLayout>
-	    
-	    
+	<ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_alignParentTop="true"
+        >
+        <LinearLayout
+        	android:layout_width="fill_parent"
+        	android:layout_height="wrap_content"
+        	android:orientation="vertical">
+			  <TextView
+			  	android:gravity="left"
+			  	android:padding="5dip"
+			 	android:layout_width="fill_parent"
+			  	android:layout_height="wrap_content"
+			  	android:text="@string/pref_main"
+			  	android:background="@color/gris"
+			  	android:textColor="@android:color/primary_text_dark"
+			  	android:textSize="20dip"></TextView>
+			  	
+			  	
+			  	<!-- Preferencia Antes de llamar -->
+			  	<LinearLayout  	
+			  	    android:layout_width="fill_parent"
+				    android:layout_height="wrap_content"
+				    android:orientation="horizontal">
+				    
+				    <CheckBox
+				    	android:gravity="center"
+					  	android:layout_width="wrap_content"
+					    android:layout_height="wrap_content"
+					  	android:id="@+id/pref_check"
+					  	android:checked="false">
+					</CheckBox>
+					
+					<LinearLayout
+						android:layout_width="fill_parent"
+				   		android:layout_height="wrap_content"
+				    	android:orientation="vertical"
+				    	android:gravity="left"
+				    	android:padding="6dip">
+				    	
+				    	<TextView
+				    		android:layout_width="fill_parent"
+				   			android:layout_height="wrap_content"
+				   			android:text="@string/pref_ask"
+				   			android:textColor="@android:color/primary_text_dark"
+				   			android:textSize="17dip"
+				   			android:textStyle="bold">
+				   			</TextView>
+				    	<TextView
+				    		android:layout_width="fill_parent"
+				   			android:layout_height="wrap_content"
+				   			android:text="@string/pref_ask_summary"
+				   			android:textColor="@android:color/secondary_text_dark"
+				   			android:textSize="14dip"
+				   			android:textStyle="bold">
+				   		</TextView>
+				    </LinearLayout>	    		    
+			    	
 
+			    </LinearLayout>
+			    <LinearLayout  	
+			  	    android:layout_width="fill_parent"
+				    android:layout_height="wrap_content"
+				    android:orientation="horizontal"
+				    android:enabled="false">
+				    			    
+					<ImageView
+				    	android:gravity="center"
+					  	android:layout_width="wrap_content"
+					    android:layout_height="wrap_content"
+					  	android:id="@+id/pref_ima_seconds"
+					  	android:src="@android:drawable/btn_dropdown">
+					</ImageView>	
+					
+					<LinearLayout
+						android:layout_width="fill_parent"
+				   		android:layout_height="wrap_content"
+				    	android:orientation="vertical"
+				    	android:gravity="left"
+				    	android:padding="6dip">
+				    	
+				    	<TextView
+				    		android:layout_width="fill_parent"
+				   			android:layout_height="wrap_content"
+				   			android:text="@string/pref_seconds"
+				   			android:textColor="@android:color/primary_text_dark"
+				   			android:textSize="15dip"
+				   			android:textStyle="bold">
+				   			</TextView>
+				    	<TextView
+				    		android:layout_width="fill_parent"
+				   			android:layout_height="wrap_content"
+				   			android:text="@string/pref_seconds_summary"
+				   			android:textColor="@android:color/secondary_text_dark"
+				   			android:textSize="12dip"
+				   			android:textStyle="bold">
+				   		</TextView>
+				    </LinearLayout>
+				    
+    		    
+			    	
+
+			    </LinearLayout>
+			    
+			 <LinearLayout
+			 	android:layout_width="fill_parent"
+			    android:layout_height="2dip"
+			    android:background="@color/gris"
+			 	></LinearLayout>
+			    
+			    <!-- Preferencia  salir al terminar de llamar-->
+		  	<LinearLayout  	
+		  	    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:orientation="horizontal">
+			    
+			    <CheckBox
+			    	android:gravity="center"
+				  	android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				  	android:id="@+id/pref_check_exit_after_call"
+				  	android:checked="false">
+				</CheckBox>
+				
+				<LinearLayout
+					android:layout_width="fill_parent"
+			   		android:layout_height="wrap_content"
+			    	android:orientation="vertical"
+			    	android:gravity="left"
+			    	android:padding="6dip">
+			    	
+			    	<TextView
+			    		android:layout_width="fill_parent"
+			   			android:layout_height="wrap_content"
+			   			android:text="@string/pref_exit_after_call"
+			   			android:textColor="@android:color/primary_text_dark"
+			   			android:textSize="17dip"
+			   			android:textStyle="bold">
+			   			</TextView>
+			    	<TextView
+			    		android:layout_width="fill_parent"
+			   			android:layout_height="wrap_content"
+			   			android:text="@string/pref_exit_after_call_summary"
+			   			android:textColor="@android:color/secondary_text_dark"
+			   			android:textSize="14dip"
+			   			android:textStyle="bold">
+			   		</TextView>
+			    </LinearLayout>	    		    
+		    </LinearLayout>
+		    
+		    <LinearLayout
+			 	android:layout_width="fill_parent"
+			    android:layout_height="2dip"
+			    android:background="@color/gris"
+			 	></LinearLayout>
+			 	
+			 	
+			<!-- Notificacion-->
+		  	<LinearLayout  	
+		  	    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:orientation="horizontal">
+			    
+			    <CheckBox
+			    	android:gravity="center"
+				  	android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				  	android:id="@+id/pref_check_notification"
+				  	android:checked="false">
+				</CheckBox>
+				
+				<LinearLayout
+					android:layout_width="fill_parent"
+			   		android:layout_height="wrap_content"
+			    	android:orientation="vertical"
+			    	android:gravity="left"
+			    	android:padding="6dip">
+			    	
+			    	<TextView
+			    		android:layout_width="fill_parent"
+			   			android:layout_height="wrap_content"
+			   			android:text="@string/pref_notification"
+			   			android:textColor="@android:color/primary_text_dark"
+			   			android:textSize="17dip"
+			   			android:textStyle="bold">
+			   			</TextView>
+			    	<TextView
+			    		android:layout_width="fill_parent"
+			   			android:layout_height="wrap_content"
+			   			android:text="@string/pref_notification_summary"
+			   			android:textColor="@android:color/secondary_text_dark"
+			   			android:textSize="14dip"
+			   			android:textStyle="bold">
+			   		</TextView>
+			    </LinearLayout>	    		    
+		    </LinearLayout>
+		    
+		    <LinearLayout
+			 	android:layout_width="fill_parent"
+			    android:layout_height="2dip"
+			    android:background="@color/gris"
+			 	></LinearLayout>
+	    
+	   </LinearLayout> 
+</ScrollView>
 
   	
      <LinearLayout
 	        android:layout_height="fill_parent"
 	        android:layout_width="fill_parent"
-	        android:gravity="bottom">	        
+	        android:gravity="bottom"
+	        android:layout_alignParentBottom="true">	        
 	        
 			        	
 			    <LinearLayout
@@ -103,4 +257,4 @@
 	</LinearLayout>
   	
   	
-</LinearLayout>
+</RelativeLayout>

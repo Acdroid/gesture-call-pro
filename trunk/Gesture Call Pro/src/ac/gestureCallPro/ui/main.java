@@ -53,6 +53,8 @@ public class main extends Activity {
 	public static final int RESULT_SALIR = 2;
 	public static final int RESULT_REALOAD_GESTURES = 3;
 	public static final int RESULT_GESTO_ADD_OK = 4;
+	public static final int RESULT_PREF_SAVED = 5;
+	public static final int RESULT_PREF_NOT_SAVED = 6;
 	public static final int ID = 0;
 	public static final int DIALOG_SALIR = 0;
 	public static final int DIALOG_CALL = 1;
@@ -140,7 +142,13 @@ public class main extends Activity {
 		setStatusBarNotification();
 		
 		//La cuenta atras para las llamadas
-		countdown = new CallCountDown(5000, 1000);
+		long intervalo;
+		try {
+			intervalo = ap.getLong(AppConfig.S_AFTER_CALL);
+		} catch (NoPreferenceException e) {
+			intervalo=3000; //Ponemos intervalo por defecto si ocurre un error
+		}
+		countdown = new CallCountDown(intervalo, 1000);
 				
 		
 		//accion por defecto
