@@ -48,7 +48,7 @@ import android.widget.Toast;
 public class main extends Activity {
 
 	public static final String NO_PREDICCION = "Sin_Resultado";
-	public static final int RESULT_OK = 0;
+//	public static final int RESULT_OK = 0;
 	public static final int RESULT_ERROR = 1;
 	public static final int RESULT_SALIR = 2;
 	public static final int RESULT_REALOAD_GESTURES = 3;
@@ -66,7 +66,7 @@ public class main extends Activity {
 
 	public GestureOverlayView overlay;
 	public static GesturesRecognizer gr;
-	public LinearLayout lay_main;
+	public LinearLayout lay_main; 
 	public  AppConfig ap;
 	public Dialog dialogCall;
 	public String prediccionActual="";
@@ -75,6 +75,7 @@ public class main extends Activity {
 	public CallCountDown countdown;
 	
 	public boolean smsOn=false;
+	public boolean isOnCallingSms=false;
 
 	private final String dir = Environment.getExternalStorageDirectory() + "/GestureCall";
 	private final String fich = "gestures";
@@ -123,11 +124,6 @@ public class main extends Activity {
 
 		mContext = this;
 
-		//Iniciamos el dialog
-		//TODO cambiar esto , hay que sacarlo fuera de aqui
-		createDialog();
-
-
 		//Cargamos las opciones
 		ap = new AppConfig(this, AppConfig.NAME);
 
@@ -149,7 +145,9 @@ public class main extends Activity {
 			intervalo=3000; //Ponemos intervalo por defecto si ocurre un error
 		}
 		countdown = new CallCountDown(intervalo, 1000);
-				
+		//Iniciamos el dialog
+		//TODO cambiar esto , hay que sacarlo fuera de aqui
+		createDialog();
 		
 		//accion por defecto
 		setDefaultAction();
@@ -228,18 +226,43 @@ public class main extends Activity {
 
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		if (requestCode == ID){
+			Log.d("DEBUG","Resulto code es : " + requestCode);
 			switch (resultCode){
 			case RESULT_OK:
+				Log.d("DEBUG","pasa por resulto OK");
+				break;
+			case RESULT_CANCELED:
+				boolean aux;
+				try {
+					aux = ap.getBool(AppConfig.RETURN_AFTER_CALL);
+				} catch (NoPreferenceException e) {
+					isOnCallingSms=false;//Si falla no salimos
+					return;
+				}
+				
+				//Si venimos de una llamada y se quiere sarir despues de llamar
+				if ((aux) && (isOnCallingSms)){
+					isOnCallingSms=false;
+					main.this.finish();
+				}
+				else{
+					//sino volvemos a poner isOnCallingSms a fale
+					isOnCallingSms=false;
+				}
+				
 				break;
 			case RESULT_ERROR:
+				Log.d("DEBUG","pasa por resulto error");
 				break;
 			case RESULT_SALIR:
 				main.this.finish();
 			case RESULT_REALOAD_GESTURES:
 				getStore().load();
 				break;
+			case RESULT_PREF_SAVED:
+				setStatusBarNotification();				
 			default:
-
+				Log.d("DEBUG","pasa por resulto default");
 			}
 
 			getStore().load();
@@ -392,12 +415,15 @@ public class main extends Activity {
 
 		switch (accionActual) {
 		case ACCION_LLAMAR:
+			isOnCallingSms=true;
 			call(prediccion);			
 			break;
 		case ACCION_SMS:
+			isOnCallingSms=true;
 			sms(prediccion);
 			break;
 		case ACCION_PERDIDA:
+			//isOnCallingSms=true;
 			missedCall(prediccion);
 			break;
 		default:
@@ -544,6 +570,7 @@ public class main extends Activity {
 		dialogCall.setOnCancelListener(new OnCancelListener() {			
 			@Override
 			public void onCancel(DialogInterface dialog) {
+				countdown.setIsPressedButtonSi(false);
 				countdown.cancel();				
 			}
 		});
@@ -554,6 +581,7 @@ public class main extends Activity {
 		buttonDialog.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				countdown.setIsPressedButtonSi(true);
 				callActions();
 				dialogCall.dismiss();
 			}
@@ -605,6 +633,7 @@ public class main extends Activity {
     class CallCountDown extends CountDownTimer{
 
     	Button button;
+    	boolean isPressedButtonSi=false;
     	
     	public CallCountDown(long millisInFuture, long countDownInterval) {
     		super(millisInFuture, countDownInterval);
@@ -614,11 +643,20 @@ public class main extends Activity {
     		this.button = b;
     	}
     	
+    	public void setIsPressedButtonSi(boolean pressed){
+    		isPressedButtonSi = pressed;
+    	}
+    	
     	@Override
     	public void onFinish() {
+    		if(isPressedButtonSi){
+    			isPressedButtonSi=false;
+    			return;
+    		}
     		callActions();
     		dialogCall.dismiss();
     	}
+    	
 
     	@Override
     	public void onTick(long millisUntilFinished) {

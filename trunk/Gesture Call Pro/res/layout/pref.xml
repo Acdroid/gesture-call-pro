@@ -39,7 +39,8 @@
 					  	android:layout_width="wrap_content"
 					    android:layout_height="wrap_content"
 					  	android:id="@+id/pref_check"
-					  	android:checked="false">
+					  	android:checked="false"
+					  	android:onClick="clickCheckBoxAfterCall">
 					</CheckBox>
 					
 					<LinearLayout
@@ -69,31 +70,52 @@
 			    	
 
 			    </LinearLayout>
-			    <LinearLayout  	
+			    <!--  Preferencia tiempo en segundos antes de llamar -->
+			    <LinearLayout
+			    	android:id="@+id/pref_lay_secs_after_call"
 			  	    android:layout_width="fill_parent"
 				    android:layout_height="wrap_content"
 				    android:orientation="horizontal"
->
-				    			    
-					<TextView
-				    	android:gravity="center"
+				    android:onClick="clickSecsAfterCall"
+				    android:paddingLeft="15dip">
+				    <LinearLayout
 					  	android:layout_width="wrap_content"
-					    android:layout_height="wrap_content"
-					    android:textSize="25dip"
-					    android:textColor="@color/white"
-					    android:textStyle="bold"
-					  	android:id="@+id/pref_text_seconds"
-					  	android:onClick="clickSecsAfterCall">
-					</TextView>	
+		        		android:layout_height="wrap_content"
+		        		android:orientation="vertical"
+		        		android:gravity="center">		    
+							<TextView
+						    	android:gravity="center"
+							  	android:layout_width="wrap_content"
+							    android:layout_height="wrap_content"
+							    android:textColor="@color/white"
+							    android:textStyle="bold"
+							    android:textSize="25dip"
+							  	android:id="@+id/pref_text_seconds"
+							  	>
+							</TextView>
+							<TextView
+						    	android:gravity="center"
+							  	android:layout_width="wrap_content"
+							    android:layout_height="wrap_content"
+							    android:text="@string/secs"
+							    android:textSize="20dip"
+							    android:textColor="@color/azul_claro"
+							    android:textStyle="bold"
+							    android:id="@+id/pref_text_secs"
+							  	>
+							</TextView>
+						</LinearLayout>	
 					
 					<LinearLayout
 						android:layout_width="fill_parent"
 				   		android:layout_height="wrap_content"
 				    	android:orientation="vertical"
 				    	android:gravity="left"
-				    	android:padding="6dip">
+				    	android:padding="6dip"
+				    	>
 				    	
 				    	<TextView
+				    		android:id="@+id/pref_text_seconds_large"
 				    		android:layout_width="fill_parent"
 				   			android:layout_height="wrap_content"
 				   			android:text="@string/pref_seconds"
@@ -102,6 +124,7 @@
 				   			android:textStyle="bold">
 				   			</TextView>
 				    	<TextView
+				    		android:id="@+id/pref_text_seconds_large2"
 				    		android:layout_width="fill_parent"
 				   			android:layout_height="wrap_content"
 				   			android:text="@string/pref_seconds_summary"
