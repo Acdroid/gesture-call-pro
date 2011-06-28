@@ -13,6 +13,7 @@
     <color name="colorConversacion">#EBF1FF</color>
     <color name="rojo">#FF0000</color>
     <color name="azul">#0000FF</color>
+    <color name="azul_claro">#1B85CA</color>
     <color name="gesture_color">#FFFFFF00</color>
     <color name="amarillo_claro">#FFFFCB</color>
     

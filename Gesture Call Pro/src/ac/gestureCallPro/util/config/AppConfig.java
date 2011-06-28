@@ -171,7 +171,7 @@ public class AppConfig extends MSharedPreferences{
 	 * aviso al llamar e inclusion de la version
 	 */
 	private void makeV2(){		
-		//put(true,DEBUG); //SOLO PARA DESARROLLADORES, PONER A FALSE!
+		//put(true,DEVELOPERS); //SOLO PARA DESARROLLADORES, PONER A FALSE!
 		
 		put(true,NOTIFICATION);
 		put(false,RETURN_AFTER_CALL);
