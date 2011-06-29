@@ -157,6 +157,10 @@ public class main extends Activity {
 		setTheme();
 		
 		
+		//Aviso por pantalla //TODO donde poner esto? En appconfig o aqui
+		mToast.Make(this, getResources().getString(R.string.makeGesture), 1);
+		
+		
 	}
 
 
@@ -240,7 +244,7 @@ public class main extends Activity {
 					return;
 				}
 				
-				//Si venimos de una llamada y se quiere sarir despues de llamar
+				//Si venimos de una llamada y se quiere salir despues de llamar
 				if ((aux) && (isOnCallingSms)){
 					isOnCallingSms=false;
 					main.this.finish();
@@ -260,7 +264,17 @@ public class main extends Activity {
 				getStore().load();
 				break;
 			case RESULT_PREF_SAVED:
-				setStatusBarNotification();				
+				setStatusBarNotification();
+				
+				//Cargamos el contador
+				//La cuenta atras para las llamadas
+				long intervalo;
+				try {
+					intervalo = ap.getLong(AppConfig.S_AFTER_CALL);
+				} catch (NoPreferenceException e) {
+					intervalo=3000; //Ponemos intervalo por defecto si ocurre un error
+				}
+				countdown = new CallCountDown(intervalo, 1000);
 			default:
 				Log.d("DEBUG","pasa por resulto default");
 			}
