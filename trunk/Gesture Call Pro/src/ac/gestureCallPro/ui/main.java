@@ -197,7 +197,6 @@ public class main extends Activity {
 		}
 	}
 
-
 	public AppConfig getAp() {
 		return ap;
 	}
@@ -772,4 +771,45 @@ public class main extends Activity {
 	public int getTipoAccion(){
 		return tipoAccion;
 	}
+	
+	
+	
+	
+	// Comprobar estas funciones para el error de llamar si se pulsa
+	//  boton home cuando esta la cuenta atras y para la creacion de dialogs
+	
+
+	@Override
+	protected void onPrepareDialog(int id, Dialog dialog, Bundle args) {
+		// TODO Auto-generated method stub
+		super.onPrepareDialog(id, dialog, args);
+	}
+
+
+
+
+
+	@Override
+	protected void onPrepareDialog(int id, Dialog dialog) {
+		// TODO Auto-generated method stub
+		super.onPrepareDialog(id, dialog);
+	}
+
+
+
+
+
+	@Override
+	protected void onStop() {
+		super.onStop();
+		countdown.cancel();
+	}
+
+	
+	
+	
+	
+	
+	
+	
 }
