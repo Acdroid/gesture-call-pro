@@ -274,6 +274,8 @@ public class main extends Activity {
 					intervalo=3000; //Ponemos intervalo por defecto si ocurre un error
 				}
 				countdown = new CallCountDown(intervalo, 1000);
+				setTheme();
+				break;
 			default:
 				Log.d("DEBUG","pasa por resulto default");
 			}

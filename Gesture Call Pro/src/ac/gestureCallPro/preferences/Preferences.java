@@ -28,16 +28,19 @@ import android.widget.TextView;
  */
 public class Preferences extends Activity{
 	public static final int DIALOG_SEGUNDOS = 1;
+	public static final int DIALOG_THEMES = 2;
 	
 	public Context mContext;
 	final CharSequence[] items = {"1 second", "2 seconds", "3 seconds", "4 seconds","5 seconds", "6 seconds", "7 seconds", "8 seconds"
 			, "9 seconds", "10 seconds"};
+	final CharSequence[] themes = {"Grey","Green","Blue"}; //coinciden con appConfig.GREY GREEN y BLUE
 	
 	private AppConfig ap;
 	private boolean askBefore=true;
 	private boolean exitAC=false;
 	private boolean notification=true;
 	private Long numSecs;
+	private int theme;
 	
 	
 	
@@ -64,7 +67,7 @@ public class Preferences extends Activity{
 			exitAC = ap.getBool(AppConfig.RETURN_AFTER_CALL);
 			notification = ap.getBool(AppConfig.NOTIFICATION);
 			numSecs = ap.getLong(AppConfig.S_AFTER_CALL);
-			Log.d("DEBUG","numsecs " + numSecs);
+			theme = ap.getInt(AppConfig.THEME);
 			
 		} catch (NoPreferenceException e) {
 			Log.e("GestureCall_pro","Error al cargar preferencias en preferences.java." +
@@ -91,6 +94,7 @@ public class Preferences extends Activity{
 		c = (CheckBox)findViewById(R.id.pref_check_notification);
 		c.setChecked(notification);
         
+		putThemeInLayout();
 			
 		
 	}
@@ -107,6 +111,8 @@ public class Preferences extends Activity{
 		c = (CheckBox) findViewById(R.id.pref_check_notification);
 
 		ap.put(c.isChecked(), AppConfig.NOTIFICATION);
+		
+		ap.put(theme, AppConfig.THEME);
 	}
 	
 	
@@ -158,6 +164,18 @@ public class Preferences extends Activity{
 			});
 			AlertDialog alert = builder.create();
 			return alert;
+		case DIALOG_THEMES:
+			AlertDialog.Builder builder2 = new AlertDialog.Builder(mContext);
+			builder2.setTitle(mContext.getResources().getString(R.string.select_themes));
+			builder2.setItems(themes, new DialogInterface.OnClickListener() {
+			    public void onClick(DialogInterface dialog, int item) {
+			        theme = item;
+			        putThemeInLayout();
+			    }
+			});
+			AlertDialog alert2 = builder2.create();
+			return alert2;
+			
 		default:
 			return dialog = null;
 		}
@@ -181,6 +199,10 @@ public class Preferences extends Activity{
 		showDialog(DIALOG_SEGUNDOS);
 	}
 	
+	public void clickThemes(View v){
+		showDialog(DIALOG_THEMES);
+	}
+	
 	public void clickCheckBoxAfterCall(View v){
 		CheckBox c = (CheckBox)findViewById(R.id.pref_check);
 		//Si esta ok permitimos cambiar el tiempo, e.o.c lo inhabilitamos
@@ -191,6 +213,24 @@ public class Preferences extends Activity{
 		else{
 			enabledLayoutSecsAftercall(false);
 		}
+	}
+	
+	public void putThemeInLayout(){
+		LinearLayout l = (LinearLayout)findViewById(R.id.pref_lay_theme_withcolor);
+		switch (theme){
+		case AppConfig.Themes.GREY:
+			l.setBackgroundResource(R.color.gris);
+			break;
+		case AppConfig.Themes.GREEN:
+			l.setBackgroundResource(R.color.verde_android);
+			break;
+		case AppConfig.Themes.BLUE:
+			l.setBackgroundResource(R.color.azul_theme);
+			break;
+		default:
+			return;
+		}
+			
 	}
 	
 	/**
