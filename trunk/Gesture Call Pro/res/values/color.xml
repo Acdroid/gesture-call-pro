@@ -24,4 +24,7 @@
     <color name="overlay_blue">#FFAD48</color>
     <color name="overlay_blue_uncertain">#80FFAD48</color>
     
+    <color name="verde_android">#a4c639</color>
+    <color name="azul_theme">#4aace5</color>
+    
 </resources>

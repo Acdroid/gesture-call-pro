@@ -186,7 +186,7 @@ public class AppConfig extends MSharedPreferences{
 	
 	/**
 	 * Para el desarrollo por si se quieren probar cosas
-	 * Por ejemplo para añadir nuevas opciones
+	 * Por ejemplo para aï¿½adir nuevas opciones
 	 * durante el desarrollo
 	 */
 	private void makeDevelopers(){
@@ -194,7 +194,7 @@ public class AppConfig extends MSharedPreferences{
 //		//Poner flags que se quieran probar
 // 		put(main.ACCION_SMS,ACCION_POR_DEFECTO);
 //		put(true,NOTIFICATION);
-//		put(Themes.GREEN,THEME);
+		put(Themes.GREEN,THEME);
 //		put(new Long(4000),S_AFTER_CALL);
 //		logOptions(); //Muestra todas las opciones menos FIRST_TIME
 		return;
