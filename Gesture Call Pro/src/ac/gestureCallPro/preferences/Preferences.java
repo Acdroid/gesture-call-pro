@@ -215,6 +215,19 @@ public class Preferences extends Activity{
 		}
 	}
 	
+	public void clickNovedades(View v){
+		
+	}
+	
+	
+	public void clickAbout(View v){
+		Dialog dialog = new Dialog(this);
+		dialog.setContentView(R.layout.credits_layout);
+		dialog.setTitle("Credits:");
+		
+		dialog.show();
+	}
+	
 	public void putThemeInLayout(){
 		LinearLayout l = (LinearLayout)findViewById(R.id.pref_lay_theme_withcolor);
 		switch (theme){
@@ -222,10 +235,10 @@ public class Preferences extends Activity{
 			l.setBackgroundResource(R.color.gris);
 			break;
 		case AppConfig.Themes.GREEN:
-			l.setBackgroundResource(R.color.verde_android);
+			l.setBackgroundResource(R.drawable.background_green_gradient);
 			break;
 		case AppConfig.Themes.BLUE:
-			l.setBackgroundResource(R.color.azul_theme);
+			l.setBackgroundResource(R.drawable.background_blue_gradient);
 			break;
 		default:
 			return;
