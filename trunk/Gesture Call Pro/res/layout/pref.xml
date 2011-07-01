@@ -9,13 +9,13 @@
   
 	<ScrollView
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="fill_parent"
         
        
         >
         <LinearLayout
         	android:layout_width="fill_parent"
-        	android:layout_height="fill_parent"
+        	android:layout_height="wrap_content"
         	android:orientation="vertical"
         	android:layout_alignParentTop="true"
         	android:layout_margin="5dp">
@@ -242,6 +242,7 @@
 			 	
 			 	
 			 	
+		    
 			 <!-- Temas-->
 			 	
 			<TextView
@@ -256,7 +257,6 @@
 			  	android:textSize="20dip"></TextView>
 			  	
 			  <LinearLayout
-			    	android:id="@+id/pref_lay_themes"
 			  	    android:layout_width="fill_parent"
 				    android:layout_height="wrap_content"
 				    android:orientation="horizontal"
@@ -264,6 +264,65 @@
 				    android:paddingLeft="15dip">
 				    <LinearLayout
 				    	android:id="@+id/pref_lay_theme_withcolor"
+					  	android:layout_width="25dip"
+		        		android:layout_height="fill_parent"
+		        		android:orientation="vertical"
+		        		/>
+					
+					<LinearLayout
+						android:layout_width="fill_parent"
+				   		android:layout_height="wrap_content"
+				    	android:orientation="vertical"
+				    	android:gravity="left"
+				    	android:padding="6dip"
+				    	>
+				    	
+				    	<TextView
+				    		android:id="@+id/pref_text_themes"
+				    		android:layout_width="fill_parent"
+				   			android:layout_height="wrap_content"
+				   			android:text="@string/pref_themes"
+				   			android:textColor="@android:color/primary_text_dark"
+				   			android:textSize="17dip"
+				   			android:textStyle="bold">
+				   			</TextView>
+				    	<TextView
+				    		android:id="@+id/pref_text_themes2"
+				    		android:layout_width="fill_parent"
+				   			android:layout_height="wrap_content"
+				   			android:text="@string/pref_themes_summary"
+				   			android:textColor="@android:color/secondary_text_dark"
+				   			android:textSize="14dip"
+				   			android:textStyle="bold">
+				   		</TextView>
+				    </LinearLayout>
+				    
+    		    
+			    	
+
+			    </LinearLayout>
+			    			    
+			    
+				 <!-- About -->
+			 	
+			<TextView
+			  	android:gravity="left"
+			  	android:paddingTop="8dip"
+			  	android:padding="5dip"
+			 	android:layout_width="fill_parent"
+			  	android:layout_height="wrap_content"
+			  	android:text="About"
+			  	android:background="@color/gris"
+			  	android:textColor="@android:color/primary_text_dark"
+			  	android:textSize="20dip"></TextView>
+			  	
+			  <LinearLayout
+			  	    android:layout_width="fill_parent"
+				    android:layout_height="wrap_content"
+				    android:orientation="horizontal"
+				    android:onClick="clickNovedades"
+				    android:paddingLeft="15dip">
+				    <LinearLayout
 					  	android:layout_width="25dip"
 		        		android:layout_height="wrap_content"
 		        		android:orientation="vertical"
@@ -278,43 +337,135 @@
 				    	>
 				    	
 				    	<TextView
-				    		android:id="@+id/pref_text_seconds_large"
+				    		android:id="@+id/pref_text_novedades"
 				    		android:layout_width="fill_parent"
 				   			android:layout_height="wrap_content"
-				   			android:text="@string/pref_themes"
+				   			android:text="@string/pref_novedades"
 				   			android:textColor="@android:color/primary_text_dark"
-				   			android:textSize="15dip"
+				   			android:textSize="17dip"
 				   			android:textStyle="bold">
 				   			</TextView>
 				    	<TextView
-				    		android:id="@+id/pref_text_seconds_large2"
+				    		android:id="@+id/pref_text_novedades2"
 				    		android:layout_width="fill_parent"
 				   			android:layout_height="wrap_content"
-				   			android:text="@string/pref_themes_summary"
+				   			android:text="@string/pref_novedades_summary"
 				   			android:textColor="@android:color/secondary_text_dark"
-				   			android:textSize="12dip"
+				   			android:textSize="14dip"
 				   			android:textStyle="bold">
 				   		</TextView>
 				    </LinearLayout>
-				    
-    		    
-			    	
-
-			    </LinearLayout>
+				</LinearLayout>
+				
+				
+				 <LinearLayout
+				 	android:layout_width="fill_parent"
+				    android:layout_height="2dip"
+				    android:background="@color/gris"
+				 	></LinearLayout>
+			    		    
 			    
-			 <LinearLayout
-			 	android:layout_width="fill_parent"
-			    android:layout_height="2dip"
-			    android:background="@color/gris"
-			 	></LinearLayout>
-
+			    <LinearLayout
+			  	    android:layout_width="fill_parent"
+				    android:layout_height="wrap_content"
+				    android:orientation="horizontal"
+				    android:onClick="clickAbout"
+				    android:paddingLeft="15dip">
+				    <LinearLayout
+					  	android:layout_width="25dip"
+		        		android:layout_height="wrap_content"
+		        		android:orientation="vertical"
+		        		/>
+					
+					<LinearLayout
+						android:layout_width="fill_parent"
+				   		android:layout_height="wrap_content"
+				    	android:orientation="vertical"
+				    	android:gravity="left"
+				    	android:padding="6dip"
+				    	>
+				    	
+				    	<TextView
+				    		android:id="@+id/pref_text_about"
+				    		android:layout_width="fill_parent"
+				   			android:layout_height="wrap_content"
+				   			android:text="@string/pref_about"
+				   			android:textColor="@android:color/primary_text_dark"
+				   			android:textSize="17dip"
+				   			android:textStyle="bold">
+				   			</TextView>
+				    	<TextView
+				    		android:id="@+id/pref_text_about2"
+				    		android:layout_width="fill_parent"
+				   			android:layout_height="wrap_content"
+				   			android:text="@string/pref_about_summary"
+				   			android:textColor="@android:color/secondary_text_dark"
+				   			android:textSize="14dip"
+				   			android:textStyle="bold">
+				   		</TextView>
+				    </LinearLayout>
+				</LinearLayout>
+			    
+			    
+			   <LinearLayout
+				 	android:layout_width="fill_parent"
+				    android:layout_height="2dip"
+				    android:background="@color/gris">
+			   </LinearLayout>
+	
+	
+	
+	<!--  Hueco en blanco momentaneo -->
+			    <LinearLayout
+			    	
+			  	    android:layout_width="fill_parent"
+				    android:layout_height="wrap_content"
+				    android:orientation="horizontal"
+				    android:onClick="clickabout"
+				    android:paddingLeft="15dip">
+				    <LinearLayout
+					  	android:layout_width="25dip"
+		        		android:layout_height="wrap_content"
+		        		android:orientation="vertical"
+		        		/>
+					
+					<LinearLayout
+						android:layout_width="fill_parent"
+				   		android:layout_height="wrap_content"
+				    	android:orientation="vertical"
+				    	android:gravity="left"
+				    	android:padding="6dip"
+				    	>
+				    	
+				    	<TextView
+				    		
+				    		android:layout_width="fill_parent"
+				   			android:layout_height="22dip"
+				   			
+				   			android:textColor="@android:color/primary_text_dark"
+				   			android:textSize="20dip"
+				   			android:textStyle="bold">
+				   			</TextView>
+				    	<TextView
+				    		android:layout_width="fill_parent"
+				   			android:layout_height="17dip"
+				   			
+				   			android:textColor="@android:color/secondary_text_dark"
+				   			android:textSize="14dip"
+				   			android:textStyle="bold">
+				   		</TextView>
+				    </LinearLayout>
+				</LinearLayout>
 	    
 	   </LinearLayout> 
 </ScrollView>
 
+
+
+<!--  Botones de abajo guardar y volver -->
   	
      <LinearLayout
-	        android:layout_height="fill_parent"
+	        android:layout_height="wrap_content"
 	        android:layout_width="fill_parent"
 	        android:gravity="bottom"
 	        android:layout_alignParentBottom="true">	        
