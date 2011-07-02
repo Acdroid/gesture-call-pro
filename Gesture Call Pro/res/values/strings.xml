@@ -21,6 +21,10 @@
     <string name ="pref_novedades_summary">Novedades de la version 2.0</string>
     <string name ="pref_about">About</string>
     <string name ="pref_about_summary">About Gesture Call and credits</string>
+    <string name ="pref_def_action">Acción por defecto</string>
+    <string name ="select_dialog_def_action">Selecciona la acción por defecto</string>
+    <string name ="sms">SMS</string>
+    <string name ="call">Call</string>
 
 
     

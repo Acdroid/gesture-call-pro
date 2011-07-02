@@ -30,6 +30,91 @@
 			  	android:textSize="20dip"></TextView>
 			  	
 			  	
+			  	<!--  Accion por Defecto -->
+			  	
+			  	<LinearLayout
+			  	    android:layout_width="fill_parent"
+				    android:layout_height="wrap_content"
+				    android:orientation="horizontal"
+				    android:onClick="clickAccionDefecto"
+				    android:paddingLeft="15dip">
+				    <LinearLayout
+					  	android:layout_width="26dip"
+		        		android:layout_height="wrap_content"
+		        		android:orientation="vertical"
+		        		/>
+					
+					<LinearLayout
+						android:layout_width="fill_parent"
+				   		android:layout_height="wrap_content"
+				    	android:orientation="vertical"
+				    	android:gravity="left"
+				    	>
+				    	
+				    	<TextView
+				    		android:id="@+id/pref_text_about"
+				    		android:layout_width="fill_parent"
+				   			android:layout_height="wrap_content"
+				   			android:text="@string/pref_def_action"
+				   			android:textColor="@android:color/primary_text_dark"
+				   			android:textSize="17dip"
+				   			android:textStyle="bold">
+				   			</TextView>
+				    	
+				    	<LinearLayout 
+				    		android:layout_width="fill_parent"
+				   			android:layout_height="wrap_content"
+				   			android:orientation="horizontal"
+				   			android:gravity="center"
+				   			android:paddingTop="3dip">
+				    	
+				    		<TextView
+					    		android:id="@+id/pref_accion_def1"
+					    		android:layout_width="fill_parent"
+					   			android:layout_height="wrap_content"
+					   			android:layout_weight="1"
+					   			android:text="@string/call"
+					   			android:textColor="@android:color/secondary_text_dark"
+					   			android:textSize="17dip"
+					   			android:textStyle="bold">
+					   		</TextView>
+				    		
+				    		<TextView
+					    		android:id="@+id/pref_accion_def2"
+					    		android:layout_width="fill_parent"
+					   			android:layout_height="wrap_content"
+					   			android:layout_weight="1"
+					   			android:text="@string/sms"
+					   			android:textColor="@android:color/secondary_text_dark"
+					   			android:textSize="17dip"
+					   			android:textStyle="bold">
+					   		</TextView>
+				    	
+				    	</LinearLayout>
+				    	
+				    	
+				    	
+				    </LinearLayout>
+				</LinearLayout>
+			    
+			    
+			   <LinearLayout
+				 	android:layout_width="fill_parent"
+				    android:layout_height="2dip"
+				    android:background="@color/gris">
+			   </LinearLayout>
+			  	
+			  	
+			  	
+			  	
+			  	
+			  	
+			  	
+			  	
+			  	
+			  	
+			  	
+			  	
 			  	<!-- Preferencia Antes de llamar -->
 			  	<LinearLayout  	
 			  	    android:layout_width="fill_parent"
@@ -264,7 +349,7 @@
 				    android:paddingLeft="15dip">
 				    <LinearLayout
 				    	android:id="@+id/pref_lay_theme_withcolor"
-					  	android:layout_width="25dip"
+					  	android:layout_width="26dip"
 		        		android:layout_height="fill_parent"
 		        		android:orientation="vertical"
 		        		/>
@@ -323,7 +408,7 @@
 				    android:onClick="clickNovedades"
 				    android:paddingLeft="15dip">
 				    <LinearLayout
-					  	android:layout_width="25dip"
+					  	android:layout_width="26dip"
 		        		android:layout_height="wrap_content"
 		        		android:orientation="vertical"
 		        		/>
@@ -372,7 +457,7 @@
 				    android:onClick="clickAbout"
 				    android:paddingLeft="15dip">
 				    <LinearLayout
-					  	android:layout_width="25dip"
+					  	android:layout_width="26dip"
 		        		android:layout_height="wrap_content"
 		        		android:orientation="vertical"
 		        		/>
