@@ -261,13 +261,13 @@ public class Preferences extends Activity{
 		TextView textCall = (TextView) findViewById(R.id.pref_accion_def1);
         TextView textSMS = (TextView) findViewById(R.id.pref_accion_def2);
         if(accion == 0 ){
-        	textCall.setTextColor(getResources().getColor(R.color.azul_claro));
+        	textCall.setTextColor(getResources().getColor(R.color.verde_android));
         	textSMS.setTextColor(getResources().getColor(R.color.gris));
         	
         }
         else{
         	textCall.setTextColor(getResources().getColor(R.color.gris));
-        	textSMS.setTextColor(getResources().getColor(R.color.azul_claro));
+        	textSMS.setTextColor(getResources().getColor(R.color.verde_android));
         }
 	}
 	
