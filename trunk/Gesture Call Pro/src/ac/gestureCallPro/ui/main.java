@@ -275,6 +275,7 @@ public class main extends Activity {
 				}
 				countdown = new CallCountDown(intervalo, 1000);
 				setTheme();
+				setDefaultAction();
 				break;
 			default:
 				Log.d("DEBUG","pasa por resulto default");

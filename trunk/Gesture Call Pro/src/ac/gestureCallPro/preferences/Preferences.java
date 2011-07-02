@@ -29,11 +29,13 @@ import android.widget.TextView;
 public class Preferences extends Activity{
 	public static final int DIALOG_SEGUNDOS = 1;
 	public static final int DIALOG_THEMES = 2;
+	public static final int DIALOG_ACCION = 3;
 	
 	public Context mContext;
 	final CharSequence[] items = {"1 second", "2 seconds", "3 seconds", "4 seconds","5 seconds", "6 seconds", "7 seconds", "8 seconds"
 			, "9 seconds", "10 seconds"};
 	final CharSequence[] themes = {"Grey","Green","Blue"}; //coinciden con appConfig.GREY GREEN y BLUE
+	final CharSequence[] acciones = {"Llamar","SMS"};  //coinciden con appConfig.GREY GREEN y BLUE
 	
 	private AppConfig ap;
 	private boolean askBefore=true;
@@ -41,6 +43,7 @@ public class Preferences extends Activity{
 	private boolean notification=true;
 	private Long numSecs;
 	private int theme;
+	private int accion;
 	
 	
 	
@@ -68,6 +71,7 @@ public class Preferences extends Activity{
 			notification = ap.getBool(AppConfig.NOTIFICATION);
 			numSecs = ap.getLong(AppConfig.S_AFTER_CALL);
 			theme = ap.getInt(AppConfig.THEME);
+			accion = ap.getInt(AppConfig.ACCION_POR_DEFECTO);
 			
 		} catch (NoPreferenceException e) {
 			Log.e("GestureCall_pro","Error al cargar preferencias en preferences.java." +
@@ -95,6 +99,8 @@ public class Preferences extends Activity{
 		c.setChecked(notification);
         
 		putThemeInLayout();
+		
+		changeDefActionColor();
 			
 		
 	}
@@ -113,6 +119,8 @@ public class Preferences extends Activity{
 		ap.put(c.isChecked(), AppConfig.NOTIFICATION);
 		
 		ap.put(theme, AppConfig.THEME);
+		
+		ap.put(accion, AppConfig.ACCION_POR_DEFECTO);
 	}
 	
 	
@@ -175,6 +183,18 @@ public class Preferences extends Activity{
 			});
 			AlertDialog alert2 = builder2.create();
 			return alert2;
+		case DIALOG_ACCION:
+			AlertDialog.Builder builder3 = new AlertDialog.Builder(mContext);
+			builder3.setTitle(mContext.getResources().getString(R.string.select_dialog_def_action));
+			builder3.setItems(acciones, new DialogInterface.OnClickListener() {
+			    public void onClick(DialogInterface dialog, int item) {
+			        accion = item;
+			        changeDefActionColor();
+			        	
+			    }
+			});
+			AlertDialog alert3 = builder3.create();
+			return alert3;
 			
 		default:
 			return dialog = null;
@@ -193,6 +213,15 @@ public class Preferences extends Activity{
 		saveValues();
 		setResult(main.RESULT_PREF_SAVED);
 		Preferences.this.finish();
+	}
+	
+	public void clickAccionDefecto(View v){
+		//showDialog(DIALOG_ACCION);
+		if (accion == 0)
+			accion = 1;
+		else
+			accion = 0;
+		changeDefActionColor();
 	}
 	
 	public void clickSecsAfterCall(View v){
@@ -226,6 +255,20 @@ public class Preferences extends Activity{
 		dialog.setTitle("Credits:");
 		
 		dialog.show();
+	}
+	
+	public void changeDefActionColor(){
+		TextView textCall = (TextView) findViewById(R.id.pref_accion_def1);
+        TextView textSMS = (TextView) findViewById(R.id.pref_accion_def2);
+        if(accion == 0 ){
+        	textCall.setTextColor(getResources().getColor(R.color.azul_claro));
+        	textSMS.setTextColor(getResources().getColor(R.color.gris));
+        	
+        }
+        else{
+        	textCall.setTextColor(getResources().getColor(R.color.gris));
+        	textSMS.setTextColor(getResources().getColor(R.color.azul_claro));
+        }
 	}
 	
 	public void putThemeInLayout(){
