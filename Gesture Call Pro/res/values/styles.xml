@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Variation on the Light theme that turns off the title
+    <style name="Theme.Tickler" parent="android:style/Theme.Light">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+	-->
+    
+    
+    
+    
+    <!-- Estilos de opciones -->
+    <style name="OptionsGroupText">
+    	<item name="android:gravity">left</item>
+    	<item name="android:padding">5dip</item>
+    	<item name="android:layout_width">fill_parent</item>
+    	<item name="android:layout_height">wrap_content</item>
+    	<item name="android:background">@color/gris</item>
+		<item name="android:textColor">@android:color/primary_text_dark</item>
+		<item name="android:textSize">20dip</item>"
+    </style>
+    
+    <style name = "OptionsLayoutGroup">
+    	<item name="android:layout_width">fill_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:orientation">horizontal</item>
+		<!-- <item name="android:paddingLeft">15dip</item>-->
+    </style>
+    
+    <style name = "SeparatorLane">
+    	<item name="android:layout_width">fill_parent</item>
+		<item name="android:layout_height">2dip</item>
+		<item name="android:background">@color/gris</item>
+    </style>
+    
+    <style name = "OptionsLayoutEmpty">
+    	<item name="android:layout_width">38dip</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:orientation">vertical</item>
+    </style>
+    
+    <style name ="OptionsCheckbox">
+    	<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:gravity">center</item>
+		<item name="android:checked">false</item>
+    </style>
+    
+    
+    <style name="OptionsLayoutGroupText">
+    	<item name="android:layout_width">fill_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:orientation">vertical</item>
+		<item name="android:gravity">left</item>
+	</style>
+    
+    <style name = "OptionsTextPrincipal">
+    	<item name="android:layout_width">fill_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+    	<item name="android:textColor">@android:color/primary_text_dark</item>
+		<item name="android:textSize">17dip</item>
+		<item name="android:textStyle">bold</item>    
+    </style>
+    
+    <style name = "OptionsTextSummary">
+    	<item name="android:layout_width">fill_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+    	<item name="android:textColor">@android:color/secondary_text_dark</item>
+		<item name="android:textSize">14dip</item>
+		<item name="android:textStyle">bold</item>    
+    </style>
+    
+    
+    
+
+</resources>
