@@ -2,7 +2,7 @@ package ac.gestureCallPro.ui;
 
 
 import ac.gestureCallPro.R;
-import ac.gestureCallPro.exceptions.NoPreferenceException;
+import ac.gestureCallPro.exceptions.NoPreferenceException; 
 import ac.gestureCallPro.preferences.Preferences;
 import ac.gestureCallPro.ui.contactos.ListContact;
 import ac.gestureCallPro.ui.gestos.GestureBuilderActivity;
