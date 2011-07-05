@@ -187,9 +187,13 @@
 					android:onClick="clickThemes">
 					    <LinearLayout
 					    	android:id="@+id/pref_lay_theme_withcolor"
-						  	android:layout_width="38dip"
+						  	android:layout_width="26dip"
 			        		android:layout_height="fill_parent"
-			        		android:orientation="vertical"/>
+			        		android:orientation="vertical"
+			        		android:layout_marginTop="3dip"
+			        		android:layout_marginBottom="3dip"
+			        		android:layout_marginLeft="7dip"
+			        		android:layout_marginRight="7dip"/>
 						
 						<LinearLayout	style="@style/OptionsLayoutGroupText">
 					    	<TextView
@@ -208,71 +212,42 @@
 				<TextView
 					style="@style/OptionsGroupText"
 				  	android:text="About"/>
+				  	
+				  	
 				<!-- Novedades -->
 				<LinearLayout
 					style="@style/OptionsLayoutGroup"
 					android:onClick="clickNovedades">
 					<LinearLayout	style="@style/OptionsLayoutEmpty"/>
-					<LinearLayout
-							android:layout_width="fill_parent"
-					   		android:layout_height="wrap_content"
-					    	android:orientation="vertical"
-					    	android:gravity="left"
-					    	android:padding="6dip"
-					    	>
+					<LinearLayout	style="@style/OptionsLayoutGroupText">
 					    	
 					    	<TextView
+					    		style="@style/OptionsTextPrincipal"
 					    		android:id="@+id/pref_text_novedades"
-					    		android:layout_width="fill_parent"
-					   			android:layout_height="wrap_content"
-					   			android:text="@string/pref_novedades"
-					   			android:textColor="@android:color/primary_text_dark"
-					   			android:textSize="17dip"
-					   			android:textStyle="bold">
-					   			</TextView>
+					    		android:text="@string/pref_novedades"/>
 					    	<TextView
+					    		style="@style/OptionsTextSummary"
 					    		android:id="@+id/pref_text_novedades2"
-					    		android:layout_width="fill_parent"
-					   			android:layout_height="wrap_content"
-					   			android:text="@string/pref_novedades_summary"
-					   			android:textColor="@android:color/secondary_text_dark"
-					   			android:textSize="14dip"
-					   			android:textStyle="bold">
-					   		</TextView>
+					   			android:text="@string/pref_novedades_summary"/>
 					    </LinearLayout>
 				</LinearLayout>
 				<LinearLayout style="@style/SeparatorLane"/>
+				
+				
 				<!-- about us -->
 				<LinearLayout
 					style="@style/OptionsLayoutGroup"
 					android:onClick="clickAbout">
 					<LinearLayout	style="@style/OptionsLayoutEmpty"/>
-					<LinearLayout
-						android:layout_width="fill_parent"
-					   	android:layout_height="wrap_content"
-					    android:orientation="vertical"
-					    android:gravity="left"
-					    android:padding="6dip"
-					    >
-					    	
+						<LinearLayout	style="@style/OptionsLayoutGroupText">
 					    <TextView
-					    		android:id="@+id/pref_text_about"
-					    		android:layout_width="fill_parent"
-					   			android:layout_height="wrap_content"
-					   			android:text="@string/pref_about"
-					   			android:textColor="@android:color/primary_text_dark"
-					   			android:textSize="17dip"
-					   			android:textStyle="bold">
-					   			</TextView>
+					    	style="@style/OptionsTextPrincipal"
+					    	android:id="@+id/pref_text_about"
+					   		android:text="@string/pref_about"/>
 					    	<TextView
+					    		style="@style/OptionsTextSummary"
 					    		android:id="@+id/pref_text_about2"
-					    		android:layout_width="fill_parent"
-					   			android:layout_height="wrap_content"
-					   			android:text="@string/pref_about_summary"
-					   			android:textColor="@android:color/secondary_text_dark"
-					   			android:textSize="14dip"
-					   			android:textStyle="bold">
-					   		</TextView>
+					    		android:text="@string/pref_about_summary"/>
 					    </LinearLayout>
 				</LinearLayout>
 				<LinearLayout style="@style/SeparatorLane"/>
@@ -283,34 +258,19 @@
 				<LinearLayout
 				    style="@style/OptionsLayoutGroup"
 					android:onClick="clickabout">
-					<LinearLayout	style="@style/OptionsLayoutEmpty"/>
-					<LinearLayout
-							android:layout_width="fill_parent"
-					   		android:layout_height="wrap_content"
-					    	android:orientation="vertical"
-					    	android:gravity="left"
-					    	android:padding="6dip"
-					    	>
+					<LinearLayout	style="@style/OptionsLayoutEmpty"
+						android:layout_height="30dip"/>
+						<LinearLayout style="@style/OptionsLayoutGroup">
 					    	
-					    	<TextView
-					    		
-					    		android:layout_width="fill_parent"
-					   			android:layout_height="22dip"
-					   			
-					   			android:textColor="@android:color/primary_text_dark"
-					   			android:textSize="20dip"
-					   			android:textStyle="bold">
+					    	<TextView style="@style/OptionsTextPrincipal">
 					   			</TextView>
-					    	<TextView
-					    		android:layout_width="fill_parent"
-					   			android:layout_height="17dip"
-					   			
-					   			android:textColor="@android:color/secondary_text_dark"
-					   			android:textSize="14dip"
-					   			android:textStyle="bold">
+					    	<TextView style="@style/OptionsTextSummary">
 					   		</TextView>
 					</LinearLayout>
 				</LinearLayout>
+				
+				
+				
 		   </LinearLayout> 
 	</ScrollView>
 	
