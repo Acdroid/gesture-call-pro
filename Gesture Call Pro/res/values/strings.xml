@@ -26,6 +26,10 @@
     <string name ="sms">SMS</string>
     <string name ="call">Call</string>
     <string name ="themes">Themes</string>
+    <string name ="pref_contacta">Send us a eMail</string>
+    <string name ="pref_contacta_summary">¿Quieres que Gesture Call esté en tu idioma y estarías dispuesto a colaborar? ¿Tienes alguna idea o sugerencia que quieres
+    que incluyamos en Gesture Call? ¿Mandarnos un mensaje? Pulsa para mandarnos un mail.</string>
+    
 
 
     

@@ -12,7 +12,9 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract.CommonDataKinds.Email;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -255,6 +257,15 @@ public class Preferences extends Activity{
 		dialog.setTitle("Credits:");
 		
 		dialog.show();
+	}
+	
+	public void clickContact(View v){
+		Intent i = new Intent(Intent.ACTION_SEND);
+		i.setType("plain/text");
+		i.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{"aracemcskyline@gmail.com"});
+		startActivity(Intent.createChooser(i, "Send mail..."));
+		
+		
 	}
 	
 	public void changeDefActionColor(){
