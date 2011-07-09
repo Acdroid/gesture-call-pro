@@ -6,29 +6,27 @@
     <!--  NUEVAS -->
     <string name ="click_gesture">Access Gesture Call !</string>
     <string name ="pref_exit_after_call">Exit after call</string>
-    <string name ="pref_exit_after_call_summary">Cuando se termine la llamada o se envíe el sms el programa se cerrará</string>
-    <string name ="pref_notification">Usar modo notificación</string>
-    <string name ="pref_notification_summary">Pone en el area de notificaciones un acceso rápido a la aplicación para 
-    acceder rápidamente a ésta desde cualquier programa.</string>
-    <string name ="pref_seconds">Seconds after call</string>
-    <string name ="pref_seconds_summary">Número de segundos antes de realizar la llamada o abrir la mensajería automáticamente.</string>
+    <string name ="pref_exit_after_call_summary">Close app after the call or sms</string>
+    <string name ="pref_notification">Use notification icon</string>
+    <string name ="pref_notification_summary">Puts an icon in the notification area to access the app from anywhere.</string>
+    <string name ="pref_seconds">Seconds before action</string>
+    <string name ="pref_seconds_summary">Number of seconds to wait before calling or opening the messages board.</string>
     <string name ="select_secs">Select number of seconds</string>
     <string name ="secs">Secs</string>
-    <string name ="select_themes">Select Theme for Gesture Call</string>
-    <string name ="pref_themes">Select Theme for the app</string>
-    <string name ="pref_themes_summary">Choose a principal color for the app. There are 3 themes grey, blue and green</string>
-    <string name ="pref_novedades">Novedades</string>
-    <string name ="pref_novedades_summary">Novedades de la version 2.0</string>
+    <string name ="select_themes">Select theme for Gesture Call</string>
+    <string name ="pref_themes">Selects theme for the app</string>
+    <string name ="pref_themes_summary">Choose main style for the app. 3 themes available: grey, blue and green</string>
+    <string name ="pref_novedades">New</string>
+    <string name ="pref_novedades_summary">New stuff for version 2.0</string>
     <string name ="pref_about">About</string>
     <string name ="pref_about_summary">About Gesture Call and credits</string>
-    <string name ="pref_def_action">Acción por defecto</string>
-    <string name ="select_dialog_def_action">Selecciona la acción por defecto</string>
+    <string name ="pref_def_action">Default action</string>
+    <string name ="select_dialog_def_action">Select default action</string>
     <string name ="sms">SMS</string>
     <string name ="call">Call</string>
     <string name ="themes">Themes</string>
-    <string name ="pref_contacta">Send us a eMail</string>
-    <string name ="pref_contacta_summary">¿Quieres que Gesture Call esté en tu idioma y estarías dispuesto a colaborar? ¿Tienes alguna idea o sugerencia que quieres
-    que incluyamos en Gesture Call? ¿Mandarnos un mensaje? Pulsa para mandarnos un mail.</string>
+    <string name ="pref_contacta">Send us an e-mail</string>
+    <string name ="pref_contacta_summary">If you want Gesture Call in your language or are willing to help us improve with any idea, please tap here to send us and e-mail.</string>
     
 
 
