@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Gesture Call Donate</string>
+    <string name = "makeGesture">전화걸려면 제스처를 이용하세요</string>
+    
+    <!--  Button -->
+    <string name = "ini_Button">추가</string>
+    <string name = "button_done">새로 만들기</string>
+    <string name = "cancelGesture">제스처 취소</string>
+    <string name = "cancelGesture2">되돌아가기</string>
+    <string name = "button_volver">되돌아가기</string>
+    <string name = "button_save">저장</string>
+    <string name = "button_edit_gesture">제스처</string>
+    
+    <!--  Menu -->
+    <string name ="salir">나가기</string>
+    <string name ="opciones">옵션</string>
+    <string name ="menu_edit">제스처</string>
+  
+    <!--  Dialog -->
+    <string name = "di_salir">정말로 나가시겠어요?</string>
+    <string name="gestures_edit">제스처 수정하기</string>
+    <string name="dialog_bc_seriusly">전화 걸까요: </string>
+    <string name="dialog_no_more">더 이상 이 글 보이지 않기</string>
+    <string name="dialog_sure">확인</string>
+    <string name="calling">전화거는중...</string>
+    
+    <!-- Miscelanea -->
+	<string name = "first_time_toast">제스처 콜을 처음으로 사용하시네요\n...</string>
+	<string name = "gesto_anadido">제스처를 올바르게 추가했습니다</string>
+	<string name = "yes">네</string>
+	<string name = "no">아니오</string>
+	<string name = "no_gesto">알아보지 못하는 제스처입니다</string>
+	<string name = "info_list_gestos">제스처를 수정하려면 길게눌러주세요</string>
+	<string name="gestures_loading">제스처 업로딩중</string>
+	<string name="gestures_empty">제스처가 없습니다</string>
+	<string name="gestures_activity">제스처</string>
+	<string name="gestures_delete_success">제스처가 지워졌습니다</string>
+	<string name="gestures_error_loading">찾을 수 없습니다 %s SD 카드가 들어있는지 확인해주세요</string>
+	<string name="error_no_libreria">에러발생했습니다. 제스처 연락처들이 업로드 되지 못했습니다.</string>
+	
+
+	<!-- Preferencias -->
+	<string name ="pref_main">프로그램의 기본설정</string>
+	<string name ="pref_ask">전화걸기 전에 확인질문하기</string>
+	<string name ="pref_ask_summary">제스처 만들고 전화걸리기전 확인이 있겠습니다</string>
+	
+	
+	
+	
+</resources>
