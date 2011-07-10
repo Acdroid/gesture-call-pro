@@ -15,7 +15,7 @@
     <string name ="secs">Secs</string>
     <string name ="select_themes">Select theme for Gesture Call</string>
     <string name ="pref_themes">Selects theme for the app</string>
-    <string name ="pref_themes_summary">Choose main style for the app. 3 themes available: grey, blue and green</string>
+    <string name ="pref_themes_summary">Choose main style for the app. 5 themes available: grey, blue, green, black and white</string>
     <string name ="pref_novedades">New</string>
     <string name ="pref_novedades_summary">New stuff for version 2.0</string>
     <string name ="pref_about">About</string>
@@ -27,6 +27,9 @@
     <string name ="themes">Themes</string>
     <string name ="pref_contacta">Send us an e-mail</string>
     <string name ="pref_contacta_summary">If you want Gesture Call in your language or are willing to help us improve with any idea, please tap here to send us and e-mail.</string>
+    
+    <string name="dialog_bc_seriusly_sms">Do you really want to send a SMS to</string>
+    <string name ="notification_hello">Hello! Try me...</string> 
     
 
 
@@ -40,7 +43,7 @@
     <string name = "button_volver">Return</string>
     <string name = "button_save">Save</string>
     <string name = "button_edit_gesture">Gestures</string>
-    <string name="button_reload">Reload</string>
+    <string name = "button_reload">Reload</string>
     
     <!--  Menu -->
     <string name ="salir">Exit</string>

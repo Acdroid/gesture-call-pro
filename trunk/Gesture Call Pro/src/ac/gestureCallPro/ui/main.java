@@ -158,7 +158,7 @@ public class main extends Activity {
 		
 		
 		//Aviso por pantalla //TODO donde poner esto? En appconfig o aqui
-		mToast.Make(this, getResources().getString(R.string.makeGesture), 1);
+		mToast.Make(this, getResources().getString(R.string.makeGesture), 0);
 		
 		
 	}
@@ -316,7 +316,7 @@ public class main extends Activity {
 		
 		//Creamos la notificacion
 		int icon = R.drawable.icon;
-		CharSequence tickerText = "Hello! Try me...";
+		CharSequence tickerText = getResources().getString(R.string.notification_hello);
 		long when = System.currentTimeMillis();
 
 		Notification notification = new Notification(icon, tickerText, when);
@@ -354,17 +354,17 @@ public class main extends Activity {
 		case ACCION_LLAMAR:
 			tipoAccion = ACCION_LLAMAR;
 			smsOn = false;
-			iSMS.setImageResource(R.drawable.env_disabled);
+			iSMS.setImageResource(R.drawable.button_sms_disabled);
 			break;
 		case ACCION_SMS:
 			tipoAccion = ACCION_SMS;
 			smsOn = true;
-			iSMS.setImageResource(R.drawable.env_enabled);
+			iSMS.setImageResource(R.drawable.button_sms_enabled);
 			break;
 		case ACCION_PERDIDA:
 			tipoAccion = ACCION_PERDIDA;
 			smsOn = false;
-			iSMS.setImageResource(R.drawable.env_disabled);
+			iSMS.setImageResource(R.drawable.button_sms_disabled);
 			break;
 		default:
 			break;
@@ -401,6 +401,18 @@ public class main extends Activity {
 			break;
 		case Themes.GREEN:
 			lay_main.setBackgroundResource(R.drawable.background_green_gradient);
+			//overlay.setGestureColor(R.color.overlay_green);
+			//overlay.setUncertainGestureColor(R.color.overlay_green_uncertain);
+			
+			break;
+		case Themes.BLACK:
+			lay_main.setBackgroundResource(R.drawable.background_black_gradient);
+			//overlay.setGestureColor(R.color.overlay_green);
+			//overlay.setUncertainGestureColor(R.color.overlay_green_uncertain);
+			
+			break;
+		case Themes.WHITE:
+			lay_main.setBackgroundResource(R.drawable.background_white_gradient);
 			//overlay.setGestureColor(R.color.overlay_green);
 			//overlay.setUncertainGestureColor(R.color.overlay_green_uncertain);
 			
@@ -465,8 +477,12 @@ public class main extends Activity {
 			if (ap.getBool(AppConfig.AVISO_AL_LLAMAR)){ 
 
 				//Obtenemos el textView para cambiar el nombre de la persona a la que queremos llamar
+				dialogCall.setTitle(mContext.getResources().getString(R.string.calling));
 				TextView t = (TextView)dialogCall.findViewById(R.id.dialog_text_contact);
 
+				TextView tquieres = (TextView)dialogCall.findViewById(R.id.qieres);
+				tquieres.setText(R.string.dialog_bc_seriusly);
+				
 				Uri uri =  Data.CONTENT_URI;
 				String[] projection = new String []{
 						Data.DISPLAY_NAME
@@ -520,7 +536,10 @@ public class main extends Activity {
 			if (ap.getBool(AppConfig.AVISO_AL_LLAMAR)){
 
 				//Obtenemos el textView para cambiar el nombre de la persona a la que queremos llamar
-				dialogCall.setTitle(mContext.getResources().getString(R.string.calling));
+				dialogCall.setTitle(mContext.getResources().getString(R.string.sms));
+				TextView tquieres = (TextView)dialogCall.findViewById(R.id.qieres);
+				tquieres.setText(R.string.dialog_bc_seriusly_sms);
+				
 				
 				TextView t = (TextView)dialogCall.findViewById(R.id.dialog_text_contact);
 
@@ -739,12 +758,12 @@ public class main extends Activity {
 			smsOn=false;
 			tipoAccion=ACCION_LLAMAR;
 			//OJO esto se cambiara segun los temas
-			i.setImageResource(R.drawable.env_disabled);
+			i.setImageResource(R.drawable.button_sms_disabled);
 		}
 		else{
 			smsOn=true;
 			tipoAccion=ACCION_SMS;
-			i.setImageResource(R.drawable.env_enabled);
+			i.setImageResource(R.drawable.button_sms_enabled);
 			
 			//OJO desactivar otros elementos como llamada perdida
 		}

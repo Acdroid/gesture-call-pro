@@ -18,6 +18,7 @@ public class MSharedPreferences {
 	public SharedPreferences pref;
 	public SharedPreferences.Editor prefEditor;
 	public String namePreferences = "";
+	public Context mContext;
 	
 	
 	/*
@@ -33,10 +34,11 @@ public class MSharedPreferences {
 	
 	/**
   	 * <ul>Constructor de la clase MSharedPreferences</ul><br><br>
-  	 * @param mContext contexto desde el que se llama al constructor
+  	 * @param mCo contexto desde el que se llama al constructor
   	 * @param nombre nombre de las preferencias que deseamos obtener.
 	 */
-	public MSharedPreferences (Context mContext,String nombre){
+	public MSharedPreferences (Context mCo,String nombre){
+		mContext = mCo;
 		pref = mContext.getSharedPreferences(nombre, PREFERENCE_MODE);
 		prefEditor = pref.edit();
 		namePreferences = nombre;

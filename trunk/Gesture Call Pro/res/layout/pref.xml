@@ -106,7 +106,8 @@
 					  	android:layout_width="wrap_content"
 		        		android:layout_height="wrap_content"
 		        		android:orientation="vertical"
-		        		android:gravity="center">		    
+		        		android:gravity="center"
+		        		android:paddingRight="2dip">		    
 							<TextView
 						    	android:gravity="center"
 							  	android:layout_width="wrap_content"
@@ -260,7 +261,7 @@
 				<LinearLayout
 					style="@style/OptionsLayoutGroup"
 					android:onClick="clickAbout"
-					android:paddingBottom="5dip">
+					android:layout_marginBottom="5dip">
 					<LinearLayout	style="@style/OptionsLayoutEmpty"/>
 						<LinearLayout	style="@style/OptionsLayoutGroupText">
 					    <TextView
