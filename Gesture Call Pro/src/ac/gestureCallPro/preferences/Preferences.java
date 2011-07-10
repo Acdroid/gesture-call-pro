@@ -36,7 +36,7 @@ public class Preferences extends Activity{
 	public Context mContext;
 	final CharSequence[] items = {"1 second", "2 seconds", "3 seconds", "4 seconds","5 seconds", "6 seconds", "7 seconds", "8 seconds"
 			, "9 seconds", "10 seconds"};
-	final CharSequence[] themes = {"Grey","Green","Blue"}; //coinciden con appConfig.GREY GREEN y BLUE
+	final CharSequence[] themes = {"Grey","Green","Blue","Black","White"}; //coinciden con appConfig.GREY GREEN y BLUE
 	final CharSequence[] acciones = {"Llamar","SMS"};  //coinciden con appConfig.GREY GREEN y BLUE
 	
 	private AppConfig ap;
@@ -247,7 +247,11 @@ public class Preferences extends Activity{
 	}
 	
 	public void clickNovedades(View v){
+		Dialog dialog = new Dialog(this);
+		dialog.setContentView(R.layout.whats_new);
+		dialog.setTitle("Whats new");
 		
+		dialog.show();
 	}
 	
 	
@@ -293,6 +297,12 @@ public class Preferences extends Activity{
 			break;
 		case AppConfig.Themes.BLUE:
 			l.setBackgroundResource(R.drawable.background_blue_gradient);
+			break;
+		case AppConfig.Themes.BLACK:
+			l.setBackgroundResource(R.drawable.background_black_gradient_border);
+			break;
+		case AppConfig.Themes.WHITE:
+			l.setBackgroundResource(R.drawable.background_white_gradient);
 			break;
 		default:
 			return;

@@ -3,10 +3,11 @@ package ac.gestureCallPro.util.config;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.GregorianCalendar;
 
+import ac.gestureCallPro.R;
 import ac.gestureCallPro.exceptions.NoPreferenceException;
 import ac.gestureCallPro.ui.main;
+import android.app.Dialog;
 import android.content.Context;
 import android.os.Environment;
 import android.util.Log;
@@ -38,6 +39,8 @@ public class AppConfig extends MSharedPreferences{
         public static final int GREY = 0;
         public static final int GREEN = 1;
         public static final int BLUE = 2;
+        public static final int BLACK = 3;
+        public static final int WHITE = 4;
     }
     
 	
@@ -179,6 +182,12 @@ public class AppConfig extends MSharedPreferences{
 		put(Themes.GREY,THEME);
 		put(new Long(3000),S_AFTER_CALL);
 		put(2,VERSION); //Imprescindible siempre poner
+		
+		Dialog dialog = new Dialog(mContext);
+		dialog.setContentView(R.layout.whats_new_firsttime);
+		dialog.setTitle("Whats new");
+		
+		dialog.show();
 	}
 
 	

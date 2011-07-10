@@ -129,13 +129,13 @@
 		        		android:id="@+id/main_sms"
 		        		android:layout_width="wrap_content"
 		        		android:layout_height="wrap_content"
-		        		android:src="@drawable/env_disabled"
+		        		android:src="@drawable/button_sms_disabled"
 		        		android:onClick="clickSms"/>
 		        	<ImageView
 		        		android:id="@+id/imggears"
 		        		android:layout_width="wrap_content"
 		        		android:layout_height="wrap_content"
-		        		android:src="@drawable/gears"
+		        		android:src="@drawable/button_options"
 		        		android:onClick="clickOpciones"/>
 	        	
 	        	</LinearLayout>

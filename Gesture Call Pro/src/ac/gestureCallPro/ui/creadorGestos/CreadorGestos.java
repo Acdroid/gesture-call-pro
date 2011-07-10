@@ -1,18 +1,24 @@
 package ac.gestureCallPro.ui.creadorGestos;
 
 import ac.gestureCallPro.R;
+import ac.gestureCallPro.exceptions.NoPreferenceException;
 import ac.gestureCallPro.ui.main;
 import ac.gestureCallPro.ui.contactos.ListContact;
+import ac.gestureCallPro.util.config.AppConfig;
+import ac.gestureCallPro.util.config.AppConfig.Themes;
 import ac.gestureCallPro.util.mToast.mToast;
 import android.app.Activity;
 import android.content.Context;
 import android.gesture.Gesture;
 import android.gesture.GestureLibrary;
 import android.gesture.GestureOverlayView;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
@@ -29,6 +35,8 @@ public class CreadorGestos extends Activity {
 	public TextView texto;
 	public String nombreContacto="";
 	public String phoneContacto="";
+	public LinearLayout lay_main;
+	public AppConfig ap;
 	
 	public GestureOverlayView overlay;
 
@@ -46,6 +54,9 @@ public class CreadorGestos extends Activity {
 		texto = (TextView)findViewById(R.id.create_gesture_text);
 		mContext = this;
 		overlay = (GestureOverlayView)findViewById(R.id.cg_overlay);
+		lay_main = (LinearLayout)findViewById(R.id.create_gesture_lay_main);
+		ap = new AppConfig(mContext, AppConfig.NAME);
+		setTheme();
 
 		Bundle bundle = getIntent().getExtras();
 		if(bundle!=null){
@@ -142,6 +153,58 @@ public class CreadorGestos extends Activity {
 		addGesture(v);
 		
 	}
+	
+	/**
+	 * Carga el tema segun las preferencias del usuarios
+	 * 
+	 */
+	public void setTheme(){
+		int  theme;
+		try {
+			theme = ap.getInt(AppConfig.THEME);
+		} catch (NoPreferenceException e) {
+			theme = Themes.GREY;
+		}
+		
+		Log.d("DEBUG","puto theme " + theme);
+		
+		switch (theme) {
+		case Themes.GREY:
+			lay_main.setBackgroundResource(R.drawable.background_grey);
+//			overlay.setGestureColor(getResources().getColor(R.color.overlay_grey));
+//			overlay.setGestureColor(Color.WHITE);
+//			overlay.setUncertainGestureColor(getResources().getColor(R.color.overlay_grey_uncertain));
+			texto.setTextColor(getResources().getColor(R.color.white));
+			
+			break;
+		case Themes.BLUE:
+			lay_main.setBackgroundResource(R.drawable.background_blue_gradient);
+//			overlay.setGestureColor(getResources().getColor(R.color.overlay_blue));
+//			overlay.setUncertainGestureColor(getResources().getColor(R.color.overlay_blue_uncertain));
+			texto.setTextColor(getResources().getColor(R.color.black));
+			break;
+		case Themes.GREEN:
+			lay_main.setBackgroundResource(R.drawable.background_green_gradient);
+//			overlay.setGestureColor(getResources().getColor(R.color.overlay_green));
+//			overlay.setUncertainGestureColor(getResources().getColor(R.color.overlay_green_uncertain));
+			texto.setTextColor(getResources().getColor(R.color.black));
+			break;
+		case Themes.BLACK:
+			lay_main.setBackgroundResource(R.drawable.background_black_gradient);
+			texto.setTextColor(getResources().getColor(R.color.white));
+			break;
+		case Themes.WHITE:
+			lay_main.setBackgroundResource(R.drawable.background_white_gradient);
+			texto.setTextColor(getResources().getColor(R.color.black));
+			break;
+
+		default:
+			lay_main.setBackgroundResource(R.drawable.background_grey);
+			texto.setTextColor(getResources().getColor(R.color.white));
+			break;
+		}
+	}
+	
 
 	
 
