@@ -8,14 +8,17 @@
   android:background="@drawable/gradiente_android">
   
 	<ScrollView
+		android:id="@+id/pref_scroll"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pref_button_bar"
+        >
         <LinearLayout        	
         	android:layout_width="fill_parent"
         	android:layout_height="wrap_content"
         	android:orientation="vertical"
-        	android:layout_alignParentTop="true"
-        	android:layout_margin="5dp">
+        	android:layout_margin="5dp"
+        	>
 			  
 			<TextView
 			  	style="@style/OptionsGroupText"
@@ -301,7 +304,7 @@
 		        android:layout_height="wrap_content"
 		        android:layout_width="fill_parent"
 		        android:gravity="bottom"
-		        android:layout_alignParentBottom="true">	        
+		        android:layout_above="@id/pref_scroll">	        
 		        
 				        	
 				    <LinearLayout
