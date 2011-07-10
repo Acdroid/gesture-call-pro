@@ -396,20 +396,20 @@ public class main extends Activity {
 		case Themes.BLUE:
 			lay_main.setBackgroundResource(R.drawable.background_blue_gradient);
 			//overlay.setGestureColor(R.color.overlay_blue);
-			overlay.setUncertainGestureColor(R.color.overlay_blue_uncertain);
+			//overlay.setUncertainGestureColor(R.color.overlay_blue_uncertain);
 			
 			break;
 		case Themes.GREEN:
 			lay_main.setBackgroundResource(R.drawable.background_green_gradient);
-			overlay.setGestureColor(R.color.overlay_green);
-			overlay.setUncertainGestureColor(R.color.overlay_green_uncertain);
+			//overlay.setGestureColor(R.color.overlay_green);
+			//overlay.setUncertainGestureColor(R.color.overlay_green_uncertain);
 			
 			break;
 
 		default:
 			lay_main.setBackgroundResource(R.drawable.background_grey);
-			overlay.setGestureColor(R.color.overlay_grey);
-			overlay.setUncertainGestureColor(R.color.overlay_grey_uncertain);
+			//overlay.setGestureColor(R.color.overlay_grey);
+			//overlay.setUncertainGestureColor(R.color.overlay_grey_uncertain);
 			
 			break;
 		}
