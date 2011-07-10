@@ -4,29 +4,29 @@
     <string name = "makeGesture">Нарисуйте жест для вызова контакта</string>
     
     <!--  NUEVAS -->
-    <string name ="click_gesture">Access Gesture Call !</string>
-    <string name ="pref_exit_after_call">Exit after call</string>
-    <string name ="pref_exit_after_call_summary">Close app after the call or sms</string>
-    <string name ="pref_notification">Use notification icon</string>
-    <string name ="pref_notification_summary">Puts an icon in the notification area to access the app from anywhere.</string>
-    <string name ="pref_seconds">Seconds before action</string>
-    <string name ="pref_seconds_summary">Number of seconds to wait before calling or opening the messages board.</string>
-    <string name ="select_secs">Select number of seconds</string>
-    <string name ="secs">Secs</string>
-    <string name ="select_themes">Select theme for Gesture Call</string>
-    <string name ="pref_themes">Selects theme for the app</string>
-    <string name ="pref_themes_summary">Choose main style for the app. 3 themes available: grey, blue and green</string>
-    <string name ="pref_novedades">New</string>
-    <string name ="pref_novedades_summary">New stuff for version 2.0</string>
-    <string name ="pref_about">About</string>
-    <string name ="pref_about_summary">About Gesture Call and credits</string>
-    <string name ="pref_def_action">Default action</string>
-    <string name ="select_dialog_def_action">Select default action</string>
-    <string name ="sms">SMS</string>
-    <string name ="call">Call</string>
-    <string name ="themes">Themes</string>
-    <string name ="pref_contacta">Send us an e-mail</string>
-    <string name ="pref_contacta_summary">If you want Gesture Call in your language or are willing to help us improve with any idea, please tap here to send us and e-mail.</string>
+    <string name ="click_gesture">Доступ/открыть Gesture Call.</string>
+    <string name ="pref_exit_after_call">Выход после звонка</string>
+    <string name ="pref_exit_after_call_summary">Закрыть приложение после звонка или смс</string>
+    <string name ="pref_notification">Используй уведомляющую иконку</string>
+    <string name ="pref_notification_summary">Установить ярлык в область уведомлений для легкого доступа к приложению</string>
+    <string name ="pref_seconds">Секунд до начала/действия</string>
+    <string name ="pref_seconds_summary">Количество секунд до вызова ли открытия сообщений.</string>
+    <string name ="select_secs">Укажите количество секунд</string>
+    <string name ="secs">Секунд</string>
+    <string name ="select_themes">Выберите оформление</string>
+    <string name ="pref_themes">Выберите оформление для приложения</string>
+    <string name ="pref_themes_summary">Выберите главный стиль приложения: серый, синий, зеленый.</string>
+    <string name ="pref_novedades">Новый</string>
+    <string name ="pref_novedades_summary">Новые фичи для версии 2.0</string>
+    <string name ="pref_about">О программе.</string>
+    <string name ="pref_about_summary">О программе.</string>
+    <string name ="pref_def_action">Действие по умолчанию.</string>
+    <string name ="select_dialog_def_action">Выберите действие по умолчанию</string>
+    <string name ="sms">СМС</string>
+    <string name ="call">Вызов</string>
+    <string name ="themes">Оформление</string>
+    <string name ="pref_contacta">Написать нам.</string>
+    <string name ="pref_contacta_summary">Если вы хотите Gesture Call на вашем языке, или у вас есть идеи и пожелания, напишите нам.</string>
     
 
 
@@ -43,39 +43,38 @@
     <string name="button_reload">Обновить</string>
     
     <!--  Menu -->
-    <string name ="salir">Exit</string>
+    <string name ="salir">Выход</string>
     <string name ="opciones">Настройки</string>
     <string name ="menu_edit">Жест</string>
   
     <!--  Dialog -->
-    <string name = "di_salir">Do you really want to exit?</string>
+    <string name = "di_salir">Вы действительно хотите выйти?</string>
     <string name="gestures_edit">Редактировать жест</string>
     <string name="gestures_delete">Удалить</string>
-    <string name="dialog_bc_seriusly">Do you really want to call</string>
-    <string name="dialog_no_more">Do not show this message again</string>
-    <string name="dialog_sure">Are you sure?</string>
-    <string name="calling">Calling...</string>
+    <string name="dialog_bc_seriusly">Подтверждаете вызов</string>
+    <string name="dialog_no_more">Не показывать это сообщение снова</string>
+    <string name="dialog_sure">Вы уверены?</string>
+    <string name="calling">Вызов...</string>
     
     <!-- Miscelanea -->
-	<string name = "first_time_toast">This is the first time you use Gesture Call\n....</string>
-	<string name = "gesto_anadido">Gesture correctly added</string>
-	<string name = "yes">Yes</string>
-	<string name = "no">No</string>
-	<string name = "no_gesto">The gesture has not been recognized</string>
-	<string name = "info_list_gestos">Для редактирования
-используйте долгое нажатие</string>
-	<string name="gestures_loading">Loading gestures...</string>
-	<string name="gestures_empty">No Gestures</string>
+	<string name = "first_time_toast">Вы впервые используете Gesture Call\n....</string> 
+	<string name = "gesto_anadido">Жест добавлен</string>
+	<string name = "yes">Да</string>
+	<string name = "no">Нет</string>
+	<string name = "no_gesto">Жест не распознан.</string>
+	<string name = "info_list_gestos">Для редактирования используйте долгое нажатие</string>
+	<string name="gestures_loading">Загрузка жестов...</string>
+	<string name="gestures_empty">Жестов нет</string> 
 	<string name="gestures_activity">Жест</string>
-	<string name="gestures_delete_success">Gesture Deleted</string>
-	<string name="gestures_error_loading">Could not load %s. Make sure you have a mounted SD card.</string>
-	<string name="error_no_libreria">Fatal error. Gesture Library not found!</string>
+	<string name="gestures_delete_success">Жест удален</string>
+	<string name="gestures_error_loading">Не загружены %s. Удостоверьтесь, что SD-карта доступна.</string>
+	<string name="error_no_libreria">Ошибка. Библиотека жестов не найдена.</string>
 	
 
 	<!-- Preferencias -->
 	<string name ="pref_main">Настройки программы</string>
 	<string name ="pref_ask">Запрашивать подтверждение для вызова.</string>
-	<string name ="pref_ask_summary">When making a gesture, it will require confirmation before calling</string>
+	<string name ="pref_ask_summary">Запрашивать подтверждение для вызова.</string>
 	
 	
 	
