@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
+  android:id="@+id/pref_lay_main"
   android:layout_width="fill_parent"
   android:layout_height="fill_parent"
   android:orientation="vertical"
@@ -11,7 +12,7 @@
 		android:id="@+id/pref_scroll"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/pref_button_bar"
+        android:layout_above="@+id/pref_button_bar"
         >
         <LinearLayout        	
         	android:layout_width="fill_parent"
@@ -258,7 +259,8 @@
 				<!-- about us -->
 				<LinearLayout
 					style="@style/OptionsLayoutGroup"
-					android:onClick="clickAbout">
+					android:onClick="clickAbout"
+					android:paddingBottom="5dip">
 					<LinearLayout	style="@style/OptionsLayoutEmpty"/>
 						<LinearLayout	style="@style/OptionsLayoutGroupText">
 					    <TextView
@@ -274,24 +276,6 @@
 				<LinearLayout style="@style/SeparatorLane"/>
 		
 		
-		
-				<!--  Hueco en blanco momentaneo
-				<LinearLayout
-				    style="@style/OptionsLayoutGroup"
-					android:onClick="clickabout">
-					<LinearLayout	style="@style/OptionsLayoutEmpty"
-						android:layout_height="30dip"/>
-						<LinearLayout style="@style/OptionsLayoutGroup">
-					    	
-					    	<TextView style="@style/OptionsTextPrincipal">
-					   			</TextView>
-					    	<TextView style="@style/OptionsTextSummary">
-					   		</TextView>
-					</LinearLayout>
-				</LinearLayout> -->
-				
-				
-				
 		   </LinearLayout> 
 	</ScrollView>
 	
@@ -304,7 +288,7 @@
 		        android:layout_height="wrap_content"
 		        android:layout_width="fill_parent"
 		        android:gravity="bottom"
-		        android:layout_above="@id/pref_scroll">	        
+		        android:layout_alignParentBottom="true">	        
 		        
 				        	
 				    <LinearLayout
