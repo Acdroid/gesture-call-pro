@@ -4,21 +4,23 @@
 = Cambios de las versiones de Gesture call pro  para cuando se suban al market recordar todos los cambios realizados =
 
 = 2.0.1 =
-* Mejora del idioma ruso
+
+• Mejora del idioma ruso
 
 
 = v2.0 =
+
 • Nueva y mejorada interfaz, más sencilla de usar.
 • Nuevos idiomas
-Ruso
-Koreano
-• 5 Temas diferentes para la aplicación
+  Ruso  
+  Koreano
+• 5 Temas diferentes para la aplicación 
 • Ahora se pueden mandar mensajes rápidamente!
 • Nuevas Opciones:
-Nuevo Acceso rápido mediante notificaciones
-Salir después de llamar
-Autollamada/mensaje después de unos segundos
-Acción por defecto(Llamar o enviar mensaje)
+   Nuevo Acceso rápido mediante notificaciones
+   Salir después de llamar
+   Autollamada/mensaje después de unos segundos
+   Acción por defecto(Llamar o enviar mensaje)
 • Ahora podrás enviarnos un mail desde opciones
-(Mándanos ideas, errores, sugerencias ... )
+  (Mándanos ideas, errores, sugerencias ... )
 • Solucionados varios errores menores.
