@@ -9,7 +9,7 @@
     <string name = "cancelGesture2">Zurück</string>
     <string name = "button_volver">Zurück</string>
     <string name = "button_save">Speichern</string>
-    <string name = "button_edit_gesture">Geste Bearbeiten</string>
+    <string name = "button_edit_gesture">Geste</string>
     <string name= "button_reload">Nachladen</string>
     
     <!--  Menu -->
