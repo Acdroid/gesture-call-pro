@@ -213,9 +213,8 @@
 				            
 			 
 			    </LinearLayout>
-			 </LinearLayout>
-			 
-				<com.google.ads.AdView
+			    
+			    <com.google.ads.AdView
  	 			android:id="@+id/Publicidad"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -223,6 +222,8 @@
                 ads:adUnitId="a14daeadcc3acb6"
 		        ads:adSize="BANNER"
 		        ads:loadAdOnCreate="true"/>
+		
+			 </LinearLayout>
 			 
 			 
 	</RelativeLayout>
