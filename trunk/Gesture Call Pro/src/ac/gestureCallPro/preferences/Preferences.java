@@ -7,14 +7,16 @@ import ac.gestureCallPro.R;
 import ac.gestureCallPro.exceptions.NoPreferenceException;
 import ac.gestureCallPro.ui.main;
 import ac.gestureCallPro.util.config.AppConfig;
+import ac.gestureCallPro.util.mToast.mToast;
+import ac.gestureCallPro.util.shortcut.CreateShortcut;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
-import android.provider.ContactsContract.CommonDataKinds.Email;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -124,6 +126,30 @@ public class Preferences extends Activity{
 		
 		ap.put(accion, AppConfig.ACCION_POR_DEFECTO);
 	}
+	
+	
+	public void clickShortcut(View v){
+		mToast.Make(mContext, getResources().getString(R.string.creando), 0);
+		LinearLayout l = (LinearLayout)findViewById(R.id.pref_lay_shortcut);
+		l.setEnabled(false);
+		
+		TextView sTitle = (TextView)findViewById(R.id.shortcut_title);
+		TextView sSumma = (TextView)findViewById(R.id.shortcut_summary);
+		
+		//Ponemos los textos en colores "desactivados"
+		sTitle.setTextColor(getResources().getColor(R.color.disabled_title));
+		sSumma.setTextColor(getResources().getColor(R.color.disabled_summary));
+		
+		CreateShortcut.create(this,"ac.gestureCallPro.ui.main");
+	}
+	
+	public void clickDonate(View v){
+		Intent intent = new Intent(Intent.ACTION_VIEW);
+		intent.setData(Uri.parse("market://details?id=ac.gestureCallPro"));
+		//intent.setData(Uri.parse("amzn://apps/android?p=ac.gestureCallPro")); //enlace con la app de amazon	
+		startActivity(intent);
+	}
+	
 	
 	
 	

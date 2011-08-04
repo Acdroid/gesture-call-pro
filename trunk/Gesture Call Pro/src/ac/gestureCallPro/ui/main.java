@@ -1,6 +1,7 @@
 package ac.gestureCallPro.ui;
 
 
+import ac.gestureCallPro.ui.donate.Donate;
 import ac.gestureCallPro.R;
 import ac.gestureCallPro.exceptions.NoPreferenceException; 
 import ac.gestureCallPro.preferences.Preferences;
@@ -744,6 +745,14 @@ public class main extends Activity {
 		}
 	}
 
+    public void clickDonate(View v){
+    	Intent i = new Intent(this,ac.gestureCallPro.ui.donate.Donate.class);
+    	//Intent i = new Intent(this,DonateAmazon.class); //Para amazon
+    	startActivity(i);
+    }
+	
+	
+	
 	/* **************** Funciones auxiliares o menores ****************** */
 
 	public void clickAdd(View v){
