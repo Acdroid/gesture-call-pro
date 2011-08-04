@@ -30,6 +30,20 @@
     
     <string name="dialog_bc_seriusly_sms">Do you really want to send a SMS to</string>
     <string name ="notification_hello">Hello! Try me...</string> 
+        
+	<string name ="pref_donate">Support us!</string>
+    <string name ="pref_donate_summary">Support us downloading Gesture Call Donate without advertising you will receive actualizations before!</string>
+    <string name ="donate">Support Us</string>
+    <string name ="donate_text1">If you want to support us you can download Gesture Call Donate without advertising and you
+     receive updates a bit earlier than the normal version. New interface, send messages quickly and the new
+     notifiación icon. click on the image: 
+    </string>
+    <string name ="donate_text2">In Acdroid love to develop applications for Android and not only have Gesture Call.</string>  
+
+	<string name="shortcut">Shortcut</string>
+	<string name="shortcut_summary">Create a shortcut to launch Gesture Call for quick access from the descktop</string>
+	<string name="creando">Creating</string>
+    
     
 
 

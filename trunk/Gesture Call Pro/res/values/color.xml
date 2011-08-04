@@ -26,5 +26,9 @@
     
     <color name="verde_android">#a4c639</color>
     <color name="azul_theme">#4aace5</color>
+ 
+    <color name="disabled_title">#565656</color>
+    <color name="disabled_summary">#2a2a2a</color>
+
     
 </resources>
