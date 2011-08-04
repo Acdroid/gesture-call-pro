@@ -2,6 +2,35 @@
 <resources>
     <string name = "makeGesture">Fai un gesto per chiamare un contatto</string>
     
+    
+    <!--  NUEVAS -->
+    <string name ="click_gesture">Accede a Gesture Call !</string>
+    <string name ="pref_exit_after_call">Salir después de llamar</string>
+    <string name ="pref_exit_after_call_summary">Salir de la aplicación después de realizar una llamada o enviar un mensaje de texto</string>
+    <string name ="pref_notification">Usar notificaciones</string>
+    <string name ="pref_notification_summary">Pone un icono en el área de notificaciones para acceder de forma rápida a Gesture Call en cualquier momento</string>
+    <string name ="pref_seconds">Segundos antes de acción</string>
+    <string name ="pref_seconds_summary">Número de segundos que la aplicación esperará antes de llamar o acceder al envío de mensajes automáticamente</string>
+    <string name ="select_secs">Selecciona el número de segundos</string>
+    <string name ="secs">Segs</string>
+    <string name ="select_themes">Selecciona el Tema para Gesture Call</string>
+    <string name ="pref_themes">Selecciona el Tema para la App</string>
+    <string name ="pref_themes_summary">Elige el estilo para la aplicación. Hay 5 temas disponibles: Gris, Azul, Verde, Negro y Blanco</string>
+    <string name ="pref_novedades">Novedades</string>
+    <string name ="pref_novedades_summary">Novedades de la versión 2.0</string>
+    <string name ="pref_about">Créditos</string>
+    <string name ="pref_about_summary">Conoce un poco sobre los que hemos hecho esto y agradecimientos</string>
+    <string name ="pref_def_action">Acción por defecto</string>
+    <string name ="select_dialog_def_action">Selecciona la acción por defecto</string>
+    <string name ="sms">SMS</string>
+    <string name ="call">Llamar</string>
+    <string name ="themes">Temas</string>
+    <string name ="pref_contacta">Mándanos un e-mail</string>
+    <string name ="pref_contacta_summary">¿Te gustaría tener Gesture Call en tu idioma? ¿Tienes alguna magnífica idea que quieres que incluyamos en Gesture Call? Pulsa aquí y mándanos un e-mail contándonos lo que queiras</string>
+    
+    <string name="dialog_bc_seriusly_sms">¿Quieres mandar un SMS a</string>
+    <string name ="notification_hello">Hola!Pruébame...</string> 
+    
     <!--  Button -->
     <string name = "ini_Button">Aggiungere</string>
     <string name = "button_done">Creare</string>
