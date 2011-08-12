@@ -14,10 +14,16 @@
 = v2.1 =
 
 • Unificación de gesture call pro y gesture call normal
+
 • Añadidos creación de shortcut
+
 • Generadas actividades donate y donate amazon
+
 • Arreglado bug de "salir después de llamar"
+
 • Pequeños cambios en la interfaz
+
+
 
 
 
