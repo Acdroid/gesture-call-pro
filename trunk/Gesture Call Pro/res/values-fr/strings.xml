@@ -3,10 +3,6 @@
     <string name = "makeGesture">Faites un geste pour appeler un contact</string>
     
     
-    <!--  NUEVAS -->
-    <string name ="click_gesture">Access à a Gesture Call !</string>
-    
-    
     <!--  Button -->
     <string name = "ini_Button">Ajouter</string>
     <string name = "button_done">Créer</string>

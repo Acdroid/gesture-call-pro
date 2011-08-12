@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+	
 	android:id="@+id/lay_main"
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
     <!-- android:background="@drawable/gradiente_android">-->    
     
-    
+    <!-- xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads" -->
     
         <android.gesture.GestureOverlayView
 			android:id="@+id/gestures"
@@ -157,7 +157,7 @@
 	        android:layout_width="fill_parent"
 	        android:layout_alignParentBottom="true">
 	        
-	        
+<!-- 	        
 	        <LinearLayout
 			 	android:layout_width="fill_parent"
 			    android:layout_height="wrap_content"
@@ -172,7 +172,7 @@
 			    	android:textColor="@color/white"
 			    	android:onClick="clickDonate"
 			    	android:background="@drawable/button_semitransparente"/>
-		    </LinearLayout>
+		    </LinearLayout> -->
 	        
 	        
 	        
@@ -214,14 +214,14 @@
 			 
 			    </LinearLayout>
 			    
-			    <com.google.ads.AdView
+<!-- 			    <com.google.ads.AdView
  	 			android:id="@+id/Publicidad"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
 
                 ads:adUnitId="a14daeadcc3acb6"
 		        ads:adSize="BANNER"
-		        ads:loadAdOnCreate="true"/>
+		        ads:loadAdOnCreate="true"/> -->
 		
 			 </LinearLayout>
 			 
