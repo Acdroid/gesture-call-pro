@@ -196,6 +196,7 @@ public class GesturesRecognizer implements OnGesturePerformedListener{
 			handler.sendMessage(msg);
 		}
 
+		Log.d("DEBUG","Gestures basic ");
 
 		//Obtenemos el array de gestos reconocidos
 		ArrayList<Prediction> predictions = Store.recognize(gesture);

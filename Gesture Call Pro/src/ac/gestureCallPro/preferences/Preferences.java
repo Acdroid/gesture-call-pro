@@ -140,7 +140,7 @@ public class Preferences extends Activity{
 		sTitle.setTextColor(getResources().getColor(R.color.disabled_title));
 		sSumma.setTextColor(getResources().getColor(R.color.disabled_summary));
 		
-		CreateShortcut.create(this,"ac.gestureCallPro.ui.main");
+		CreateShortcut.create(this);
 	}
 	
 	public void clickDonate(View v){
@@ -243,6 +243,14 @@ public class Preferences extends Activity{
 		Preferences.this.finish();
 	}
 	
+	@Override
+	public void onBackPressed() {
+		saveValues();
+		setResult(main.RESULT_PREF_SAVED);
+		super.onBackPressed();
+	}
+
+
 	public void clickAccionDefecto(View v){
 		//showDialog(DIALOG_ACCION);
 		if (accion == 0)
@@ -293,6 +301,7 @@ public class Preferences extends Activity{
 		Intent i = new Intent(Intent.ACTION_SEND);
 		i.setType("plain/text");
 		i.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{"aracemcskyline@gmail.com"});
+		i.putExtra(android.content.Intent.EXTRA_SUBJECT, "Gesture Call Donate: ");
 		startActivity(Intent.createChooser(i, "Send mail..."));
 		
 		

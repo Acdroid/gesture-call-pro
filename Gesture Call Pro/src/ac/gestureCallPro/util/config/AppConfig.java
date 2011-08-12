@@ -7,10 +7,14 @@ import java.io.IOException;
 import ac.gestureCallPro.R;
 import ac.gestureCallPro.exceptions.NoPreferenceException;
 import ac.gestureCallPro.ui.main;
+import ac.gestureCallPro.util.shortcut.CreateShortcut;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Environment;
 import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 
 /**
  * AppConfig.java 30/03/2011
@@ -53,7 +57,7 @@ public class AppConfig extends MSharedPreferences{
 		super(mContext,name);
 		
 		//para el desarrollo por si se quiere hacer cosas especiales
-		//put(true,DEVELOPERS);
+//		put(true,DEVELOPERS);
 		try {
 			if( (pref.contains(DEVELOPERS)) && (getBool(DEVELOPERS) == true)){
 				makeDevelopers();
@@ -127,6 +131,7 @@ public class AppConfig extends MSharedPreferences{
 	private void makeAll(){
 		makeV1();
 		makeV2();
+		makeV3();
 	}
 	
 	/**
@@ -148,7 +153,10 @@ public class AppConfig extends MSharedPreferences{
 		}
 		if (ver < 2){
 			makeV2();
-			return;
+		}
+		
+		if (ver < 3){
+			makeV3();
 		}
 		
 		
@@ -168,23 +176,47 @@ public class AppConfig extends MSharedPreferences{
 		put(1,VERSION);
 		createStructure(dir, fich);
 	}
+	
+	/**
+	 * Primera version de las opciones con la opcion de
+	 * aviso al llamar e inclusion de la version
+	 * 1.2.2
+	 */
+	private void makeV2(){		
+		//put(true,DEVELOPERS); //SOLO PARA DESARROLLADORES, PONER A FALSE!
+		put(2,VERSION);
+	}
 
 	/**
 	 * Primera version de las opciones con la opcion de
 	 * aviso al llamar e inclusion de la version
+	 * 
+	 * 2.1
+	 * 
 	 */
-	private void makeV2(){		
+	private void makeV3(){		
 		//put(true,DEVELOPERS); //SOLO PARA DESARROLLADORES, PONER A FALSE!
 		
 		put(true,NOTIFICATION);
 		put(false,RETURN_AFTER_CALL);
 		put(main.ACCION_LLAMAR,ACCION_POR_DEFECTO);
-		put(Themes.GREY,THEME);
+		put(Themes.BLACK,THEME);
 		put(new Long(3000),S_AFTER_CALL);
-		put(2,VERSION); //Imprescindible siempre poner
+		put(3,VERSION); //Imprescindible siempre poner
 		
 		Dialog dialog = new Dialog(mContext);
 		dialog.setContentView(R.layout.whats_new_firsttime);
+		Button b;
+		b = (Button)dialog.findViewById(R.id.whats_new_button);
+		b.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				CreateShortcut.create(mContext);
+				
+			}
+		});
+		
 		dialog.setTitle("Whats new");
 		
 		dialog.show();

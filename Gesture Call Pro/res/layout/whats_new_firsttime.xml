@@ -1,13 +1,25 @@
+<RelativeLayout 
+ android:id="@+id/scrollView1" android:layout_width="fill_parent" android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android"
+ android:gravity="center">
 
-    <ScrollView android:id="@+id/scrollView1" android:layout_width="fill_parent" android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android">
-        <LinearLayout android:id="@+id/linearLayout1" android:layout_width="match_parent" android:layout_height="match_parent">
-            <ScrollView android:layout_width="wrap_content" android:layout_height="match_parent" android:id="@+id/scrollView2">
-                <LinearLayout android:id="@+id/linearLayout2" android:layout_width="match_parent" android:layout_height="match_parent">
-                    <TextView
-                    	android:text="
+ <ScrollView
+	android:layout_above="@+id/whats_new_layout"
+	android:layout_width="wrap_content"
+	android:layout_height="match_parent"
+	android:id="@+id/scrollView2">
+    <LinearLayout android:id="@+id/linearLayout2"
+    	android:layout_width="match_parent"
+    	android:layout_height="match_parent">
+        <TextView
+             android:text="
 - Gesture Call Donate -\n
 \n
 Thanx you very much for downloading Gesture Call Donate!\n\n
+◘  Version 2.1
+• Now you can create a shortcut\n
+• Little changes in the interface\n
+• Bug of 'Return after call/sms` solved\n\n
+
 ◘  Version 2.0\n\n
 • New Interface\n
 • New Languages\n
@@ -27,16 +39,31 @@ Thanx you very much for downloading Gesture Call Donate!\n\n
 ◘  Version 1.2\n\n
 • First Version of Gesture Call Donate
   
+\n\n\n        
+  
 \n\n\n
   
 "                 	
-                    	android:id="@+id/textView1" android:layout_width="fill_parent" android:layout_height="wrap_content"></TextView>
-                </LinearLayout>
-            </ScrollView>
-        </LinearLayout>
-    </ScrollView>
+             android:id="@+id/textView1"
+             android:layout_width="fill_parent"
+			android:layout_height="wrap_content"></TextView>
+       </LinearLayout>
+  </ScrollView> 
 
-
+	<LinearLayout 
+	 	android:id="@+id/whats_new_layout"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:gravity="center">
+	  <Button
+	     android:id="@+id/whats_new_button"
+	     android:layout_width="wrap_content" android:layout_height="wrap_content"
+	     android:text="@string/creating_shortcut"
+	     
+	     ></Button>
+   </LinearLayout>
+</RelativeLayout>
 
     <!-- 
  ·Basque:\n

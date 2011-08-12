@@ -30,6 +30,20 @@
     <string name="dialog_bc_seriusly_sms">¿Quieres mandar un SMS a</string>
     <string name ="notification_hello">Hola!Pruébame...</string> 
     
+    <string name ="pref_donate">¡Apóyanos!</string>
+    <string name ="pref_donate_summary">Apóyanos descargando Gesture Call Donate sin publicidad y recibirás un poco antes las actualizaciones.\n</string>
+    <string name ="donate">¡Colabora!</string>
+    <string name ="donate_text1">Si quieres colaborar con nosotros puedes descargar Gesture Call Donate sin publicidad y podrás
+    recibir las actualizaciones un poco antes que en la versión normal. Nueva interfaz, mandar mensajes rápidamente o el nuevo 
+    icono de notifiación a un click: 
+    </string>
+    <string name ="donate_text2">En Acdroid nos encanta desarrollar aplicaciones para Android y no sólo tenemos Gesture Call: 
+    </string>
+    
+    <string name="shortcut">Acceso directo</string>
+    <string name="shortcut_summary">Crea una acceso directo para acceder a Gesture Call rápidamente desde el escritorio</string>
+    <string name="creando">Creando</string>
+    <string name="creating_shortcut">Crear Acceso Directo</string>
     
     
     <!--  Button -->

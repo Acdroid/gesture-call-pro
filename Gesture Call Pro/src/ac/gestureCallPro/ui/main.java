@@ -32,7 +32,6 @@ import android.os.Handler;
 import android.os.Message;
 import android.provider.ContactsContract.CommonDataKinds.Phone;
 import android.provider.ContactsContract.Data;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -44,7 +43,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 
 public class main extends Activity {
 
@@ -108,7 +106,6 @@ public class main extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-
 		init();
 	}
 
@@ -122,8 +119,8 @@ public class main extends Activity {
 	 * tales como AppCondig ap o el mContext.
 	 */
 	private void init(){
-
 		mContext = this;
+		isOnCallingSms=false;
 
 		//Cargamos las opciones
 		ap = new AppConfig(this, AppConfig.NAME);
@@ -160,7 +157,6 @@ public class main extends Activity {
 		
 		//Aviso por pantalla //TODO donde poner esto? En appconfig o aqui
 		mToast.Make(this, getResources().getString(R.string.makeGesture), 0);
-		
 		
 	}
 
@@ -230,10 +226,8 @@ public class main extends Activity {
 
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		if (requestCode == ID){
-			Log.d("DEBUG","Resulto code es : " + requestCode);
 			switch (resultCode){
 			case RESULT_OK:
-				Log.d("DEBUG","pasa por resulto OK");
 				break;
 			case RESULT_CANCELED:
 				boolean aux;
@@ -243,7 +237,6 @@ public class main extends Activity {
 					isOnCallingSms=false;//Si falla no salimos
 					return;
 				}
-				
 				//Si venimos de una llamada y se quiere salir despues de llamar
 				if ((aux) && (isOnCallingSms)){
 					isOnCallingSms=false;
@@ -256,7 +249,6 @@ public class main extends Activity {
 				
 				break;
 			case RESULT_ERROR:
-				Log.d("DEBUG","pasa por resulto error");
 				break;
 			case RESULT_SALIR:
 				main.this.finish();
@@ -279,7 +271,6 @@ public class main extends Activity {
 				setDefaultAction();
 				break;
 			default:
-				Log.d("DEBUG","pasa por resulto default");
 			}
 
 			getStore().load();
@@ -385,7 +376,6 @@ public class main extends Activity {
 			theme = Themes.GREY;
 		}
 		
-		Log.d("DEBUG","puto theme " + theme);
 		
 		switch (theme) {
 		case Themes.GREY:
@@ -442,13 +432,12 @@ public class main extends Activity {
 	public void ejecutaAccion(String prediccion){
 		int accionActual = getTipoAccion();
 
+		
 		switch (accionActual) {
-		case ACCION_LLAMAR:
-			isOnCallingSms=true;
+		case ACCION_LLAMAR:			
 			call(prediccion);			
 			break;
 		case ACCION_SMS:
-			isOnCallingSms=true;
 			sms(prediccion);
 			break;
 		case ACCION_PERDIDA:
@@ -496,7 +485,7 @@ public class main extends Activity {
 				if(c.moveToFirst()){ 
 					t.setText(c.getString(c.getColumnIndex(Data.DISPLAY_NAME))+  "?");       			
 				}
-				else{
+			else{
 					t.setText(getPrediccionActual());
 				}
 				showDialog(DIALOG_CALL);
@@ -506,15 +495,18 @@ public class main extends Activity {
 				
 
 			}
-			else{//Si no se llama directamente
+			else{//Si no, se llama directamente
 
 				String url = "tel:" + prediccion;
 				Intent i = new Intent(Intent.ACTION_CALL, Uri.parse(url));
+				isOnCallingSms=true;
 				startActivityForResult(i,ID);
+				
 			}
 		} catch (NoPreferenceException e) { //En caso de no existir la opcion guardada correctamente se llama
 			String url = "tel:" + prediccion;
 			Intent i = new Intent(Intent.ACTION_CALL, Uri.parse(url));
+			isOnCallingSms=true;
 			startActivityForResult(i,ID);
 		}
 
@@ -566,14 +558,15 @@ public class main extends Activity {
 
 			}
 			else{//En caso de false se envia directamente
-
 				String url = "sms:" + prediccion;
 				Intent iSMS = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+				isOnCallingSms=true;
 				startActivityForResult(iSMS,ID);
 			}
 		} catch (NoPreferenceException e) { //En caso de no existir la opcion se envia directamente
 			String url = "sms:" + prediccion;
 			Intent iSMS = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+			isOnCallingSms=true;
 			startActivityForResult(iSMS,ID);
 		}
 
@@ -637,6 +630,10 @@ public class main extends Activity {
 			getAp().put(false, AppConfig.AVISO_AL_LLAMAR);
 		}
 
+		//Marcamos como que se esta llamando o enviando un smsm para poder salir
+		//directamente al volver si es necesario
+		isOnCallingSms=true;
+		
 		//Dependiendo del tipo de accion realizamos una u otra cosa
 		String url = "";
 		switch (tipoAccion) {
@@ -746,7 +743,7 @@ public class main extends Activity {
 	}
 
     public void clickDonate(View v){
-    	Intent i = new Intent(this,ac.gestureCallPro.ui.donate.Donate.class);
+    	Intent i = new Intent(this,Donate.class);
     	//Intent i = new Intent(this,DonateAmazon.class); //Para amazon
     	startActivity(i);
     }
@@ -824,6 +821,30 @@ public class main extends Activity {
 	protected void onPrepareDialog(int id, Dialog dialog) {
 		// TODO Auto-generated method stub
 		super.onPrepareDialog(id, dialog);
+	}
+
+
+
+
+
+	@Override
+	protected void onSaveInstanceState(Bundle outState) {
+		// TODO Auto-generated method stub
+		outState.putBoolean("ISCALLSMS", isOnCallingSms);
+		super.onSaveInstanceState(outState);
+	}
+
+
+
+
+
+	@Override
+	protected void onRestoreInstanceState(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		if ( (savedInstanceState != null) && (savedInstanceState.containsKey("ISCALLSMS")) ){
+			isOnCallingSms = savedInstanceState.getBoolean("ISCALLSMS");
+		}
+		super.onRestoreInstanceState(savedInstanceState);
 	}
 
 
