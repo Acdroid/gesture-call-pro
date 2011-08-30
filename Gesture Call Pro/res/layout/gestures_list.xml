@@ -1,104 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:orientation="vertical">
 
-    <ListView
-        android:id="@android:id/list"
-        android:layout_width="fill_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1.0"
-        android:background="@drawable/gradiente_android"/>
+	<ListView android:id="@android:id/list" android:layout_width="fill_parent"
+		android:layout_height="0dip" android:layout_weight="1.0"
+		android:background="@drawable/gradiente_android" />
 
-    <TextView
-        android:id="@android:id/empty"
-        android:layout_width="fill_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1.0"
-		android:textColor="@color/white"
-        android:gravity="center"
-        android:text="@string/gestures_loading"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+	<TextView android:id="@android:id/empty" android:layout_width="fill_parent"
+		android:layout_height="0dip" android:layout_weight="1.0"
+		android:textColor="@color/white" android:gravity="center"
+		android:text="@string/gestures_loading" android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <LinearLayout
-        android:background="@drawable/gradient_header"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-                
-        <LinearLayout
-	 		android:layout_height="10dip"
-	        android:layout_width="fill_parent"
-	        android:background="@drawable/menubar_shadow_downtoup">
-	   	</LinearLayout>
-        
-        <TextView
-        	android:layout_width="fill_parent"
-        	android:layout_height="wrap_content"
-        	android:text="@string/info_list_gestos"
-        	android:textStyle="bold"
-        	android:textColor="@color/black"
-        	android:padding="5dip"
-        	android:gravity="center"></TextView>        
-						
-		
-		 <LinearLayout
-	        android:layout_height="fill_parent"
-	        android:layout_width="fill_parent"
-	        android:gravity="bottom">
-	        
-			        	
-			    <LinearLayout
-		         	android:gravity="bottom"
-		            android:layout_width="fill_parent"
-			        android:layout_height="wrap_content"			
-			        android:orientation="horizontal"
-			        android:padding="5dip">
-		        
-			 
-		       			 <Button
-			            	android:id="@+id/reloadButton"
-			            	android:onClick="reloadGestures"
-			            	android:text="@string/button_reload"      
-				            android:layout_width="0dip"
-				            android:layout_height="fill_parent"
-				            android:layout_weight="1"		            
-				            android:padding="10dip"
-				            android:background="@drawable/button_menu_bar_left_bg"/>
-				    
-				        <Button
-				        	android:id="@+id/gb_button_volver"
-			            	android:onClick="clickReturn"
-			          		android:text="@string/button_volver" 
-				            android:layout_width="0dip"
-				            android:layout_height="fill_parent"
-				            android:layout_weight="1"		            
-				            android:padding="10dip"		           
-				            android:background="@drawable/button_menu_bar_right_bg"/>
-				            
-			 
-			    </LinearLayout>
+	<LinearLayout android:background="@drawable/gradient_header"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:orientation="vertical">
+
+		<LinearLayout android:layout_height="10dip"
+			android:layout_width="fill_parent" android:background="@drawable/menubar_shadow_downtoup">
+		</LinearLayout>
+
+		<TextView android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:text="@string/info_list_gestos"
+			android:textStyle="bold" android:textColor="@color/black"
+			android:padding="5dip" android:gravity="center"></TextView>
+
+
+		<LinearLayout android:layout_height="fill_parent"
+			android:layout_width="fill_parent" android:gravity="bottom">
+
+
+			<LinearLayout android:gravity="bottom"
+				android:layout_width="fill_parent" android:layout_height="wrap_content"
+				android:orientation="horizontal" android:padding="5dip">
+
+
+				<Button android:id="@+id/reloadButton" android:onClick="reloadGestures"
+					android:text="@string/button_reload" android:layout_width="0dip"
+					android:layout_height="fill_parent" android:layout_weight="1"
+					android:padding="10dip" android:background="@drawable/button_menu_bar_left_bg" />
+
+				<Button android:id="@+id/gb_button_volver" android:onClick="clickReturn"
+					android:text="@string/button_volver" android:layout_width="0dip"
+					android:layout_height="fill_parent" android:layout_weight="1"
+					android:padding="10dip" android:background="@drawable/button_menu_bar_right_bg" />
+
+
+			</LinearLayout>
+		</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	</LinearLayout>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-    </LinearLayout>
 
 </LinearLayout>
 

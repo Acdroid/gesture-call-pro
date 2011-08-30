@@ -1,4 +1,10 @@
 /**
+ * Acdroid Apps for Android
+ * 
+ * @author Carlos Diaz Canovas
+ * @author Marcos Trujillo Seoane
+ * 
+ * Project Gesture Call
  * 
  */
 package ac.gestureCallPro.ui.widget;
@@ -13,15 +19,10 @@ import android.content.Intent;
 import android.util.Log;
 import android.widget.RemoteViews;
 
-/**
- * @author marcos y carlos
- *
- */
 public class WidgetSimple extends AppWidgetProvider {
 
 	private static RemoteViews controles;
 	public static final String ACCION_BOTON_WIDGET_SIMPLE = "ac.gestureCallPro.PressButton";
-
 
 	@Override
 	public void onUpdate(Context context, AppWidgetManager appWidgetManager,
@@ -37,8 +38,6 @@ public class WidgetSimple extends AppWidgetProvider {
 	        actualizarWidget(context, appWidgetManager, widgetId);
 	    }
 	}
-
-
 
 	public void callGestureCall(Context c,AppWidgetManager widgetManager,int widgetId){
 
@@ -66,7 +65,6 @@ public class WidgetSimple extends AppWidgetProvider {
 		//Notificamos al manager de la actualización del widget actual
 		appWidgetManager.updateAppWidget(widgetId, controles);
 	}
-
 
 	@Override
 	public void onReceive(Context context, Intent intent) {

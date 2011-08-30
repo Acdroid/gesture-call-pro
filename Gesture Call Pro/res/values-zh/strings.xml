@@ -1,48 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name = "makeGesture">画图呼叫联系人</string>
-    
-    <!--  Button -->
-    <string name = "ini_Button">添加</string>
-    <string name = "button_done">创建</string>
-    <string name = "cancelGesture">取消</string>
-    <string name = "cancelGesture2">返回</string>
-    <string name = "button_volver">返回</string>
-    <string name = "button_save">保存r</string>
-    <string name = "button_edit_gesture">图</string>
-    <string name= "button_reload">加载</string>
-    
-    <!--  Menu -->
-    <string name ="salir">关闭</string>
-    <string name ="opciones">选项</string>
-    <string name ="menu_edit">图</string>
-    
-    <!--  Dialog -->
-    <string name = "di_salir">"确定要退出应用程序?"</string>
-    <string name="gestures_edit">修改图片</string>
-    <string name="gestures_delete">删除</string>
-    <string name="dialog_bc_seriusly">¿要呼叫</string>
-    <string name="dialog_no_more">不要再显示此消息</string>
-    <string name="dialog_sure">确定?</string>
-    <string name="calling">呼叫...</string>
-    
-    <!-- Miscelanea -->
-	<string name = "first_time_toast">这是您第一次用 Gesture Call吗\n</string>
-	<string name = "gesto_anadido">添加图片正确</string>
-	<string name = "yes">是</string>
-	<string name = "no">否</string>
-	<string name = "no_gesto">图片不正确</string>
-	<string name = "info_list_gestos">长按键编辑图片</string>
+	<string name="makeGesture">画图呼叫联系人</string>
+
+	<!-- Button -->
+	<string name="ini_Button">添加</string>
+	<string name="button_done">创建</string>
+	<string name="cancelGesture">取消</string>
+	<string name="cancelGesture2">返回</string>
+	<string name="button_volver">返回</string>
+	<string name="button_save">保存r</string>
+	<string name="button_edit_gesture">图</string>
+	<string name="button_reload">加载</string>
+
+	<!-- Menu -->
+	<string name="salir">关闭</string>
+	<string name="opciones">选项</string>
+	<string name="menu_edit">图</string>
+
+	<!-- Dialog -->
+	<string name="di_salir">"确定要退出应用程序?"</string>
+	<string name="gestures_edit">修改图片</string>
+	<string name="gestures_delete">删除</string>
+	<string name="dialog_bc_seriusly">¿要呼叫</string>
+	<string name="dialog_no_more">不要再显示此消息</string>
+	<string name="dialog_sure">确定?</string>
+	<string name="calling">呼叫...</string>
+
+	<!-- Miscelanea -->
+	<string name="first_time_toast">这是您第一次用 Gesture Call吗\n</string>
+	<string name="gesto_anadido">添加图片正确</string>
+	<string name="yes">是</string>
+	<string name="no">否</string>
+	<string name="no_gesto">图片不正确</string>
+	<string name="info_list_gestos">长按键编辑图片</string>
 	<string name="gestures_loading">载入图片...</string>
 	<string name="gestures_empty">无图片</string>
 	<string name="gestures_activity">图片</string>
 	<string name="gestures_delete_success">图片已删除</string>
 	<string name="gestures_error_loading">无法载入 %s.确定SD卡已插入，</string>
-		
+
 	<!-- Preferencias -->
-	<string name ="pref_main">程序选项</string>
-	<string name ="pref_ask">呼叫前询问</string>
-	<string name ="pref_ask_summary"></string>
-	
-	
+	<string name="pref_main">程序选项</string>
+	<string name="pref_ask">呼叫前询问</string>
+	<string name="pref_ask_summary"></string>
+
+
 </resources>

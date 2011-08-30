@@ -1,4 +1,10 @@
 /**
+ * Acdroid Apps for Android
+ * 
+ * @author Carlos Diaz Canovas
+ * @author Marcos Trujillo Seoane
+ * 
+ * Project Gesture Call
  * 
  */
 package ac.gestureCallPro.ui.donate;
@@ -30,11 +36,16 @@ public class Donate extends Activity {
 	}
 
 
+
 	public void init(){
 
 
 	}
 
+	/**
+	 * Method clickGestureCall.
+	 * @param v View
+	 */
 	public void clickGestureCall(View v){
 		Intent intent = new Intent(Intent.ACTION_VIEW);
 		intent.setData(Uri.parse("market://details?id=ac.gestureCallPro"));
@@ -86,12 +97,6 @@ public class Donate extends Activity {
 			setResult(RESULT_OK);
 			Donate.this.finish();
 		}
-
-
-
-
-
-
 	}
 
 }

@@ -1,26 +1,29 @@
+/**
+ * Acdroid Apps for Android
+ * 
+ * @author Carlos Diaz Canovas
+ * @author Marcos Trujillo Seoane
+ * 
+ * Project Gesture Call
+ * 
+ */
 package ac.gestureCallPro.util.SDCard;
 
 import android.content.Context;
 import android.os.Environment;
 import android.widget.Toast;
 
-/**
- * @author mtrujillo
- *
- */
 public class CheckSDCard {
 	
 	/**
-	 * <b> comprobarSDCard</b><br><br>
-	 *    public static Boolean comprobarSDCard()<br>
-	 * <ul>Esta clase se ha implementado para facilitar la
+	 * Esta clase se ha implementado para facilitar la
 	 * comprobacion del estado de la tarjeta SDCard.
 	 * Si el estado es correcto se devolver� true.
 	 * Si el estado es incorrecto se obtendra un mensaje por
 	 * pantalla informando del error y se devolvera false.
-	 * </ul><br><br>
-	 * @return True si la SDCard esta correctametne o false e.o.c.
-	 */
+	 * <br><br>
+	 * @param mContext Context
+	 * @return True si la SDCard esta correctametne o false e.o.c. */
 	public static Boolean comprobarSDCard(Context mContext){
 		
 		String auxSDCardStatus = Environment.getExternalStorageState();

@@ -1,93 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-   <string name = "makeGesture">Fes un gest per trucar a un contacte</string>
-   
-   <!--  NUEVAS -->
-    <string name ="click_gesture">Accede a Gesture Call !</string>
-    <string name ="pref_exit_after_call">Salir después de llamar</string>
-    <string name ="pref_exit_after_call_summary">Salir de la aplicación después de realizar una llamada o enviar un mensaje de texto</string>
-    <string name ="pref_notification">Usar notificaciones</string>
-    <string name ="pref_notification_summary">Pone un icono en el área de notificaciones para acceder de forma rápida a Gesture Call en cualquier momento</string>
-    <string name ="pref_seconds">Segundos antes de acción</string>
-    <string name ="pref_seconds_summary">Número de segundos que la aplicación esperará antes de llamar o acceder al envío de mensajes automáticamente</string>
-    <string name ="select_secs">Selecciona el número de segundos</string>
-    <string name ="secs">Segs</string>
-    <string name ="select_themes">Selecciona el Tema para Gesture Call</string>
-    <string name ="pref_themes">Selecciona el Tema para la App</string>
-    <string name ="pref_themes_summary">Elige el estilo para la aplicación. Hay 5 temas disponibles: Gris, Azul, Verde, Negro y Blanco</string>
-    <string name ="pref_novedades">Novedades</string>
-    <string name ="pref_novedades_summary">Novedades de la versión 2.0</string>
-    <string name ="pref_about">Créditos</string>
-    <string name ="pref_about_summary">Conoce un poco sobre los que hemos hecho esto y agradecimientos</string>
-    <string name ="pref_def_action">Acción por defecto</string>
-    <string name ="select_dialog_def_action">Selecciona la acción por defecto</string>
-    <string name ="sms">SMS</string>
-    <string name ="call">Llamar</string>
-    <string name ="themes">Temas</string>
-    <string name ="pref_contacta">Mándanos un e-mail</string>
-    <string name ="pref_contacta_summary">¿Te gustaría tener Gesture Call en tu idioma? ¿Tienes alguna magnífica idea que quieres que incluyamos en Gesture Call? Pulsa aquí y mándanos un e-mail contándonos lo que quieras</string>
-    
-    <string name="dialog_bc_seriusly_sms">¿Quieres mandar un SMS a</string>
-    <string name ="notification_hello">Hola!Pruébame...</string> 
-    
-    <string name ="pref_donate">¡Apóyanos!</string>
-    <string name ="pref_donate_summary">Apóyanos descargando Gesture Call Donate sin publicidad y recibirás un poco antes las actualizaciones.\n</string>
-    <string name ="donate">¡Colabora!</string>
-    <string name ="donate_text1">Si quieres colaborar con nosotros puedes descargar Gesture Call Donate sin publicidad y podrás
-    recibir las actualizaciones un poco antes que en la versión normal. Nueva interfaz, mandar mensajes rápidamente o el nuevo 
-    icono de notifiación a un click: 
+	<string name="makeGesture">Fes un gest per trucar a un contacte</string>
+
+	<!-- NUEVAS -->
+	<string name="click_gesture">Accede a Gesture Call !</string>
+	<string name="pref_exit_after_call">Salir después de llamar</string>
+	<string name="pref_exit_after_call_summary">Salir de la aplicación después de realizar una
+		llamada o enviar un mensaje de texto</string>
+	<string name="pref_notification">Usar notificaciones</string>
+	<string name="pref_notification_summary">Pone un icono en el área de notificaciones para
+		acceder de forma rápida a Gesture Call en cualquier momento</string>
+	<string name="pref_seconds">Segundos antes de acción</string>
+	<string name="pref_seconds_summary">Número de segundos que la aplicación esperará antes
+		de llamar o acceder al envío de mensajes automáticamente</string>
+	<string name="select_secs">Selecciona el número de segundos</string>
+	<string name="secs">Segs</string>
+	<string name="select_themes">Selecciona el Tema para Gesture Call</string>
+	<string name="pref_themes">Selecciona el Tema para la App</string>
+	<string name="pref_themes_summary">Elige el estilo para la aplicación. Hay 5 temas
+		disponibles: Gris, Azul, Verde, Negro y Blanco</string>
+	<string name="pref_novedades">Novedades</string>
+	<string name="pref_novedades_summary">Novedades de la versión 2.0</string>
+	<string name="pref_about">Créditos</string>
+	<string name="pref_about_summary">Conoce un poco sobre los que hemos hecho esto y
+		agradecimientos</string>
+	<string name="pref_def_action">Acción por defecto</string>
+	<string name="select_dialog_def_action">Selecciona la acción por defecto</string>
+	<string name="sms">SMS</string>
+	<string name="call">Llamar</string>
+	<string name="themes">Temas</string>
+	<string name="pref_contacta">Mándanos un e-mail</string>
+	<string name="pref_contacta_summary">¿Te gustaría tener Gesture Call en tu idioma?
+		¿Tienes alguna magnífica idea que quieres que incluyamos en Gesture
+		Call? Pulsa aquí y mándanos un e-mail contándonos lo que quieras</string>
+
+	<string name="dialog_bc_seriusly_sms">¿Quieres mandar un SMS a</string>
+	<string name="notification_hello">Hola!Pruébame...</string>
+
+	<string name="pref_donate">¡Apóyanos!</string>
+	<string name="pref_donate_summary">Apóyanos descargando Gesture Call Donate sin
+		publicidad y recibirás un poco antes las actualizaciones.\n</string>
+	<string name="donate">¡Colabora!</string>
+	<string name="donate_text1">Si quieres colaborar con nosotros puedes descargar
+		Gesture Call Donate sin publicidad y podrás
+		recibir las actualizaciones un poco antes que en la versión normal. Nueva
+		interfaz, mandar mensajes rápidamente o el nuevo
+		icono de notifiación a un click: 
     </string>
-    <string name ="donate_text2">En Acdroid nos encanta desarrollar aplicaciones para Android y no sólo tenemos Gesture Call: 
+	<string name="donate_text2">En Acdroid nos encanta desarrollar aplicaciones
+		para Android y no sólo tenemos Gesture Call: 
     </string>
-    
-    <string name="shortcut">Acceso directo</string>
-    <string name="shortcut_summary">Crea una acceso directo para acceder a Gesture Call rápidamente desde el escritorio</string>
-    <string name="creando">Creando</string>
-    <string name="creating_shortcut">Crear Acceso Directo</string>
-   
-   <!--  Button -->
-   <string name = "ini_Button">Afegir</string>
 
-   <string name = "button_done">Crear</string>
-   <string name = "cancelGesture">Cancelar Gest</string>
-   <string name = "cancelGesture2">Tornar</string>
+	<string name="shortcut">Acceso directo</string>
+	<string name="shortcut_summary">Crea una acceso directo para acceder a Gesture Call
+		rápidamente desde el escritorio</string>
+	<string name="creando">Creando</string>
+	<string name="creating_shortcut">Crear Acceso Directo</string>
+
+	<!-- Button -->
+	<string name="ini_Button">Afegir</string>
+
+	<string name="button_done">Crear</string>
+	<string name="cancelGesture">Cancelar Gest</string>
+	<string name="cancelGesture2">Tornar</string>
 
 
-       <string name = "button_volver">Tornar</string>
+	<string name="button_volver">Tornar</string>
 
-       <string name = "button_edit_gesture">Gestos</string>
-       <string name= "button_reload">Recarregar</string>
-       
-       <!--  Menu -->
-       <string name ="salir">Sortir</string>
-       <string name ="opciones">Opcions</string>
+	<string name="button_edit_gesture">Gestos</string>
+	<string name="button_reload">Recarregar</string>
 
-       <string name ="menu_edit">Gestos</string>
-       
-       <!--  Dialog -->
-       <string name = "di_salir">"Estàs segur de voler sortir de l'aplicació?"</string>
-       <string name="gestures_edit">Modificar Gest</string>
-       <string name="dialog_bc_seriusly">Trucar a</string>
-       <string name="gestures_delete">Eliminar</string>
-       <string name="calling">Trucant...</string>
-       
-       <!-- Miscelanea -->
-    <string name = "first_time_toast">Aquesta és la primera vegada que fas servir Gesture Call\n....</string>
-    <string name = "gesto_anadido">Gest afegit Correctament</string>
+	<!-- Menu -->
+	<string name="salir">Sortir</string>
+	<string name="opciones">Opcions</string>
 
-    <string name = "yes">Sí</string>
-    <string name = "no">No</string>
-    <string name = "no_gesto">No s\'ha reconegut el gest</string>
-    <string name = "info_list_gestos">Polsa prolongadament per editar el Gest</string>
-    <string name="gestures_loading">Carregant gestos...</string>
-    <string name="gestures_empty">No hi ha gestos</string>
+	<string name="menu_edit">Gestos</string>
 
-    <string name="gestures_activity">Gestos</string>
-    <string name="gestures_delete_success">Gest Eliminat</string>
-    <string name="gestures_error_loading">No es pot carregar %s. Assegura\'t de que la targeta SD està muntada.</string>
-    <string name="error_no_libreria">No s\'ha pogut carregar Gestures Library</string>
-    
-    
-    
-    </resources>
+	<!-- Dialog -->
+	<string name="di_salir">"Estàs segur de voler sortir de l'aplicació?"</string>
+	<string name="gestures_edit">Modificar Gest</string>
+	<string name="dialog_bc_seriusly">Trucar a</string>
+	<string name="gestures_delete">Eliminar</string>
+	<string name="calling">Trucant...</string>
+
+	<!-- Miscelanea -->
+	<string name="first_time_toast">Aquesta és la primera vegada que fas servir Gesture
+		Call\n....</string>
+	<string name="gesto_anadido">Gest afegit Correctament</string>
+
+	<string name="yes">Sí</string>
+	<string name="no">No</string>
+	<string name="no_gesto">No s\'ha reconegut el gest</string>
+	<string name="info_list_gestos">Polsa prolongadament per editar el Gest</string>
+	<string name="gestures_loading">Carregant gestos...</string>
+	<string name="gestures_empty">No hi ha gestos</string>
+
+	<string name="gestures_activity">Gestos</string>
+	<string name="gestures_delete_success">Gest Eliminat</string>
+	<string name="gestures_error_loading">No es pot carregar %s. Assegura\'t de que la
+		targeta SD està muntada.</string>
+	<string name="error_no_libreria">No s\'ha pogut carregar Gestures Library</string>
+
+
+
+</resources>
     

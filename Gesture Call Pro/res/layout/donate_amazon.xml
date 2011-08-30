@@ -1,43 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent"
-  android:orientation="vertical"
-  android:background="@drawable/linearlayout_color_gradient_down"
-  android:gravity="center"
-  >
-  <ScrollView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
-        
-		  <LinearLayout
-		    	android:layout_width="fill_parent"
-		  		android:layout_height="wrap_content"
-		  		android:layout_weight="1"
-		  		android:orientation="vertical"
-		  		android:gravity="center"
-		  	>
-			  	<TextView
-			  		android:layout_width="match_parent"
-			  		android:layout_height="wrap_content"
-			  		android:gravity="left"
-			  		android:paddingLeft="16dip"
-			  		android:text="@string/donate_text1"
-			  		android:textColor="@android:color/primary_text_dark"
-			  		android:textSize="20dip"
-			  		android:textStyle="bold"
-			  		android:background="@android:drawable/dialog_frame"
-			  		/>
-			  	<ImageView
-			  		android:layout_width="fill_parent"
-			  		android:layout_height="wrap_content"
-			  		android:id="@+id/donate_ima_gesturecalldonate" 
-			  		android:layout_gravity="center"
-			  		android:src="@drawable/android_donate"
-			  		android:onClick="clickGestureCall"/>
-			  		
-		  	
-		</LinearLayout>  
-	</ScrollView>  
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent" android:layout_height="match_parent"
+	android:orientation="vertical" android:background="@drawable/linearlayout_color_gradient_down"
+	android:gravity="center">
+	<ScrollView android:layout_width="fill_parent"
+		android:layout_height="wrap_content">
+
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:layout_weight="1"
+			android:orientation="vertical" android:gravity="center">
+			<TextView android:layout_width="match_parent"
+				android:layout_height="wrap_content" android:gravity="left"
+				android:paddingLeft="16dip" android:text="@string/donate_text1"
+				android:textColor="@android:color/primary_text_dark"
+				android:textSize="20dip" android:textStyle="bold"
+				android:background="@android:drawable/dialog_frame" />
+			<ImageView android:layout_width="fill_parent"
+				android:layout_height="wrap_content" android:id="@+id/donate_ima_gesturecalldonate"
+				android:layout_gravity="center" android:src="@drawable/boton_amazon"
+				android:onClick="clickGestureCall" />
+
+
+		</LinearLayout>
+	</ScrollView>
 </LinearLayout>
