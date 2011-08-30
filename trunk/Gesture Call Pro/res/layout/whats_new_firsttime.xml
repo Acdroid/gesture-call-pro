@@ -1,17 +1,15 @@
-<RelativeLayout 
- android:id="@+id/scrollView1" android:layout_width="fill_parent" android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android"
- android:gravity="center">
+<RelativeLayout android:id="@+id/scrollView1"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:gravity="center">
 
- <ScrollView
-	android:layout_above="@+id/whats_new_layout"
-	android:layout_width="wrap_content"
-	android:layout_height="match_parent"
-	android:id="@+id/scrollView2">
-    <LinearLayout android:id="@+id/linearLayout2"
-    	android:layout_width="match_parent"
-    	android:layout_height="match_parent">
-        <TextView
-             android:text="
+	<ScrollView android:layout_above="@+id/whats_new_layout"
+		android:layout_width="wrap_content" android:layout_height="match_parent"
+		android:id="@+id/scrollView2">
+		<LinearLayout android:id="@+id/linearLayout2"
+			android:layout_width="match_parent" android:layout_height="match_parent">
+			<TextView
+				android:text="
 - Gesture Call Donate -\n
 \n
 Thanx you very much for downloading Gesture Call Donate!\n\n
@@ -43,31 +41,19 @@ Thanx you very much for downloading Gesture Call Donate!\n\n
   
 \n\n\n
   
-"                 	
-             android:id="@+id/textView1"
-             android:layout_width="fill_parent"
-			android:layout_height="wrap_content"></TextView>
-       </LinearLayout>
-  </ScrollView> 
+"
+				android:id="@+id/textView1" android:layout_width="fill_parent"
+				android:layout_height="wrap_content"></TextView>
+		</LinearLayout>
+	</ScrollView>
 
-	<LinearLayout 
-	 	android:id="@+id/whats_new_layout"
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		android:layout_alignParentBottom="true"
-		android:gravity="center">
-	  <Button
-	     android:id="@+id/whats_new_button"
-	     android:layout_width="wrap_content" android:layout_height="wrap_content"
-	     android:text="@string/creating_shortcut"
-	     
-	     ></Button>
-   </LinearLayout>
+	<LinearLayout android:id="@+id/whats_new_layout"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true" android:gravity="center">
+		<Button android:id="@+id/whats_new_button"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:text="@string/creating_shortcut"></Button>
+	</LinearLayout>
 </RelativeLayout>
 
-    <!-- 
- ·Basque:\n
- Haizea Mendo San José\n
- \n
-    
-    -->
+<!-- ·Basque:\n Haizea Mendo San José\n \n -->

@@ -1,3 +1,12 @@
+/**
+ * Acdroid Apps for Android
+ * 
+ * @author Carlos Diaz Canovas
+ * @author Marcos Trujillo Seoane
+ * 
+ * Project Gesture Call
+ * 
+ */
 package ac.gestureCallPro.util.gestures;
 
 import java.io.File;
@@ -14,7 +23,6 @@ import android.gesture.Prediction;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
-
 
 /**
  * Gestures.java 02/03/2011

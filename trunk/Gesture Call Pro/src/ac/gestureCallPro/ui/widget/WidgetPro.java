@@ -1,4 +1,10 @@
 /**
+ * Acdroid Apps for Android
+ * 
+ * @author Carlos Diaz Canovas
+ * @author Marcos Trujillo Seoane
+ * 
+ * Project Gesture Call
  * 
  */
 package ac.gestureCallPro.ui.widget;
@@ -17,13 +23,13 @@ import android.widget.RemoteViews;
 /**
  * @author marcos y carlos
  *
+ * @version $Revision: 1.0 $
  */
 public class WidgetPro extends AppWidgetProvider {
 
 	private static RemoteViews controles;
 	public static final String ACCION_BOTON_WIDGET_PRO = "ac.gestureCallPro.proPressButton";
 	public static final String ACCION_BOTON_WIDGET_PRO_DIRECT_CALL = "ac.gestureCallPro.proDirectCall";
-
 
 	@Override
 	public void onUpdate(Context context, AppWidgetManager appWidgetManager,
@@ -41,7 +47,6 @@ public class WidgetPro extends AppWidgetProvider {
 	    }
 
 	}
-
 
 
 	public void callGestureCall(Context c,AppWidgetManager widgetManager,int widgetId){

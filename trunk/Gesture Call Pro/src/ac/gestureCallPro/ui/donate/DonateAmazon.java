@@ -1,4 +1,10 @@
 /**
+ * Acdroid Apps for Android
+ * 
+ * @author Carlos Diaz Canovas
+ * @author Marcos Trujillo Seoane
+ * 
+ * Project Gesture Call
  * 
  */
 package ac.gestureCallPro.ui.donate;
@@ -17,9 +23,7 @@ import android.view.View;
  *
  */
 public class DonateAmazon extends Activity {
-
 	public static final int ID = 2345;
-
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -29,10 +33,7 @@ public class DonateAmazon extends Activity {
 		init();
 	}
 
-
 	public void init(){
-
-
 	}
 
 //	public void clickGestureCall(View v){
@@ -45,6 +46,10 @@ public class DonateAmazon extends Activity {
 	
 //PARA APLICACION EN AMAZON 
 
+	/**
+	 * Method clickGestureCall.
+	 * @param v View
+	 */
 	public void clickGestureCall(View v){
 		Intent intent = new Intent(Intent.ACTION_VIEW);
 	//	intent.setData(Uri.parse("http://www.amazon.com/gp/mas/dl/android?p=ac.GestureCallPro"));//enlace web
@@ -86,12 +91,5 @@ public class DonateAmazon extends Activity {
 			setResult(RESULT_OK);
 			DonateAmazon.this.finish();
 		}
-
-
-
-
-
-
 	}
-
 }

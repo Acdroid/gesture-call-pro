@@ -1,4 +1,10 @@
 /**
+ * Acdroid Apps for Android
+ * 
+ * @author Carlos Diaz Canovas
+ * @author Marcos Trujillo Seoane
+ * 
+ * Project Gesture Call
  * 
  */
 package ac.gestureCallPro.preferences;
@@ -27,15 +33,16 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 /**
- * @author marcos
- *
+ * @author Marcos y Carlos
  */
 public class Preferences extends Activity{
+	
 	public static final int DIALOG_SEGUNDOS = 1;
 	public static final int DIALOG_THEMES = 2;
 	public static final int DIALOG_ACCION = 3;
 	
 	public Context mContext;
+	//TODO cambiar para pillar de values/arrays investigar !!
 	final CharSequence[] items = {"1 second", "2 seconds", "3 seconds", "4 seconds","5 seconds", "6 seconds", "7 seconds", "8 seconds"
 			, "9 seconds", "10 seconds"};
 	final CharSequence[] themes = {"Grey","Green","Blue","Black","White"}; //coinciden con appConfig.GREY GREEN y BLUE
@@ -50,9 +57,6 @@ public class Preferences extends Activity{
 	private int accion;
 	
 	
-	
-	
-
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,6 +71,9 @@ public class Preferences extends Activity{
     }	
     
 	
+	/**
+	 * Obtiene las variables guardadas en las preferencias
+	 */
 	private void getValues(){
 		ap = new AppConfig(this, AppConfig.NAME);
 		try {
@@ -84,6 +91,11 @@ public class Preferences extends Activity{
 		
 		
 	}
+	
+	/**
+	 * Metodo que inicializa las preferencias atendiendo a lo 
+	 * que esta guardado en el fichero de configuracion.
+	 */
 	private void initValues(){
 		CheckBox c = (CheckBox) findViewById(R.id.pref_check);
 		c.setChecked(askBefore);
@@ -109,6 +121,11 @@ public class Preferences extends Activity{
 		
 	}
 	
+	
+	/**
+	 * Metodo que guarda en el fichero de configuración
+	 * las opciones tal como las ha dejado el usuario
+	 */
 	private void saveValues(){
 		CheckBox c = (CheckBox) findViewById(R.id.pref_check);
 		ap.put(c.isChecked(), AppConfig.AVISO_AL_LLAMAR);
@@ -128,6 +145,10 @@ public class Preferences extends Activity{
 	}
 	
 	
+	/**
+	 * Method clickShortcut.
+	 * @param v View
+	 */
 	public void clickShortcut(View v){
 		mToast.Make(mContext, getResources().getString(R.string.creando), 0);
 		LinearLayout l = (LinearLayout)findViewById(R.id.pref_lay_shortcut);
@@ -143,6 +164,10 @@ public class Preferences extends Activity{
 		CreateShortcut.create(this);
 	}
 	
+	/**
+	 * Method clickDonate.
+	 * @param v View
+	 */
 	public void clickDonate(View v){
 		Intent intent = new Intent(Intent.ACTION_VIEW);
 		intent.setData(Uri.parse("market://details?id=ac.gestureCallPro"));
@@ -153,7 +178,12 @@ public class Preferences extends Activity{
 	
 	
 	
-	//Menu para los creditos
+	
+	/**
+	 * Method onCreateOptionsMenu.
+	 * @param menu Menu
+	
+	 * @return boolean */
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		MenuInflater inflater = getMenuInflater();
@@ -161,6 +191,11 @@ public class Preferences extends Activity{
 		return true;
 	}
     
+	/**
+	 * Method onOptionsItemSelected.
+	 * @param item MenuItem
+	
+	 * @return boolean */
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		
@@ -183,6 +218,11 @@ public class Preferences extends Activity{
 	}
 	
 	
+	/**
+	 * Method onCreateDialog.
+	 * @param id int
+	
+	 * @return Dialog */
 	@Override
 	protected Dialog onCreateDialog(int id) {
 		@SuppressWarnings("unused")
@@ -230,19 +270,30 @@ public class Preferences extends Activity{
 	}
 
 	
-	//**************************** Funciones menores o de Clicks en vires ********************************//
+	//**************************** Funciones menores o de Clicks 	 ********************************//
 	
+	/**
+	 * Method clickReturn.
+	 * @param v View
+	 */
 	public void clickReturn(View v){
 		setResult(main.RESULT_PREF_NOT_SAVED);
 		Preferences.this.finish();
 	}
 	
+	/**
+	 * Method clickSave.
+	 * @param v View
+	 */
 	public void clickSave(View v){
 		saveValues();
 		setResult(main.RESULT_PREF_SAVED);
 		Preferences.this.finish();
 	}
 	
+	/**
+	 * Method onBackPressed.
+	 */
 	@Override
 	public void onBackPressed() {
 		saveValues();
@@ -251,6 +302,10 @@ public class Preferences extends Activity{
 	}
 
 
+	/**
+	 * Method clickAccionDefecto.
+	 * @param v View
+	 */
 	public void clickAccionDefecto(View v){
 		//showDialog(DIALOG_ACCION);
 		if (accion == 0)
@@ -260,14 +315,26 @@ public class Preferences extends Activity{
 		changeDefActionColor();
 	}
 	
+	/**
+	 * Method clickSecsAfterCall.
+	 * @param v View
+	 */
 	public void clickSecsAfterCall(View v){
 		showDialog(DIALOG_SEGUNDOS);
 	}
 	
+	/**
+	 * Method clickThemes.
+	 * @param v View
+	 */
 	public void clickThemes(View v){
 		showDialog(DIALOG_THEMES);
 	}
 	
+	/**
+	 * Method clickCheckBoxAfterCall.
+	 * @param v View
+	 */
 	public void clickCheckBoxAfterCall(View v){
 		CheckBox c = (CheckBox)findViewById(R.id.pref_check);
 		//Si esta ok permitimos cambiar el tiempo, e.o.c lo inhabilitamos
@@ -280,6 +347,10 @@ public class Preferences extends Activity{
 		}
 	}
 	
+	/**
+	 * Method clickNovedades.
+	 * @param v View
+	 */
 	public void clickNovedades(View v){
 		Dialog dialog = new Dialog(this);
 		dialog.setContentView(R.layout.whats_new);
@@ -289,6 +360,10 @@ public class Preferences extends Activity{
 	}
 	
 	
+	/**
+	 * Method clickAbout.
+	 * @param v View
+	 */
 	public void clickAbout(View v){
 		Dialog dialog = new Dialog(this);
 		dialog.setContentView(R.layout.credits_layout);
@@ -297,6 +372,10 @@ public class Preferences extends Activity{
 		dialog.show();
 	}
 	
+	/**
+	 * Method clickContact.
+	 * @param v View
+	 */
 	public void clickContact(View v){
 		Intent i = new Intent(Intent.ACTION_SEND);
 		i.setType("plain/text");
@@ -307,6 +386,9 @@ public class Preferences extends Activity{
 		
 	}
 	
+	/**
+	 * Cambia el modo de accion por defecto aplicando los cambios a la interfaz
+	 */
 	public void changeDefActionColor(){
 		TextView textCall = (TextView) findViewById(R.id.pref_accion_def1);
         TextView textSMS = (TextView) findViewById(R.id.pref_accion_def2);
@@ -321,6 +403,9 @@ public class Preferences extends Activity{
         }
 	}
 	
+	/**
+	 * Cambia la interfaz para informar al usuario del tema seleccionado.
+	 */
 	public void putThemeInLayout(){
 		LinearLayout l = (LinearLayout)findViewById(R.id.pref_lay_theme_withcolor);
 		switch (theme){

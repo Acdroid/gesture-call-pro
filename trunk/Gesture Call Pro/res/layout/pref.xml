@@ -1,357 +1,242 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  android:id="@+id/pref_lay_main"
-  android:layout_width="fill_parent"
-  android:layout_height="fill_parent"
-  android:orientation="vertical"
-  android:gravity="top"
-  android:background="@drawable/gradiente_android">
-  
-	<ScrollView
-		android:id="@+id/pref_scroll"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/pref_button_bar"
-        >
-        <LinearLayout        	
-        	android:layout_width="fill_parent"
-        	android:layout_height="wrap_content"
-        	android:orientation="vertical"
-        	android:layout_margin="5dp"
-        	>
-			  
-			<TextView
-			  	style="@style/OptionsGroupText"
-			  	android:text="@string/pref_main"/>
-			  	
-			  	
-			  	<!--  Accion por Defecto -->
-			  	<LinearLayout
-					style="@style/OptionsLayoutGroup"
-				    android:onClick="clickAccionDefecto">
-				    <LinearLayout
-				    	android:layout_width="44dip"
-				   		android:layout_height="wrap_content"/>
-					
-					<LinearLayout style="@style/OptionsLayoutGroupText">
-				    	<TextView
-				    		style="@style/OptionsTextPrincipal"
-				   			android:text="@string/pref_def_action"/>
-				    	
-				    	<LinearLayout 
-				    		android:layout_width="fill_parent"
-				   			android:layout_height="wrap_content"
-				   			android:orientation="horizontal"
-				   			android:gravity="center"
-				   			android:paddingTop="3dip">
-				    	
-				    		<TextView
-					    		android:id="@+id/pref_accion_def1"
-					    		android:layout_width="fill_parent"
-					   			android:layout_height="wrap_content"
-					   			android:layout_weight="1"
-					   			android:text="@string/call"
-					   			android:textColor="@android:color/secondary_text_dark"
-					   			android:textSize="17dip"
-					   			android:textStyle="bold">
-					   		</TextView>
-				    		
-				    		<TextView
-					    		android:id="@+id/pref_accion_def2"
-					    		android:layout_width="fill_parent"
-					   			android:layout_height="wrap_content"
-					   			android:layout_weight="1"
-					   			android:text="@string/sms"
-					   			android:textColor="@android:color/secondary_text_dark"
-					   			android:textSize="17dip"
-					   			android:textStyle="bold">
-					   		</TextView>
-				    	</LinearLayout>
-				    	
-				    	
-				    	
-				    </LinearLayout>
-				</LinearLayout>
-			    <LinearLayout style="@style/SeparatorLane"/>
-			   			  	
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/pref_lay_main" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:orientation="vertical"
+	android:gravity="top" android:background="@drawable/gradiente_android">
 
-				<!-- Preferencia Antes de llamar -->
-			  	<LinearLayout  	style="@style/OptionsLayoutGroup">	    
-				    <CheckBox
-				    	style="@style/OptionsCheckbox"
-					  	android:id="@+id/pref_check"
-					  	android:onClick="clickCheckBoxAfterCall">
-					</CheckBox>
-					
-					<LinearLayout style="@style/OptionsLayoutGroupText">
-				    	<TextView style="@style/OptionsTextPrincipal"
-				   			android:text="@string/pref_ask"/>
-				    	<TextView
-				    		style="@style/OptionsTextSummary"
-				   			android:text="@string/pref_ask_summary"/>
-				    </LinearLayout>	    		    
-			    	
+	<ScrollView android:id="@+id/pref_scroll"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:layout_above="@+id/pref_button_bar">
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:orientation="vertical"
+			android:layout_margin="5dp">
 
-			    </LinearLayout>
-			  
+			<TextView style="@style/OptionsGroupText" android:text="@string/pref_main" />
 
-			    <!--  Preferencia tiempo en segundos antes de llamar -->
-			    <LinearLayout
-			    	style="@style/OptionsLayoutGroup"
-			    	android:padding="15dip"
-			    	android:id="@+id/pref_lay_secs_after_call"
-				    android:onClick="clickSecsAfterCall">
-				    <LinearLayout
-					  	android:layout_width="wrap_content"
-		        		android:layout_height="wrap_content"
-		        		android:orientation="vertical"
-		        		android:gravity="center"
-		        		android:paddingRight="2dip">		    
-							<TextView
-						    	android:gravity="center"
-							  	android:layout_width="wrap_content"
-							    android:layout_height="wrap_content"
-							    android:textColor="@color/white"
-							    android:textStyle="bold"
-							    android:textSize="25dip"
-							  	android:id="@+id/pref_text_seconds"
-							  	>
-							</TextView>
-							<TextView
-						    	android:gravity="center"
-							  	android:layout_width="wrap_content"
-							    android:layout_height="wrap_content"
-							    android:text="@string/secs"
-							    android:textSize="20dip"
-							    android:textColor="@color/azul_claro"
-							    android:textStyle="bold"
-							    android:id="@+id/pref_text_secs"
-							  	>
-							</TextView>
-						</LinearLayout>	
-					
-					<LinearLayout	style="@style/OptionsLayoutGroupText">				    	
-				    	<TextView
-				    		style="@style/OptionsTextPrincipal"
-				    		android:id="@+id/pref_text_seconds_large"
-				   			android:text="@string/pref_seconds"/>
-				    	<TextView
-				    		style="@style/OptionsTextSummary"
-				    		android:id="@+id/pref_text_seconds_large2"
-				   			android:text="@string/pref_seconds_summary"/>
-				    </LinearLayout>
-			    </LinearLayout>
-			    <LinearLayout style="@style/SeparatorLane"/>
 
-				    
-				<!-- Preferencia  salir al terminar de llamar-->
-			  	<LinearLayout  style="@style/OptionsLayoutGroup">
-				    <CheckBox
-				    	style="@style/OptionsCheckbox"
-					  	android:id="@+id/pref_check_exit_after_call"/>
-					<LinearLayout	style="@style/OptionsLayoutGroupText">
-				    	<TextView
-				    		style="@style/OptionsTextPrincipal"
-				   			android:text="@string/pref_exit_after_call"/>
-				    	<TextView
-				    		style="@style/OptionsTextSummary"
-				   			android:text="@string/pref_exit_after_call_summary"/>
-				    </LinearLayout>	    		    
-			    </LinearLayout>
-			    <LinearLayout style="@style/SeparatorLane"/>
-				 	
-				 	
-				<!-- Notificacion-->
-			  	<LinearLayout  	style="@style/OptionsLayoutGroup">
-				    <CheckBox
-				    	style="@style/OptionsCheckbox"
-					  	android:id="@+id/pref_check_notification"/>
-					<LinearLayout	style="@style/OptionsLayoutGroupText">
-				    	<TextView
-				    		style="@style/OptionsTextPrincipal"
-				   			android:text="@string/pref_notification"
-				   			android:textColor="@android:color/primary_text_dark"/>
-				    	<TextView
-							style="@style/OptionsTextSummary"
-				   			android:text="@string/pref_notification_summary"
-				   			android:textColor="@android:color/secondary_text_dark"/>
-				    </LinearLayout>	    		    
-			    </LinearLayout>
-			    <LinearLayout style="@style/SeparatorLane"/>
-	
-	
-				 	  
-				<!-- Temas-->	
-				<TextView
-					style="@style/OptionsGroupText"
-				  	android:text="@string/themes"/>
-				  	
-				<LinearLayout 
-					style="@style/OptionsLayoutGroup"
-					android:onClick="clickThemes">
-					    <LinearLayout
-					    	android:id="@+id/pref_lay_theme_withcolor"
-						  	android:layout_width="26dip"
-			        		android:layout_height="fill_parent"
-			        		android:orientation="vertical"
-			        		android:layout_marginTop="3dip"
-			        		android:layout_marginBottom="3dip"
-			        		android:layout_marginLeft="7dip"
-			        		android:layout_marginRight="7dip"/>
-						
-						<LinearLayout	style="@style/OptionsLayoutGroupText">
-					    	<TextView
-					    		style="@style/OptionsTextPrincipal"
-					    		android:id="@+id/pref_text_themes"
-					   			android:text="@string/pref_themes"/>
-					    	<TextView
-					    		style="@style/OptionsTextSummary"
-					    		android:id="@+id/pref_text_themes2"
-					   			android:text="@string/pref_themes_summary"/>
-					    </LinearLayout>
-				</LinearLayout>
-				    			    
-				    			    
-				<!-- ShortCut -->
-				<TextView
-					style="@style/OptionsGroupText"
-				  	android:text="@string/shortcut"/>
+			<!-- Accion por Defecto -->
+			<LinearLayout style="@style/OptionsLayoutGroup"
+				android:onClick="clickAccionDefecto">
+				<LinearLayout android:layout_width="44dip"
+					android:layout_height="wrap_content" />
 
-				<!-- Shortcut-->
-				<LinearLayout
-					style="@style/OptionsLayoutGroup"
-					android:onClick="clickShortcut"
-					android:id="@+id/pref_lay_shortcut">
-					<LinearLayout	style="@style/OptionsLayoutEmpty"/>
-					<LinearLayout	style="@style/OptionsLayoutGroupText">
-					    	
-					    	<TextView
-					    		android:id="@+id/shortcut_title"
-					    		style="@style/OptionsTextPrincipal"
-					    		android:text="@string/shortcut"/>
-					    	<TextView
-					    		android:id="@+id/shortcut_summary"
-					    		style="@style/OptionsTextSummary"
-					   			android:text="@string/shortcut_summary"/>
-					    </LinearLayout>
+				<LinearLayout style="@style/OptionsLayoutGroupText">
+					<TextView style="@style/OptionsTextPrincipal"
+						android:text="@string/pref_def_action" />
+
+					<LinearLayout android:layout_width="fill_parent"
+						android:layout_height="wrap_content" android:orientation="horizontal"
+						android:gravity="center" android:paddingTop="3dip">
+
+						<TextView android:id="@+id/pref_accion_def1"
+							android:layout_width="fill_parent" android:layout_height="wrap_content"
+							android:layout_weight="1" android:text="@string/call"
+							android:textColor="@android:color/secondary_text_dark"
+							android:textSize="17dip" android:textStyle="bold">
+						</TextView>
+
+						<TextView android:id="@+id/pref_accion_def2"
+							android:layout_width="fill_parent" android:layout_height="wrap_content"
+							android:layout_weight="1" android:text="@string/sms"
+							android:textColor="@android:color/secondary_text_dark"
+							android:textSize="17dip" android:textStyle="bold">
+						</TextView>
+					</LinearLayout>
+
+
+
 				</LinearLayout>
-				<LinearLayout style="@style/SeparatorLane"/>    			    
-				    			    
-				    			    
-				    			    
-				    
-				<!-- About -->
-				<TextView
-					style="@style/OptionsGroupText"
-				  	android:text="About"/>
-				  	
-				  	
-				<!-- Novedades -->
-				<LinearLayout
-					style="@style/OptionsLayoutGroup"
-					android:onClick="clickNovedades">
-					<LinearLayout	style="@style/OptionsLayoutEmpty"/>
-					<LinearLayout	style="@style/OptionsLayoutGroupText">
-					    	
-					    	<TextView
-					    		style="@style/OptionsTextPrincipal"
-					    		android:id="@+id/pref_text_novedades"
-					    		android:text="@string/pref_novedades"/>
-					    	<TextView
-					    		style="@style/OptionsTextSummary"
-					    		android:id="@+id/pref_text_novedades2"
-					   			android:text="@string/pref_novedades_summary"/>
-					    </LinearLayout>
+			</LinearLayout>
+			<LinearLayout style="@style/SeparatorLane" />
+
+
+			<!-- Preferencia Antes de llamar -->
+			<LinearLayout style="@style/OptionsLayoutGroup">
+				<CheckBox style="@style/OptionsCheckbox" android:id="@+id/pref_check"
+					android:onClick="clickCheckBoxAfterCall">
+				</CheckBox>
+
+				<LinearLayout style="@style/OptionsLayoutGroupText">
+					<TextView style="@style/OptionsTextPrincipal"
+						android:text="@string/pref_ask" />
+					<TextView style="@style/OptionsTextSummary" android:text="@string/pref_ask_summary" />
 				</LinearLayout>
-				<LinearLayout style="@style/SeparatorLane"/>
-				
-								<!-- Contacta -->
-				<LinearLayout
-					style="@style/OptionsLayoutGroup"
-					android:onClick="clickContact">
-					<LinearLayout	style="@style/OptionsLayoutEmpty"/>
-						<LinearLayout	style="@style/OptionsLayoutGroupText">
-					    <TextView
-					    	style="@style/OptionsTextPrincipal"
-					    	android:id="@+id/pref_text_contacta"
-					   		android:text="@string/pref_contacta"/>
-					    	<TextView
-					    		style="@style/OptionsTextSummary"
-					    		android:id="@+id/pref_text_contacta2"
-					    		android:text="@string/pref_contacta_summary"/>
-					    </LinearLayout>
+
+
+			</LinearLayout>
+
+
+			<!-- Preferencia tiempo en segundos antes de llamar -->
+			<LinearLayout style="@style/OptionsLayoutGroup"
+				android:padding="15dip" android:id="@+id/pref_lay_secs_after_call"
+				android:onClick="clickSecsAfterCall">
+				<LinearLayout android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:orientation="vertical"
+					android:gravity="center" android:paddingRight="2dip">
+					<TextView android:gravity="center" android:layout_width="wrap_content"
+						android:layout_height="wrap_content" android:textColor="@color/white"
+						android:textStyle="bold" android:textSize="25dip" android:id="@+id/pref_text_seconds">
+					</TextView>
+					<TextView android:gravity="center" android:layout_width="wrap_content"
+						android:layout_height="wrap_content" android:text="@string/secs"
+						android:textSize="20dip" android:textColor="@color/azul_claro"
+						android:textStyle="bold" android:id="@+id/pref_text_secs">
+					</TextView>
 				</LinearLayout>
-				<LinearLayout style="@style/SeparatorLane"/>
-				
-				
-				<!-- about us -->
-				<LinearLayout
-					style="@style/OptionsLayoutGroup"
-					android:onClick="clickAbout"
-					android:layout_marginBottom="5dip">
-					<LinearLayout	style="@style/OptionsLayoutEmpty"/>
-						<LinearLayout	style="@style/OptionsLayoutGroupText">
-					    <TextView
-					    	style="@style/OptionsTextPrincipal"
-					    	android:id="@+id/pref_text_about"
-					   		android:text="@string/pref_about"/>
-					    	<TextView
-					    		style="@style/OptionsTextSummary"
-					    		android:id="@+id/pref_text_about2"
-					    		android:text="@string/pref_about_summary"/>
-					    </LinearLayout>
+
+				<LinearLayout style="@style/OptionsLayoutGroupText">
+					<TextView style="@style/OptionsTextPrincipal" android:id="@+id/pref_text_seconds_large"
+						android:text="@string/pref_seconds" />
+					<TextView style="@style/OptionsTextSummary" android:id="@+id/pref_text_seconds_large2"
+						android:text="@string/pref_seconds_summary" />
 				</LinearLayout>
-				<LinearLayout style="@style/SeparatorLane"/>
-		
-		
-		   </LinearLayout> 
-	</ScrollView>
-	
-	
-	
-	<!--  Botones de abajo guardar y volver -->
-	  	
-	     <LinearLayout
-	     		android:id="@+id/pref_button_bar"
-		        android:layout_height="wrap_content"
-		        android:layout_width="fill_parent"
-		        android:gravity="bottom"
-		        android:layout_alignParentBottom="true">	        
-		        
-				        	
-				    <LinearLayout
-			         	android:gravity="bottom"
-			            android:layout_width="fill_parent"
-				        android:layout_height="wrap_content"			
-				        android:orientation="horizontal"
-				        android:padding="5dip"
-				        android:background="@drawable/gradient_header">
-			        
-				 
-			       			 <Button
-				            	android:id="@+id/pref_save_utton"
-				            	android:onClick="clickSave"
-				            	android:text="@string/button_save"       
-					            android:layout_width="0dip"
-					            android:layout_height="fill_parent"
-					            android:layout_weight="1"		            
-					            android:padding="10dip"
-					            android:background="@drawable/button_menu_bar_left_bg"/>
-					    
-					        <Button
-					        	android:id="@+id/pref_button_volver"
-				            	android:onClick="clickReturn"
-				          		android:text="@string/button_volver" 
-					            android:layout_width="0dip"
-					            android:layout_height="fill_parent"
-					            android:layout_weight="1"		            
-					            android:padding="10dip"		           
-					            android:background="@drawable/button_menu_bar_right_bg"/>
-					            
-				 
-				    </LinearLayout>
+			</LinearLayout>
+			<LinearLayout style="@style/SeparatorLane" />
+
+
+			<!-- Preferencia salir al terminar de llamar -->
+			<LinearLayout style="@style/OptionsLayoutGroup">
+				<CheckBox style="@style/OptionsCheckbox" android:id="@+id/pref_check_exit_after_call" />
+				<LinearLayout style="@style/OptionsLayoutGroupText">
+					<TextView style="@style/OptionsTextPrincipal"
+						android:text="@string/pref_exit_after_call" />
+					<TextView style="@style/OptionsTextSummary" android:text="@string/pref_exit_after_call_summary" />
+				</LinearLayout>
+			</LinearLayout>
+			<LinearLayout style="@style/SeparatorLane" />
+
+
+			<!-- Notificacion -->
+			<LinearLayout style="@style/OptionsLayoutGroup">
+				<CheckBox style="@style/OptionsCheckbox" android:id="@+id/pref_check_notification" />
+				<LinearLayout style="@style/OptionsLayoutGroupText">
+					<TextView style="@style/OptionsTextPrincipal"
+						android:text="@string/pref_notification" android:textColor="@android:color/primary_text_dark" />
+					<TextView style="@style/OptionsTextSummary" android:text="@string/pref_notification_summary"
+						android:textColor="@android:color/secondary_text_dark" />
+				</LinearLayout>
+			</LinearLayout>
+			<LinearLayout style="@style/SeparatorLane" />
+
+
+
+			<!-- Temas -->
+			<TextView style="@style/OptionsGroupText" android:text="@string/themes" />
+
+			<LinearLayout style="@style/OptionsLayoutGroup"
+				android:onClick="clickThemes">
+				<LinearLayout android:id="@+id/pref_lay_theme_withcolor"
+					android:layout_width="26dip" android:layout_height="fill_parent"
+					android:orientation="vertical" android:layout_marginTop="3dip"
+					android:layout_marginBottom="3dip" android:layout_marginLeft="7dip"
+					android:layout_marginRight="7dip" />
+
+				<LinearLayout style="@style/OptionsLayoutGroupText">
+					<TextView style="@style/OptionsTextPrincipal" android:id="@+id/pref_text_themes"
+						android:text="@string/pref_themes" />
+					<TextView style="@style/OptionsTextSummary" android:id="@+id/pref_text_themes2"
+						android:text="@string/pref_themes_summary" />
+				</LinearLayout>
+			</LinearLayout>
+
+
+			<!-- ShortCut -->
+			<TextView style="@style/OptionsGroupText" android:text="@string/shortcut" />
+
+			<!-- Shortcut -->
+			<LinearLayout style="@style/OptionsLayoutGroup"
+				android:onClick="clickShortcut" android:id="@+id/pref_lay_shortcut">
+				<LinearLayout style="@style/OptionsLayoutEmpty" />
+				<LinearLayout style="@style/OptionsLayoutGroupText">
+
+					<TextView android:id="@+id/shortcut_title" style="@style/OptionsTextPrincipal"
+						android:text="@string/shortcut" />
+					<TextView android:id="@+id/shortcut_summary" style="@style/OptionsTextSummary"
+						android:text="@string/shortcut_summary" />
+				</LinearLayout>
+			</LinearLayout>
+			<LinearLayout style="@style/SeparatorLane" />
+
+
+
+
+			<!-- About -->
+			<TextView style="@style/OptionsGroupText" android:text="About" />
+
+
+			<!-- Novedades -->
+			<LinearLayout style="@style/OptionsLayoutGroup"
+				android:onClick="clickNovedades">
+				<LinearLayout style="@style/OptionsLayoutEmpty" />
+				<LinearLayout style="@style/OptionsLayoutGroupText">
+
+					<TextView style="@style/OptionsTextPrincipal" android:id="@+id/pref_text_novedades"
+						android:text="@string/pref_novedades" />
+					<TextView style="@style/OptionsTextSummary" android:id="@+id/pref_text_novedades2"
+						android:text="@string/pref_novedades_summary" />
+				</LinearLayout>
+			</LinearLayout>
+			<LinearLayout style="@style/SeparatorLane" />
+
+			<!-- Contacta -->
+			<LinearLayout style="@style/OptionsLayoutGroup"
+				android:onClick="clickContact">
+				<LinearLayout style="@style/OptionsLayoutEmpty" />
+				<LinearLayout style="@style/OptionsLayoutGroupText">
+					<TextView style="@style/OptionsTextPrincipal" android:id="@+id/pref_text_contacta"
+						android:text="@string/pref_contacta" />
+					<TextView style="@style/OptionsTextSummary" android:id="@+id/pref_text_contacta2"
+						android:text="@string/pref_contacta_summary" />
+				</LinearLayout>
+			</LinearLayout>
+			<LinearLayout style="@style/SeparatorLane" />
+
+
+			<!-- about us -->
+			<LinearLayout style="@style/OptionsLayoutGroup"
+				android:onClick="clickAbout" android:layout_marginBottom="5dip">
+				<LinearLayout style="@style/OptionsLayoutEmpty" />
+				<LinearLayout style="@style/OptionsLayoutGroupText">
+					<TextView style="@style/OptionsTextPrincipal" android:id="@+id/pref_text_about"
+						android:text="@string/pref_about" />
+					<TextView style="@style/OptionsTextSummary" android:id="@+id/pref_text_about2"
+						android:text="@string/pref_about_summary" />
+				</LinearLayout>
+			</LinearLayout>
+			<LinearLayout style="@style/SeparatorLane" />
+
+
 		</LinearLayout>
-	  	
-  	
+	</ScrollView>
+
+
+
+	<!-- Botones de abajo guardar y volver -->
+
+	<LinearLayout android:id="@+id/pref_button_bar"
+		android:layout_height="wrap_content" android:layout_width="fill_parent"
+		android:gravity="bottom" android:layout_alignParentBottom="true">
+
+
+		<LinearLayout android:gravity="bottom"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:orientation="horizontal" android:padding="5dip"
+			android:background="@drawable/gradient_header">
+
+
+			<Button android:id="@+id/pref_save_utton" android:onClick="clickSave"
+				android:text="@string/button_save" android:layout_width="0dip"
+				android:layout_height="fill_parent" android:layout_weight="1"
+				android:padding="10dip" android:background="@drawable/button_menu_bar_left_bg" />
+
+			<Button android:id="@+id/pref_button_volver" android:onClick="clickReturn"
+				android:text="@string/button_volver" android:layout_width="0dip"
+				android:layout_height="fill_parent" android:layout_weight="1"
+				android:padding="10dip" android:background="@drawable/button_menu_bar_right_bg" />
+
+
+		</LinearLayout>
+	</LinearLayout>
+
+
 </RelativeLayout>

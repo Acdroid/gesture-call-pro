@@ -1,3 +1,12 @@
+/**
+ * Acdroid Apps for Android
+ * 
+ * @author Carlos Diaz Canovas
+ * @author Marcos Trujillo Seoane
+ * 
+ * Project Gesture Call
+ * 
+ */
 package ac.gestureCallPro.ui.creadorGestos;
 
 import ac.gestureCallPro.R;
@@ -12,7 +21,6 @@ import android.content.Context;
 import android.gesture.Gesture;
 import android.gesture.GestureLibrary;
 import android.gesture.GestureOverlayView;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -22,11 +30,15 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
+/**
+ * @author mtrujillo
+ * @version $Revision: 1.0 $
+ */
 public class CreadorGestos extends Activity {
 	private static final float LENGTH_THRESHOLD = 120.0f;
 
 	private Gesture mGesture;
-	private View mDoneButton;
+	private Button mDoneButton;
 	public Button ButtonCancel;
 	public GestureLibrary store;
 
@@ -40,7 +52,6 @@ public class CreadorGestos extends Activity {
 	
 	public GestureOverlayView overlay;
 
-	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -67,6 +78,7 @@ public class CreadorGestos extends Activity {
 
 		overlay.addOnGestureListener(new GesturesProcessor());
 	}
+
 
 	@Override
 	protected void onSaveInstanceState(Bundle outState) {
@@ -96,6 +108,7 @@ public class CreadorGestos extends Activity {
 		mDoneButton.setEnabled(false);
 	}
 
+	
 	/**
 	 * 
 	 * Metodo de apoyo para doneGesture
@@ -163,7 +176,9 @@ public class CreadorGestos extends Activity {
 		try {
 			theme = ap.getInt(AppConfig.THEME);
 		} catch (NoPreferenceException e) {
+			Log.i("Gesture Call","No Theme preference. Apply Default GREY");
 			theme = Themes.GREY;
+			ap.put(Themes.GREY,AppConfig.THEME);
 		}
 		
 		Log.d("DEBUG","puto theme " + theme);
@@ -206,9 +221,8 @@ public class CreadorGestos extends Activity {
 	}
 	
 
-	
-
 	private class GesturesProcessor implements GestureOverlayView.OnGestureListener {
+		
 		public void onGestureStarted(GestureOverlayView overlay, MotionEvent event) {
 			mDoneButton.setEnabled(false);
 			mGesture = null;

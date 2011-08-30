@@ -1,3 +1,12 @@
+/**
+ * Acdroid Apps for Android
+ * 
+ * @author Carlos Diaz Canovas
+ * @author Marcos Trujillo Seoane
+ * 
+ * Project Gesture Call
+ * 
+ */
 package ac.gestureCallPro.util.config;
 
 import java.util.ArrayList;
@@ -20,17 +29,6 @@ public class MSharedPreferences {
 	public String namePreferences = "";
 	public Context mContext;
 	
-	
-	/*
-  	 * <ul>Constructor de la clase MSharedPreferences
-  	 * Selecciona por defecto las preferencias TacTIC_Movil</ul><br><br>
-  	 * @param mContext contexto desde el que se llama al constructor
-	 */
-//	public MSharedPreferences (Context mContext){
-//		pref = mContext.getSharedPreferences(PREFERENCE_NAME_DEF, PREFERENCE_MODE);
-//		prefEditor = pref.edit();
-//		namePreferences = PREFERENCE_NAME_DEF;
-//	}
 	
 	/**
   	 * <ul>Constructor de la clase MSharedPreferences</ul><br><br>

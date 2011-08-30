@@ -1,3 +1,12 @@
+/**
+ * Acdroid Apps for Android
+ * 
+ * @author Carlos Diaz Canovas
+ * @author Marcos Trujillo Seoane
+ * 
+ * Project Gesture Call
+ * 
+ */
 package ac.gestureCallPro.util.shortcut;
 
 import ac.gestureCallPro.R;
@@ -6,13 +15,9 @@ import android.content.Intent;
 import android.os.Parcelable;
 
 public class CreateShortcut {
-
-
 	public static final void create (Context context){
-
 		Intent shortcutIntent = new Intent(Intent.ACTION_MAIN); 
 		shortcutIntent.setClassName(context, context.getApplicationContext().getPackageName() + ".ui.main");
-
 
 		Intent i = new Intent();
 		i.setAction("com.android.launcher.action.INSTALL_SHORTCUT");

@@ -1,10 +1,15 @@
 
-    <ScrollView android:id="@+id/scrollView1" android:layout_width="fill_parent" android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android">
-        <LinearLayout android:id="@+id/linearLayout1" android:layout_width="match_parent" android:layout_height="match_parent">
-            <ScrollView android:layout_width="wrap_content" android:layout_height="match_parent" android:id="@+id/scrollView2">
-                <LinearLayout android:id="@+id/linearLayout2" android:layout_width="match_parent" android:layout_height="match_parent">
-                    <TextView
-                    	android:text="
+<ScrollView android:id="@+id/scrollView1"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	<LinearLayout android:id="@+id/linearLayout1"
+		android:layout_width="match_parent" android:layout_height="match_parent">
+		<ScrollView android:layout_width="wrap_content"
+			android:layout_height="match_parent" android:id="@+id/scrollView2">
+			<LinearLayout android:id="@+id/linearLayout2"
+				android:layout_width="match_parent" android:layout_height="match_parent">
+				<TextView
+					android:text="
 -Acdroid-\n
 ·Concept, Idea and Development:\n
  Marcos Trujillo Seoane\n
@@ -50,18 +55,14 @@ GESTURE CALL AND DONATE\n
 THANX!!
   
   
-  \n\n\n"                 	
-                    	android:id="@+id/textView1" android:layout_width="fill_parent" android:layout_height="wrap_content"></TextView>
-                </LinearLayout>
-            </ScrollView>
-        </LinearLayout>
-    </ScrollView>
+  \n\n\n"
+					android:id="@+id/textView1" android:layout_width="fill_parent"
+					android:layout_height="wrap_content"></TextView>
+			</LinearLayout>
+		</ScrollView>
+	</LinearLayout>
+</ScrollView>
 
 
 
-    <!-- 
- ·Basque:\n
- Haizea Mendo San José\n
- \n
-    
-    -->
+<!-- ·Basque:\n Haizea Mendo San José\n \n -->

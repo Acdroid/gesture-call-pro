@@ -1,6 +1,15 @@
+/**
+ * Acdroid Apps for Android
+ * 
+ * @author Carlos Diaz Canovas
+ * @author Marcos Trujillo Seoane
+ * 
+ * Project Gesture Call
+ * 
+ */
 package ac.gestureCallPro.ui.widget;
 
-import ac.gestureCallPro.R;
+
 import android.app.Activity;
 import android.appwidget.AppWidgetManager;
 import android.content.Intent;

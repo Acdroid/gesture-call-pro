@@ -1,6 +1,10 @@
 /**
- *  Poner licencia
- * @author Carlos Diaz Canovas y Marcos Trujillo Seoane
+ * Acdroid Apps for Android
+ * 
+ * @author Carlos Diaz Canovas
+ * @author Marcos Trujillo Seoane
+ * 
+ * Project Gesture Call
  * 
  */
 package ac.gestureCallPro.ui.contactos;
@@ -18,8 +22,6 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.gesture.GestureLibrary;
 import android.os.Bundle;
-import android.provider.ContactsContract.CommonDataKinds.Phone;
-import android.provider.ContactsContract.Data;
 import android.view.View;
 import android.widget.AlphabetIndexer;
 import android.widget.ImageView;
@@ -27,6 +29,7 @@ import android.widget.ListView;
 import android.widget.SectionIndexer;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
+
 
 
 public final class ListContact extends ListActivity
@@ -38,8 +41,10 @@ public final class ListContact extends ListActivity
 	public ContactCursor manegadorCursor;
 
 	public Cursor cursor;
+	
 	/**
 	 * Called when the activity is first created. Responsible for initializing the UI.
+	 * @param savedInstanceState Bundle
 	 */
 	@Override
 	public void onCreate(Bundle savedInstanceState)
@@ -69,8 +74,9 @@ public final class ListContact extends ListActivity
 	/**
 	 * Obtains the contact list for the currently selected account.
 	 *
-	 * @return A cursor for for accessing the contact list.
-	 */
+	
+	 * @return A cursor for for accessing the contact list. */
+	@SuppressWarnings("unused")
 	private Cursor getContacts()
 	{
         // Run query
@@ -103,6 +109,13 @@ public final class ListContact extends ListActivity
 
 
 
+	/**
+	 * Method onListItemClick.
+	 * @param l ListView
+	 * @param v View
+	 * @param position int
+	 * @param id long
+	 */
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		super.onListItemClick(l, v, position, id);
@@ -116,6 +129,12 @@ public final class ListContact extends ListActivity
 		startActivityForResult(i, ID);
 	}
 	
+    /**
+     * Method onActivityResult.
+     * @param requestCode int
+     * @param resultCode int
+     * @param data Intent
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         
@@ -129,6 +148,7 @@ public final class ListContact extends ListActivity
 			case main.RESULT_SALIR:
 				setResult(main.RESULT_SALIR);
 				ListContact.this.finish();
+				break;
 			case main.RESULT_GESTO_ADD_OK:
 				setResult(main.RESULT_OK);
 				ListContact.this.finish();
@@ -143,12 +163,30 @@ public final class ListContact extends ListActivity
         
 	
 	
+
 	private class mySimpleCursorAdapter extends SimpleCursorAdapter implements SectionIndexer{
 
+		/**
+		 * Field mContext.
+		 */
 		private Context mContext;
+		/**
+		 * Field gestosNoNull.
+		 */
 		Set<String> gestosNoNull;
+		/**
+		 * Field alphaIndexer.
+		 */
 		AlphabetIndexer alphaIndexer;
 
+		/**
+		 * Constructor for mySimpleCursorAdapter.
+		 * @param context Context
+		 * @param layout int
+		 * @param c Cursor
+		 * @param from String[]
+		 * @param to int[]
+		 */
 		public mySimpleCursorAdapter(Context context, int layout, Cursor c,
 				String[] from, int[] to) {
 			super(context, layout, c, from, to);
@@ -158,15 +196,18 @@ public final class ListContact extends ListActivity
 			alphaIndexer=new AlphabetIndexer(c,c.getColumnIndex(manegadorCursor.getNameNameColum()), " ABCDEFGHIJKLMNOPQRSTUVWXYZ");
 		}
 
+
 		@Override
 		public int getPositionForSection(int section) {
 			return alphaIndexer.getPositionForSection(section);
 		}
 
+
 		@Override
 		public int getSectionForPosition(int position) {
 			return alphaIndexer.getSectionForPosition(position);
 		}
+
 
 		@Override
 		public Object[] getSections() {
@@ -196,7 +237,7 @@ public final class ListContact extends ListActivity
 			TextView t2 = (TextView) view.findViewById(R.id.item_lista_numero);
 			String phone =t2.getText().toString();
 			ImageView i = (ImageView)view.findViewById(R.id.item_list_image);
-			if (gestosNoNull.contains(phone) == true){
+			if ( gestosNoNull.contains(phone) ){
 				i.setImageResource(R.drawable.btn_check_on);
 			}
 			else{

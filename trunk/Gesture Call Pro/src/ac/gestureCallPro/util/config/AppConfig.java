@@ -1,4 +1,12 @@
-
+/**
+ * Acdroid Apps for Android
+ * 
+ * @author Carlos Diaz Canovas
+ * @author Marcos Trujillo Seoane
+ * 
+ * Project Gesture Call
+ * 
+ */
 package ac.gestureCallPro.util.config;
 
 import java.io.File;
@@ -25,6 +33,7 @@ import android.widget.Button;
  * todas las posibles preferencias que se pueden guardar.
  * Durante el primer uso guarda la configuracion inicial.
  * @author mtrujillo & cdiaz
+ * @version $Revision: 1.0 $
  */
 public class AppConfig extends MSharedPreferences{
 	public static final String VERSION = "version"; //version
@@ -46,24 +55,29 @@ public class AppConfig extends MSharedPreferences{
         public static final int BLACK = 3;
         public static final int WHITE = 4;
     }
-    
-	
-
+   
 	private static final String dir = Environment.getExternalStorageDirectory() + "/GestureCall";
 	private final String fich = dir + "/gestures";
 
 
+
+	/**
+	 * Constructor for AppConfig.
+	 * @param mContext Context
+	 * @param name String
+	 */
 	public AppConfig(Context mContext, String name){
 		super(mContext,name);
 		
 		//para el desarrollo por si se quiere hacer cosas especiales
 //		put(true,DEVELOPERS);
 		try {
-			if( (pref.contains(DEVELOPERS)) && (getBool(DEVELOPERS) == true)){
+			if( pref.contains(DEVELOPERS) && getBool(DEVELOPERS) ){
 				makeDevelopers();
 				return;
 			}
 		} catch (NoPreferenceException e) {
+			Log.i("Gesture Call","Normal mode");
 		}
 		
 
@@ -82,9 +96,9 @@ public class AppConfig extends MSharedPreferences{
 	 * 
 	 * @param dirPath El directorio completo donde esta el archivo sin el nombre del archivo
 	 * @param fullPath
-	 * @throws NoContactFileException 
+	
 	 * 
-	 * */
+	 * * @throws NoContactFileException  */
 	public static void createStructure(String dirPath, String fullPath){
 
 		File file = new File(fullPath);
@@ -113,7 +127,6 @@ public class AppConfig extends MSharedPreferences{
 				//throw new NoFileException("Unable to create file: "+fullPath);
 			}
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -143,7 +156,7 @@ public class AppConfig extends MSharedPreferences{
 		try {
 			ver = getInt(VERSION);
 		} catch (NoPreferenceException e) {
-			//TODO revisar
+			Log.i("Gesture Call","Preference Version not found. Save all the default preferences");
 			ver = 0; //Si falla ponemos que es version 0 y que sobreescriba todo
 		}
 		
@@ -238,12 +251,13 @@ public class AppConfig extends MSharedPreferences{
 //		put(Themes.GREEN,THEME);
 //		put(new Long(4000),S_AFTER_CALL);
 //		logOptions(); //Muestra todas las opciones menos FIRST_TIME
-		return;
+
 	}
 	
 	/**
 	 * Muestra por log todas las opciones:
 	 */
+	@SuppressWarnings("unused")
 	private void logOptions(){
 		
 		try {
@@ -259,7 +273,7 @@ public class AppConfig extends MSharedPreferences{
 			
 			
 		} catch (NoPreferenceException e) {
-			Log.d("GestureCall_AC","Falla al pintar en el log en la funcion debug de AppConfig. Te falta algun registro.");
+			Log.d("Gesture Call","Error al debuguear las opciones. Alguna no se encuentra.");
 		}
 	}
 	
