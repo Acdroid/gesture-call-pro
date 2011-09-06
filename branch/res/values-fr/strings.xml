@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="makeGesture">Faites un geste pour appeler un contact</string>
+
+
+	<!-- Button -->
+	<string name="ini_Button">Ajouter</string>
+	<string name="button_done">Créer</string>
+	<string name="cancelGesture">Annuler le geste</string>
+	<string name="cancelGesture2">Retour</string>
+	<string name="button_volver">Retour</string>
+	<string name="button_save">Enregistrer</string>
+	<string name="button_edit_gesture">Gestes</string>
+	<string name="button_reload">Recharger</string>
+
+	<!-- Menu -->
+	<string name="salir">Sortir</string>
+	<string name="opciones">Options</string>
+	<string name="menu_edit">Gestes</string>
+
+	<!-- Dialog -->
+	<string name="di_salir">Voulez-vous réellement sortir ?</string>
+	<string name="gestures_edit">Editer geste</string>
+	<string name="gestures_delete">Effacer</string>
+	<string name="dialog_bc_seriusly">Voulez-vous appeler </string>
+	<string name="dialog_no_more">Ne plus montrer ce message</string>
+	<string name="dialog_sure">Êtes-vous sûr ?</string>
+	<string name="calling">Appel...</string>
+
+	<!-- Miscelanea -->
+	<string name="first_time_toast">C\'est la première fois que vous utilisez Gesture
+		Call\n....</string>
+	<string name="gesto_anadido">Geste ajouté correctement</string>
+	<string name="yes">Oui</string>
+	<string name="no">Non</string>
+	<string name="no_gesto">Le geste n\'as pas été reconnu</string>
+	<string name="info_list_gestos">Long click sur un élément pour modifier ses options</string>
+	<string name="gestures_loading">Chargement des gestes...</string>
+	<string name="gestures_empty">Pas de gestes</string>
+	<string name="gestures_activity">Gestes</string>
+	<string name="gestures_delete_success">Geste effacé</string>
+	<string name="gestures_error_loading">Impossible de charger %s. Verifier que vous avez un
+		carte SD.</string>
+	<string name="error_no_libreria">Erreur, impossible de trouver Gestures Library.</string>
+
+
+	<!-- Preferencias -->
+	<string name="pref_main">Préférences du programme</string>
+	<string name="pref_ask">Demander avant d appeler</string>
+	<string name="pref_ask_summary">Après faire un geste, il sera necessaire confirmer
+		l appel</string>
+
+
+
+</resources>

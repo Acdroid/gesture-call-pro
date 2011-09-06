@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+	<string name="makeGesture">通話の為にゼスチャーを入り</string>
+
+	<!-- Button -->
+	<string name="ini_Button">追加</string>
+	<string name="button_done">完了</string>
+	<string name="cancelGesture">キャンセル</string>
+	<string name="cancelGesture2">戻る</string>
+	<string name="button_volver">戻る</string>
+	<string name="button_save">セーブ</string>
+	<string name="button_edit_gesture">ゼスチャー</string>
+	<string name="button_reload">リロード</string>
+
+	<!-- Menu -->
+	<string name="salir">終了</string>
+	<string name="opciones">設定</string>
+	<string name="menu_edit">ゼスチャーのリスト</string>
+
+	<!-- Dialog -->
+	<string name="di_salir">終了しますか？</string>
+	<string name="gestures_edit">ゼスチャーを更新</string>
+	<string name="gestures_delete">ゼスチャーを削除</string>
+	<string name="dialog_bc_seriusly">通話させる人は</string>
+	<string name="dialog_no_more">このメッセージは見せない</string>
+	<string name="dialog_sure">確認してください</string>
+	<string name="calling">発信中</string>
+
+	<!-- Miscelanea -->
+	<string name="first_time_toast">Gesture Callの使用は初めて\n</string>
+	<string name="gesto_anadido">ゼスチャーを追加しました</string>
+	<string name="yes">はい</string>
+	<string name="no">いいえ</string>
+	<string name="no_gesto">このゼスチャーを認識できません</string>
+	<string name="info_list_gestos">長いプレスでゼスチャーを変更</string>
+	<string name="gestures_loading">ローディング中</string>
+	<string name="gestures_empty">ゼスチャーはない</string>
+	<string name="gestures_activity">ゼスチャーのリスト</string>
+	<string name="gestures_delete_success">ゼスチャーを削除しました</string>
+	<string name="gestures_error_loading">%sはローディングできない。SDカードをチェックしてください</string>
+	<string name="error_no_libreria">大変なエラー。Gestureのライブラリはありません!</string>
+
+	<!-- Preferencias -->
+	<string name="pref_main">設定</string>
+	<string name="pref_ask">確認を頼む</string>
+	<string name="pref_ask_summary">発信の前に確認を頼む</string>
+
+
+</resources>
