@@ -1,0 +1,52 @@
+
+<ScrollView android:id="@+id/scrollView1"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	<LinearLayout android:id="@+id/linearLayout1"
+		android:layout_width="match_parent" android:layout_height="match_parent">
+		<ScrollView android:layout_width="wrap_content"
+			android:layout_height="match_parent" android:id="@+id/scrollView2">
+			<LinearLayout android:id="@+id/linearLayout2"
+				android:layout_width="match_parent" android:layout_height="match_parent">
+				<TextView
+					android:text="
+- Gesture Call Donate -\n
+\n\n
+◘  Version 2.1
+• Now you can create a shortcut\n
+• Little changes in the interface\n
+• Bug of 'Return after call/sms` solved\n\n
+
+◘  Version 2.0\n\n
+• New Interface\n
+• New Languages\n
+  Russian\n
+  Korean\n
+• Differents Themes\n
+• Now You can Send SMS\n
+• New Options:\n
+   New Notification for quick access\n
+   Exit after call\n
+   Auto call after wait a few seconds\n
+   Default action (Call or SMS)\n
+• New method to contact with the developers\n
+  (send us feedback, ideas, bugs ... )\n
+• Bug fix
+  
+\n\n
+◘  Version 1.2\n\n
+• First Version of Gesture Call Donate
+  
+\n\n\n
+  
+"
+					android:id="@+id/textView1" android:layout_width="fill_parent"
+					android:layout_height="wrap_content"></TextView>
+			</LinearLayout>
+		</ScrollView>
+	</LinearLayout>
+</ScrollView>
+
+
+
+<!-- ·Basque:\n Haizea Mendo San José\n \n -->
