@@ -20,7 +20,7 @@
 	<string name="pref_themes_summary">Choose main style for the app. 5 themes available:
 		grey, blue, green, black and white</string>
 	<string name="pref_novedades">New</string>
-	<string name="pref_novedades_summary">New stuff for version 2.0</string>
+	<string name="pref_novedades_summary">New stuff for version 2.1.1</string>
 	<string name="pref_about">About</string>
 	<string name="pref_about_summary">About Gesture Call and credits</string>
 	<string name="pref_def_action">Default action</string>
@@ -56,7 +56,11 @@
 	<string name="creating_shortcut">Create Shortcut</string>
 
 
-
+<!-- Aun mas nuevas -->
+	<string name="tutorial_uno">The first that we recomend is that configure gesture call bla bla bla</string>
+	<string name="finish">Finish</string>
+	<string name="next">Next</string>
+	<string name="aviso_notificacion">To activate the notification bar icon press the menu on your phone and then click settings</string>
 
 
 

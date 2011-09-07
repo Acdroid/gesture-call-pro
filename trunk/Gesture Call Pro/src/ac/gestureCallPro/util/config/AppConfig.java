@@ -1,5 +1,5 @@
 /**
- * Acdroid Apps for Android
+s * Acdroid Apps for Android
  * 
  * @author Carlos Diaz Canovas
  * @author Marcos Trujillo Seoane
@@ -15,6 +15,7 @@ import java.io.IOException;
 import ac.gestureCallPro.R;
 import ac.gestureCallPro.exceptions.NoPreferenceException;
 import ac.gestureCallPro.ui.main;
+import ac.gestureCallPro.util.mToast.mToast;
 import ac.gestureCallPro.util.shortcut.CreateShortcut;
 import android.app.Dialog;
 import android.content.Context;
@@ -145,6 +146,7 @@ public class AppConfig extends MSharedPreferences{
 		makeV1();
 		makeV2();
 		makeV3();
+		makeV4();
 	}
 	
 	/**
@@ -170,6 +172,10 @@ public class AppConfig extends MSharedPreferences{
 		
 		if (ver < 3){
 			makeV3();
+		}
+		
+		if (ver < 4){
+			makeV4();
 		}
 		
 		
@@ -235,6 +241,20 @@ public class AppConfig extends MSharedPreferences{
 		dialog.show();
 	}
 
+	/**
+	 * Cuarta version de las opciones con la opcion de
+	 * aviso al llamar e inclusion de la version
+	 * 
+	 * 2.1.1
+	 * 
+	 */
+	private void makeV4(){
+		//Falseamos las notificaciones
+		//para que no haya quejas
+		put(false,NOTIFICATION);
+		mToast.Make(mContext, mContext.getResources().getString(R.string.aviso_notificacion),1);
+		put(4,VERSION); //Imprescindible siempre poner
+	}
 	
 	
 	

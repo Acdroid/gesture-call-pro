@@ -20,7 +20,7 @@
 	<string name="pref_themes_summary">Elige el estilo para la aplicación. Hay 5 temas
 		disponibles: Gris, Azul, Verde, Negro y Blanco</string>
 	<string name="pref_novedades">Novedades</string>
-	<string name="pref_novedades_summary">Novedades de la versión 2.0</string>
+	<string name="pref_novedades_summary">Novedades de la versión 2.1.1</string>
 	<string name="pref_about">Créditos</string>
 	<string name="pref_about_summary">Conoce un poco sobre los que hemos hecho esto y
 		agradecimientos</string>
@@ -56,6 +56,16 @@
 		rápidamente desde el escritorio</string>
 	<string name="creando">Creando</string>
 	<string name="creating_shortcut">Crear Acceso Directo</string>
+
+
+
+
+	<!-- Aun mas nuevas -->
+	<string name="tutorial_uno">Primero ¿por qué no configuras la aplicación con tus preferencias? Pulsa en 
+	la rueda dentada de arriba a la derecha o presiona la tecla menú y elije opciones.</string>
+	<string name="finish">Finish</string>
+	<string name="next">Next</string>
+	<string name="aviso_notificacion">Para activar el acceso rápido en la barra de notificación presiona la tecla menú en tu móvil y después Opciones</string>
 
 
 	<!-- Button -->
