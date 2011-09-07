@@ -9,7 +9,7 @@
 
 • Arreglos en varios idiomas (Catalan se le ha puesto las cosas sin traducir en español en vez de inglés, italiano traducido, algunos fallos por ahí en archivos de idioma y demás )
 
- Cambiado icono notificacion por defecto a false.
+• Cambiado icono notificacion por defecto a false.
 
 
 
