@@ -223,6 +223,22 @@ public class AppConfig extends MSharedPreferences{
 		put(new Long(3000),S_AFTER_CALL);
 		put(3,VERSION); //Imprescindible siempre poner
 		
+		
+	}
+
+	/**
+	 * Cuarta version de las opciones con la opcion de
+	 * aviso al llamar e inclusion de la version
+	 * 
+	 * 2.1.1
+	 * 
+	 */
+	private void makeV4(){
+		//Falseamos las notificaciones
+		//para que no haya quejas
+		put(false,NOTIFICATION);
+		mToast.Make(mContext, mContext.getResources().getString(R.string.aviso_notificacion),1);
+		
 		Dialog dialog = new Dialog(mContext);
 		dialog.setContentView(R.layout.whats_new_firsttime);
 		Button b;
@@ -239,20 +255,6 @@ public class AppConfig extends MSharedPreferences{
 		dialog.setTitle("Whats new");
 		
 		dialog.show();
-	}
-
-	/**
-	 * Cuarta version de las opciones con la opcion de
-	 * aviso al llamar e inclusion de la version
-	 * 
-	 * 2.1.1
-	 * 
-	 */
-	private void makeV4(){
-		//Falseamos las notificaciones
-		//para que no haya quejas
-		put(false,NOTIFICATION);
-		mToast.Make(mContext, mContext.getResources().getString(R.string.aviso_notificacion),1);
 		put(4,VERSION); //Imprescindible siempre poner
 	}
 	
