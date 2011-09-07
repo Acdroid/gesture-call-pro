@@ -3,11 +3,13 @@
 
 = Cambios de las versiones de Gesture call pro  para cuando se suban al market recordar todos los cambios realizados =
 
-= v2.2 =
+= v2.1.1 =
 
 • Ahora al salir de las opciones  (presionando el botón back)se guardan igual que si se da al botón guardar.
 
 • Arreglos en varios idiomas (Catalan se le ha puesto las cosas sin traducir en español en vez de inglés, italiano traducido, algunos fallos por ahí en archivos de idioma y demás )
+
+ Cambiado icono notificacion por defecto a false.
 
 
 
