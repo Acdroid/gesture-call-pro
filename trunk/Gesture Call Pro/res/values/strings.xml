@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources> 
 	<string name="app_name">Gesture Call Donate</string>
 	<string name="makeGesture">Make a gesture to call a contact</string>
 
@@ -61,7 +61,8 @@
 	<string name="finish">Finish</string>
 	<string name="next">Next</string>
 	<string name="aviso_notificacion">To activate the notification bar icon press the menu on your phone and then click settings</string>
-
+	<string name="smson">Send SMS Activated</string>
+	<string name="smsoff">Call Activated</string>
 
 
 	<!-- Button -->
