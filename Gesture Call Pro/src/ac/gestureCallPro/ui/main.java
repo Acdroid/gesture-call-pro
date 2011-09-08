@@ -54,7 +54,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class main extends Activity {
+public class main extends Activity { 
 
 	public static final String NO_PREDICCION = "Sin_Resultado";
 //	public static final int RESULT_OK = 0;
@@ -820,11 +820,14 @@ public class main extends Activity {
 			tipoAccion=ACCION_LLAMAR;
 			//OJO esto se cambiara segun los temas
 			i.setImageResource(R.drawable.button_sms_disabled);
+			mToast.Make(this, getResources().getString(R.string.smsoff), 0);
 		}
 		else{
 			smsOn=true;
 			tipoAccion=ACCION_SMS;
 			i.setImageResource(R.drawable.button_sms_enabled);
+			
+			mToast.Make(this, getResources().getString(R.string.smson), 0);
 			
 			//OJO desactivar otros elementos como llamada perdida
 		}

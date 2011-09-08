@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?> 
 <resources>
 	<string name="makeGesture">Haz un gesto para llamar a un contacto</string>
 
@@ -66,7 +66,8 @@
 	<string name="finish">Finish</string>
 	<string name="next">Next</string>
 	<string name="aviso_notificacion">Para activar el acceso rápido en la barra de notificación presiona la tecla menú en tu móvil y después Opciones</string>
-
+    <string name="smson">Envío SMS activado</string>
+	<string name="smsoff">Llamadas activadas</string>
 
 	<!-- Button -->
 	<string name="ini_Button">Añadir</string>
