@@ -10,18 +10,23 @@
 package ac.gestureCallPro.ui.contactos;
 
 
+import java.io.File;
 import java.util.Set;
 
 import ac.gestureCallPro.R;
 import ac.gestureCallPro.ui.main;
 import ac.gestureCallPro.ui.creadorGestos.CreadorGestos;
 import ac.gestureCallPro.util.contactos.ContactCursor;
+import ac.gestureCallPro.util.mToast.mToast;
 import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+import android.gesture.GestureLibraries;
 import android.gesture.GestureLibrary;
 import android.os.Bundle;
+import android.os.Environment;
+import android.util.Log;
 import android.view.View;
 import android.widget.AlphabetIndexer;
 import android.widget.ImageView;
@@ -52,7 +57,15 @@ public final class ListContact extends ListActivity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.lista_contactos);     
 		
-		store = main.getStore();
+//		try {
+//			store = main.getStore();
+//		} catch (Exception e) {
+//			Log.e("Gesture Call","ERROR al obtener los gestos. " + e.getMessage());
+//			mToast.Make(this, "Error while obtein the Gestures Library. Try to close and open Gesture Call", 0);
+//		}
+		
+		obtenLibreria();
+		
 		manegadorCursor = new ContactCursor(this);
 		cursor =  manegadorCursor.getCursor();
 		//startManagingCursor(cursor);
@@ -70,6 +83,18 @@ public final class ListContact extends ListActivity
 	}
 
 
+	/**
+	 * Obtiene la store con los gestos
+	 */
+	private void obtenLibreria(){
+		File mStoreFile = new File(Environment.getExternalStorageDirectory() + "/GestureCall", "gestures");
+		store = GestureLibraries.fromFile(mStoreFile);
+		if (!store.load()){
+			Log.d("DEBUG","Store.load == null");
+			if ( store.getGestureEntries() == null)
+				mToast.Make(this, "Error while obtain the Gestures Library. Try to close and open Gesture Call", 0);
+		}
+	}
 
 	/**
 	 * Obtains the contact list for the currently selected account.

@@ -61,17 +61,17 @@
 
 						<ImageView android:id="@+id/main_sms"
 							android:layout_width="wrap_content" android:layout_height="wrap_content"
-							android:src="@drawable/button_sms_disabled" android:onClick="clickSms"
-							android:background="@drawable/button_imageview"
-		        			android:layout_margin="2dip"/>
+							android:src="@drawable/button_sms_disabled" android:onClick="clickSms"/>
+<!-- 							android:background="@drawable/button_imageview"
+		        			android:layout_margin="2dip"/> -->
 							
 							 
 						<ImageView android:id="@+id/imggears"
 							android:layout_width="wrap_content" android:layout_height="wrap_content"
-							android:src="@drawable/button_options" android:onClick="clickOpciones"
-							android:background="@drawable/button_imageview"
+							android:src="@drawable/button_options" android:onClick="clickOpciones"/>
+<!-- 							android:background="@drawable/button_imageview"
 		        			android:layout_margin="2dip"/>
-
+ -->
 					</LinearLayout>
 
 

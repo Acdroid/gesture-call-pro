@@ -30,12 +30,14 @@ import ac.gestureCallPro.R;
 import ac.gestureCallPro.ui.main;
 import ac.gestureCallPro.ui.contactos.ListContact;
 import ac.gestureCallPro.ui.creadorGestos.CreadorGestos;
+import ac.gestureCallPro.util.mToast.mToast;
 import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.database.Cursor;
 import android.gesture.Gesture;
+import android.gesture.GestureLibraries;
 import android.gesture.GestureLibrary;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
@@ -46,6 +48,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.ContactsContract.CommonDataKinds.Phone;
 import android.provider.ContactsContract.Data;
+import android.util.Log;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -104,8 +107,17 @@ public class GestureBuilderActivity extends ListActivity {
         setListAdapter(mAdapter);
 
         if (sStore == null) {
-            sStore = main.getStore();
-        }
+
+			File mStoreFile = new File(Environment.getExternalStorageDirectory() + "/GestureCall", "gestures");
+			sStore = GestureLibraries.fromFile(mStoreFile);
+			if (!sStore.load()){
+				Log.d("DEBUG","Store.load == null");
+				if ( sStore.getGestureEntries() == null)
+					mToast.Make(this, "Error while obtain the Gestures Library. Try to close and open Gesture Call", 0);
+			}
+
+		}
+        
         mEmpty = (TextView) findViewById(android.R.id.empty);
         loadGestures();
 

@@ -9,6 +9,8 @@
  */
 package ac.gestureCallPro.ui.creadorGestos;
 
+import java.io.File;
+
 import ac.gestureCallPro.R;
 import ac.gestureCallPro.exceptions.NoPreferenceException;
 import ac.gestureCallPro.ui.main;
@@ -19,9 +21,11 @@ import ac.gestureCallPro.util.mToast.mToast;
 import android.app.Activity;
 import android.content.Context;
 import android.gesture.Gesture;
+import android.gesture.GestureLibraries;
 import android.gesture.GestureLibrary;
 import android.gesture.GestureOverlayView;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -118,7 +122,8 @@ public class CreadorGestos extends Activity {
 	public void addGesture(View v) {
 		if (mGesture != null) {
 
-			store = main.getStore();
+			if(!obtenLibreria())
+				return;
 			
 			store.removeEntry(phoneContacto);
 			store.addGesture(phoneContacto, mGesture);
@@ -129,6 +134,26 @@ public class CreadorGestos extends Activity {
 			CreadorGestos.this.finish();
 		}
 
+	}
+	
+	/**
+	 * Obtiene la lista de gestos de la base de datos
+	 * de gestos.
+	 * @return false si ha ocurrido algun error al cargar
+	 * true si todo ha salido bien.
+	 */
+	private boolean obtenLibreria(){
+		File mStoreFile = new File(Environment.getExternalStorageDirectory() + "/GestureCall", "gestures");
+		store = GestureLibraries.fromFile(mStoreFile);
+		if (!store.load()){
+			Log.d("DEBUG","Store.load == null");
+			if ( store.getGestureEntries() == null){
+				mToast.Make(this, "Error while obtain the Gestures Library. Try to close and open Gesture Call", 0);
+				return false;
+			}
+		}
+		
+		return true;
 	}
 
 	/**
