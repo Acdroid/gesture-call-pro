@@ -3,9 +3,11 @@
 
 = Cambios de las versiones de Gesture call pro  para cuando se suban al market recordar todos los cambios realizados =
 
-= v2.1.2 =
+= v2.1-2 =
 
-• Cambiados los iconos del main por otros con cierta sensación de botón y profundidad.
+• Cambiados los iconos del main por otros con cierta sensación de botón y profundidad. //Pendiente
+
+• Arreglado el antiguo bug de getStore();
 
 
 
