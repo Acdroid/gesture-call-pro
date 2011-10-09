@@ -10,6 +10,7 @@
 package ac.gestureCallPro.ui;
 
 
+import ac.gestureCallPro.ui.cabecera.Cabecera;
 import ac.gestureCallPro.ui.donate.Donate;
 import ac.gestureCallPro.R;
 import ac.gestureCallPro.exceptions.NoPreferenceException; 
@@ -49,7 +50,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -82,6 +82,8 @@ public class main extends Activity {
 	public Context mContext;
 	public int tipoAccion=ACCION_LLAMAR; //Accion por defecto llamar si no se pulsa ningun boton
 	public CallCountDown countdown;
+	
+	public Cabecera cabecera;
 	
 	public boolean smsOn=false;
 	public boolean isOnCallingSms=false;
@@ -139,15 +141,31 @@ public class main extends Activity {
 		setStatusBarNotification();
 		
 		//La cuenta atras para las llamadas
-		long intervalo;
+		long intervalo; 
 		try {
 			intervalo = ap.getLong(AppConfig.S_AFTER_CALL);
 		} catch (NoPreferenceException e) {
 			Log.i("Gesture Call","No Secs After Call preference. Apply Default 3000");
 			intervalo=3000; //Ponemos intervalo por defecto si ocurre un error
 			ap.put(3000,AppConfig.S_AFTER_CALL);
-			
 		}
+		
+		//Configuramos la cabecera
+		cabecera = (Cabecera)findViewById(R.id.main_cabecera);
+		cabecera.setVisibleAccion();
+		cabecera.setOnActionClick(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				clickSms(arg0);
+				
+			}
+		});
+		cabecera.setOnOptionClickWitReturn(ID);
+		
+		
+		
+		
 		countdown = new CallCountDown(intervalo, 1000);
 		//Iniciamos el dialog
 		//TODO cambiar esto , hay que sacarlo fuera de aqui
@@ -354,23 +372,22 @@ public class main extends Activity {
 			ap.put(ACCION_LLAMAR,AppConfig.ACCION_POR_DEFECTO);		
 			
 		}
-		ImageView iSMS = (ImageView)findViewById(R.id.main_sms);
-		
+	
 		switch (actDef) {
 		case ACCION_LLAMAR:
 			tipoAccion = ACCION_LLAMAR;
 			smsOn = false;
-			iSMS.setImageResource(R.drawable.button_sms_disabled);
+			cabecera.setAccionImageResource(R.drawable.phone);
 			break;
 		case ACCION_SMS:
 			tipoAccion = ACCION_SMS;
 			smsOn = true;
-			iSMS.setImageResource(R.drawable.button_sms_enabled);
+			cabecera.setAccionImageResource(R.drawable.sms);
 			break;
 		case ACCION_PERDIDA:
 			tipoAccion = ACCION_PERDIDA;
 			smsOn = false;
-			iSMS.setImageResource(R.drawable.button_sms_disabled);
+			cabecera.setAccionImageResource(R.drawable.phone);
 			break;
 		default:
 			break;
@@ -749,19 +766,14 @@ public class main extends Activity {
 	protected void onRestart() {
 		
 		super.onRestart();
-		
-		
-		ImageView i = (ImageView)findViewById(R.id.main_sms);
-		
 		if(smsOn){
 			tipoAccion=ACCION_SMS;
 			//OJO esto se cambiara segun los temas
-			i.setImageResource(R.drawable.env_enabled);
+			cabecera.setAccionImageResource(R.drawable.sms);
 		}
 		else{
 			tipoAccion=ACCION_LLAMAR;
-			i.setImageResource(R.drawable.env_disabled);
-			
+			cabecera.setAccionImageResource(R.drawable.phone);
 			//OJO desactivar otros elementos como llamada perdida
 		}
 	}
@@ -770,17 +782,14 @@ public class main extends Activity {
 	protected void onResume() {
 		super.onResume();
 		
-		ImageView i = (ImageView)findViewById(R.id.main_sms);
-		
 		if(smsOn){
 			tipoAccion=ACCION_SMS;
 			//OJO esto se cambiara segun los temas
-			i.setImageResource(R.drawable.env_enabled);
+			cabecera.setAccionImageResource(R.drawable.sms);
 		}
 		else{
 			tipoAccion=ACCION_LLAMAR;
-			i.setImageResource(R.drawable.env_disabled);
-			
+			cabecera.setAccionImageResource(R.drawable.phone);
 			//OJO desactivar otros elementos como llamada perdida
 		}
 	}
@@ -813,19 +822,18 @@ public class main extends Activity {
 	 * @param v View
 	 */
 	public void clickSms(View v){
-		ImageView i = (ImageView)v.findViewById(R.id.main_sms);
 		
 		if(smsOn){
 			smsOn=false;
 			tipoAccion=ACCION_LLAMAR;
 			//OJO esto se cambiara segun los temas
-			i.setImageResource(R.drawable.button_sms_disabled);
+			cabecera.setAccionImageResource(R.drawable.phone);
 			mToast.Make(this, getResources().getString(R.string.smsoff), 0);
 		}
 		else{
 			smsOn=true;
 			tipoAccion=ACCION_SMS;
-			i.setImageResource(R.drawable.button_sms_enabled);
+			cabecera.setAccionImageResource(R.drawable.sms);
 			
 			mToast.Make(this, getResources().getString(R.string.smson), 0);
 			
