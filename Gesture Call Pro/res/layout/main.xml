@@ -8,93 +8,31 @@
 	<!-- xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads" -->
 
 	<android.gesture.GestureOverlayView
-		android:id="@+id/gestures" android:layout_width="fill_parent"
-		android:layout_height="0dip" android:layout_weight="1.0"
-		android:gravity="center" android:gestureStrokeType="multiple"
-		android:eventsInterceptionEnabled="true" android:gestureColor="#c32020"
-		android:uncertainGestureColor="#80c32020" android:orientation="vertical">
-
-		<!-- android:gestureColor="#c32020" android:uncertainGestureColor="#80c32020" 
-			<TextView android:gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" 
-			android:layout_alignParentLeft="true" android:textColor="@android:color/white" 
-			android:textSize="22dip" android:textStyle="bold" android:paddingTop="20dip" 
-			android:text="@string/makeGesture"/> -->
-
-		<!-- <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" 
-			android:gravity="bottom" android:orientation="vertical"> <LinearLayout android:id="@+id/linearLayout1"></LinearLayout> 
-			<LinearLayout style="@android:style/ButtonBar" android:layout_width="fill_parent" 
-			android:layout_height="wrap_content" android:orientation="horizontal"> <Button 
-			android:id="@+id/ButtonBar" android:layout_width="0dip" android:layout_height="wrap_content" 
-			android:layout_weight="1" android:onClick="clickAdd" android:text="@string/ini_Button"/> 
-			<Button android:id="@+id/main_button_edit" android:layout_width="0dip" android:layout_height="wrap_content" 
-			android:layout_weight="1" android:onClick="clickEdit" android:text="@string/button_edit_gesture" 
-			/> <Button android:id="@+id/main_button_options" android:layout_width="0dip" 
-			android:layout_height="wrap_content" android:layout_weight="1" android:onClick="clickOpciones" 
-			android:text="@string/opciones" /> </LinearLayout> </RelativeLayout> -->
-
-
-
-
-
-
-
-
+		android:id="@+id/gestures" 
+		android:layout_width="fill_parent" android:layout_height="0dip" android:layout_weight="1.0"
+		android:gravity="center" 
+		android:gestureStrokeType="multiple"
+		android:eventsInterceptionEnabled="true" 
+		android:gestureColor="#c32020"
+		android:uncertainGestureColor="#80c32020"
+		android:orientation="vertical">
 
 		<RelativeLayout android:orientation="vertical"
 			android:layout_height="fill_parent" android:layout_width="fill_parent">
 
-			<LinearLayout android:id="@+id/header"
-				android:orientation="vertical" android:layout_height="50dip"
-				android:layout_width="fill_parent" android:layout_alignParentTop="true">
-				<LinearLayout android:layout_height="40dip"
-					android:layout_width="fill_parent" android:orientation="horizontal"
-					android:background="@drawable/gradient_header">
-
-
-					<ImageView android:id="@+id/imglogo"
-						android:layout_width="200dip" android:layout_height="wrap_content"
-						android:src="@drawable/logo" android:layout_weight="0.2" />
-
-					<LinearLayout android:layout_height="40dip"
-						android:layout_width="fill_parent" android:orientation="horizontal"
-						android:layout_weight="0.8" android:gravity="right">
-
-						<ImageView android:id="@+id/main_sms"
-							android:layout_width="wrap_content" android:layout_height="wrap_content"
-							android:src="@drawable/button_sms_disabled" android:onClick="clickSms"/>
-<!-- 							android:background="@drawable/button_imageview"
-		        			android:layout_margin="2dip"/> -->
-							
-							 
-						<ImageView android:id="@+id/imggears"
-							android:layout_width="wrap_content" android:layout_height="wrap_content"
-							android:src="@drawable/button_options" android:onClick="clickOpciones"/>
-<!-- 							android:background="@drawable/button_imageview"
-		        			android:layout_margin="2dip"/>
- -->
-					</LinearLayout>
-
-
-				</LinearLayout>
-				<LinearLayout android:layout_height="10dip"
-					android:layout_width="fill_parent" android:background="@drawable/gradiente_shadow"></LinearLayout>
-			</LinearLayout>
+		    <ac.gestureCallPro.ui.cabecera.Cabecera
+	    		android:id="@+id/main_cabecera"
+	    		android:layout_height="50dip"
+				android:layout_width="fill_parent"
+				android:layout_alignParentTop="true"
+	    		
+	    		></ac.gestureCallPro.ui.cabecera.Cabecera>
 
 
 
 			<LinearLayout android:orientation="vertical"
 				android:layout_height="wrap_content" android:layout_width="fill_parent"
 				android:layout_alignParentBottom="true">
-
-				<!-- <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" 
-					android:gravity="right" android:paddingBottom="8dip" android:paddingRight="15dip"> 
-					<Button android:layout_width="wrap_content" android:layout_height="50dip" 
-					android:text="@string/donate" android:textStyle="bold" android:textColor="@color/white" 
-					android:onClick="clickDonate" android:background="@drawable/button_semitransparente"/> 
-					</LinearLayout> -->
-
-
-
 
 				<LinearLayout android:layout_height="10dip"
 					android:layout_width="fill_parent" android:background="@drawable/gradient_shadow_down">

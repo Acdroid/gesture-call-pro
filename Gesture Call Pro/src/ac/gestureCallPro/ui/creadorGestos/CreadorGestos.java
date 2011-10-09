@@ -14,12 +14,14 @@ import java.io.File;
 import ac.gestureCallPro.R;
 import ac.gestureCallPro.exceptions.NoPreferenceException;
 import ac.gestureCallPro.ui.main;
+import ac.gestureCallPro.ui.cabecera.Cabecera;
 import ac.gestureCallPro.ui.contactos.ListContact;
 import ac.gestureCallPro.util.config.AppConfig;
 import ac.gestureCallPro.util.config.AppConfig.Themes;
 import ac.gestureCallPro.util.mToast.mToast;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.gesture.Gesture;
 import android.gesture.GestureLibraries;
 import android.gesture.GestureLibrary;
@@ -40,6 +42,7 @@ import android.widget.TextView;
  */
 public class CreadorGestos extends Activity {
 	private static final float LENGTH_THRESHOLD = 120.0f;
+	private static final int ID = 2;
 
 	private Gesture mGesture;
 	private Button mDoneButton;
@@ -53,12 +56,14 @@ public class CreadorGestos extends Activity {
 	public String phoneContacto="";
 	public LinearLayout lay_main;
 	public AppConfig ap;
+	public Cabecera cabecera;
 	
 	public GestureOverlayView overlay;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
 
 		setContentView(R.layout.create_gesture);
 
@@ -72,6 +77,10 @@ public class CreadorGestos extends Activity {
 		lay_main = (LinearLayout)findViewById(R.id.create_gesture_lay_main);
 		ap = new AppConfig(mContext, AppConfig.NAME);
 		setTheme();
+		
+		//Cabecera
+		cabecera = (Cabecera)findViewById(R.id.create_cabecera);
+		cabecera.setOnOptionClickWitReturn(ID);
 
 		Bundle bundle = getIntent().getExtras();
 		if(bundle!=null){
@@ -245,6 +254,13 @@ public class CreadorGestos extends Activity {
 		}
 	}
 	
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		if (requestCode == ID){
+			setTheme();
+		}
+
+	}
 
 	private class GesturesProcessor implements GestureOverlayView.OnGestureListener {
 		
