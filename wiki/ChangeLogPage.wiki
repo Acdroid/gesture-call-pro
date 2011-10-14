@@ -3,6 +3,14 @@
 
 = Cambios de las versiones de Gesture call pro  para cuando se suban al market recordar todos los cambios realizados =
 
+
+= v2.1-3 =
+
+• Añadido botón no al dialog AfterCall
+
+• 
+
+
 = v2.1-2 =
 
 • Cambiados los iconos del main por otros con cierta sensación de botón y profundidad. //Pendiente
