@@ -219,7 +219,7 @@ public class AppConfig extends MSharedPreferences{
 		put(true,NOTIFICATION);
 		put(false,RETURN_AFTER_CALL);
 		put(main.ACCION_LLAMAR,ACCION_POR_DEFECTO);
-		put(Themes.BLACK,THEME);
+		put(Themes.BLUE,THEME);
 		put(new Long(3000),S_AFTER_CALL);
 		put(3,VERSION); //Imprescindible siempre poner
 		

@@ -25,16 +25,40 @@
 		android:layout_alignRight="@+id/dialog_text_contact" android:src="@drawable/call_confirm"
 		android:layout_width="fill_parent" android:layout_height="67dip">
 	</ImageView>
-
-	<Button android:layout_below="@+id/imagenrobot"
+	
+	<LinearLayout 
+		android:id="@+id/main_lay_buttons"
+		android:layout_below="@+id/imagenrobot"
 		android:layout_alignLeft="@+id/imagenrobot" android:layout_alignRight="@+id/imagenrobot"
-		android:id="@+id/dialog_button_yes" android:layout_width="fill_parent"
-		android:layout_height="wrap_content" android:text="@string/yes"
-		android:textSize="24dip" android:textStyle="bold" android:gravity="center"
-		android:layout_marginLeft="15dip" android:layout_marginRight="15dip">
-	</Button>
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:layout_marginLeft="11dip" android:layout_marginRight="11dip">
+			
+		<Button 
+			android:id="@+id/dialog_button_yes"
+			android:layout_width="0dip" android:layout_weight="1" android:layout_height="wrap_content"
+			android:text="@string/yes"
+			android:textSize="24dip" android:textStyle="bold" android:gravity="center"
+			android:padding="6dip"
+			android:background="@drawable/button_menu_bar_left_bg">
+		</Button>
+	
+		<Button 
+			android:id="@+id/dialog_button_no"
+			android:layout_width="0dip" android:layout_weight="1" android:layout_height="wrap_content"
+			android:text="@string/no"
+			android:textSize="24dip" android:textStyle="bold" android:gravity="center"
+			android:padding="6dip"
+			android:background="@drawable/button_menu_bar_right_bg">
+		</Button>
+	
+	
+	</LinearLayout>
 
-	<LinearLayout android:layout_below="@+id/dialog_button_yes"
+
+
+	<LinearLayout android:layout_below="@+id/main_lay_buttons"
 		android:layout_height="wrap_content" android:layout_width="wrap_content"
 		android:id="@+id/linearLayout1" android:layout_alignLeft="@+id/dialog_button_yes"
 		android:layout_alignRight="@+id/dialog_button_yes">
