@@ -36,7 +36,7 @@ import android.widget.Button;
  * @author mtrujillo & cdiaz
  * @version $Revision: 1.0 $
  */
-public class AppConfig extends MSharedPreferences{
+public class AppConfig extends MSharedPreferences{  
 	public static final String VERSION = "version"; //version
 	@Deprecated
 	public static final String FIRST_TIME = "first_time"; //deprecated
@@ -71,7 +71,7 @@ public class AppConfig extends MSharedPreferences{
 		super(mContext,name);
 		
 		//para el desarrollo por si se quiere hacer cosas especiales
-//		put(true,DEVELOPERS);
+		//put(true,DEVELOPERS);
 		try {
 			if( pref.contains(DEVELOPERS) && getBool(DEVELOPERS) ){
 				makeDevelopers();
@@ -239,6 +239,17 @@ public class AppConfig extends MSharedPreferences{
 		put(false,NOTIFICATION);
 		mToast.Make(mContext, mContext.getResources().getString(R.string.aviso_notificacion),1);
 		
+		showNewDialog();
+		put(4,VERSION); //Imprescindible siempre poner
+	}
+	
+	
+	
+	/**
+	 * Muestra el dialog de 
+	 * new
+	 */
+	private void showNewDialog(){
 		Dialog dialog = new Dialog(mContext);
 		dialog.setContentView(R.layout.whats_new_firsttime);
 		Button b;
@@ -248,17 +259,14 @@ public class AppConfig extends MSharedPreferences{
 			@Override
 			public void onClick(View arg0) {
 				CreateShortcut.create(mContext);
+				arg0.setEnabled(false);
 				
 			}
 		});
-		
 		dialog.setTitle("Whats new");
 		
 		dialog.show();
-		put(4,VERSION); //Imprescindible siempre poner
 	}
-	
-	
 	
 	/**
 	 * Para el desarrollo por si se quieren probar cosas
@@ -273,7 +281,7 @@ public class AppConfig extends MSharedPreferences{
 //		put(Themes.GREEN,THEME);
 //		put(new Long(4000),S_AFTER_CALL);
 //		logOptions(); //Muestra todas las opciones menos FIRST_TIME
-
+//		makeV4();
 	}
 	
 	/**
