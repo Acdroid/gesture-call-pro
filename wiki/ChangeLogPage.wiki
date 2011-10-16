@@ -10,6 +10,8 @@
 
 • Tema por defecto, AZUL
 
+• "Arreglado" un "error" comunicado por Amazon en el dialog de whatsNew. Pesados -.-
+
 
 = v2.1-2 =
 
