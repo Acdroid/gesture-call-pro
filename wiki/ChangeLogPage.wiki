@@ -12,6 +12,8 @@
 
 • "Arreglado" un "error" comunicado por Amazon en el dialog de whatsNew. Pesados -.-
 
+• Mejorados los dialogs whats news
+
 
 = v2.1-2 =
 
