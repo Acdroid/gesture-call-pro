@@ -1,18 +1,35 @@
-<RelativeLayout android:id="@+id/scrollView1"
-	android:layout_width="fill_parent" android:layout_height="fill_parent"
+<RelativeLayout
+	android:id="@+id/scrollView1"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
 	xmlns:android="http://schemas.android.com/apk/res/android"
-	android:gravity="center">
+	android:gravity="center"
+	android:background="@android:drawable/edit_text">
 
-	<ScrollView android:layout_above="@+id/whats_new_layout"
-		android:layout_width="wrap_content" android:layout_height="match_parent"
+	<ScrollView
+		android:layout_above="@+id/whats_new_layout"
+		android:layout_width="wrap_content"
+		android:layout_height="match_parent"
 		android:id="@+id/scrollView2">
-		<LinearLayout android:id="@+id/linearLayout2"
-			android:layout_width="match_parent" android:layout_height="match_parent">
+		<LinearLayout
+			android:id="@+id/linearLayout2"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent">
+			
+			
 			<TextView
 				android:text="
 - Gesture Call Donate -\n
 \n
 Thanx you very much for downloading Gesture Call Donate!\n\n
+
+◘  Version 2.1.3\n\n
+• Change default color theme.\n
+• Fix a bug in the whats new dialog.\n
+• Change the icon of the app.\n
+• Improve in the dialog Before Call.\n
+• Reducing the size of the app.\n\n
+
 ◘  Version 2.1.2\n\n
 • Solved a important bug.\n
 • Fix languages.\n
@@ -52,18 +69,24 @@ Thanx you very much for downloading Gesture Call Donate!\n\n
 \n\n\n
   
 "
-				android:id="@+id/textView1" android:layout_width="fill_parent"
-				android:layout_height="wrap_content"></TextView>
+				android:id="@+id/textView1"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:textColor="@color/black"
+				android:textStyle="bold"></TextView>
 		</LinearLayout>
 	</ScrollView>
 
-	<LinearLayout android:id="@+id/whats_new_layout"
-		android:layout_width="fill_parent" android:layout_height="wrap_content"
-		android:layout_alignParentBottom="true" android:gravity="center">
-		<Button android:id="@+id/whats_new_button"
+	<LinearLayout
+		android:id="@+id/whats_new_layout"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:gravity="center">
+		<Button
+			android:id="@+id/whats_new_button"
+			android:layout_marginTop="8dip"
 			android:layout_width="wrap_content" android:layout_height="wrap_content"
 			android:text="@string/creating_shortcut"></Button>
 	</LinearLayout>
 </RelativeLayout>
-
-<!-- ·Basque:\n Haizea Mendo San José\n \n -->

@@ -2,16 +2,24 @@
 <ScrollView android:id="@+id/scrollView1"
 	android:layout_width="fill_parent" android:layout_height="fill_parent"
 	xmlns:android="http://schemas.android.com/apk/res/android">
-	<LinearLayout android:id="@+id/linearLayout1"
-		android:layout_width="match_parent" android:layout_height="match_parent">
-		<ScrollView android:layout_width="wrap_content"
-			android:layout_height="match_parent" android:id="@+id/scrollView2">
-			<LinearLayout android:id="@+id/linearLayout2"
-				android:layout_width="match_parent" android:layout_height="match_parent">
-				<TextView
-					android:text="
+	<LinearLayout
+		android:id="@+id/linearLayout1"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="@android:drawable/edit_text">
+		<TextView
+			android:text="
 - Gesture Call Donate -\n
 \n\n
+
+
+◘  Version 2.1.3\n\n
+• Change default color theme.\n
+• Fix a bug in the whats new dialog.\n
+• Change the icon of the app.\n
+• Improve in the dialog Before Call.\n
+• Reducing the size of the app.\n\n
+
 ◘  Version 2.1.2\n\n
 • Solved a important bug.\n
 • Fix languages.\n
@@ -51,13 +59,10 @@
 \n\n\n
   
 "
-					android:id="@+id/textView1" android:layout_width="fill_parent"
-					android:layout_height="wrap_content"></TextView>
-			</LinearLayout>
-		</ScrollView>
+					android:id="@+id/textView1"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:textColor="@color/black"
+					android:textStyle="bold"></TextView>
 	</LinearLayout>
 </ScrollView>
-
-
-
-<!-- ·Basque:\n Haizea Mendo San José\n \n -->

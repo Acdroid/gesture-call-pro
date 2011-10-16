@@ -12,7 +12,7 @@
 	android:layout_height="0dip"
 	android:layout_weight="1"
 	android:gravity="center"
-	android:src="@drawable/captura1"/>
+	android:src="@drawable/icon"/>
 	
    <TextView
    	android:layout_width="match_parent"
