@@ -19,7 +19,7 @@
 	<string name="pref_themes_summary">Выберите оформление для приложения, доступные
 		цвета: серый, синий, зеленый, серый и белый</string>
 	<string name="pref_novedades">Обновления</string>
-	<string name="pref_novedades_summary">Новые возможности для версии 2.0</string>
+	<string name="pref_novedades_summary">Новые возможности для версии 2.1.4</string>
 	<string name="pref_about">О программе.</string>
 	<string name="pref_about_summary">О программе.</string>
 	<string name="pref_def_action">Действие по умолчанию.</string>

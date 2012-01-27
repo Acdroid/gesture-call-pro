@@ -10,14 +10,14 @@
     <string name ="pref_notification">Usare notificazioni</string>
     <string name ="pref_notification_summary">Pone un icono nell area di notificazioni per accedere di modo veloce a Gesture Call in qualsiasi momento</string>
     <string name ="pref_seconds">Secondi prima di azione</string>
-    <string name ="pref_seconds_summary">Numero di secondi che la applicazione sperarÃ¡ prima di chiamare o accedere all invio di messaggi automaticamente</string>
+    <string name ="pref_seconds_summary">Numero di secondi che la applicazione sperara prima di chiamare o accedere all invio di messaggi automaticamente</string>
     <string name ="select_secs">il numero di secondi</string>
     <string name ="secs">Segs</string>
     <string name ="select_themes">Seleziona il Tema per Gesture Call</string>
     <string name ="pref_themes">Seleziona il Tema della App</string>
     <string name ="pref_themes_summary">Scelgli lo stile della App. Ci sono 5 temi a disposizione: Grigio, Azzurro, Verde, Nero e Bianco</string>
     <string name ="pref_novedades">NovitÃ¡</string>
-    <string name ="pref_novedades_summary">NovitÃ¡ della versione 2.0</string>
+    <string name ="pref_novedades_summary">Novita della versione 2.1.4</string>
     <string name ="pref_about">Crediti</string>
     <string name ="pref_about_summary">Conosci qualcosa sulla gente che ha fatto Gesture Call e ringraziamenti</string>
     <string name ="pref_def_action">Azione per difetto</string>
@@ -34,7 +34,7 @@
     <string name ="pref_donate">Aiutaci!</string>
     <string name ="pref_donate_summary">Aiutaci scaricando Gesture Call Donate  senza annunci e avrai prima le attualizazioni</string>
     <string name ="donate">Collabora!</string>
-    <string name ="donate_text1">Se vuoi collaborare con noi puoi scaricare Gesture Call Donate senza pubblicitÃ¡ e potrai ricevere le attualizazioni prima della versione normale. Nuova interfaccia, mandare messaggi velocemente o il nuovo icono di notificazione a un click: 
+    <string name ="donate_text1">Se vuoi collaborare con noi puoi scaricare Gesture Call Donate senza pubblicita e potrai ricevere le attualizazioni prima della versione normale. Nuova interfaccia, mandare messaggi velocemente o il nuovo icono di notificazione a un click: 
     </string>
     <string name ="donate_text2">Ad Acdroid ni piace sviluppare applicazioni per Android e non soltanto abbiamo Gesture Call: 
     </string>
@@ -63,18 +63,18 @@
     <string name ="menu_edit">Gesti</string>
     
     <!--  Dialog -->
-    <string name = "di_salir">"Â¿Sei sicuro di voler uscire dalla applicazione?"</string>
+    <string name = "di_salir">"¿Sei sicuro di voler uscire dalla applicazione?"</string>
     <string name="gestures_edit">Modificare Gesto</string>
     <string name="gestures_delete">Annullare</string>
-    <string name="dialog_bc_seriusly">Â¿Vuoi chiamare</string>
-    <string name="dialog_no_more">Non mostrare piÃº questo messaggio</string>
-    <string name="dialog_sure">Â¿Sei sicuro?</string>
+    <string name="dialog_bc_seriusly">¿Vuoi chiamare</string>
+    <string name="dialog_no_more">Non mostrare pi questo messaggio</string>
+    <string name="dialog_sure">¿Sei sicuro?</string>
     <string name="calling">Chiamando…</string>
     
     <!-- Miscelanea -->
-	<string name = "first_time_toast">Questa Ã© la prima volta che fai uso di Gesture Call\n....</string>
+	<string name = "first_time_toast">Questa è la prima volta che fai uso di Gesture Call\n....</string>
 	<string name = "gesto_anadido">Gesto aggiunto correttamente</string>
-	<string name = "yes">SiÂ­</string>
+	<string name = "yes">Si­</string>
 	<string name = "no">No</string>
 	<string name = "no_gesto">Non si ha riconosciuto il gesto</string>
 	<string name = "info_list_gestos">Lunga pulsazione per editare il gesto</string>
@@ -82,8 +82,8 @@
 	<string name="gestures_empty">Non ci sono gesti</string>
 	<string name="gestures_activity">Gesti</string>
 	<string name="gestures_delete_success">Gesto eliminato</string>
-	<string name="gestures_error_loading">Non si puÃ³ caricare. Prova lo stato della tessera di memoria SD.</string>
-	<string name="error_no_libreria">Si ha verificato il seguente errore fatale. Non si puÃ³ caricare la biblioteca di gesti!</string>
+	<string name="gestures_error_loading">Non si puo caricare. Prova lo stato della tessera di memoria SD.</string>
+	<string name="error_no_libreria">Si ha verificato il seguente errore fatale. Non si puo caricare la biblioteca di gesti!</string>
 		
 	<!-- Preferencias -->
 	<string name ="pref_main">Impostazione delle preferenze</string>
