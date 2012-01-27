@@ -243,6 +243,8 @@ public class AppConfig extends MSharedPreferences{
 		//Falseamos las notificaciones
 		//para que no haya quejas
 		put(false,NOTIFICATION);
+		mToast.Make(mContext, mContext.getResources().getString(R.string.aviso_notificacion),1);
+
 		put(4,VERSION); //Imprescindible siempre poner
 	}
 	
@@ -253,7 +255,6 @@ public class AppConfig extends MSharedPreferences{
 	 */
 	private void makeV5(){
 		put(true,OPEN_START);
-		mToast.Make(mContext, mContext.getResources().getString(R.string.aviso_notificacion),1);
 		showNewDialog();
 		put(5,VERSION);
 		
