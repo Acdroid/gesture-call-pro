@@ -148,14 +148,9 @@ public class Preferences extends Activity{
 		ap.put(c.isChecked(), AppConfig.RETURN_AFTER_CALL);
 		
 		c = (CheckBox) findViewById(R.id.pref_check_notification);
-
 		ap.put(c.isChecked(), AppConfig.NOTIFICATION);
 		
 		c = (CheckBox) findViewById(R.id.pref_check_open_start);
-		
-		
-		//cosas para abrir al inicio
-
 		ap.put(c.isChecked(), AppConfig.OPEN_START);
 
 		ap.put(theme, AppConfig.THEME);
