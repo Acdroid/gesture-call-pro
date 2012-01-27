@@ -1,117 +1,296 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources> 
-	<string name="app_name">Gesture Call Donate</string>
-	<string name="makeGesture">Make a gesture to call a contact</string>
+<resources>
 
-	<!-- NUEVAS -->
-	<string name="click_gesture">Access Gesture Call !</string>
-	<string name="pref_exit_after_call">Exit after call</string>
-	<string name="pref_exit_after_call_summary">Close app after the call or sms</string>
-	<string name="pref_notification">Use notification icon</string>
-	<string name="pref_notification_summary">Puts an icon in the notification area to access the
+    <string name="app_name">Gesture Call Donate</string>
+    <string name="makeGesture">Make a gesture to call a contact</string>
+
+    <!-- Mas nuevas -->
+    <string name="sharefacebook">Share on Facebook</string>
+    <string name="post_facebook"> just tried gesture call, and I like it !
+You can call or text your contacts with a simple gesture on the screen.  Get it here:
+
+Post a comment on facebook to recomend Gesture Call to your friends</string>
+    <string name="sharefacebook_sub">Put a post in your wall to recomend Gesture Call to your friends</string>
+
+    <!-- NUEVAS -->
+    <string name="click_gesture">Access Gesture Call !</string>
+    <string name="pref_exit_after_call">Exit after call</string>
+    <string name="pref_exit_after_call_summary">Close app after the call or sms</string>
+    <string name="pref_notification">Use notification icon</string>
+    <string name="pref_notification_summary">Puts an icon in the notification area to access the
 		app from anywhere.</string>
-	<string name="pref_seconds">Seconds before action</string>
-	<string name="pref_seconds_summary">Number of seconds to wait before calling or opening
+    <string name="pref_seconds">Seconds before action</string>
+    <string name="pref_seconds_summary">Number of seconds to wait before calling or opening
 		the messages board.</string>
-	<string name="select_secs">Select number of seconds</string>
-	<string name="secs">Secs</string>
-	<string name="select_themes">Select theme for Gesture Call</string>
-	<string name="pref_themes">Selects theme for the app</string>
-	<string name="pref_themes_summary">Choose main style for the app. 5 themes available:
+    <string name="select_secs">Select number of seconds</string>
+    <string name="secs">Secs</string>
+    <string name="select_themes">Select theme for Gesture Call</string>
+    <string name="pref_themes">Selects theme for the app</string>
+    <string name="pref_themes_summary">Choose main style for the app. 5 themes available:
 		grey, blue, green, black and white</string>
-	<string name="pref_novedades">New</string>
-	<string name="pref_novedades_summary">New stuff for version 2.1.1</string>
-	<string name="pref_about">About</string>
-	<string name="pref_about_summary">About Gesture Call and credits</string>
-	<string name="pref_def_action">Default action</string>
-	<string name="select_dialog_def_action">Select default action</string>
-	<string name="sms">SMS</string>
-	<string name="call">Call</string>
-	<string name="themes">Themes</string>
-	<string name="pref_contacta">Send us an e-mail</string>
-	<string name="pref_contacta_summary">If you want Gesture Call in your language or are
+    <string name="pref_novedades">New</string>
+    <string name="pref_novedades_summary">New stuff for version 2.1.1</string>
+    <string name="pref_about">About</string>
+    <string name="pref_about_summary">About Gesture Call and credits</string>
+    <string name="pref_def_action">Default action</string>
+    <string name="select_dialog_def_action">Select default action</string>
+    <string name="sms">SMS</string>
+    <string name="call">Call</string>
+    <string name="themes">Themes</string>
+    <string name="pref_contacta">Send us an e-mail</string>
+    <string name="pref_contacta_summary">If you want Gesture Call in your language or are
 		willing to help us improve with any idea, please tap here to send us
 		and e-mail.</string>
-
-	<string name="dialog_bc_seriusly_sms">Do you really want to send a SMS to</string>
-	<string name="notification_hello">Hello! Try me...</string>
-
-	<string name="pref_donate">Support us!</string>
-	<string name="pref_donate_summary">Support us downloading Gesture Call Donate without
+    <string name="dialog_bc_seriusly_sms">Do you really want to send a SMS to</string>
+    <string name="notification_hello">Hello! Try me…</string>
+    <string name="pref_donate">Support us!</string>
+    <string name="pref_donate_summary">Support us downloading Gesture Call Donate without
 		advertising you will receive actualizations before!</string>
-	<string name="donate">Support Us</string>
-	<string name="donate_text1">If you want to support us you can download Gesture
+    <string name="donate">Support Us</string>
+    <string name="donate_text1">f you want to support us you can download Gesture
 		Call Donate without advertising and you
 		receive updates a bit earlier than the normal version. New interface, send
 		messages quickly and the new
-		notifiación icon. click on the image: 
-    </string>
-	<string name="donate_text2">In Acdroid love to develop applications for Android
+		notifiación icon. click on the image: </string>
+    <string name="donate_text2">In Acdroid love to develop applications for Android
 		and not only have Gesture Call.</string>
-
-	<string name="shortcut">Shortcut</string>
-	<string name="shortcut_summary">Create a shortcut to launch Gesture Call for quick
+    <string name="shortcut">Shortcut</string>
+    <string name="shortcut_summary">Create a shortcut to launch Gesture Call for quick
 		access from the descktop</string>
-	<string name="creando">Creating</string>
-	<string name="creating_shortcut">Create Shortcut</string>
+    <string name="creando">Creating</string>
+    <string name="creating_shortcut">Create Shortcut</string>
 
+    <!-- Aun mas nuevas -->
+    <string name="tutorial_uno">The first that we recomend is that configure gesture call bla bla bla</string>
+    <string name="finish">Finish</string>
+    <string name="next">Next</string>
+    <string name="aviso_notificacion">To activate the notification bar icon press the menu on your phone and then click settings</string>
+    <string name="smson">Send SMS Activated</string>
+    <string name="smsoff">Call Activated</string>
 
-<!-- Aun mas nuevas -->
-	<string name="tutorial_uno">The first that we recomend is that configure gesture call bla bla bla</string>
-	<string name="finish">Finish</string>
-	<string name="next">Next</string>
-	<string name="aviso_notificacion">To activate the notification bar icon press the menu on your phone and then click settings</string>
-	<string name="smson">Send SMS Activated</string>
-	<string name="smsoff">Call Activated</string>
+    <!-- Button -->
+    <string name="ini_Button">Add</string>
+    <string name="button_done">Create</string>
+    <string name="cancelGesture">Cancel Gesture</string>
+    <string name="cancelGesture2">Return</string>
+    <string name="button_volver">Return</string>
+    <string name="button_save">Save</string>
+    <string name="button_edit_gesture">Gestures</string>
+    <string name="button_reload">Reload</string>
 
+    <!-- Menu -->
+    <string name="salir">Exit</string>
+    <string name="opciones">Options</string>
+    <string name="menu_edit">Gestures</string>
 
-	<!-- Button -->
-	<string name="ini_Button">Add</string>
-	<string name="button_done">Create</string>
-	<string name="cancelGesture">Cancel Gesture</string>
-	<string name="cancelGesture2">Return</string>
-	<string name="button_volver">Return</string>
-	<string name="button_save">Save</string>
-	<string name="button_edit_gesture">Gestures</string>
-	<string name="button_reload">Reload</string>
+    <!-- Dialog -->
+    <string name="di_salir">Do you really want to exit?</string>
+    <string name="gestures_edit">Edit Gesture</string>
+    <string name="gestures_delete">Delete</string>
+    <string name="dialog_bc_seriusly">Do you really want to call</string>
+    <string name="dialog_no_more">Do not show this message again</string>
+    <string name="dialog_sure">Are you sure?</string>
+    <string name="calling">Calling…</string>
 
-	<!-- Menu -->
-	<string name="salir">Exit</string>
-	<string name="opciones">Options</string>
-	<string name="menu_edit">Gestures</string>
-
-	<!-- Dialog -->
-	<string name="di_salir">Do you really want to exit?</string>
-	<string name="gestures_edit">Edit Gesture</string>
-	<string name="gestures_delete">Delete</string>
-	<string name="dialog_bc_seriusly">Do you really want to call</string>
-	<string name="dialog_no_more">Do not show this message again</string>
-	<string name="dialog_sure">Are you sure?</string>
-	<string name="calling">Calling...</string>
-
-	<!-- Miscelanea -->
-	<string name="first_time_toast">This is the first time you use Gesture Call\n....</string>
-	<string name="gesto_anadido">Gesture correctly added</string>
-	<string name="yes">Yes</string>
-	<string name="no">No</string>
-	<string name="no_gesto">The gesture has not been recognized</string>
-	<string name="info_list_gestos">Long click on an item to edit its options</string>
-	<string name="gestures_loading">Loading gestures...</string>
-	<string name="gestures_empty">No Gestures</string>
-	<string name="gestures_activity">Gestures</string>
-	<string name="gestures_delete_success">Gesture Deleted</string>
-	<string name="gestures_error_loading">Could not load %s. Make sure you have a mounted SD
+    <!-- Miscelanea -->
+    <string name="first_time_toast">This is the first time you use Gesture Call\n....</string>
+    <string name="gesto_anadido">Gesture correctly added</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="no_gesto">The gesture has not been recognized</string>
+    <string name="info_list_gestos">Long click on an item to edit its options</string>
+    <string name="gestures_loading">Loading gestures…</string>
+    <string name="gestures_empty">No Gestures</string>
+    <string name="gestures_activity">Gestures</string>
+    <string name="gestures_delete_success">Gesture Deleted</string>
+    <string name="gestures_error_loading">Could not load %s. Make sure you have a mounted SD
 		card.</string>
-	<string name="error_no_libreria">Fatal error. Gesture Library not found!</string>
+    <string name="error_no_libreria">Fatal error. Gesture Library not found!</string>
 
-
-	<!-- Preferencias -->
-	<string name="pref_main">Program Preferences</string>
-	<string name="pref_ask">Ask before call</string>
-	<string name="pref_ask_summary">When making a gesture, it will require confirmation
+    <!-- Preferencias -->
+    <string name="pref_main">Program Preferences</string>
+    <string name="pref_ask">Ask before call</string>
+    <string name="pref_ask_summary">When making a gesture, it will require confirmation
 		before calling</string>
-
-
-
+		
+    <string name="creditos">
+\n-Acdroid-\\n
+\n·Concept, Idea and Development:\\n
+\n Marcos Trujillo Seoane\\n
+\n Carlos Díaz Cánovas\\n
+\n\\n
+\n·Further Testing:\\n
+\n Renat Kunafin\\n
+\n\\n
+\nTranslations:\\n
+\n\\n
+\n·Spanish:\\n
+\n Marcos Trujillo Seoane\\n
+\n\\n
+\n·English and French:\\n
+\n Carlos Díaz Cánovas\\n
+\n \\n
+\n ·Italian:\\n
+\n Javier Torán Zufía\\n
+\n Jesús Varela Torres\\n
+\n \\n
+\n·Catalan:\\n
+\n Daniel Aguilera Morales\\n
+\n \\n
+\n ·Korean:\\n
+\n Mina Park\\n
+\n \\n
+\n·Japanese:\\n
+\n Luis Lorenzo Salgado Urbano\\n
+\n \\n
+\n ·German:\\n
+\n Adrián Antoñana Gómez\\n
+\n \\n 
+\n·Mandarin Chinese:\\n
+\n Yang Wei\\n
+\n \\n
+\n·Thai and Malay\\n
+\n \'El Dani et al\'\\n
+\n \\n
+\n ·Russian:\\n
+\n  Renat Kunafin\\n\\n  
+\nAND TO YOU FOR DOWNLOADING\\n
+\nGESTURE CALL AND DONATE\\n
+\nTHANX!!
+\n  
+\n  
+\n  \\n\\n\\n</string>
+	<string name="do_you_have_contacts">Do you have contacts?</string>
+	<string name="whats_new">
+\n- Gesture Call -\\n
+\n\\n
+\nThanx you very much for downloading Gesture Call\\n\\n
+\n
+\n◘  Version 2.0.6\\n\\n
+\n• Bug Fix.
+\n• Changes in the Ads.
+\n• Added  Share on Facebook.\\n\\n
+\n
+\n◘  Version 2.0.5\\n\\n
+\n• Added button \'No\' to the before call dialog.\\n
+\n• Change default theme to Blue.\\n
+\n• Fix a problem in the Wellcome dialog.\\n
+\n• Reduced the size of the application.\\n
+\n• Improvements in the interface.\\n
+\n• Fix a bug in the ads when there aren\'t a network.\\n\\n
+\n
+\n◘  Version 2.0.4\\n\\n
+\n• Solved a important bug.\\n
+\n• Fix languages.\\n
+\n• Important improvements in the interface.\\n
+\n• Change Ads Company.\\n\\n
+\n
+\n◘  Version 2.0.1\\n\\n
+\n• In the preferences screen now return button save the preferences.\\n
+\n• Fix languages and complete italian.\\n
+\n• To activate the notification bar icon press the menu on your phone and then click settings.\\n\\n
+\n
+\n◘  Version 2.0\\n\\n
+\n• New Interface\\n
+\n• Differents Themes\\n
+\n• Now You can Send SMS\\n
+\n• New Options:\\n
+\n   New Notification for quick access\\n
+\n   Exit after call\\n
+\n   Auto call after wait a few seconds\\n
+\n   Default action (Call or SMS)\\n
+\n• Now you can create a shortcut\\n
+\n• New method to contact with the developers\\n
+\n  (send us feedback, ideas, bugs … )\\n
+\n• Bug Fix
+\n\\n\\n
+\n
+\n◘  Version 1.2.2\\n\\n
+\n• Now you can create a shortcut of Gesture Call\\n
+\n  (In the options menu press the Shortcut option)\\n
+\n• Min bug fix \\n\\n
+\n
+\n
+\n◘  Version 1.2.1\\n\\n
+\n• New Languages\\n
+\n  Russian\\n
+\n  Korean\\n
+\n• New button Donate\\n
+\n• Interface improvements\\n
+\n• New method to contact with the developers\\n
+\n  (send us feedback, ideas, bugs … )\\n
+\n• Bug fix\\n
+\n  
+\n\\n\\n\\n
+\n  
+\n\\n\\n\\n
+\n  
+\n</string>
+	<string name="whats_new_firsttime">
+\n- Gesture Call -\\n
+\n\\n
+\nThanx you very much for downloading Gesture Call\\n\\n
+\n
+\n◘  Version 2.0.6\\n\\n
+\n• Bug Fix.
+\n• Changes in the Ads.
+\n• Added  Share on Facebook.\\n\\n
+\n
+\n◘  Version 2.0.5\\n\\n
+\n• Added button \'No\' to the before call dialog.\\n
+\n• Change default theme to Blue.\\n
+\n• Fix a problem in the Wellcome dialog.\\n
+\n• Reduced the size of the application.\\n
+\n• Improvements in the interface.\\n
+\n• Fix a bug in the ads when there aren\'t a network.\\n\\n
+\n
+\n◘  Version 2.0.4\\n\\n
+\n• Solved a important bug.\\n
+\n• Fix languages.\\n
+\n• Important improvements in the interface.\\n
+\n• Change Ads Company.\\n\\n
+\n
+\n◘  Version 2.0.1\\n\\n
+\n• In the preferences screen now return button save the preferences.\\n
+\n• Fix languages and complete italian.\\n
+\n• To activate the notification bar icon press the menu on your phone and then click settings.\\n\\n
+\n
+\n◘  Version 2.0\\n\\n
+\n• New Interface\\n
+\n• Differents Themes\\n
+\n• Now You can Send SMS\\n
+\n• New Options:\\n
+\n   New Notification for quick access\\n
+\n   Exit after call\\n
+\n   Auto call after wait a few seconds\\n
+\n   Default action (Call or SMS)\\n
+\n• Now you can create a shortcut\\n
+\n• New method to contact with the developers\\n
+\n  (send us feedback, ideas, bugs … )\\n
+\n• Bug Fix
+\n\\n\\n
+\n
+\n◘  Version 1.2.2\\n\\n
+\n• Now you can create a shortcut of Gesture Call\\n
+\n  (In the options menu press the Shortcut option)\\n
+\n• Min bug fix \\n\\n
+\n
+\n
+\n◘  Version 1.2.1\\n\\n
+\n• New Languages\\n
+\n  Russian\\n
+\n  Korean\\n
+\n• New button Donate\\n
+\n• Interface improvements\\n
+\n• New method to contact with the developers\\n
+\n  (send us feedback, ideas, bugs … )\\n
+\n• Bug fix\\n
+\n  
+\n\\n\\n\\n
+\n  
+\n\\n\\n\\n
+\n  
+\n</string>
+	
 
 </resources>

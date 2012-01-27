@@ -1,52 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_width="fill_parent" android:layout_height="wrap_content"
-	android:orientation="vertical" android:gravity="center">
+    android:id="@+id/lay_item"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/item_list_gradient"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:paddingLeft="4dip"
+    android:paddingRight="4dip" >
 
-	<LinearLayout android:layout_width="fill_parent"
-		android:layout_height="4dip" android:background="@drawable/linearlayout_color_gradient_down" />
+    <ImageView
+        android:id="@+id/item_list_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="7dip"
+        android:src="@drawable/btn_check_off" >
+    </ImageView>
 
+    <LinearLayout
+        android:id="@+id/lay_item2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dip" >
 
-	<LinearLayout android:layout_width="fill_parent"
-		android:layout_height="wrap_content" android:orientation="horizontal"
-		android:gravity="center">
+        <TextView
+            android:id="@+id/item_lista_nombre"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:text="@+id/item_lista_nombre"
+            android:textColor="@color/white"
+            android:textSize="28dip"
+            android:textStyle="bold" />
 
-		<LinearLayout android:layout_width="4dip"
-			android:layout_height="wrap_content" android:background="@drawable/linearlayout_color_gradient_down" />
+        <TextView
+            android:id="@+id/item_lista_numero"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="marquee"
+            android:singleLine="true"
+            android:text="@+id/item_lista_numero"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="18dip"
+            android:textStyle="bold" />
+    </LinearLayout>
 
-
-
-		<LinearLayout android:id="@+id/lay_item"
-			android:layout_width="fill_parent" android:layout_height="wrap_content"
-			android:orientation="horizontal" android:paddingLeft="4dip"
-			android:paddingRight="4dip" android:background="@color/grey_list_item"
-			android:gravity="center">
-
-
-			<ImageView android:id="@+id/item_list_image"
-				android:layout_width="wrap_content" android:layout_height="wrap_content"
-				android:padding="7dip" android:src="@drawable/btn_check_off"></ImageView>
-
-			<LinearLayout android:id="@+id/lay_item2"
-				android:layout_width="fill_parent" android:layout_height="wrap_content"
-				android:padding="10dip" android:orientation="vertical">
-				<TextView android:text="@+id/item_lista_nombre" android:id="@+id/item_lista_nombre"
-					android:layout_width="fill_parent" android:layout_height="wrap_content"
-					android:gravity="center_vertical" android:textSize="28dip"
-					android:textColor="@color/black" android:textStyle="bold"
-					android:maxLines="1" />
-				<TextView android:text="@+id/item_lista_numero"
-					android:layout_width="fill_parent" android:layout_height="wrap_content"
-					android:id="@+id/item_lista_numero" android:singleLine="true"
-					android:ellipsize="marquee" android:textSize="18dip"
-					android:textColor="@android:color/darker_gray" android:textStyle="bold" />
-
-			</LinearLayout>
-		</LinearLayout>
-
-
-		<LinearLayout android:layout_width="4dip"
-			android:layout_height="wrap_content" android:background="@drawable/linearlayout_color_gradient_down" />
-
-	</LinearLayout>
 </LinearLayout>

@@ -63,8 +63,6 @@ public class CreadorGestos extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
-
 		setContentView(R.layout.create_gesture);
 
 		mDoneButton = (Button)findViewById(R.id.done);
@@ -210,46 +208,50 @@ public class CreadorGestos extends Activity {
 		try {
 			theme = ap.getInt(AppConfig.THEME);
 		} catch (NoPreferenceException e) {
-			Log.i("Gesture Call","No Theme preference. Apply Default GREY");
-			theme = Themes.GREY;
-			ap.put(Themes.GREY,AppConfig.THEME);
+			Log.i("Gesture Call","No Theme Preference. Apply Default: Grey");
+			theme = Themes.BLUE;
+			ap.put(Themes.BLUE,AppConfig.THEME);
 		}
-		
-		Log.d("DEBUG","puto theme " + theme);
-		
+
+
 		switch (theme) {
 		case Themes.GREY:
 			lay_main.setBackgroundResource(R.drawable.background_grey);
-//			overlay.setGestureColor(getResources().getColor(R.color.overlay_grey));
-//			overlay.setGestureColor(Color.WHITE);
-//			overlay.setUncertainGestureColor(getResources().getColor(R.color.overlay_grey_uncertain));
+			overlay.setGestureColor(getResources().getColor(R.color.overlay_grey));
+			overlay.setUncertainGestureColor(getResources().getColor(R.color.overlay_grey_uncertain));
 			texto.setTextColor(getResources().getColor(R.color.white));
-			
+
 			break;
 		case Themes.BLUE:
 			lay_main.setBackgroundResource(R.drawable.background_blue_gradient);
-//			overlay.setGestureColor(getResources().getColor(R.color.overlay_blue));
-//			overlay.setUncertainGestureColor(getResources().getColor(R.color.overlay_blue_uncertain));
+			overlay.setGestureColor(getResources().getColor(R.color.overlay_blue));
+			overlay.setUncertainGestureColor(getResources().getColor(R.color.overlay_blue_uncertain));
 			texto.setTextColor(getResources().getColor(R.color.black));
 			break;
 		case Themes.GREEN:
 			lay_main.setBackgroundResource(R.drawable.background_green_gradient);
-//			overlay.setGestureColor(getResources().getColor(R.color.overlay_green));
-//			overlay.setUncertainGestureColor(getResources().getColor(R.color.overlay_green_uncertain));
+			overlay.setGestureColor(getResources().getColor(R.color.overlay_green));
+			overlay.setUncertainGestureColor(getResources().getColor(R.color.overlay_green_uncertain));
 			texto.setTextColor(getResources().getColor(R.color.black));
 			break;
 		case Themes.BLACK:
 			lay_main.setBackgroundResource(R.drawable.background_black_gradient);
+			overlay.setGestureColor(getResources().getColor(R.color.overlay_black));
+			overlay.setUncertainGestureColor(getResources().getColor(R.color.overlay_black_uncertain));
 			texto.setTextColor(getResources().getColor(R.color.white));
 			break;
 		case Themes.WHITE:
 			lay_main.setBackgroundResource(R.drawable.background_white_gradient);
+			overlay.setGestureColor(getResources().getColor(R.color.overlay_white));
+			overlay.setUncertainGestureColor(getResources().getColor(R.color.overlay_white_uncertain));
 			texto.setTextColor(getResources().getColor(R.color.black));
 			break;
 
 		default:
-			lay_main.setBackgroundResource(R.drawable.background_grey);
-			texto.setTextColor(getResources().getColor(R.color.white));
+			lay_main.setBackgroundResource(R.drawable.background_blue_gradient);
+			overlay.setGestureColor(getResources().getColor(R.color.overlay_blue));
+			overlay.setUncertainGestureColor(getResources().getColor(R.color.overlay_blue_uncertain));
+			texto.setTextColor(getResources().getColor(R.color.black));
 			break;
 		}
 	}
@@ -274,6 +276,7 @@ public class CreadorGestos extends Activity {
 		}
 
 		public void onGestureEnded(GestureOverlayView overlay, MotionEvent event) {
+			Log.d("DEBUG", "on ended gesture");
 			mGesture = overlay.getGesture();
 			if (mGesture.getLength() < LENGTH_THRESHOLD) {
 				overlay.clear(false);

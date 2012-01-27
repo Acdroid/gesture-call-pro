@@ -25,7 +25,7 @@
 	<string name="dialog_bc_seriusly">Voulez-vous appeler </string>
 	<string name="dialog_no_more">Ne plus montrer ce message</string>
 	<string name="dialog_sure">Êtes-vous sûr ?</string>
-	<string name="calling">Appel...</string>
+	<string name="calling">Appel…</string>
 
 	<!-- Miscelanea -->
 	<string name="first_time_toast">C\'est la première fois que vous utilisez Gesture
@@ -35,7 +35,7 @@
 	<string name="no">Non</string>
 	<string name="no_gesto">Le geste n\'as pas été reconnu</string>
 	<string name="info_list_gestos">Long click sur un élément pour modifier ses options</string>
-	<string name="gestures_loading">Chargement des gestes...</string>
+	<string name="gestures_loading">Chargement des gestes…</string>
 	<string name="gestures_empty">Pas de gestes</string>
 	<string name="gestures_activity">Gestes</string>
 	<string name="gestures_delete_success">Geste effacé</string>

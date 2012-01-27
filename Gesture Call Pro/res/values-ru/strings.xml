@@ -32,7 +32,7 @@
 		вас есть идеи и пожелания, напишите нам.</string>
 
 	<string name="dialog_bc_seriusly_sms">Вы действительно хотите послать сообщение?</string>
-	<string name="notification_hello">Привет! Попробуй меня...</string>
+	<string name="notification_hello">Привет! Попробуй меня…</string>
 
 
 
@@ -58,7 +58,7 @@
 	<string name="dialog_bc_seriusly">Подтверждаете вызов</string>
 	<string name="dialog_no_more">Не показывать это сообщение снова</string>
 	<string name="dialog_sure">Вы уверены?</string>
-	<string name="calling">Вызов...</string>
+	<string name="calling">Вызов…</string>
 
 	<!-- Miscelanea -->
 	<string name="first_time_toast">Вы впервые используете Gesture Call\n....</string>
@@ -67,7 +67,7 @@
 	<string name="no">Нет</string>
 	<string name="no_gesto">Жест не распознан.</string>
 	<string name="info_list_gestos">Удерживайте палец для редактирования</string>
-	<string name="gestures_loading">Загрузка жестов...</string>
+	<string name="gestures_loading">Загрузка жестов…</string>
 	<string name="gestures_empty">Жестов нет</string>
 	<string name="gestures_activity">Жест</string>
 	<string name="gestures_delete_success">Жест удален</string>
