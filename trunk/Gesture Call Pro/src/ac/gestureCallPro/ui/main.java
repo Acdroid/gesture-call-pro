@@ -633,7 +633,12 @@ public class main extends Activity {
 			@Override
 			public void onCancel(DialogInterface dialog) {
 				countdown.setIsPressedButtonSi(false);
-				countdown.cancel();				
+				countdown.cancel();	
+				
+				CheckBox c = (CheckBox)dialogCall.findViewById(R.id.dialog_check);
+				if(c.isChecked()){
+					getAp().put(false, AppConfig.AVISO_AL_LLAMAR);
+				}
 			}
 		});
 		
@@ -657,6 +662,11 @@ public class main extends Activity {
 			public void onClick(View v) {
 				countdown.setIsPressedButtonSi(false);
 				countdown.cancel();	
+				CheckBox c = (CheckBox)dialogCall.findViewById(R.id.dialog_check);
+				if(c.isChecked()){
+					getAp().put(false, AppConfig.AVISO_AL_LLAMAR);
+				}
+				
 				dialogCall.dismiss();
 			}
 		});

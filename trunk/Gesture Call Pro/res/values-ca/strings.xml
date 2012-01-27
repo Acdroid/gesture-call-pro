@@ -2,6 +2,9 @@
 <resources>
 	<string name="makeGesture">Fes un gest per trucar a un contacte</string>
 	
+	    <!--  Aun mas nuevas -->
+    <string name="pref_open_start">Iniciar con el dispositivo</string>
+    <string name="pref_open_start_summary">Inicia la aplicación al endender el dispositivo para habilitar el icono de notificaciones.</string>
 	    <!-- Mas nuevas -->
 	<string name ="sharefacebook">Compartir en Facebook</string>    
 	<string name ="post_facebook">He probado Gesture Call para android y me gusta. 

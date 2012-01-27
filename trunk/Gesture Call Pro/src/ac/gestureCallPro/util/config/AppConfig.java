@@ -48,6 +48,7 @@ public class AppConfig extends MSharedPreferences{
 	public static final String ACCION_POR_DEFECTO = "defAction"; //accion por defecto llamar, sms o perdida?
 	public static final String THEME = "theme"; //Theme elegido
 	public static final String S_AFTER_CALL = "secondsAfterCall"; //tiempo en segundos antes de llamar, sms o perdida
+	public static final String OPEN_START = "open_on_start";
 	
     public static final class Themes {
         public static final int GREY = 0;
@@ -147,6 +148,7 @@ public class AppConfig extends MSharedPreferences{
 		makeV2();
 		makeV3();
 		makeV4();
+		makeV5();
 	}
 	
 	/**
@@ -176,6 +178,10 @@ public class AppConfig extends MSharedPreferences{
 		
 		if (ver < 4){
 			makeV4();
+		}
+		
+		if (ver < 5){
+			makeV5();
 		}
 		
 		
@@ -237,10 +243,20 @@ public class AppConfig extends MSharedPreferences{
 		//Falseamos las notificaciones
 		//para que no haya quejas
 		put(false,NOTIFICATION);
-		mToast.Make(mContext, mContext.getResources().getString(R.string.aviso_notificacion),1);
-		
-		showNewDialog();
 		put(4,VERSION); //Imprescindible siempre poner
+	}
+	
+	/**
+	 * Quinta version en la que se agrega abrir al inicio
+	 * 
+	 * 2.1.4
+	 */
+	private void makeV5(){
+		put(true,OPEN_START);
+		mToast.Make(mContext, mContext.getResources().getString(R.string.aviso_notificacion),1);
+		showNewDialog();
+		put(5,VERSION);
+		
 	}
 	
 	
@@ -284,27 +300,27 @@ public class AppConfig extends MSharedPreferences{
 //		makeV4();
 	}
 	
-	/**
-	 * Muestra por log todas las opciones:
-	 */
-	@SuppressWarnings("unused")
-	private void logOptions(){
-		
-		try {
-			Log.d("DEBUG",ACCION_POR_DEFECTO + " " +  getInt(ACCION_POR_DEFECTO) + " (0 llamar,1 sms, 2 perdida)" ) ;
-					
-			Log.d("DEBUG", AVISO_AL_LLAMAR + " " + getBool(AVISO_AL_LLAMAR)  );
-			Log.d("DEBUG",DEVELOPERS + " " + getBool(DEVELOPERS));
-			Log.d("DEBUG",NOTIFICATION + " " + getBool(NOTIFICATION));
-			Log.d("DEBUG",RETURN_AFTER_CALL + " " + getBool(RETURN_AFTER_CALL));
-			Log.d("DEBUG",VERSION + " " + getInt(VERSION));
-			Log.d("DEBUG",THEME + " " + getInt(THEME) + "  (0 gris,1verde,2azul)");
-			Log.d("DEBUG",S_AFTER_CALL + " " + getLong(S_AFTER_CALL));
-			
-			
-		} catch (NoPreferenceException e) {
-			Log.d("Gesture Call","Error al debuguear las opciones. Alguna no se encuentra.");
-		}
-	}
+//	/**
+//	 * Muestra por log todas las opciones:
+//	 */
+//	@SuppressWarnings("unused")
+//	private void logOptions(){
+//		
+//		try {
+//			Log.d("DEBUG",ACCION_POR_DEFECTO + " " +  getInt(ACCION_POR_DEFECTO) + " (0 llamar,1 sms, 2 perdida)" ) ;
+//					
+//			Log.d("DEBUG", AVISO_AL_LLAMAR + " " + getBool(AVISO_AL_LLAMAR)  );
+//			Log.d("DEBUG",DEVELOPERS + " " + getBool(DEVELOPERS));
+//			Log.d("DEBUG",NOTIFICATION + " " + getBool(NOTIFICATION));
+//			Log.d("DEBUG",RETURN_AFTER_CALL + " " + getBool(RETURN_AFTER_CALL));
+//			Log.d("DEBUG",VERSION + " " + getInt(VERSION));
+//			Log.d("DEBUG",THEME + " " + getInt(THEME) + "  (0 gris,1verde,2azul)");
+//			Log.d("DEBUG",S_AFTER_CALL + " " + getLong(S_AFTER_CALL));
+//			
+//			
+//		} catch (NoPreferenceException e) {
+//			Log.d("Gesture Call","Error al debuguear las opciones. Alguna no se encuentra.");
+//		}
+//	}
 	
 }
