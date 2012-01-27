@@ -9,6 +9,7 @@
  */
 package ac.gestureCallPro.preferences;
 
+import ac.gestureCallPro.util.facebook.FacebookPostMessage;
 import ac.gestureCallPro.R;
 import ac.gestureCallPro.exceptions.NoPreferenceException;
 import ac.gestureCallPro.ui.main;
@@ -21,6 +22,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -55,6 +57,7 @@ public class Preferences extends Activity{
 	private Long numSecs;
 	private int theme;
 	private int accion;
+	private boolean open;
 	
 	
 	@Override
@@ -83,6 +86,7 @@ public class Preferences extends Activity{
 			numSecs = ap.getLong(AppConfig.S_AFTER_CALL);
 			theme = ap.getInt(AppConfig.THEME);
 			accion = ap.getInt(AppConfig.ACCION_POR_DEFECTO);
+			open = ap.getBool(AppConfig.OPEN_START);
 			
 		} catch (NoPreferenceException e) {
 			Log.e("GestureCall_pro","Error al cargar preferencias en preferences.java." +
@@ -113,6 +117,14 @@ public class Preferences extends Activity{
 		
 		c = (CheckBox)findViewById(R.id.pref_check_notification);
 		c.setChecked(notification);
+		
+		c = (CheckBox)findViewById(R.id.pref_check_open_start);
+		c.setChecked(open);
+		
+		//Si no esta true, inhabilitamos la opcion open start
+		if (!notification){
+			disableOpen();
+		}
         
 		putThemeInLayout();
 		
@@ -139,6 +151,13 @@ public class Preferences extends Activity{
 
 		ap.put(c.isChecked(), AppConfig.NOTIFICATION);
 		
+		c = (CheckBox) findViewById(R.id.pref_check_open_start);
+		
+		
+		//cosas para abrir al inicio
+
+		ap.put(c.isChecked(), AppConfig.OPEN_START);
+
 		ap.put(theme, AppConfig.THEME);
 		
 		ap.put(accion, AppConfig.ACCION_POR_DEFECTO);
@@ -177,7 +196,19 @@ public class Preferences extends Activity{
 	
 	
 	
-	
+	/**
+	 * Method clickDonate.
+	 * @param v View
+	 */
+	public void clickFacebook(View v){
+		new FacebookPostMessage(this,"Gesture Call for Android", getResources().getString(R.string.post_facebook),
+				main.LINK,
+				main.IMAGE);
+		
+		LinearLayout l = (LinearLayout)findViewById(R.id.pref_lay_facebook);
+		l.setEnabled(false);
+		
+	}
 	
 	/**
 	 * Method onCreateOptionsMenu.
@@ -384,6 +415,32 @@ public class Preferences extends Activity{
 		startActivity(Intent.createChooser(i, "Send mail..."));
 		
 		
+	}
+	
+	public void clickNotification(View v){
+		CheckBox c = (CheckBox)findViewById(R.id.pref_check_notification);
+		if (c.isChecked()){
+			enableOpen();
+		}
+		else{
+			disableOpen();
+		}		
+	}
+	
+	private void enableOpen(){
+		LinearLayout l = (LinearLayout)findViewById(R.id.layout_open_start);
+		l.setBackgroundColor(Color.TRANSPARENT);
+		l.setEnabled(false);
+		CheckBox c = (CheckBox)findViewById(R.id.pref_check_open_start);
+		c.setEnabled(true);
+	}
+	
+	private void disableOpen(){
+		LinearLayout l = (LinearLayout)findViewById(R.id.layout_open_start);
+		l.setBackgroundColor(getResources().getColor(R.color.gris_claro));
+		l.setEnabled(false);
+		CheckBox c = (CheckBox)findViewById(R.id.pref_check_open_start);
+		c.setEnabled(false);
 	}
 	
 	/**

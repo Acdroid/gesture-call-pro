@@ -3,6 +3,9 @@
 
     <string name="app_name">Gesture Call Donate</string>
     <string name="makeGesture">Make a gesture to call a contact</string>
+    <!-- Aun mas nuevas -->
+    <string name="pref_open_start">Start with device</string>
+    <string name="pref_open_start_summary">Starts the application when the device boots to enable notification icon</string>
 
     <!-- Mas nuevas -->
     <string name="sharefacebook">Share on Facebook</string>
@@ -112,9 +115,7 @@ Post a comment on facebook to recomend Gesture Call to your friends</string>
     <string name="pref_ask">Ask before call</string>
     <string name="pref_ask_summary">When making a gesture, it will require confirmation
 		before calling</string>
-		
-    <string name="creditos">
-\n-Acdroid-\\n
+    <string name="creditos">\n-Acdroid-\\n
 \n·Concept, Idea and Development:\\n
 \n Marcos Trujillo Seoane\\n
 \n Carlos Díaz Cánovas\\n
@@ -160,9 +161,8 @@ Post a comment on facebook to recomend Gesture Call to your friends</string>
 \n  
 \n  
 \n  \\n\\n\\n</string>
-	<string name="do_you_have_contacts">Do you have contacts?</string>
-	<string name="whats_new">
-\n- Gesture Call -\\n
+    <string name="do_you_have_contacts">Do you have contacts?</string>
+    <string name="whats_new">\n- Gesture Call -\\n
 \n\\n
 \nThanx you very much for downloading Gesture Call\\n\\n
 \n
@@ -226,8 +226,7 @@ Post a comment on facebook to recomend Gesture Call to your friends</string>
 \n\\n\\n\\n
 \n  
 \n</string>
-	<string name="whats_new_firsttime">
-\n- Gesture Call -\\n
+    <string name="whats_new_firsttime">\n- Gesture Call -\\n
 \n\\n
 \nThanx you very much for downloading Gesture Call\\n\\n
 \n
@@ -291,6 +290,5 @@ Post a comment on facebook to recomend Gesture Call to your friends</string>
 \n\\n\\n\\n
 \n  
 \n</string>
-	
 
 </resources>
