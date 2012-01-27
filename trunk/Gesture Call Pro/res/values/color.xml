@@ -1,34 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<color name="colorBackground">#FAFAFA</color>
-	<color name="fileBackgroundAmarillo">#F5F6CE</color>
-	<color name="fileBackgroundAzul">#CEE3F6</color>
-	<color name="colorBackgroundRojo">#FF0000</color>
+    <color name="fileBackgroundAmarillo">#F5F6CE</color>
+    <color name="fileBackgroundAzul">#CEE3F6</color>
+    <color name="colorBackgroundRojo">#FF0000</color>
+    
+    <color name="grey_list_item">#1A1A1A</color>
+    
+    <color name="black">#000000</color>
+    <color name="gris">#444444</color>
+    <color name="white">#FFFFFF</color>
+    <color name="colorConversacion">#EBF1FF</color>
+    <color name="rojo">#FF0000</color>
+    <color name="azul">#0000FF</color>
+    <color name="azul_claro">#1B85CA</color>
+    <color name="gesture_color">#FFFFFF00</color>
+    <color name="amarillo_claro">#FFFFCB</color>
+    
+    <color name="overlay_grey">#C1C1C1</color>
+    <color name="overlay_grey_uncertain">#80C1C1C1</color>
+    <color name="overlay_green">#60308C</color>
+    <color name="overlay_green_uncertain">#8060308C</color>
+    <color name="overlay_blue">#c32020</color>
+    <color name="overlay_blue_uncertain">#80c32020</color>
+    <color name="overlay_black">#FFFFFF</color>
+    <color name="overlay_black_uncertain">#80FFFFFF</color>
+    <color name="overlay_white">#000000</color>
+    <color name="overlay_white_uncertain">#80000000</color>
+    
+    <color name="verde_android">#a4c639</color>
+    <color name="azul_theme">#4aace5</color>
+ 
+    <color name="disabled_title">#565656</color>
+    <color name="disabled_summary">#2a2a2a</color>
 
-	<color name="grey_list_item">#1A1A1A</color>
-
-	<color name="black">#000000</color>
-	<color name="gris">#444444</color>
-	<color name="white">#FFFFFF</color>
-	<color name="colorConversacion">#EBF1FF</color>
-	<color name="rojo">#FF0000</color>
-	<color name="azul">#0000FF</color>
-	<color name="azul_claro">#1B85CA</color>
-	<color name="gesture_color">#FFFFFF00</color>
-	<color name="amarillo_claro">#FFFFCB</color>
-
-	<color name="overlay_grey">#8D8D8D</color>
-	<color name="overlay_grey_uncertain">#808D8D8D</color>
-	<color name="overlay_green">#640E4E</color>
-	<color name="overlay_green_uncertain">#80640E4E</color>
-	<color name="overlay_blue">#FFAD48</color>
-	<color name="overlay_blue_uncertain">#80FFAD48</color>
-
-	<color name="verde_android">#a4c639</color>
-	<color name="azul_theme">#4aace5</color>
-
-	<color name="disabled_title">#565656</color>
-	<color name="disabled_summary">#2a2a2a</color>
-
-
+    
 </resources>

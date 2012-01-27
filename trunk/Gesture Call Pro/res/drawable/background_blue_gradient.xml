@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
-	<gradient android:startColor="#4aace5" android:endColor="#dddddd"
-		android:angle="90" />
-	<corners android:radius="2px" />
+ <gradient 
+ 		android:startColor="#4aace5"
+    	android:endColor="#c6e5f9"
+        android:angle="90"
+        
+  
+        />   
+    <corners android:radius="2px" />
 </shape>
 
+<!-- Degradado de azul azul a azul-gris de abajo a arriba -->
 <!-- android:startColor="#4aace5" azul -->
 <!-- android:startColor="#a4c639" verde -->

@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="makeGesture">Fes un gest per trucar a un contacte</string>
+	
+	    <!-- Mas nuevas -->
+	<string name ="sharefacebook">Compartir en Facebook</string>    
+	<string name ="post_facebook">He probado Gesture Call para android y me gusta. 
+	    Puedes llamar o mandar un SMS a tus contactos con un simple gesto en la pantalla. Consíguelo aquí
+	    
+	    </string>
+	<string name ="sharefacebook_sub">Publica un comentario en Facebook para recomendar Gesture Call a tus amigos</string>    
+ 
 
 	<!-- NUEVAS -->
 	<string name="click_gesture">Accede a Gesture Call !</string>
@@ -35,7 +44,7 @@
 		Call? Pulsa aquí y mándanos un e-mail contándonos lo que quieras</string>
 
 	<string name="dialog_bc_seriusly_sms">¿Quieres mandar un SMS a</string>
-	<string name="notification_hello">Hola!Pruébame...</string>
+	<string name="notification_hello">Hola!Pruébame…</string>
 
 	<string name="pref_donate">¡Apóyanos!</string>
 	<string name="pref_donate_summary">Apóyanos descargando Gesture Call Donate sin
@@ -81,7 +90,7 @@
 	<string name="gestures_edit">Modificar Gest</string>
 	<string name="dialog_bc_seriusly">Trucar a</string>
 	<string name="gestures_delete">Eliminar</string>
-	<string name="calling">Trucant...</string>
+	<string name="calling">Trucant…</string>
 
 	<!-- Miscelanea -->
 	<string name="first_time_toast">Aquesta és la primera vegada que fas servir Gesture
@@ -92,7 +101,7 @@
 	<string name="no">No</string>
 	<string name="no_gesto">No s\'ha reconegut el gest</string>
 	<string name="info_list_gestos">Polsa prolongadament per editar el Gest</string>
-	<string name="gestures_loading">Carregant gestos...</string>
+	<string name="gestures_loading">Carregant gestos…</string>
 	<string name="gestures_empty">No hi ha gestos</string>
 
 	<string name="gestures_activity">Gestos</string>

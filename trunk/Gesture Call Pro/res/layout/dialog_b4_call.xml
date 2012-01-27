@@ -15,7 +15,7 @@
 		android:layout_alignLeft="@+id/qieres" android:layout_alignRight="@+id/qieres"
 		android:id="@+id/dialog_text_contact" android:gravity="center"
 		android:layout_width="fill_parent" android:layout_height="wrap_content"
-		android:text="contact" android:textColor="@color/white"
+	    android:textColor="@color/white"
 		android:textSize="24dip" android:textStyle="bold">
 	</TextView>
 

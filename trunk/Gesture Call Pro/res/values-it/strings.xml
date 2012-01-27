@@ -29,7 +29,7 @@
     <string name ="pref_contacta_summary">Ti piacerebbe avere Gesture Call nella tua lingua? Hai una magnifica idea che vuoi sia aggiunta a Gesture Call? Premi qua e manda un e-mail raccontando quello che vuoi</string>
     
     <string name="dialog_bc_seriusly_sms">Vuoi mandare un SMS a</string>
-    <string name ="notification_hello">Ciao! Provami...</string> 
+    <string name ="notification_hello">Ciao! Provami…</string> 
     
     <string name ="pref_donate">Aiutaci!</string>
     <string name ="pref_donate_summary">Aiutaci scaricando Gesture Call Donate  senza annunci e avrai prima le attualizazioni</string>
@@ -69,7 +69,7 @@
     <string name="dialog_bc_seriusly">Â¿Vuoi chiamare</string>
     <string name="dialog_no_more">Non mostrare piÃº questo messaggio</string>
     <string name="dialog_sure">Â¿Sei sicuro?</string>
-    <string name="calling">Chiamando...</string>
+    <string name="calling">Chiamando…</string>
     
     <!-- Miscelanea -->
 	<string name = "first_time_toast">Questa Ã© la prima volta che fai uso di Gesture Call\n....</string>
@@ -78,7 +78,7 @@
 	<string name = "no">No</string>
 	<string name = "no_gesto">Non si ha riconosciuto il gesto</string>
 	<string name = "info_list_gestos">Lunga pulsazione per editare il gesto</string>
-	<string name="gestures_loading">Caricando gesti...</string>
+	<string name="gestures_loading">Caricando gesti…</string>
 	<string name="gestures_empty">Non ci sono gesti</string>
 	<string name="gestures_activity">Gesti</string>
 	<string name="gestures_delete_success">Gesto eliminato</string>

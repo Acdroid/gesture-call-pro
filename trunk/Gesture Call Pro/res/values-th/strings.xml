@@ -33,7 +33,7 @@
 	<string name="no"> ไม่ใช่</string>
 	<string name="no_gesto">ไม่สามารถรับรู้ท่าทางของคุณ</string>
 	<string name="info_list_gestos">กดค้างบนรายการที่ต้องการแก้ไข</string>
-	<string name="gestures_loading">กำลังดาวโหลดท่าทาง...</string>
+	<string name="gestures_loading">กำลังดาวโหลดท่าทาง…</string>
 	<string name="gestures_empty">ไม่มีท่าทาง</string>
 	<string name="gestures_activity">ท่าทาง</string>
 	<string name="gestures_delete_success">ท่าทางถูกลบทิ้งแล้ว</string>

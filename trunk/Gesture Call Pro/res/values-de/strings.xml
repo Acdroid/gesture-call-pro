@@ -24,7 +24,7 @@
 	<string name="dialog_bc_seriusly">Wollen Sie dieses Kontakt anrufen ? :</string>
 	<string name="dialog_no_more">Deise Nachricht nicht wieder einblenden</string>
 	<string name="dialog_sure">Sind Sie sicher?</string>
-	<string name="calling">Rufaufbau...</string>
+	<string name="calling">Rufaufbau…</string>
 
 	<!-- Miscelanea -->
 	<string name="first_time_toast">Das ist das erste Mal, dass Sie Geste Anruf
@@ -34,7 +34,7 @@
 	<string name="no">Nein</string>
 	<string name="no_gesto">Die Geste wurde nicht erkannt</string>
 	<string name="info_list_gestos">Taste halten um Geste zu bearbeiten</string>
-	<string name="gestures_loading">Gesten werden geladet...</string>
+	<string name="gestures_loading">Gesten werden geladet…</string>
 	<string name="gestures_empty">Keine Gesten vorhanden</string>
 	<string name="gestures_activity">Gesten</string>
 	<string name="gestures_delete_success">Geste gelöscht</string>

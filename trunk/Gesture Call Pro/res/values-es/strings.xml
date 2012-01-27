@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <resources>
 	<string name="makeGesture">Haz un gesto para llamar a un contacto</string>
+	
+	    <!-- Mas nuevas -->
+	<string name ="sharefacebook">Compartir en Facebook</string>    
+	<string name ="post_facebook">He probado Gesture Call para android y me gusta. 
+	    Puedes llamar o mandar un SMS a tus contactos con un simple gesto en la pantalla. Consíguelo aquí
+	    
+	    </string>
+	<string name ="sharefacebook_sub">Publica un comentario en Facebook para recomendar Gesture Call a tus amigos</string>    
+ 
 
 	<!-- NUEVAS -->
 	<string name="click_gesture">Accede a Gesture Call !</string>
@@ -35,7 +44,7 @@
 		Call? Pulsa aquí y mándanos un e-mail contándonos lo que quieras</string>
 
 	<string name="dialog_bc_seriusly_sms">¿Quieres mandar un SMS a</string>
-	<string name="notification_hello">Hola!Pruébame...</string>
+	<string name="notification_hello">Hola!Pruébame…</string>
 
 	<string name="pref_donate">¡Apóyanos!</string>
 	<string name="pref_donate_summary">Apóyanos descargando Gesture Call Donate sin
@@ -91,7 +100,7 @@
 	<string name="dialog_bc_seriusly">¿Quieres llamar a</string>
 	<string name="dialog_no_more">No mostrar más este mensaje</string>
 	<string name="dialog_sure">¿Estás seguro?</string>
-	<string name="calling">Llamando...</string>
+	<string name="calling">Llamando…</string>
 
 	<!-- Miscelanea -->
 	<string name="first_time_toast">Esta es la primera vez que usas Gesture Call\n....</string>
@@ -100,7 +109,7 @@
 	<string name="no">No</string>
 	<string name="no_gesto">No se ha reconocido el gesto</string>
 	<string name="info_list_gestos">Pulsación larga para editar el Gesto</string>
-	<string name="gestures_loading">Cargando gestos...</string>
+	<string name="gestures_loading">Cargando gestos…</string>
 	<string name="gestures_empty">No hay gestos</string>
 	<string name="gestures_activity">Gestos</string>
 	<string name="gestures_delete_success">Gesto Borrado</string>

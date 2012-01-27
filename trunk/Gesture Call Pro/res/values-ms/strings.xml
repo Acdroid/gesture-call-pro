@@ -24,7 +24,7 @@
 	<string name="dialog_bc_seriusly">adakah anda benar-benar hendak membuat panggilan?</string>
 	<string name="dialog_no_more">Jangan paparkan mesej ini lagi</string>
 	<string name="dialog_sure">adakah anda yakin?</string>
-	<string name="calling">memanggil...</string>
+	<string name="calling">memanggil…</string>
 
 	<!-- Miscelanea -->
 	<string name="first_time_toast">Ini kali pertama anda menggunakan Panggilan Isyarat</string>
@@ -33,12 +33,12 @@
 	<string name="no">tidak</string>
 	<string name="no_gesto">Isyarat tidak dikenali</string>
 	<string name="info_list_gestos">Klik panjang pada item untuk mengedit pilihan item</string>
-	<string name="gestures_loading">muatan isyarat...</string>
+	<string name="gestures_loading">muatan isyarat…</string>
 	<string name="gestures_empty">Tiada isyarat</string>
 	<string name="gestures_activity">Isyarat</string>
 	<string name="gestures_delete_success">Isyarat dipadam</string>
 	<string name="gestures_error_loading">Tidak boleh muat %s. Pastikan anda telah memuatkan
-		kad SD...</string>
+		kad SD…</string>
 	<string name="error_no_libreria">Ralat mati. Perpustakaan isyarat tidal dijumpai!</string>
 
 

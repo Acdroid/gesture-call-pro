@@ -24,7 +24,7 @@
 	<string name="dialog_bc_seriusly">¿要呼叫</string>
 	<string name="dialog_no_more">不要再显示此消息</string>
 	<string name="dialog_sure">确定?</string>
-	<string name="calling">呼叫...</string>
+	<string name="calling">呼叫…</string>
 
 	<!-- Miscelanea -->
 	<string name="first_time_toast">这是您第一次用 Gesture Call吗\n</string>
@@ -33,7 +33,7 @@
 	<string name="no">否</string>
 	<string name="no_gesto">图片不正确</string>
 	<string name="info_list_gestos">长按键编辑图片</string>
-	<string name="gestures_loading">载入图片...</string>
+	<string name="gestures_loading">载入图片…</string>
 	<string name="gestures_empty">无图片</string>
 	<string name="gestures_activity">图片</string>
 	<string name="gestures_delete_success">图片已删除</string>

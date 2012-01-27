@@ -10,6 +10,7 @@
 package ac.gestureCallPro.ui;
 
 
+import ac.gestureCallPro.util.facebook.FacebookPostMessage;
 import ac.gestureCallPro.ui.cabecera.Cabecera;
 import ac.gestureCallPro.R;
 import ac.gestureCallPro.exceptions.NoPreferenceException; 
@@ -54,6 +55,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class main extends Activity { 
+	
+	public static final String IMAGE = "http://i13.photobucket.com/albums/a253/Aracem/Captura1Device.png";
+	public static final String LINK = "https://market.android.com/details?id=ac.gestureCall";
 
 	public static final String NO_PREDICCION = "Sin_Resultado";
 //	public static final int RESULT_OK = 0;
@@ -136,19 +140,6 @@ public class main extends Activity {
 			Toast.makeText(this, e.getMessage() + "\nERROR while begin the Gesture Recognize!!",Toast.LENGTH_SHORT).show();
 		} //Reconocedor, lo cargamos con la base de datos de accesos directos
 		
-		//notificacion
-		setStatusBarNotification();
-		
-		//La cuenta atras para las llamadas
-		long intervalo; 
-		try {
-			intervalo = ap.getLong(AppConfig.S_AFTER_CALL);
-		} catch (NoPreferenceException e) {
-			Log.i("Gesture Call","No Secs After Call preference. Apply Default 3000");
-			intervalo=3000; //Ponemos intervalo por defecto si ocurre un error
-			ap.put(3000,AppConfig.S_AFTER_CALL);
-		}
-		
 		//Configuramos la cabecera
 		cabecera = (Cabecera)findViewById(R.id.main_cabecera);
 		cabecera.setVisibleAccion();
@@ -162,9 +153,18 @@ public class main extends Activity {
 		});
 		cabecera.setOnOptionClickWitReturn(ID);
 		
+		//notificacion
+		setStatusBarNotification();
 		
-		
-		
+		//La cuenta atras para las llamadas
+		long intervalo; 
+		try {
+			intervalo = ap.getLong(AppConfig.S_AFTER_CALL);
+		} catch (NoPreferenceException e) {
+			Log.i("Gesture Call","No Secs After Call preference. Apply Default 3000");
+			intervalo=3000; //Ponemos intervalo por defecto si ocurre un error
+			ap.put(3000,AppConfig.S_AFTER_CALL);
+		}
 		countdown = new CallCountDown(intervalo, 1000);
 		//Iniciamos el dialog
 		//TODO cambiar esto , hay que sacarlo fuera de aqui
@@ -216,10 +216,6 @@ public class main extends Activity {
 		}
 	}
 
-	public AppConfig getAp() {
-		return ap;
-	}
-
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		MenuInflater inflater = getMenuInflater();
@@ -240,6 +236,10 @@ public class main extends Activity {
 		case R.id.me_opciones:
 			clickOpciones(null);
 			return true;
+		case R.id.me_facebook:
+			new FacebookPostMessage(this,"Gesture Call for Android", getResources().getString(R.string.post_facebook),
+					LINK,
+					IMAGE);
 		default:
 			return super.onOptionsItemSelected(item);
 		}
@@ -350,9 +350,6 @@ public class main extends Activity {
 		PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0);
 
 		notification.setLatestEventInfo(context, contentTitle, contentText, contentIntent);
-		
-		
-		
 
 		mNotificationManager.notify(HELLO_ID, notification);
 	}
@@ -404,48 +401,48 @@ public class main extends Activity {
 			theme = ap.getInt(AppConfig.THEME);
 		} catch (NoPreferenceException e) {
 			Log.i("Gesture Call","No Theme Preference. Apply Default: Grey");
-			theme = Themes.GREY;
-			ap.put(Themes.GREY,AppConfig.THEME);			
+			theme = Themes.BLUE;
+			ap.put(Themes.BLUE,AppConfig.THEME);
 		}
-		
-		
+
+
 		switch (theme) {
 		case Themes.GREY:
 			lay_main.setBackgroundResource(R.drawable.background_grey);
-			//overlay.setGestureColor(R.color.overlay_grey);
-			//overlay.setUncertainGestureColor(R.color.overlay_grey_uncertain);
-			
+			overlay.setGestureColor(getResources().getColor(R.color.overlay_grey));
+			overlay.setUncertainGestureColor(getResources().getColor(R.color.overlay_grey_uncertain));
+
 			break;
 		case Themes.BLUE:
 			lay_main.setBackgroundResource(R.drawable.background_blue_gradient);
-			//overlay.setGestureColor(R.color.overlay_blue);
-			//overlay.setUncertainGestureColor(R.color.overlay_blue_uncertain);
-			
+			overlay.setGestureColor(getResources().getColor(R.color.overlay_blue));
+			overlay.setUncertainGestureColor(getResources().getColor(R.color.overlay_blue_uncertain));
+
 			break;
 		case Themes.GREEN:
 			lay_main.setBackgroundResource(R.drawable.background_green_gradient);
-			//overlay.setGestureColor(R.color.overlay_green);
-			//overlay.setUncertainGestureColor(R.color.overlay_green_uncertain);
-			
+			overlay.setGestureColor(getResources().getColor(R.color.overlay_green));
+			overlay.setUncertainGestureColor(getResources().getColor(R.color.overlay_green_uncertain));
+
 			break;
 		case Themes.BLACK:
 			lay_main.setBackgroundResource(R.drawable.background_black_gradient);
-			//overlay.setGestureColor(R.color.overlay_green);
-			//overlay.setUncertainGestureColor(R.color.overlay_green_uncertain);
-			
+			overlay.setGestureColor(getResources().getColor(R.color.overlay_black));
+			overlay.setUncertainGestureColor(getResources().getColor(R.color.overlay_black_uncertain));
+
 			break;
 		case Themes.WHITE:
 			lay_main.setBackgroundResource(R.drawable.background_white_gradient);
-			//overlay.setGestureColor(R.color.overlay_green);
-			//overlay.setUncertainGestureColor(R.color.overlay_green_uncertain);
-			
+			overlay.setGestureColor(getResources().getColor(R.color.overlay_white));
+			overlay.setUncertainGestureColor(getResources().getColor(R.color.overlay_white_uncertain));
+
 			break;
 
 		default:
-			lay_main.setBackgroundResource(R.drawable.background_grey);
-			//overlay.setGestureColor(R.color.overlay_grey);
-			//overlay.setUncertainGestureColor(R.color.overlay_grey_uncertain);
-			
+			lay_main.setBackgroundResource(R.drawable.background_blue_gradient);
+			overlay.setGestureColor(getResources().getColor(R.color.overlay_blue));
+			overlay.setUncertainGestureColor(getResources().getColor(R.color.overlay_blue_uncertain));
+
 			break;
 		}
 	}
@@ -913,11 +910,7 @@ public class main extends Activity {
 		}
 		super.onRestoreInstanceState(savedInstanceState);
 	}
-
-
-
-
-
+	
 	/**
 	 * Method onStop.
 	 */
@@ -929,9 +922,7 @@ public class main extends Activity {
 
 	
 	
-	
-	
-	
-	
-	
+	public AppConfig getAp() {
+		return ap;
+	}
 }

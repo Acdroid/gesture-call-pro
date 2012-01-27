@@ -1,25 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:orientation="vertical" android:layout_width="fill_parent"
-	android:layout_height="fill_parent">
-	 <ac.gestureCallPro.ui.cabecera.Cabecera
-	    		android:id="@+id/main_cabecera"
-	    		android:layout_height="50dip"
-				android:layout_width="fill_parent"
-				android:layout_alignParentTop="true"
-	    		
-	    		></ac.gestureCallPro.ui.cabecera.Cabecera>
-	
-	<ListView android:id="@android:id/list"
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		android:layout_weight="1"
-		android:cacheColorHint="#FFFFFFFF"
-		android:fastScrollEnabled="true" />
-	<TextView 
-		android:id="@android:id/empty"
-		android:layout_width="fill_parent"
-		android:layout_height="fill_parent"
-		android:text="no se han encontrado registros" />
-</LinearLayout>
+    <ac.gestureCallPro.ui.cabecera.Cabecera
+        android:id="@+id/list_cont_cabecera"
+        android:layout_width="fill_parent"
+        android:layout_height="40dip"
+        android:layout_alignParentTop="true" >
+    </ac.gestureCallPro.ui.cabecera.Cabecera>
+    
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/list_cont_cabecera"
+        android:cacheColorHint="#FF000000"
+        android:fastScrollEnabled="true"
+        android:scrollingCache="true"
+        android:divider="#a0a0a0"
+        android:dividerHeight="3dip"
+        android:textFilterEnabled="true" />
+
+    <TextView
+        android:id="@android:id/empty"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:text="@string/do_you_have_contacts"
+        android:textColor="@color/black"
+        android:textSize="40dip"
+        android:textStyle="bold" />
+
+</RelativeLayout>
