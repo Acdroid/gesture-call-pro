@@ -41,26 +41,20 @@
 	        </intent-filter>
 		</receiver>
 
-		<!-- Widgets -->
-
-		<!-- Widget Simple <receiver android:name=".ui.widget.WidgetSimple" android:label="Gesture 
-			Call Simple"> <intent-filter> <action android:name="android.appwidget.action.APPWIDGET_UPDATE" 
-			/> </intent-filter> <intent-filter> <action android:name="ac.gestureCallPro.PressButton"/> 
-			</intent-filter> <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_simple_conf" 
-			/> </receiver> <activity android:name=".ui.widget.WidgetSimpleConfig"> <intent-filter> 
-			<action android:name="android.apwidget.action.APPWIDGET_CONFIGURE"/> </intent-filter> 
-			</activity> -->
-		<!-- Widget Pro <receiver android:name=".ui.widget.WidgetPro" android:label="Gesture 
-			Call Pro"> <intent-filter> <action android:name="android.appwidget.action.APPWIDGET_UPDATE" 
-			/> <action android:name="ac.gestureCallPro.ProPressButton"/> <action android:name="ac.gestureCallPro.proDirectCall"/> 
-			</intent-filter> <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_pro_config" 
-			/> </receiver> <activity android:name=".ui.widget.WidgetProConfig"> <intent-filter> 
-			<action android:name="android.apwidget.action.APPWIDGET_CONFIGURE"/> </intent-filter> 
-			</activity> -->
-
-
-
-
-
+		<!-- Widgets -->    
+<!-- 		<receiver android:enabled="true" android:name=".widget.Widget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="ac.gestureCallPro.CLICK"/>
+            </intent-filter>
+            This specifies the widget provider info
+            <meta-data android:name="android.appwidget.provider"
+                    android:resource="@xml/pref_widget"/>
+            
+        </receiver> -->
 	</application>
 </manifest>
+
+ <!-- <action android:name="ac.gestureCallPro.CLICK"/> -->

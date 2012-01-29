@@ -16,7 +16,11 @@
         android:gestureStrokeWidth="18"
         android:gravity="center"
         android:orientation="vertical"
-        android:uncertainGestureColor="#80c32020" >
+        android:uncertainGestureColor="#80c32020" 
+        
+        android:gestureStrokeLengthThreshold="50.0"
+        android:gestureStrokeSquarenessThreshold="0.275"
+        android:gestureStrokeAngleThreshold="40.0">
 
         <RelativeLayout
             android:layout_width="fill_parent"
