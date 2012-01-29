@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="200dip"
+    android:layout_height="300dip"
+    android:background="@drawable/widget_pro_background">
+    <android.gesture.GestureOverlayView 
+        android:id="@+id/gestures"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gestureStrokeWidth="12.0"
+        android:gestureColor="#ffffff00"
+        android:uncertainGestureColor="#48ffff00"
+        android:fadeOffset="420"
+        android:fadeDuration="150"
+        android:gestureStrokeLengthThreshold="50.0"
+        android:gestureStrokeSquarenessThreshold="0.275"
+        android:gestureStrokeAngleThreshold="40.0"
+        android:eventsInterceptionEnabled="true"
+        android:gestureStrokeType="multiple"        
+        
+        ></android.gesture.GestureOverlayView>
+    
+    
+
+</RelativeLayout>

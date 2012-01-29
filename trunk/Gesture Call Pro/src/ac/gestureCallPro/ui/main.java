@@ -179,8 +179,7 @@ public class main extends Activity {
 		
 		
 		//Aviso por pantalla //TODO donde poner esto? En appconfig o aqui
-		mToast.Make(this, getResources().getString(R.string.makeGesture), 0);
-		
+		mToast.Make(this, getResources().getString(R.string.makeGesture), 0);	
 	}
 
 	@Override

@@ -56,7 +56,7 @@ public final class ListContact extends ListActivity
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.lista_contactos);     
-		
+	
 		obtenLibreria();
 		
 		manegadorCursor = new ContactCursor(this);
