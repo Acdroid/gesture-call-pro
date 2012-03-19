@@ -2,10 +2,18 @@
 <resources>
 
     <string name="makeGesture">Haz un gesto para llamar a un contacto</string>
+    
+    	<!-- Lo mas de lo mas -->
+    <string name="rate">Valorar</string>
+    <string name="rate_later">Recuérdamelo más tarde</string>
+    <string name="rate_no_thanks">No, gracias</string>
+    <string name="rate_text1">Si te gusta </string>
+    <string name="rate_text2">, por favor tómate un momento para valorarlo. ¡Gracias por tu ayuda!"</string>
+    
 
 	<!--  Aun mas nuevas -->
     <string name="pref_open_start">Iniciar con el dispositivo</string>
-    <string name="pref_open_start_summary">Inicia la aplicación al endender el dispositivo para habilitar el icono de notificaciones.</string>
+    <string name="pref_open_start_summary">Inicia la aplicación al encender el dispositivo para habilitar el icono de notificaciones.</string>
     <!-- Mas nuevas -->
     <string name="sharefacebook">Compartir en Facebook</string>
     <string name="post_facebook">e probado Gesture Call para android y me gusta. 

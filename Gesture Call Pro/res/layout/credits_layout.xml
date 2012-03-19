@@ -12,7 +12,9 @@
             android:id="@+id/textView1"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="@string/creditos" >
+            android:text="@string/creditos"
+            android:paddingLeft="15dip"
+            android:paddingRight="15dip">
         </TextView>
     </LinearLayout>
 

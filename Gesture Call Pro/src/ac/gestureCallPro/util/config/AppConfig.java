@@ -1,5 +1,5 @@
 /**
-s * Acdroid Apps for Android
+ * Acdroid Apps for Android
  * 
  * @author Carlos Diaz Canovas
  * @author Marcos Trujillo Seoane
@@ -49,6 +49,10 @@ public class AppConfig extends MSharedPreferences{
 	public static final String THEME = "theme"; //Theme elegido
 	public static final String S_AFTER_CALL = "secondsAfterCall"; //tiempo en segundos antes de llamar, sms o perdida
 	public static final String OPEN_START = "open_on_start";
+	public static final String RATER_PRO = "rater_pro";
+	public static final String RATER_PRO_LAUCH_COUNTER = "rater_pro_lauch_counter";
+	public static final String RATER_PRO_FIRST_USE = "rater_pro_first_use";
+	public static final String RATER_PRO_REMIND_LATER = "rater_pro_remind_later";
 	
     public static final class Themes {
         public static final int GREY = 0;
@@ -131,13 +135,6 @@ public class AppConfig extends MSharedPreferences{
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
-
-
-		Log.i("GestureCall_AC", "Config file created");
-
-
-
 	}
 	
 	/**
@@ -149,6 +146,7 @@ public class AppConfig extends MSharedPreferences{
 		makeV3();
 		makeV4();
 		makeV5();
+		makeV6();
 	}
 	
 	/**
@@ -183,6 +181,9 @@ public class AppConfig extends MSharedPreferences{
 		if (ver < 5){
 			makeV5();
 		}
+		
+		if (ver < 6)
+			makeV6();
 		
 		
 	}
@@ -255,10 +256,27 @@ public class AppConfig extends MSharedPreferences{
 	 */
 	private void makeV5(){
 		put(true,OPEN_START);
-		showNewDialog();
 		put(5,VERSION);
 		
 	}
+	
+	/**
+	 * Quinta version en la que se agrega rater
+	 * 
+	 * 2.1.5
+	 */
+	private void makeV6(){
+		put(true,RATER_PRO);
+		put(0,RATER_PRO_LAUCH_COUNTER);
+		put(1,RATER_PRO_REMIND_LATER);
+		//first lauch
+		Long time = System.currentTimeMillis();
+		put(time,RATER_PRO_FIRST_USE);
+		//showNewDialog();
+		put(6,VERSION);
+		
+	}
+	
 	
 	
 	
