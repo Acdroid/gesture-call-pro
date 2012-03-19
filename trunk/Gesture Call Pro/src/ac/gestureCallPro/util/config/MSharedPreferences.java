@@ -171,6 +171,16 @@ public class MSharedPreferences {
 	
 	/**
 	 * <ul>Crea una nueva preferencia.</ul><br><br>
+	 * @param valor Long que queremos guardar.
+	 * @param key que identificara a la preferencia.
+	 */
+	public final void put(Long valor, String key){
+		prefEditor.putLong(key, valor);
+		prefEditor.commit();
+	}
+	
+	/**
+	 * <ul>Crea una nueva preferencia.</ul><br><br>
 	 * @param valor float que queremos guardar.
 	 * @param key que identificara a la preferencia.
 	 */
@@ -179,15 +189,7 @@ public class MSharedPreferences {
 		prefEditor.commit();
 	}
 	
-	/**
-	 * <ul>Crea una nueva preferencia.</ul><br><br>
-	 * @param valor Long que queremos guardar.
-	 * @param key que identificara a la preferencia.
-	 */
-	public final void put(Long valor, String key){
-		prefEditor.putLong(key, valor);
-		prefEditor.commit();
-	}
+
 	
 	/**
 	 * <ul>Crea una nueva preferencia.</ul><br><br>

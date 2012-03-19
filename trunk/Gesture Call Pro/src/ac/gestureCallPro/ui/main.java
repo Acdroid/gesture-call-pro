@@ -21,6 +21,7 @@ import ac.gestureCallPro.util.config.AppConfig;
 import ac.gestureCallPro.util.config.AppConfig.Themes;
 import ac.gestureCallPro.util.gestures.GesturesRecognizer;
 import ac.gestureCallPro.util.mToast.mToast;
+import ac.gestureCallPro.util.rater.Rater;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -176,6 +177,8 @@ public class main extends Activity {
 		//Cargamos tema
 		lay_main = (LinearLayout)findViewById(R.id.lay_main);
 		setTheme();
+		
+		Rater.checkRater(this,0,0);
 		
 		
 		//Aviso por pantalla //TODO donde poner esto? En appconfig o aqui

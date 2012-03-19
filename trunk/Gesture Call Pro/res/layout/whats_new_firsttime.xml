@@ -18,69 +18,7 @@
 			
 			
 			<TextView
-				android:text="
-- Gesture Call Donate -\n
-\n
-Thanx you very much for downloading Gesture Call Donate!\n\n
-
-◘  Version 2.1.4\n\n
-• Improvements in the interface.\n
-• Fix a bug in the dialog before call.\n
-• The notification icon now appear when reboot the device.\n
-• Reducing the size of the app.\n
-• Now you can share the app on Facebook.\n
-• The Gestures now change the color according to the Theme.\n
-• Prove the app in Android 4.0 Ice Scream Sandwich and in the Galaxy Nexus.\n
-• Prepare Gesture Call for a future version with a new interface more adequate for the style of Android 4.0 Ice Cream Sandwich.\n
-• Solve a bug in the style of the buttons.\n\n
-
-
-◘  Version 2.1.3\n\n
-• Change default color theme.\n
-• Fix a bug in the whats new dialog.\n
-• Change the icon of the app.\n
-• Improve in the dialog Before Call.\n
-• Reducing the size of the app.\n\n
-
-◘  Version 2.1.2\n\n
-• Solved a important bug.\n
-• Fix languages.\n
-• Important improvements in the interface.\n\n
-
-◘  Version 2.1.1\n\n
-• In the preferences screen now return button save the preferences.\n
-• Fix languages and complete italian.\n
-• To activate the notification bar icon press the menu on your phone and then click settings.\n\n
-
-◘  Version 2.1\n\n
-• Now you can create a shortcut\n
-• Little changes in the interface\n
-• Bug of 'Return after call/sms` solved\n\n
-
-◘  Version 2.0\n\n
-• New Interface\n
-• New Languages\n
-  Russian\n
-  Korean\n
-• Differents Themes\n
-• Now You can Send SMS\n
-• New Options:\n
-   New Notification for quick access\n
-   Exit after call\n
-   Auto call after wait a few seconds\n
-   Default action (Call or SMS)\n
-• New method to contact with the developers\n
-  (send us feedback, ideas, bugs ... )\n
-• Bug Fix
-\n\n
-◘  Version 1.2\n\n
-• First Version of Gesture Call Donate
-  
-\n\n\n        
-  
-\n\n\n
-  
-"
+				android:text="@string/whats_new"
 				android:id="@+id/textView1"
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
